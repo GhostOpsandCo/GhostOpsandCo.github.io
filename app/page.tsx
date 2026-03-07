@@ -27,8 +27,7 @@ export default function Home() {
           </p>
 
           <p className="text-base sm:text-lg text-white/40 max-w-[620px] leading-relaxed">
-            I build partnership-led growth engines that drive revenue, activation,
-            and durable market momentum.
+            God calls us to serve others and I strive to follow that calling in business and life.
           </p>
         </section>
 
@@ -36,12 +35,10 @@ export default function Home() {
         <section className="w-full max-w-[680px] mb-16 sm:mb-20">
           <div className="rounded-2xl border border-white/[0.06] bg-white/[0.02] px-8 py-8 sm:px-10 sm:py-10">
             <p className="text-base sm:text-lg text-white/70 leading-[1.75]">
-              Growth and revenue operator with experience driving $20M+ primary
-              launch revenue and sustaining $100M+ secondary trading volume across
-              AI and crypto. I own partnerships and distribution end-to-end,
-              translating relationships into pipeline, liquidity, and revenue. I
-              thrive in fast-moving environments where execution and outcomes
-              matter.
+              Growth & Revenue Operator who has scaled from $8M+ in annual revenue targets into a
+              seasoned career, producing $20M+ in primary revenue, scaling to $100M+ in ongoing revenue
+              generation. My primary focus is in strategy development, partnership alignment, and execution
+              in a company of passionate individuals whose mission matters deeply.
             </p>
           </div>
         </section>
