@@ -33,6 +33,11 @@ jobs:
       - name: Build
         run: npm run build
 
+      - name: Include static Treasury Router page
+        run: |
+          rm -rf out/treasuryrouter
+          cp -R treasuryrouter out/treasuryrouter
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
