@@ -167,15 +167,15 @@
     h1 {
       margin-bottom: 20px;
       max-width: 840px;
-      font-size: 76px;
-      line-height: .93;
+      font-size: 68px;
+      line-height: .96;
       letter-spacing: 0;
     }
 
     h2 {
       margin-bottom: 0;
       max-width: 820px;
-      font-size: 52px;
+      font-size: 46px;
       line-height: 1.03;
       letter-spacing: 0;
     }
@@ -200,6 +200,37 @@
       color: #c9d1df;
       font-size: 21px;
       line-height: 1.52;
+    }
+
+    .hero-impact {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 10px;
+      max-width: 760px;
+      margin-top: 24px;
+    }
+
+    .hero-impact-item {
+      padding: 16px;
+      border: 1px solid rgba(101,217,255,.18);
+      border-radius: var(--radius);
+      background: rgba(255,255,255,.055);
+    }
+
+    .hero-impact-item b {
+      display: block;
+      margin-top: 7px;
+      color: var(--green);
+      font-size: 28px;
+      line-height: 1;
+    }
+
+    .hero-impact-item span {
+      display: block;
+      margin-top: 7px;
+      color: var(--muted);
+      font-size: 11px;
+      line-height: 1.35;
     }
 
     .hero-actions {
@@ -418,6 +449,73 @@
       line-height: 1.55;
     }
 
+    .story-grid {
+      display: grid;
+      grid-template-columns: repeat(6, minmax(0, 1fr));
+      gap: 10px;
+    }
+
+    .story-step {
+      min-height: 154px;
+      padding: 14px;
+      border: 1px solid var(--soft);
+      border-radius: var(--radius);
+      background: rgba(5,7,13,.36);
+    }
+
+    .story-step small {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 28px;
+      height: 28px;
+      margin-bottom: 14px;
+      border-radius: var(--radius-sm);
+      color: #06140e;
+      background: linear-gradient(135deg, var(--cyan), var(--gold));
+      font-weight: 900;
+    }
+
+    .story-step b {
+      display: block;
+      margin-bottom: 8px;
+      font-size: 13px;
+    }
+
+    .story-step span {
+      display: block;
+      color: var(--muted);
+      font-size: 11px;
+      line-height: 1.45;
+    }
+
+    .story-note {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 10px;
+      margin-top: 14px;
+    }
+
+    .story-note div {
+      padding: 16px;
+      border: 1px solid rgba(101,240,173,.18);
+      border-radius: var(--radius);
+      background: rgba(101,240,173,.055);
+    }
+
+    .story-note b {
+      display: block;
+      margin-bottom: 7px;
+      color: var(--green);
+      font-size: 13px;
+    }
+
+    .story-note span {
+      color: #cbd3df;
+      font-size: 12px;
+      line-height: 1.45;
+    }
+
     .value-grid {
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -560,6 +658,29 @@
     }
 
     .demo-body { padding: 22px; }
+    .demo-step-note {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 14px 15px;
+      margin-bottom: 10px;
+      border: 1px solid rgba(244,201,93,.20);
+      border-radius: var(--radius);
+      background: rgba(244,201,93,.06);
+    }
+
+    .demo-step-note b {
+      color: var(--gold);
+      font-size: 14px;
+    }
+
+    .demo-step-note span {
+      color: #d9dfeb;
+      font-size: 12px;
+      line-height: 1.45;
+    }
+
     .overview-row {
       display: grid;
       grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -769,7 +890,7 @@
     .route-list {
       display: grid;
       gap: 8px;
-      max-height: 318px;
+      max-height: 254px;
       overflow: auto;
       padding-right: 3px;
     }
@@ -830,6 +951,16 @@
     .route-meta b { display: block; color: var(--green); font-size: 11px; }
     .route-meta span { display: block; margin-top: 4px; color: var(--muted); font-size: 9px; }
     .route-card.excluded .route-meta b { color: var(--rose); }
+
+    .route-more {
+      padding: 9px 10px;
+      border: 1px dashed rgba(255,255,255,.14);
+      border-radius: var(--radius);
+      color: var(--muted);
+      background: rgba(255,255,255,.025);
+      font-size: 11px;
+      text-align: center;
+    }
 
     .plans-memo-grid {
       display: grid;
@@ -1059,6 +1190,7 @@
       .pilot-metrics { grid-template-columns: repeat(3, minmax(0, 1fr)); }
       .controls-panel { grid-template-columns: repeat(2, minmax(0, 1fr)); }
       .scan-button { min-height: 54px; }
+      .story-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
     }
 
     @media (max-width: 820px) {
@@ -1071,10 +1203,11 @@
       .section.compact { padding: 30px 0; }
       .section-header { display: block; }
       .section-kicker { margin-top: 15px; }
-      .value-grid, .capability-grid, .overview-row, .mini-kpis, .route-columns, .plan-tabs, .strategy-detail, .memo-impact-grid { grid-template-columns: 1fr; }
+      .hero-impact, .story-grid, .story-note, .value-grid, .capability-grid, .overview-row, .mini-kpis, .route-columns, .plan-tabs, .strategy-detail, .memo-impact-grid { grid-template-columns: 1fr; }
       .controls-panel { grid-template-columns: 1fr; }
       .idle-band { grid-template-columns: 1fr; }
       .demo-body { padding: 14px; }
+      .demo-step-note { align-items: flex-start; flex-direction: column; }
       .demo-toolbar { align-items: flex-start; flex-direction: column; }
       .alloc-row { grid-template-columns: 1fr .85fr 40px; }
       .memo-actions { flex-direction: column; }
@@ -1085,8 +1218,8 @@
     }
 
     @media (max-width: 1060px) and (min-width: 821px) {
-      h1 { font-size: 64px; }
-      h2 { font-size: 44px; }
+      h1 { font-size: 58px; }
+      h2 { font-size: 40px; }
     }
 
     @media (max-width: 480px) {
@@ -1118,9 +1251,9 @@
         <span>Gate AI Treasury Router</span>
       </a>
       <div class="nav-links">
-        <a href="#value">Value</a>
-        <a href="#capabilities">What it does</a>
+        <a href="#story">Story</a>
         <a href="#demo">Live demo</a>
+        <a href="#value">Value</a>
         <a href="#pilot" class="pill"><span class="dot"></span> Build case</a>
       </div>
     </div>
@@ -1133,9 +1266,14 @@
           <div class="pill"><span class="dot"></span> Gate AI product concept for VIP advisors</div>
           <h1>Turn idle VIP capital into <span class="gradient">active Gate value.</span></h1>
           <p class="hero-copy">Gate AI Treasury Router helps VIP advisors turn idle client balances into approved earning plans the client can understand and act on.</p>
+          <div class="hero-impact" aria-label="Illustrative value unlock">
+            <div class="hero-impact-item"><small>Detected</small><b>$12.4M idle</b><span>Stablecoin balance mostly inactive for 47 days.</span></div>
+            <div class="hero-impact-item"><small>Routed</small><b>$7.9M activated</b><span>Illustrative advisor-reviewed plan after liquidity reserve.</span></div>
+            <div class="hero-impact-item"><small>Used</small><b>5 Gate products</b><span>Existing routes become measurable ecosystem activity.</span></div>
+          </div>
           <div class="hero-actions">
             <a class="btn primary" href="#demo">Run the product demo</a>
-            <a class="btn" href="#value">See the value unlock</a>
+            <a class="btn" href="#story">See the workflow</a>
           </div>
           <div class="micro-proof">
             <span>Gate-approved routes</span>
@@ -1177,82 +1315,27 @@
       </div>
     </section>
 
-    <section class="section compact" id="value">
+    <section class="section compact" id="story">
       <div class="shell">
         <div class="section-header">
           <div>
-            <div class="eyebrow">Value unlock</div>
-            <h2>One AI workflow creates value for VIP clients, advisors, and Gate.</h2>
+            <div class="eyebrow">The workflow</div>
+            <h2>One guided path from idle balance to advisor-reviewed action.</h2>
           </div>
-          <p class="section-kicker">The product is not another yield page. It is a guided advisor workflow that turns idle balances into clear, reviewable decisions.</p>
+          <p class="section-kicker">The product is simple: find idle capital, filter approved Gate routes against client needs, prepare three options, and measure capital activated.</p>
         </div>
-        <div class="value-grid">
-          <div class="value-card">
-            <div class="role">VIP client</div>
-            <h3>An intelligent path to stronger returns.</h3>
-            <p>Treasury Router helps VIP clients see where idle capital could be put to work through clear, advisor-reviewed options.</p>
-            <div class="value-stat"><span>Outcome:</span> more clarity, more confidence, and more potential value from assets already inside Gate.</div>
-          </div>
-          <div class="value-card">
-            <div class="role">VIP advisor</div>
-            <h3>A stronger way to serve VIP clients.</h3>
-            <p>Advisors can provide a more personalized, data-backed service with faster preparation and clearer investment conversations.</p>
-            <div class="value-stat"><span>Outcome:</span> better client conversations without replacing human judgment.</div>
-          </div>
-          <div class="value-card">
-            <div class="role">Gate</div>
-            <h3>Idle capital becomes active ecosystem value.</h3>
-            <p>Capital that was sitting idle can flow into existing Gate products, improving product utilization, supporting platform performance, and strengthening VIP relationships through better client outcomes.</p>
-            <div class="value-stat"><span>Outcome:</span> more product activity, stronger retention, and measurable revenue influence.</div>
-          </div>
+        <div class="story-grid" aria-label="Gate AI Treasury Router walkthrough">
+          <div class="story-step"><small>01</small><b>Find idle capital</b><span>Gate AI detects balances that have been sitting underused inside the client account.</span></div>
+          <div class="story-step"><small>02</small><b>Confirm constraints</b><span>The advisor sets liquidity reserve, maximum lockup, risk comfort, and preferred assets.</span></div>
+          <div class="story-step"><small>03</small><b>Scan Gate routes</b><span>Approved Earn, lending, staking, quant, structured, and Private Wealth routes are compared.</span></div>
+          <div class="story-step"><small>04</small><b>Exclude mismatches</b><span>AI removes routes that are too long, too risky, too complex, or outside client preference.</span></div>
+          <div class="story-step"><small>05</small><b>Create options</b><span>The advisor gets three clear plans with potential income, liquidity, and risk tradeoffs.</span></div>
+          <div class="story-step"><small>06</small><b>Measure impact</b><span>Gate tracks capital activated, products used, advisor time saved, and retention signal.</span></div>
         </div>
-      </div>
-    </section>
-
-    <section class="section compact">
-      <div class="shell">
-        <div class="section-header">
-          <div>
-            <div class="eyebrow">The value loop</div>
-            <h2>Idle capital becomes a measurable advisor-led action.</h2>
-          </div>
-          <p class="section-kicker">Every report creates a structured path from detected opportunity to client decision and Gate product activation.</p>
-        </div>
-        <div class="loop" aria-label="Gate AI Treasury Router value loop">
-          <div class="loop-step"><div class="loop-num">01</div><b>Detect</b><span>Find idle VIP balances, asset mix, and time unallocated.</span></div>
-          <div class="loop-step"><div class="loop-num">02</div><b>Analyze</b><span>Apply liquidity needs, max lockup, risk comfort, and client preferences.</span></div>
-          <div class="loop-step"><div class="loop-num">03</div><b>Route</b><span>Match approved Gate ecosystem products to the client profile.</span></div>
-          <div class="loop-step"><div class="loop-num">04</div><b>Advise</b><span>Generate simple investor-ready options for advisor review.</span></div>
-          <div class="loop-step"><div class="loop-num">05</div><b>Measure</b><span>Track capital activated, product usage, and retention signals.</span></div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section compact" id="capabilities">
-      <div class="shell">
-        <div class="section-header">
-          <div>
-            <div class="eyebrow">What Gate AI Treasury Router does</div>
-            <h2>Smart enough to help. Simple enough for advisors and VIPs to trust.</h2>
-          </div>
-          <p class="section-kicker">The AI does practical work: it finds the opportunity, filters the routes, and turns the output into a clean advisor-ready package.</p>
-        </div>
-        <div class="capability-grid">
-          <div class="capability">
-            <div class="cap-num">01</div>
-            <h3>Scans for idle capital opportunities.</h3>
-            <p>Intelligently scans for opportunities to deploy idle capital inside the Gate ecosystem.</p>
-          </div>
-          <div class="capability">
-            <div class="cap-num">02</div>
-            <h3>Uncovers potential returns in real time.</h3>
-            <p>Uncovers opportunities in real time to unlock potential returns for VIP clients.</p>
-          </div>
-          <div class="capability">
-            <div class="cap-num">03</div>
-            <h3>Creates investor-ready options.</h3>
-            <p>Assists VIP advisors in presenting investor-ready options in a simple format.</p>
-          </div>
+        <div class="story-note">
+          <div><b>Advisor stays in control.</b><span>AI drafts options; the advisor reviews before anything reaches the VIP client.</span></div>
+          <div><b>VIP makes the decision.</b><span>The output is simple enough for a client conversation, not an autonomous execution engine.</span></div>
+          <div><b>Gate uses existing products.</b><span>The value comes from routing idle capital into approved products already inside the ecosystem.</span></div>
         </div>
       </div>
     </section>
@@ -1261,10 +1344,10 @@
       <div class="shell">
         <div class="section-header">
           <div>
-            <div class="eyebrow">Interactive product simulation</div>
-            <h2>Watch Gate AI turn one idle balance into three advisor-ready plans.</h2>
+            <div class="eyebrow">Guided product walkthrough</div>
+            <h2>Watch one idle balance become a client-ready decision.</h2>
           </div>
-          <p class="section-kicker">This is mocked data, but the workflow is the point: detect idle capital, scan approved routes, generate simple plans, and measure the value created.</p>
+          <p class="section-kicker">The default flow works without touching anything: run the scan, watch bad routes get removed, review the memo, and see Gate impact update.</p>
         </div>
 
         <div class="demo-wrap">
@@ -1274,6 +1357,10 @@
           </div>
 
           <div class="demo-body">
+            <div class="demo-step-note">
+              <b>Step 1: Gate AI detects idle capital.</b>
+              <span>$12.4M has sat mostly idle for 47 days. The product starts by showing the advisor what can safely be reviewed.</span>
+            </div>
             <div class="overview-row">
               <div class="metric"><small>Total portfolio</small><b>$28.4M</b><span>Across approved Gate accounts</span></div>
               <div class="metric highlight"><small>Idle capital</small><b>$12.4M</b><span>47 days average idle time</span></div>
@@ -1283,8 +1370,8 @@
 
             <div class="simulation-grid">
               <aside class="controls-panel" aria-label="Advisor controls">
-                <h3>Advisor confirms client needs.</h3>
-                <p class="panel-intro">These simple inputs show why AI is useful: the route list changes as client needs change.</p>
+                <h3>Step 2: advisor confirms client needs.</h3>
+                <p class="panel-intro">The product starts with a safe default profile. Advisors can adjust constraints, and the route scan updates immediately.</p>
 
                 <div class="control">
                   <label for="reserveInput"><span>Liquidity reserve</span><output id="reserveOut">$3.0M</output></label>
@@ -1328,16 +1415,16 @@
 
                   <div class="route-board">
                     <div class="route-head">
-                      <div><b>Gate ecosystem route scan</b><span id="routeSummary">11 eligible · 7 excluded</span></div>
+                      <div><b>Steps 3-4: scan routes, remove bad fits</b><span id="routeSummary">10 eligible · 8 excluded</span></div>
                       <span class="pill">Advisor view</span>
                     </div>
                     <div class="route-columns">
                       <div>
-                        <div class="route-column-title">Eligible routes</div>
+                        <div class="route-column-title">Best-fit evidence</div>
                         <div class="route-list" id="eligibleRoutes"></div>
                       </div>
                       <div>
-                        <div class="route-column-title">Excluded by AI</div>
+                        <div class="route-column-title">Removed by AI</div>
                         <div class="route-list" id="excludedRoutes"></div>
                       </div>
                     </div>
@@ -1346,8 +1433,8 @@
 
                 <div class="plans-memo-grid">
                   <section class="output-panel" aria-label="Generated strategies">
-                    <h3>Gate AI builds three plans.</h3>
-                    <p class="panel-intro">The advisor can compare liquidity, income potential, risk, and product mix before speaking with the VIP client.</p>
+                    <h3>Step 5: Gate AI builds three options.</h3>
+                    <p class="panel-intro">Each option is framed for a real VIP conversation: what it may earn, how liquid it is, how risky it is, and where capital would go.</p>
                     <div class="plan-tabs" id="planTabs"></div>
                     <div class="strategy-detail">
                       <div class="allocation" id="allocation"></div>
@@ -1382,8 +1469,8 @@
                     </section>
 
                     <section class="impact-panel" aria-label="Gate business impact">
-                      <h3>Gate sees the value created.</h3>
-                      <p class="panel-intro">The product does not need to be a new fund. It can create value by activating capital into products Gate already offers.</p>
+                      <h3>Step 6: Gate sees capital activated.</h3>
+                      <p class="panel-intro">This does not need to be a new fund. It creates value by routing idle capital into products Gate already offers.</p>
                       <div class="impact-row"><span>Capital activated</span><b id="activatedCapital">$7.9M</b></div>
                       <div class="impact-row"><span>Gate products used</span><b id="productsUsed">5</b></div>
                       <div class="impact-row"><span>Advisor prep time saved</span><b>~2.5h</b></div>
@@ -1394,6 +1481,38 @@
                 </div>
               </div>
             </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section compact" id="value">
+      <div class="shell">
+        <div class="section-header">
+          <div>
+            <div class="eyebrow">Why it matters</div>
+            <h2>The same workflow creates value for VIP clients, advisors, and Gate.</h2>
+          </div>
+          <p class="section-kicker">Treasury Router is useful because it turns a passive balance into a clear advisor-led decision with measurable platform impact.</p>
+        </div>
+        <div class="value-grid">
+          <div class="value-card">
+            <div class="role">VIP client</div>
+            <h3>An intelligent path to potential returns.</h3>
+            <p>Treasury Router helps VIP clients see where idle capital could be put to work through clear, advisor-reviewed options.</p>
+            <div class="value-stat"><span>Value:</span> clearer choices, better context, and more potential value from assets already inside Gate.</div>
+          </div>
+          <div class="value-card">
+            <div class="role">VIP advisor</div>
+            <h3>A stronger way to serve VIP clients.</h3>
+            <p>Advisors can provide a more personalized, data-backed service with faster preparation and clearer investment conversations.</p>
+            <div class="value-stat"><span>Value:</span> better client conversations without replacing human judgment.</div>
+          </div>
+          <div class="value-card">
+            <div class="role">Gate</div>
+            <h3>Idle capital becomes active ecosystem value.</h3>
+            <p>Capital that was sitting idle can flow into existing Gate products, improving utilization, supporting platform performance, and strengthening VIP relationships through better client outcomes.</p>
+            <div class="value-stat"><span>Value:</span> more product activity, stronger retention, and measurable revenue influence.</div>
           </div>
         </div>
       </div>
@@ -1612,25 +1731,31 @@
     function renderRoutes(evaluated) {
       const eligible = evaluated.filter(route => route.eligible);
       const excluded = evaluated.filter(route => !route.eligible);
+      const visibleEligible = eligible.slice(0, 5);
+      const visibleExcluded = excluded.slice(0, 4);
 
       els.routeSummary.textContent = eligible.length + " eligible · " + excluded.length + " excluded";
       els.excludeStep.textContent = "Excluding " + excluded.length + " unsuitable routes";
 
-      els.eligibleRoutes.innerHTML = eligible.slice(0, 9).map(route =>
+      els.eligibleRoutes.innerHTML = visibleEligible.map(route =>
         '<div class="route-card">' +
           '<div class="route-icon">' + route.code + '</div>' +
           '<div class="route-main"><b>' + route.name + '</b><span>' + route.category + ' · ' + route.note + '</span></div>' +
           '<div class="route-meta"><b>' + route.yieldLow.toFixed(1) + '%-' + route.yieldHigh.toFixed(1) + '%</b><span>' + route.liquidity + '</span></div>' +
         '</div>'
-      ).join("");
+      ).join("") + (eligible.length > visibleEligible.length
+        ? '<div class="route-more">+' + (eligible.length - visibleEligible.length) + ' more eligible routes considered</div>'
+        : '');
 
-      els.excludedRoutes.innerHTML = excluded.slice(0, 9).map(route =>
+      els.excludedRoutes.innerHTML = visibleExcluded.map(route =>
         '<div class="route-card excluded">' +
           '<div class="route-icon">' + route.code + '</div>' +
           '<div class="route-main"><b>' + route.name + '</b><span>' + route.category + ' · ' + route.note + '</span></div>' +
           '<div class="route-meta"><b>' + route.reason + '</b><span>' + route.lockup + 'd lockup</span></div>' +
         '</div>'
-      ).join("");
+      ).join("") + (excluded.length > visibleExcluded.length
+        ? '<div class="route-more">+' + (excluded.length - visibleExcluded.length) + ' more exclusions hidden</div>'
+        : '');
     }
 
     function renderPlans() {
