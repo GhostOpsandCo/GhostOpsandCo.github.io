@@ -516,6 +516,137 @@
       line-height: 1.45;
     }
 
+    .pitch-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 12px;
+    }
+
+    .brand-proof {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 10px;
+      margin-bottom: 14px;
+    }
+
+    .brand-proof div {
+      padding: 16px;
+      border: 1px solid rgba(101,217,255,.18);
+      border-radius: var(--radius);
+      background: rgba(255,255,255,.045);
+    }
+
+    .brand-proof b {
+      display: block;
+      margin-top: 7px;
+      color: var(--gold);
+      font-size: 24px;
+      line-height: 1.05;
+    }
+
+    .brand-proof span {
+      display: block;
+      margin-top: 7px;
+      color: var(--muted);
+      font-size: 11px;
+      line-height: 1.35;
+    }
+
+    .pitch-card {
+      min-height: 198px;
+      padding: 20px;
+      border: 1px solid var(--soft);
+      border-radius: var(--radius);
+      background: rgba(5,7,13,.34);
+    }
+
+    .pitch-card .role {
+      margin-bottom: 12px;
+    }
+
+    .pitch-card h3 {
+      margin-bottom: 10px;
+      font-size: 21px;
+    }
+
+    .pitch-card p {
+      margin-bottom: 0;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.55;
+    }
+
+    .solution-panel {
+      display: grid;
+      grid-template-columns: minmax(0, .95fr) minmax(0, 1.05fr);
+      gap: 14px;
+      align-items: stretch;
+    }
+
+    .equation-card {
+      display: grid;
+      align-content: center;
+      gap: 12px;
+      min-height: 260px;
+      padding: 24px;
+      border: 1px solid rgba(101,240,173,.18);
+      border-radius: var(--radius);
+      background: rgba(101,240,173,.055);
+    }
+
+    .equation-row {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 44px minmax(0, 1fr);
+      gap: 10px;
+      align-items: center;
+    }
+
+    .equation-box {
+      padding: 17px;
+      border: 1px solid var(--soft);
+      border-radius: var(--radius);
+      background: rgba(5,7,13,.42);
+    }
+
+    .equation-box small { margin-bottom: 7px; }
+    .equation-box b {
+      display: block;
+      color: var(--green);
+      font-size: 28px;
+      line-height: 1.05;
+    }
+
+    .equation-arrow {
+      color: var(--gold);
+      font-size: 28px;
+      font-weight: 900;
+      text-align: center;
+    }
+
+    .solution-list {
+      display: grid;
+      gap: 10px;
+    }
+
+    .solution-item {
+      padding: 16px;
+      border: 1px solid var(--soft);
+      border-radius: var(--radius);
+      background: rgba(255,255,255,.04);
+    }
+
+    .solution-item b {
+      display: block;
+      margin-bottom: 5px;
+      font-size: 14px;
+    }
+
+    .solution-item span {
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.45;
+    }
+
     .value-grid {
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -1185,12 +1316,12 @@
     .disclaimer { max-width: 780px; text-align: right; }
 
     @media (max-width: 1060px) {
-      .hero-grid, .simulation-grid, .scan-panel, .plans-memo-grid, .pilot-card { grid-template-columns: 1fr; }
+      .hero-grid, .simulation-grid, .scan-panel, .plans-memo-grid, .pilot-card, .solution-panel { grid-template-columns: 1fr; }
       .hero-card { max-width: 720px; }
       .pilot-metrics { grid-template-columns: repeat(3, minmax(0, 1fr)); }
       .controls-panel { grid-template-columns: repeat(2, minmax(0, 1fr)); }
       .scan-button { min-height: 54px; }
-      .story-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+      .story-grid, .pitch-grid, .brand-proof { grid-template-columns: repeat(2, minmax(0, 1fr)); }
     }
 
     @media (max-width: 820px) {
@@ -1203,7 +1334,8 @@
       .section.compact { padding: 30px 0; }
       .section-header { display: block; }
       .section-kicker { margin-top: 15px; }
-      .hero-impact, .story-grid, .story-note, .value-grid, .capability-grid, .overview-row, .mini-kpis, .route-columns, .plan-tabs, .strategy-detail, .memo-impact-grid { grid-template-columns: 1fr; }
+      .hero-impact, .story-grid, .story-note, .pitch-grid, .brand-proof, .value-grid, .capability-grid, .overview-row, .mini-kpis, .route-columns, .plan-tabs, .strategy-detail, .memo-impact-grid, .equation-row { grid-template-columns: 1fr; }
+      .equation-arrow { display: none; }
       .controls-panel { grid-template-columns: 1fr; }
       .idle-band { grid-template-columns: 1fr; }
       .demo-body { padding: 14px; }
@@ -1251,9 +1383,10 @@
         <span>Gate AI Treasury Router</span>
       </a>
       <div class="nav-links">
-        <a href="#story">Story</a>
+        <a href="#problem">Problem</a>
+        <a href="#solution">Solution</a>
+        <a href="#why-gate">Why Gate</a>
         <a href="#demo">Live demo</a>
-        <a href="#value">Value</a>
         <a href="#pilot" class="pill"><span class="dot"></span> Build case</a>
       </div>
     </div>
@@ -1264,8 +1397,8 @@
       <div class="shell hero-grid">
         <div>
           <div class="pill"><span class="dot"></span> Gate AI product concept for VIP advisors</div>
-          <h1>Turn idle VIP capital into <span class="gradient">active Gate value.</span></h1>
-          <p class="hero-copy">Gate AI Treasury Router helps VIP advisors turn idle client balances into approved earning plans the client can understand and act on.</p>
+          <h1>Gate AI <span class="gradient">Treasury Router.</span></h1>
+          <p class="hero-copy">A live advisor workflow that turns idle VIP balances into approved Gate product options the client can understand and act on.</p>
           <div class="hero-impact" aria-label="Illustrative value unlock">
             <div class="hero-impact-item"><small>Detected</small><b>$12.4M idle</b><span>Stablecoin balance mostly inactive for 47 days.</span></div>
             <div class="hero-impact-item"><small>Routed</small><b>$7.9M activated</b><span>Illustrative advisor-reviewed plan after liquidity reserve.</span></div>
@@ -1273,7 +1406,7 @@
           </div>
           <div class="hero-actions">
             <a class="btn primary" href="#demo">Run the product demo</a>
-            <a class="btn" href="#story">See the workflow</a>
+            <a class="btn" href="#problem">Start the pitch</a>
           </div>
           <div class="micro-proof">
             <span>Gate-approved routes</span>
@@ -1282,7 +1415,7 @@
             <span>Measured activation</span>
           </div>
           <div class="hero-note">
-            <b>Core idea:</b> Gate already has the clients, advisor relationships, and earning products. Treasury Router is the AI workflow that detects idle capital, matches it to approved Gate routes, and turns passive balances into measurable product activity.
+            <b>The idea:</b> Gate's next AI product should not feel like a generic chatbot. It should turn Gate's scale, VIP trust, and product depth into a smarter way to activate capital already inside the platform.
           </div>
         </div>
 
@@ -1315,14 +1448,116 @@
       </div>
     </section>
 
-    <section class="section compact" id="story">
+    <section class="section compact" id="problem">
       <div class="shell">
         <div class="section-header">
           <div>
-            <div class="eyebrow">The workflow</div>
-            <h2>One guided path from idle balance to advisor-reviewed action.</h2>
+            <div class="eyebrow">The problem</div>
+            <h2>At Gate scale, idle VIP capital is trapped ecosystem value.</h2>
           </div>
-          <p class="section-kicker">The product is simple: find idle capital, filter approved Gate routes against client needs, prepare three options, and measure capital activated.</p>
+          <p class="section-kicker">Gate can have the client, the balance, the advisor relationship, and the products, but capital still sits passive when the next best action is hard to identify and explain.</p>
+        </div>
+        <div class="pitch-grid">
+          <div class="pitch-card">
+            <div class="role">Idle balances</div>
+            <h3>Money sits inside the ecosystem.</h3>
+            <p>Stablecoin balances can remain underused for weeks while the client waits for a clear allocation path.</p>
+          </div>
+          <div class="pitch-card">
+            <div class="role">Product overload</div>
+            <h3>Too many routes look similar.</h3>
+            <p>Earn, lending, staking, quant, structured, and Private Wealth routes need to be compared in one simple format.</p>
+          </div>
+          <div class="pitch-card">
+            <div class="role">Advisor friction</div>
+            <h3>Preparation takes too long.</h3>
+            <p>Advisors need to check liquidity, lockup, risk, asset fit, and suitability before the conversation can happen.</p>
+          </div>
+          <div class="pitch-card">
+            <div class="role">Gate impact</div>
+            <h3>Existing products are underused.</h3>
+            <p>If idle capital never routes into approved products, Gate loses product activity, revenue influence, and relationship momentum.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section compact" id="solution">
+      <div class="shell">
+        <div class="section-header">
+          <div>
+            <div class="eyebrow">The solution</div>
+            <h2>Gate AI converts idle capital into advisor-reviewed options.</h2>
+          </div>
+          <p class="section-kicker">Treasury Router is not another yield page. It is the workflow that scans, filters, packages, and measures the path from idle balance to client decision.</p>
+        </div>
+        <div class="solution-panel">
+          <div class="equation-card">
+            <div class="equation-row" aria-label="Illustrative value unlock equation">
+              <div class="equation-box"><small>Before</small><b>$12.4M idle</b><span>47 days mostly inactive</span></div>
+              <div class="equation-arrow">to</div>
+              <div class="equation-box"><small>After</small><b>$7.9M activated</b><span>Advisor-reviewed plan</span></div>
+            </div>
+            <p class="panel-intro">The client still decides. The advisor still reviews. Gate gains a measurable path to activate capital already inside the platform.</p>
+          </div>
+          <div class="solution-list">
+            <div class="solution-item"><b>Scan approved Gate routes.</b><span>Normalize Earn, lending, staking, quant, structured, and Private Wealth options into one comparable view.</span></div>
+            <div class="solution-item"><b>Filter against client constraints.</b><span>Remove routes that are too long, too risky, too complex, or outside the preferred asset set.</span></div>
+            <div class="solution-item"><b>Create three advisor-ready plans.</b><span>Show Liquidity First, Balanced Income, and Enhanced Return with plain tradeoff language.</span></div>
+            <div class="solution-item"><b>Measure what happens.</b><span>Track capital activated, products used, advisor time saved, and follow-up outcome.</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section compact" id="why-gate">
+      <div class="shell">
+        <div class="section-header">
+          <div>
+            <div class="eyebrow">Why Gate</div>
+            <h2>Gate has the scale, brand, and product depth to make AI immediately useful.</h2>
+          </div>
+          <p class="section-kicker">After 13 years of operation, 54M+ global users, multi-trillion trading scale, Gate Earn, Private Wealth, and global partnerships like Oracle Red Bull Racing, the next AI unlock should activate value already inside the business.</p>
+        </div>
+        <div class="brand-proof" aria-label="Gate scale proof points">
+          <div><small>Operating history</small><b>13 years</b><span>Founded in 2013; mature enough for advisor-grade AI workflows.</span></div>
+          <div><small>Global reach</small><b>54M+ users</b><span>User scale makes small activation gains meaningful.</span></div>
+          <div><small>Trading engine</small><b>Multi-trillion scale</b><span>Spot, futures, Earn, lending, and wealth routes create the inventory AI can compare.</span></div>
+          <div><small>Brand standard</small><b>Red Bull Racing</b><span>A performance partnership that raises the bar for premium product execution.</span></div>
+        </div>
+        <div class="pitch-grid">
+          <div class="pitch-card">
+            <div class="role">VIP relationships</div>
+            <h3>Gate already has the trusted relationship layer.</h3>
+            <p>Treasury Router makes advisors faster and more prepared without turning VIP service into autonomous investing.</p>
+          </div>
+          <div class="pitch-card">
+            <div class="role">Product inventory</div>
+            <h3>Gate already has routes worth activating.</h3>
+            <p>The first version can route capital into approved products already inside the ecosystem instead of waiting for a new marketplace.</p>
+          </div>
+          <div class="pitch-card">
+            <div class="role">Client context</div>
+            <h3>Gate can learn from every VIP decision.</h3>
+            <p>Each accepted, rejected, or revised plan teaches the system what the client actually values.</p>
+          </div>
+          <div class="pitch-card">
+            <div class="role">Business case</div>
+            <h3>The business case is measurable.</h3>
+            <p>Gate can track capital activated, product usage, advisor time saved, platform economics, and retention signal.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section compact" id="works">
+      <div class="shell">
+        <div class="section-header">
+          <div>
+            <div class="eyebrow">How it works</div>
+            <h2>The workflow is built like an advisor-review pipeline.</h2>
+          </div>
+          <p class="section-kicker">The AI does the heavy comparison work, but the output stays practical: approved routes, plain tradeoffs, advisor review, VIP decision, measurable activation.</p>
         </div>
         <div class="story-grid" aria-label="Gate AI Treasury Router walkthrough">
           <div class="story-step"><small>01</small><b>Find idle capital</b><span>Gate AI detects balances that have been sitting underused inside the client account.</span></div>
@@ -1344,10 +1579,10 @@
       <div class="shell">
         <div class="section-header">
           <div>
-            <div class="eyebrow">Guided product walkthrough</div>
-            <h2>Watch one idle balance become a client-ready decision.</h2>
+            <div class="eyebrow">Live demo pitch</div>
+            <h2>Now watch the product do it.</h2>
           </div>
-          <p class="section-kicker">The default flow works without touching anything: run the scan, watch bad routes get removed, review the memo, and see Gate impact update.</p>
+          <p class="section-kicker">Run the scan, watch unsuitable routes get removed, compare three plans, review the advisor memo, and see Gate impact update.</p>
         </div>
 
         <div class="demo-wrap">
