@@ -1,0 +1,2181 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="robots" content="noindex,nofollow" />
+  <title>Gate AI Treasury Router | VIP Value Unlock Demo</title>
+  <meta name="description" content="A Gate AI Treasury Router concept demo showing how VIP advisors can turn idle VIP capital into approved Gate product activity." />
+  <style>
+    :root {
+      --bg: #05070d;
+      --bg2: #090d18;
+      --panel: rgba(255,255,255,.075);
+      --panel2: rgba(255,255,255,.11);
+      --line: rgba(255,255,255,.14);
+      --soft: rgba(255,255,255,.075);
+      --text: #f5f7fb;
+      --muted: #a6b0c3;
+      --cyan: #65d9ff;
+      --gold: #f4c95d;
+      --green: #65f0ad;
+      --violet: #b996ff;
+      --rose: #ff7b9c;
+      --orange: #ffb86b;
+      --shadow: 0 34px 100px rgba(0,0,0,.38);
+      --max: 1180px;
+      --radius: 8px;
+      --radius-sm: 6px;
+    }
+
+    * { box-sizing: border-box; }
+    html {
+      overflow-x: hidden;
+      background: var(--bg);
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      overflow-x: hidden;
+      color: var(--text);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background-color: var(--bg);
+      background:
+        linear-gradient(135deg, rgba(101,217,255,.10), transparent 32%),
+        linear-gradient(225deg, rgba(244,201,93,.08), transparent 36%),
+        linear-gradient(180deg, #05070d 0%, #080b14 46%, #04050a 100%);
+    }
+
+    body:before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      z-index: -2;
+      pointer-events: none;
+      background-image:
+        linear-gradient(rgba(255,255,255,.034) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.034) 1px, transparent 1px);
+      background-size: 48px 48px;
+      mask-image: linear-gradient(to bottom, rgba(0,0,0,.76), transparent 86%);
+    }
+
+    a { color: inherit; text-decoration: none; }
+    button, input, select { font: inherit; }
+    button { cursor: pointer; }
+    .shell { width: min(var(--max), calc(100% - 40px)); margin: 0 auto; }
+    main, footer { background-color: transparent; }
+
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 40;
+      border-bottom: 1px solid var(--soft);
+      background: rgba(5,7,13,.74);
+      backdrop-filter: blur(18px);
+    }
+
+    .nav-inner {
+      min-height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      white-space: nowrap;
+      font-weight: 800;
+      letter-spacing: 0;
+    }
+
+    .logo {
+      position: relative;
+      width: 42px;
+      height: 42px;
+      flex: 0 0 auto;
+      border-radius: var(--radius);
+      background:
+        linear-gradient(160deg, rgba(255,255,255,.38), transparent 32%),
+        linear-gradient(135deg, var(--cyan), var(--violet) 52%, var(--gold));
+      box-shadow: 0 0 0 1px rgba(255,255,255,.17), 0 16px 38px rgba(101,217,255,.18);
+    }
+
+    .logo:after {
+      content: "";
+      position: absolute;
+      inset: 11px;
+      border: 1px solid rgba(5,7,13,.62);
+      border-radius: var(--radius-sm);
+      background: rgba(5,7,13,.22);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 650;
+    }
+
+    .nav-links a {
+      padding: 9px 11px;
+      border-radius: var(--radius);
+      transition: 180ms ease;
+    }
+
+    .nav-links a:hover { color: var(--text); background: rgba(255,255,255,.07); }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      width: fit-content;
+      padding: 8px 12px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: rgba(255,255,255,.06);
+      color: var(--muted);
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 0;
+      text-transform: uppercase;
+    }
+
+    .dot {
+      width: 8px;
+      height: 8px;
+      flex: 0 0 auto;
+      border-radius: 50%;
+      background: var(--green);
+      box-shadow: 0 0 18px var(--green);
+    }
+
+    .hero { padding: 58px 0 38px; }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.05fr) minmax(360px, .95fr);
+      gap: 32px;
+      align-items: center;
+    }
+
+    h1, h2, h3, p { margin-top: 0; }
+    h1 {
+      margin-bottom: 20px;
+      max-width: 840px;
+      font-size: 68px;
+      line-height: .96;
+      letter-spacing: 0;
+    }
+
+    h2 {
+      margin-bottom: 0;
+      max-width: 820px;
+      font-size: 46px;
+      line-height: 1.03;
+      letter-spacing: 0;
+    }
+
+    h3 {
+      margin-bottom: 8px;
+      font-size: 22px;
+      line-height: 1.15;
+      letter-spacing: 0;
+    }
+
+    .gradient {
+      color: transparent;
+      background: linear-gradient(100deg, #fff 8%, var(--cyan) 34%, var(--gold) 70%, #fff 96%);
+      -webkit-background-clip: text;
+      background-clip: text;
+    }
+
+    .hero-copy {
+      max-width: 740px;
+      margin-bottom: 0;
+      color: #c9d1df;
+      font-size: 21px;
+      line-height: 1.52;
+    }
+
+    .hero-impact {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 10px;
+      max-width: 760px;
+      margin-top: 24px;
+    }
+
+    .hero-impact-item {
+      padding: 16px;
+      border: 1px solid rgba(101,217,255,.18);
+      border-radius: var(--radius);
+      background: rgba(255,255,255,.055);
+    }
+
+    .hero-impact-item b {
+      display: block;
+      margin-top: 7px;
+      color: var(--green);
+      font-size: 28px;
+      line-height: 1;
+    }
+
+    .hero-impact-item span {
+      display: block;
+      margin-top: 7px;
+      color: var(--muted);
+      font-size: 11px;
+      line-height: 1.35;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 28px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 48px;
+      padding: 13px 18px;
+      border: 1px solid rgba(255,255,255,.16);
+      border-radius: var(--radius);
+      background: rgba(255,255,255,.075);
+      color: var(--text);
+      font-size: 14px;
+      font-weight: 760;
+      transition: 180ms ease;
+    }
+
+    .btn:hover { transform: translateY(-2px); background: rgba(255,255,255,.12); }
+    .btn.primary {
+      border-color: rgba(101,217,255,.32);
+      color: #041017;
+      background: linear-gradient(135deg, var(--cyan), #a3eaff 48%, var(--gold));
+    }
+
+    .micro-proof {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px 18px;
+      margin-top: 22px;
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 650;
+    }
+
+    .micro-proof span:before {
+      content: "✓";
+      margin-right: 7px;
+      color: var(--green);
+    }
+
+    .hero-note {
+      margin-top: 20px;
+      max-width: 760px;
+      padding: 16px 18px;
+      border: 1px solid rgba(101,217,255,.22);
+      border-radius: var(--radius);
+      background: rgba(101,217,255,.07);
+      color: rgba(245,247,251,.88);
+      line-height: 1.55;
+    }
+
+    .card {
+      border: 1px solid var(--line);
+      background: linear-gradient(155deg, rgba(255,255,255,.105), rgba(255,255,255,.035));
+      box-shadow: var(--shadow);
+    }
+
+    .hero-card {
+      position: relative;
+      overflow: hidden;
+      padding: 24px;
+      border-radius: var(--radius);
+    }
+
+    .hero-card:before {
+      content: "";
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 46%;
+      height: 100%;
+      background: linear-gradient(135deg, transparent, rgba(101,217,255,.10));
+    }
+
+    .hero-card > * { position: relative; z-index: 1; }
+    .card-top {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      margin-bottom: 18px;
+    }
+
+    small {
+      display: block;
+      color: var(--muted);
+      font-size: 11px;
+      letter-spacing: 0;
+      text-transform: uppercase;
+    }
+
+    .live-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      align-self: flex-start;
+      padding: 7px 10px;
+      border: 1px solid rgba(101,240,173,.25);
+      border-radius: var(--radius);
+      background: rgba(101,240,173,.08);
+      color: var(--green);
+      font-size: 11px;
+      font-weight: 800;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+    .mini-kpis {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 10px;
+    }
+
+    .mini-kpi, .metric, .control, .route-card, .plan-card, .impact-row, .value-card, .capability, .pilot-card {
+      border: 1px solid var(--soft);
+      border-radius: var(--radius);
+      background: rgba(4,7,13,.34);
+    }
+
+    .mini-kpi { padding: 14px; }
+    .mini-kpi small { margin-bottom: 8px; }
+    .mini-kpi b { display: block; font-size: 20px; letter-spacing: 0; }
+    .mini-kpi em { display: block; margin-top: 4px; color: var(--muted); font-size: 10px; font-style: normal; }
+
+    .idle-band {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 18px;
+      align-items: center;
+      margin-top: 13px;
+      padding: 19px;
+      border: 1px solid rgba(244,201,93,.25);
+      border-radius: var(--radius);
+      background: linear-gradient(135deg, rgba(244,201,93,.12), rgba(255,255,255,.035));
+    }
+
+    .idle-band small { color: #d6c798; }
+    .idle-band strong {
+      display: block;
+      margin-top: 3px;
+      font-size: 35px;
+      letter-spacing: 0;
+    }
+
+    .idle-band span {
+      display: block;
+      margin-top: 5px;
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .idle-ring {
+      display: grid;
+      place-items: center;
+      width: 82px;
+      height: 82px;
+      border-radius: 50%;
+      background: conic-gradient(var(--gold) 0 44%, rgba(255,255,255,.08) 44% 100%);
+    }
+
+    .opportunity {
+      margin-top: 13px;
+      padding: 17px;
+      border: 1px solid rgba(101,217,255,.2);
+      border-radius: var(--radius);
+      background: rgba(101,217,255,.065);
+    }
+
+    .opportunity-line {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    .opportunity strong {
+      display: block;
+      margin-top: 5px;
+      font-size: 28px;
+      letter-spacing: 0;
+    }
+
+    .route-count { color: var(--green); font-size: 12px; font-weight: 800; white-space: nowrap; }
+    .section { padding: 48px 0; scroll-margin-top: 88px; }
+    .section.compact { padding: 38px 0; }
+    #demo { padding-bottom: 24px; }
+    #pilot { padding-top: 24px; }
+
+    .section-header {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 42px;
+      margin-bottom: 24px;
+    }
+
+    .eyebrow {
+      margin-bottom: 9px;
+      color: var(--cyan);
+      font-size: 11px;
+      font-weight: 820;
+      letter-spacing: 0;
+      text-transform: uppercase;
+    }
+
+    .section-kicker {
+      max-width: 470px;
+      margin-bottom: 0;
+      color: var(--muted);
+      line-height: 1.55;
+    }
+
+    .story-grid {
+      display: grid;
+      grid-template-columns: repeat(6, minmax(0, 1fr));
+      gap: 10px;
+    }
+
+    .story-step {
+      min-height: 154px;
+      padding: 14px;
+      border: 1px solid var(--soft);
+      border-radius: var(--radius);
+      background: rgba(5,7,13,.36);
+    }
+
+    .story-step small {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 28px;
+      height: 28px;
+      margin-bottom: 14px;
+      border-radius: var(--radius-sm);
+      color: #06140e;
+      background: linear-gradient(135deg, var(--cyan), var(--gold));
+      font-weight: 900;
+    }
+
+    .story-step b {
+      display: block;
+      margin-bottom: 8px;
+      font-size: 13px;
+    }
+
+    .story-step span {
+      display: block;
+      color: var(--muted);
+      font-size: 11px;
+      line-height: 1.45;
+    }
+
+    .story-note {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 10px;
+      margin-top: 14px;
+    }
+
+    .story-note div {
+      padding: 16px;
+      border: 1px solid rgba(101,240,173,.18);
+      border-radius: var(--radius);
+      background: rgba(101,240,173,.055);
+    }
+
+    .story-note b {
+      display: block;
+      margin-bottom: 7px;
+      color: var(--green);
+      font-size: 13px;
+    }
+
+    .story-note span {
+      color: #cbd3df;
+      font-size: 12px;
+      line-height: 1.45;
+    }
+
+    .pitch-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 12px;
+    }
+
+    .pitch-card {
+      min-height: 198px;
+      padding: 20px;
+      border: 1px solid var(--soft);
+      border-radius: var(--radius);
+      background: rgba(5,7,13,.34);
+    }
+
+    .pitch-card .role {
+      margin-bottom: 12px;
+    }
+
+    .pitch-card h3 {
+      margin-bottom: 10px;
+      font-size: 21px;
+    }
+
+    .pitch-card p {
+      margin-bottom: 0;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.55;
+    }
+
+    .solution-panel {
+      display: grid;
+      grid-template-columns: minmax(0, .95fr) minmax(0, 1.05fr);
+      gap: 14px;
+      align-items: stretch;
+    }
+
+    .equation-card {
+      display: grid;
+      align-content: center;
+      gap: 12px;
+      min-height: 260px;
+      padding: 24px;
+      border: 1px solid rgba(101,240,173,.18);
+      border-radius: var(--radius);
+      background: rgba(101,240,173,.055);
+    }
+
+    .equation-row {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 44px minmax(0, 1fr);
+      gap: 10px;
+      align-items: center;
+    }
+
+    .equation-box {
+      padding: 17px;
+      border: 1px solid var(--soft);
+      border-radius: var(--radius);
+      background: rgba(5,7,13,.42);
+    }
+
+    .equation-box small { margin-bottom: 7px; }
+    .equation-box b {
+      display: block;
+      color: var(--green);
+      font-size: 28px;
+      line-height: 1.05;
+    }
+
+    .equation-arrow {
+      color: var(--gold);
+      font-size: 28px;
+      font-weight: 900;
+      text-align: center;
+    }
+
+    .solution-list {
+      display: grid;
+      gap: 10px;
+    }
+
+    .solution-item {
+      padding: 16px;
+      border: 1px solid var(--soft);
+      border-radius: var(--radius);
+      background: rgba(255,255,255,.04);
+    }
+
+    .solution-item b {
+      display: block;
+      margin-bottom: 5px;
+      font-size: 14px;
+    }
+
+    .solution-item span {
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.45;
+    }
+
+    .value-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .value-card {
+      min-height: 250px;
+      padding: 24px;
+      background: linear-gradient(155deg, rgba(255,255,255,.09), rgba(255,255,255,.035));
+    }
+
+    .role {
+      color: var(--cyan);
+      font-size: 10px;
+      font-weight: 820;
+      letter-spacing: 0;
+      text-transform: uppercase;
+    }
+
+    .value-card h3 { margin: 12px 0 10px; font-size: 25px; }
+    .value-card p {
+      margin-bottom: 0;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.58;
+    }
+
+    .value-stat {
+      margin-top: 22px;
+      color: #dce4ef;
+      font-size: 13px;
+      font-weight: 760;
+      line-height: 1.45;
+    }
+
+    .value-stat span { color: var(--gold); }
+
+    .loop {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(140px, 1fr));
+      gap: 10px;
+      overflow-x: auto;
+      padding-bottom: 4px;
+    }
+
+    .loop-step {
+      min-height: 146px;
+      padding: 16px 14px;
+      border: 1px solid var(--soft);
+      border-radius: var(--radius);
+      background: rgba(5,7,13,.36);
+    }
+
+    .loop-num {
+      display: grid;
+      place-items: center;
+      width: 30px;
+      height: 30px;
+      margin-bottom: 16px;
+      border-radius: var(--radius-sm);
+      color: #041017;
+      background: linear-gradient(135deg, var(--cyan), var(--gold));
+      font-size: 12px;
+      font-weight: 900;
+    }
+
+    .loop-step b { display: block; margin-bottom: 8px; font-size: 13px; }
+    .loop-step span { color: var(--muted); font-size: 11px; line-height: 1.45; }
+
+    .capability-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .capability {
+      position: relative;
+      overflow: hidden;
+      min-height: 210px;
+      padding: 24px;
+      background: rgba(255,255,255,.045);
+    }
+
+    .capability:before {
+      content: "";
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 42%;
+      height: 100%;
+      background: linear-gradient(135deg, transparent, rgba(101,217,255,.08));
+    }
+
+    .capability > * { position: relative; z-index: 1; }
+    .capability h3 { margin: 14px 0 10px; font-size: 24px; }
+    .capability p { margin-bottom: 0; color: var(--muted); font-size: 13px; line-height: 1.6; }
+    .cap-num {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 34px;
+      height: 34px;
+      border-radius: var(--radius-sm);
+      color: #06140e;
+      background: var(--green);
+      font-size: 12px;
+      font-weight: 900;
+    }
+
+    .demo-wrap {
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: linear-gradient(155deg, rgba(255,255,255,.105), rgba(255,255,255,.035));
+      box-shadow: var(--shadow);
+    }
+
+    .demo-toolbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      padding: 18px 22px;
+      border-bottom: 1px solid var(--soft);
+      background: rgba(5,7,13,.34);
+    }
+
+    .demo-title b { display: block; margin-top: 4px; }
+    .demo-status {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--green);
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 0;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+    .demo-body { padding: 22px; }
+    .demo-step-note {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 14px 15px;
+      margin-bottom: 10px;
+      border: 1px solid rgba(244,201,93,.20);
+      border-radius: var(--radius);
+      background: rgba(244,201,93,.06);
+    }
+
+    .demo-step-note b {
+      color: var(--gold);
+      font-size: 14px;
+    }
+
+    .demo-step-note span {
+      color: #d9dfeb;
+      font-size: 12px;
+      line-height: 1.45;
+    }
+
+    .overview-row {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 10px;
+      margin-bottom: 16px;
+    }
+
+    .metric {
+      min-height: 104px;
+      padding: 15px;
+      background: rgba(5,7,13,.30);
+    }
+
+    .metric small { margin-bottom: 8px; font-size: 10px; }
+    .metric b {
+      display: block;
+      font-size: 23px;
+      line-height: 1.05;
+      letter-spacing: 0;
+    }
+
+    .metric span {
+      display: block;
+      margin-top: 7px;
+      color: var(--muted);
+      font-size: 10px;
+      line-height: 1.35;
+    }
+
+    .metric.highlight {
+      border-color: rgba(244,201,93,.28);
+      background: rgba(244,201,93,.075);
+    }
+
+    .metric.highlight b { color: var(--gold); }
+    .simulation-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 14px;
+      align-items: start;
+    }
+
+    .controls-panel, .output-panel, .memo-panel, .impact-panel {
+      border: 1px solid var(--soft);
+      border-radius: var(--radius);
+      background: rgba(5,7,13,.30);
+    }
+
+    .controls-panel {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr)) minmax(160px, .7fr);
+      gap: 10px;
+      align-items: end;
+      padding: 16px;
+    }
+
+    .controls-panel h3,
+    .controls-panel .panel-intro {
+      grid-column: 1 / -1;
+    }
+
+    .controls-panel h3, .output-panel h3, .memo-panel h3, .impact-panel h3 { margin-bottom: 6px; }
+    .panel-intro { margin-bottom: 16px; color: var(--muted); font-size: 12px; line-height: 1.55; }
+
+    .controls-panel .panel-intro { max-width: 760px; margin-bottom: 2px; }
+
+    .control {
+      padding: 13px;
+      margin-top: 0;
+      background: rgba(255,255,255,.035);
+    }
+
+    .control label {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 9px;
+      color: #dbe3ee;
+      font-size: 12px;
+      font-weight: 760;
+    }
+
+    .control output { color: var(--cyan); font-weight: 820; }
+    .control input[type="range"] { width: 100%; accent-color: var(--cyan); }
+    .control select {
+      width: 100%;
+      min-height: 42px;
+      padding: 0 11px;
+      border: 1px solid rgba(255,255,255,.12);
+      border-radius: var(--radius);
+      color: var(--text);
+      background: #0b0f1a;
+    }
+
+    .risk-buttons {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 7px;
+    }
+
+    .risk-btn {
+      min-height: 42px;
+      border: 1px solid rgba(255,255,255,.12);
+      border-radius: var(--radius);
+      color: var(--muted);
+      background: rgba(255,255,255,.035);
+      font-size: 12px;
+      font-weight: 780;
+    }
+
+    .risk-btn.active {
+      color: #06140e;
+      border-color: rgba(101,240,173,.35);
+      background: linear-gradient(135deg, var(--green), #c6ffdf);
+    }
+
+    .scan-button {
+      width: 100%;
+      min-height: 70px;
+      margin-top: 0;
+    }
+
+    .scan-panel {
+      display: grid;
+      grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr);
+      gap: 14px;
+      margin-bottom: 14px;
+    }
+
+    .scan-steps, .route-board {
+      border: 1px solid var(--soft);
+      border-radius: var(--radius);
+      background: rgba(255,255,255,.035);
+    }
+
+    .scan-steps { padding: 16px; }
+    .scan-step {
+      display: grid;
+      grid-template-columns: 28px minmax(0, 1fr) auto;
+      gap: 10px;
+      align-items: center;
+      min-height: 44px;
+      border-bottom: 1px solid rgba(255,255,255,.06);
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .scan-step:last-child { border-bottom: 0; }
+    .scan-dot {
+      display: grid;
+      place-items: center;
+      width: 24px;
+      height: 24px;
+      border-radius: var(--radius-sm);
+      background: rgba(255,255,255,.06);
+      color: rgba(255,255,255,.48);
+      font-size: 11px;
+      font-weight: 900;
+    }
+
+    .scan-step.done { color: #eaf1fb; }
+    .scan-step.done .scan-dot {
+      color: #06140e;
+      background: var(--green);
+    }
+
+    .scan-step.active .scan-dot {
+      color: #041017;
+      background: var(--cyan);
+      animation: pulse 900ms ease-in-out infinite;
+    }
+
+    .scan-step small { font-size: 9px; letter-spacing: 0; }
+
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); box-shadow: 0 0 0 rgba(101,217,255,0); }
+      50% { transform: scale(1.08); box-shadow: 0 0 24px rgba(101,217,255,.24); }
+    }
+
+    .route-board { padding: 16px; }
+    .route-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      margin-bottom: 12px;
+    }
+
+    .route-head b { font-size: 14px; }
+    .route-head span { color: var(--muted); font-size: 11px; }
+    .route-columns {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px;
+    }
+
+    .route-column-title {
+      margin-bottom: 8px;
+      color: var(--muted);
+      font-size: 10px;
+      font-weight: 820;
+      letter-spacing: 0;
+      text-transform: uppercase;
+    }
+
+    .route-list {
+      display: grid;
+      gap: 8px;
+      max-height: 254px;
+      overflow: auto;
+      padding-right: 3px;
+    }
+
+    .route-card {
+      display: grid;
+      grid-template-columns: 34px minmax(0, 1fr) auto;
+      gap: 10px;
+      align-items: center;
+      min-height: 70px;
+      padding: 10px;
+      background: rgba(5,7,13,.44);
+      transition: 220ms ease;
+    }
+
+    .route-card.excluded {
+      opacity: .72;
+      border-color: rgba(255,123,156,.18);
+      background: rgba(255,123,156,.045);
+    }
+
+    .route-icon {
+      display: grid;
+      place-items: center;
+      width: 32px;
+      height: 32px;
+      border: 1px solid rgba(101,217,255,.20);
+      border-radius: var(--radius-sm);
+      color: var(--cyan);
+      background: rgba(101,217,255,.08);
+      font-size: 10px;
+      font-weight: 900;
+    }
+
+    .route-card.excluded .route-icon {
+      color: var(--rose);
+      border-color: rgba(255,123,156,.22);
+      background: rgba(255,123,156,.08);
+    }
+
+    .route-main b {
+      display: block;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      font-size: 12px;
+    }
+
+    .route-main span {
+      display: block;
+      margin-top: 4px;
+      color: var(--muted);
+      font-size: 9px;
+      line-height: 1.35;
+    }
+
+    .route-meta { text-align: right; }
+    .route-meta b { display: block; color: var(--green); font-size: 11px; }
+    .route-meta span { display: block; margin-top: 4px; color: var(--muted); font-size: 9px; }
+    .route-card.excluded .route-meta b { color: var(--rose); }
+
+    .route-more {
+      padding: 9px 10px;
+      border: 1px dashed rgba(255,255,255,.14);
+      border-radius: var(--radius);
+      color: var(--muted);
+      background: rgba(255,255,255,.025);
+      font-size: 11px;
+      text-align: center;
+    }
+
+    .plans-memo-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 14px;
+      align-items: start;
+    }
+
+    .output-panel { padding: 16px; }
+    .plan-tabs {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 9px;
+      margin: 14px 0;
+    }
+
+    .plan-card {
+      min-height: 120px;
+      padding: 13px;
+      text-align: left;
+      color: var(--muted);
+      background: rgba(255,255,255,.035);
+      transition: 180ms ease;
+    }
+
+    .plan-card.active, .plan-card:hover {
+      color: var(--text);
+      border-color: rgba(101,217,255,.32);
+      background: linear-gradient(135deg, rgba(101,217,255,.14), rgba(185,150,255,.08));
+    }
+
+    .plan-card b { display: block; margin-bottom: 6px; font-size: 13px; color: inherit; }
+    .plan-card span { display: block; color: inherit; font-size: 10px; line-height: 1.35; }
+    .plan-card strong { display: block; margin-top: 10px; color: var(--green); font-size: 17px; letter-spacing: 0; }
+
+    .strategy-detail {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(170px, .44fr);
+      gap: 14px;
+      margin-top: 14px;
+    }
+
+    .allocation {
+      display: grid;
+      gap: 10px;
+      padding: 14px;
+      border: 1px solid var(--soft);
+      border-radius: var(--radius);
+      background: rgba(255,255,255,.03);
+    }
+
+    .alloc-row {
+      display: grid;
+      grid-template-columns: minmax(130px, 1fr) minmax(90px, 1.15fr) 42px;
+      gap: 10px;
+      align-items: center;
+      color: #d6dce7;
+      font-size: 11px;
+    }
+
+    .track {
+      height: 8px;
+      overflow: hidden;
+      border-radius: var(--radius-sm);
+      background: rgba(255,255,255,.07);
+    }
+
+    .fill {
+      height: 100%;
+      border-radius: inherit;
+      background: linear-gradient(90deg, var(--cyan), var(--violet), var(--gold));
+    }
+
+    .alloc-row strong { text-align: right; font-size: 11px; }
+
+    .strategy-stats {
+      display: grid;
+      gap: 8px;
+    }
+
+    .strategy-stat {
+      padding: 12px;
+      border: 1px solid var(--soft);
+      border-radius: var(--radius);
+      background: rgba(255,255,255,.035);
+    }
+
+    .strategy-stat small { margin-bottom: 6px; font-size: 9px; }
+    .strategy-stat b { font-size: 16px; letter-spacing: 0; }
+
+    .memo-impact-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(320px, .74fr);
+      gap: 14px;
+      align-items: start;
+    }
+
+    .memo-panel { overflow: hidden; }
+    .memo-body { padding: 17px; }
+    .memo-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      padding: 7px 9px;
+      border: 1px solid rgba(101,240,173,.22);
+      border-radius: var(--radius);
+      color: var(--green);
+      background: rgba(101,240,173,.07);
+      font-size: 9px;
+      font-weight: 800;
+      text-transform: uppercase;
+    }
+
+    .memo-panel h3 { margin-top: 16px; }
+    .memo-panel p { margin-bottom: 0; color: #c8cfda; font-size: 12px; line-height: 1.6; }
+
+    .memo-block {
+      margin-top: 14px;
+      padding: 13px;
+      border: 1px solid var(--soft);
+      border-radius: var(--radius);
+      background: rgba(255,255,255,.035);
+    }
+
+    .memo-block small { margin-bottom: 8px; font-size: 9px; }
+    .memo-block ul {
+      margin: 0;
+      padding-left: 17px;
+      color: #d7dce6;
+      font-size: 10px;
+      line-height: 1.65;
+    }
+
+    .guardrail-list {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 8px;
+      margin-top: 13px;
+    }
+
+    .guardrail-item {
+      padding: 11px;
+      border: 1px solid rgba(101,217,255,.16);
+      border-radius: var(--radius);
+      color: #dce4ef;
+      background: rgba(101,217,255,.045);
+      font-size: 10px;
+      line-height: 1.45;
+    }
+
+    .guardrail-item b {
+      display: block;
+      margin-bottom: 4px;
+      color: var(--cyan);
+      font-size: 10px;
+    }
+
+    .client-dialogue {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 8px;
+      margin-top: 13px;
+    }
+
+    .dialogue-card {
+      padding: 12px;
+      border: 1px solid var(--soft);
+      border-radius: var(--radius);
+      background: rgba(255,255,255,.035);
+    }
+
+    .dialogue-card small { margin-bottom: 7px; font-size: 9px; }
+    .dialogue-card p {
+      color: #d7dce6;
+      font-size: 11px;
+      line-height: 1.55;
+    }
+
+    .memo-actions {
+      display: flex;
+      gap: 8px;
+      padding: 13px 17px 17px;
+      border-top: 1px solid var(--soft);
+    }
+
+    .memo-actions button { flex: 1; min-height: 42px; }
+
+    .impact-panel { padding: 16px; }
+    .impact-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 12px;
+      margin-top: 8px;
+      color: #d4dae5;
+      font-size: 12px;
+      background: rgba(255,255,255,.035);
+    }
+
+    .impact-row b { color: var(--green); }
+    .impact-row.scale {
+      border-color: rgba(244,201,93,.22);
+      background: rgba(244,201,93,.055);
+    }
+
+    .impact-row.scale b { color: var(--gold); }
+
+    .approval-status {
+      margin-top: 13px;
+      padding: 13px;
+      border: 1px solid rgba(101,240,173,.2);
+      border-radius: var(--radius);
+      color: #dfffee;
+      background: rgba(101,240,173,.07);
+      font-size: 12px;
+      line-height: 1.5;
+    }
+
+    .pilot-card {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 22px;
+      align-items: center;
+      padding: 24px;
+      border-radius: var(--radius);
+      background:
+        linear-gradient(135deg, rgba(101,217,255,.10), transparent 48%),
+        linear-gradient(225deg, rgba(244,201,93,.08), transparent 48%),
+        rgba(255,255,255,.055);
+      box-shadow: var(--shadow);
+    }
+
+    .pilot-card p {
+      max-width: 760px;
+      margin-bottom: 0;
+      color: #c7cfdb;
+      line-height: 1.65;
+    }
+
+    .pilot-card h2 {
+      max-width: 760px;
+      font-size: 34px;
+      line-height: 1.08;
+    }
+
+    .pilot-metrics {
+      display: grid;
+      grid-template-columns: repeat(3, 118px);
+      gap: 9px;
+    }
+
+    .pilot-metric {
+      padding: 13px;
+      border: 1px solid var(--soft);
+      border-radius: var(--radius);
+      background: rgba(5,7,13,.34);
+      text-align: center;
+    }
+
+    .pilot-metric b { display: block; color: var(--gold); font-size: 22px; }
+    .pilot-metric span { display: block; margin-top: 4px; color: var(--muted); font-size: 10px; line-height: 1.3; }
+
+    .footer { padding: 0 0 22px; color: var(--muted); }
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      gap: 30px;
+      padding-top: 24px;
+      border-top: 1px solid var(--soft);
+      font-size: 11px;
+      line-height: 1.5;
+    }
+
+    .disclaimer { max-width: 780px; text-align: right; }
+
+    @media (max-width: 1060px) {
+      .hero-grid, .simulation-grid, .scan-panel, .plans-memo-grid, .pilot-card, .solution-panel { grid-template-columns: 1fr; }
+      .hero-card { max-width: 720px; }
+      .pilot-metrics { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+      .controls-panel { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .scan-button { min-height: 54px; }
+      .story-grid, .pitch-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    }
+
+    @media (max-width: 820px) {
+      .shell { width: min(var(--max), calc(100% - 24px)); }
+      .nav-links { display: none; }
+      .hero { padding: 42px 0 30px; }
+      h1 { font-size: 48px; }
+      h2 { font-size: 36px; }
+      .section { padding: 36px 0; }
+      .section.compact { padding: 30px 0; }
+      .section-header { display: block; }
+      .section-kicker { margin-top: 15px; }
+      .hero-impact, .story-grid, .story-note, .pitch-grid, .value-grid, .capability-grid, .overview-row, .mini-kpis, .route-columns, .plan-tabs, .strategy-detail, .memo-impact-grid, .equation-row, .guardrail-list, .client-dialogue { grid-template-columns: 1fr; }
+      .equation-arrow { display: none; }
+      .controls-panel { grid-template-columns: 1fr; }
+      .idle-band { grid-template-columns: 1fr; }
+      .demo-body { padding: 14px; }
+      .demo-step-note { align-items: flex-start; flex-direction: column; }
+      .demo-toolbar { align-items: flex-start; flex-direction: column; }
+      .alloc-row { grid-template-columns: 1fr .85fr 40px; }
+      .memo-actions { flex-direction: column; }
+      .pilot-metrics { grid-template-columns: 1fr; }
+      .footer-inner { display: block; }
+      .disclaimer { margin-top: 14px; text-align: left; }
+      .pilot-card h2 { font-size: 30px; }
+    }
+
+    @media (max-width: 1060px) and (min-width: 821px) {
+      h1 { font-size: 58px; }
+      h2 { font-size: 40px; }
+    }
+
+    @media (max-width: 480px) {
+      h1 { font-size: 42px; }
+      h2 { font-size: 32px; }
+      .hero-copy { font-size: 18px; }
+    }
+
+    @media print {
+      body { color: #111; background: #fff; }
+      body:before, body:after, .nav, .hero-actions, .controls-panel, .memo-actions { display: none !important; }
+      .card, .demo-wrap, .controls-panel, .output-panel, .memo-panel, .impact-panel, .value-card, .capability, .pilot-card {
+        box-shadow: none !important;
+        background: #fff !important;
+        border-color: #d8dee8 !important;
+      }
+      .hero-grid, .simulation-grid, .scan-panel, .plans-memo-grid { grid-template-columns: 1fr !important; }
+      .section { padding: 24px 0; }
+      .route-list { max-height: none; overflow: visible; }
+      .hero-copy, .section-kicker, .value-card p, .capability p, .memo-panel p, .route-main span, .metric span, .footer { color: #444 !important; }
+    }
+  </style>
+</head>
+<body>
+  <nav class="nav">
+    <div class="shell nav-inner">
+      <a class="brand" href="#top" aria-label="Gate AI Treasury Router home">
+        <span class="logo" aria-hidden="true"></span>
+        <span>Gate AI Treasury Router</span>
+      </a>
+      <div class="nav-links">
+        <a href="#problem">Problem</a>
+        <a href="#solution">Solution</a>
+        <a href="#why-gate">Why Gate</a>
+        <a href="#demo">Live demo</a>
+        <a href="#pilot" class="pill"><span class="dot"></span> Build case</a>
+      </div>
+    </div>
+  </nav>
+
+  <main id="top">
+    <section class="hero">
+      <div class="shell hero-grid">
+        <div>
+          <div class="pill"><span class="dot"></span> Gate AI wealth workflow for VIP advisors</div>
+          <h1>Gate AI Treasury Router puts <span class="gradient">idle VIP capital</span> to work.</h1>
+          <p class="hero-copy">It helps VIP advisors move passive client balances into approved Gate earning routes with clear recommendations, advisor review, and client approval.</p>
+          <div class="hero-impact" aria-label="Illustrative value unlock">
+            <div class="hero-impact-item"><small>Capital identified</small><b>$12.4M idle</b><span>Stablecoin balance mostly inactive for 47 days.</span></div>
+            <div class="hero-impact-item"><small>Capital activated</small><b>$7.9M</b><span>Illustrative client-approved plan after advisor review.</span></div>
+            <div class="hero-impact-item"><small>20-client pilot</small><b>~$158M</b><span>Similar VIP reviews could prove the build case quickly.</span></div>
+          </div>
+          <div class="hero-actions">
+            <a class="btn primary" href="#demo">Run the product demo</a>
+            <a class="btn" href="#problem">Start the pitch</a>
+          </div>
+          <div class="micro-proof">
+            <span>More capital activated</span>
+            <span>More Gate product usage</span>
+            <span>Better VIP outcomes</span>
+            <span>Advisor review</span>
+          </div>
+          <div class="hero-note">
+            <b>The value:</b> Gate already has the clients, the balances, the advisors, and the products. Treasury Router connects them into one revenue-generating workflow.
+          </div>
+        </div>
+
+        <div class="card hero-card" aria-label="Illustrative Gate VIP treasury snapshot">
+          <div class="card-top">
+            <div><small>Gate VIP advisor view</small><b>VIP Idle Capital Snapshot</b></div>
+            <span class="live-tag"><span class="dot"></span> Monitored</span>
+          </div>
+          <div class="mini-kpis">
+            <div class="mini-kpi"><small>Total portfolio</small><b>$28.4M</b><em>Digital assets</em></div>
+            <div class="mini-kpi"><small>Current yield</small><b>0.30%</b><em>On idle balance</em></div>
+            <div class="mini-kpi"><small>Average idle time</small><b>47d</b><em>Without allocation</em></div>
+          </div>
+          <div class="idle-band">
+            <div>
+              <small>Idle stablecoin capital detected</small>
+              <strong>$12.4M</strong>
+              <span>44% of this VIP portfolio is currently underutilized.</span>
+            </div>
+            <div class="idle-ring"><b>44%</b></div>
+          </div>
+          <div class="opportunity">
+            <small>Gate AI opportunity scan</small>
+            <div class="opportunity-line">
+              <strong>$9.4M deployable</strong>
+              <div class="route-count">18 Gate routes scanned</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section compact" id="problem">
+      <div class="shell">
+        <div class="section-header">
+          <div>
+            <div class="eyebrow">The problem</div>
+            <h2>Gate already has the clients, products, and advisors. The missing piece is turning idle capital into clear client action.</h2>
+          </div>
+          <p class="section-kicker">Instead of capital sitting idle, Gate AI helps advisors identify where it can be deployed inside Gate's ecosystem, explain the tradeoffs, and move the client toward a decision.</p>
+        </div>
+        <div class="pitch-grid">
+          <div class="pitch-card">
+            <div class="role">Decision gap</div>
+            <h3>Idle capital is unrealized ecosystem value.</h3>
+            <p>It does not create client value or product usage until someone turns it into an approved plan the VIP can understand.</p>
+          </div>
+          <div class="pitch-card">
+            <div class="role">VIP confidence</div>
+            <h3>VIP clients need confidence, not a product maze.</h3>
+            <p>They need a small set of clear options with liquidity, risk, and tradeoffs explained in plain English.</p>
+          </div>
+          <div class="pitch-card">
+            <div class="role">Advisor capacity</div>
+            <h3>Preparation is too manual.</h3>
+            <p>Advisors need to check liquidity, lockup, asset fit, route eligibility, suitability, and client history before the conversation can happen.</p>
+          </div>
+          <div class="pitch-card">
+            <div class="role">Gate impact</div>
+            <h3>Manual decisions hide revenue opportunities.</h3>
+            <p>If recommendations happen offline, Gate loses the data loop around what VIPs accept, reject, ask about, and activate.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section compact" id="solution">
+      <div class="shell">
+        <div class="section-header">
+          <div>
+            <div class="eyebrow">The solution</div>
+            <h2>Treasury Router gives advisors a direct path from idle balance to approved Gate product activity.</h2>
+          </div>
+          <p class="section-kicker">It monitors idle balances, compares approved Gate routes, applies client constraints, drafts the advisor memo, and records the outcome so Gate can activate more capital over time.</p>
+        </div>
+        <div class="solution-panel">
+          <div class="equation-card">
+            <div class="equation-row" aria-label="Illustrative value unlock equation">
+              <div class="equation-box"><small>Before</small><b>$12.4M idle</b><span>47 days mostly inactive</span></div>
+              <div class="equation-arrow">to</div>
+              <div class="equation-box"><small>After</small><b>$7.9M activated</b><span>Advisor-reviewed plan</span></div>
+            </div>
+            <p class="panel-intro">The advisor stays accountable. The VIP makes the decision. Gate gets more product usage, measurable revenue influence, and a clearer view of client demand.</p>
+          </div>
+          <div class="solution-list">
+            <div class="solution-item"><b>Find idle VIP capital before it stays passive.</b><span>Gate AI surfaces high-value balances that deserve a proactive wealth conversation.</span></div>
+            <div class="solution-item"><b>Compare approved Gate earning routes.</b><span>Earn, lending, staking, quant, structured, and Private Wealth routes become comparable in one simple format.</span></div>
+            <div class="solution-item"><b>Apply suitability and client constraints.</b><span>Routes that violate liquidity, lockup, asset preference, risk comfort, or approval rules are removed with reasons.</span></div>
+            <div class="solution-item"><b>Turn the scan into an advisor-ready package.</b><span>The system drafts client-ready options, then records what the VIP accepts, rejects, or wants to revisit.</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section compact" id="why-gate">
+      <div class="shell">
+        <div class="section-header">
+          <div>
+            <div class="eyebrow">Why this belongs in Gate AI</div>
+            <h2>Gate AI should create measurable business outcomes, not just better answers.</h2>
+          </div>
+          <p class="section-kicker">Treasury Router is the VIP Wealth use case: high-value balances, existing products, advisor relationships, and a direct path to more activated capital inside Gate's ecosystem.</p>
+        </div>
+        <div class="pitch-grid">
+          <div class="pitch-card">
+            <div class="role">AI strategy</div>
+            <h3>It turns Gate AI into a revenue workflow.</h3>
+            <p>The value is not another chat box. It is AI that detects an opportunity, prepares a recommendation, and moves it into advisor review.</p>
+          </div>
+          <div class="pitch-card">
+            <div class="role">VIP Wealth</div>
+            <h3>It helps relationship managers grow VIP value.</h3>
+            <p>Advisors can cover more VIPs with more personalized, data-backed conversations without lowering the service standard.</p>
+          </div>
+          <div class="pitch-card">
+            <div class="role">Existing products</div>
+            <h3>It activates products Gate already operates.</h3>
+            <p>The MVP can route idle capital into approved Gate products before Gate has to create anything new.</p>
+          </div>
+          <div class="pitch-card">
+            <div class="role">Learning loop</div>
+            <h3>It creates proprietary VIP preference data.</h3>
+            <p>Every approval, rejection, objection, and activation makes future recommendations smarter for that client and more useful for Gate.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section compact" id="works">
+      <div class="shell">
+        <div class="section-header">
+          <div>
+            <div class="eyebrow">How it works</div>
+            <h2>The product is built to move from AI analysis to advisor review to client-approved activation.</h2>
+          </div>
+          <p class="section-kicker">AI does the comparison work, but the output stays practical: approved routes, suitability guardrails, plain tradeoffs, advisor review, VIP decision, and outcome tracking.</p>
+        </div>
+        <div class="story-grid" aria-label="Gate AI Treasury Router walkthrough">
+          <div class="story-step"><small>01</small><b>Find idle capital</b><span>Gate AI detects balances that have been sitting underused inside the client account.</span></div>
+          <div class="story-step"><small>02</small><b>Confirm constraints</b><span>The advisor sets liquidity reserve, maximum lockup, risk comfort, and preferred assets.</span></div>
+          <div class="story-step"><small>03</small><b>Scan Gate routes</b><span>Approved Earn, lending, staking, quant, structured, and Private Wealth routes are compared.</span></div>
+          <div class="story-step"><small>04</small><b>Apply guardrails</b><span>Routes are removed when liquidity, lockup, risk, asset fit, or suitability checks fail.</span></div>
+          <div class="story-step"><small>05</small><b>Prepare the advisor memo</b><span>The advisor gets options, likely client concerns, and simple language for the conversation.</span></div>
+          <div class="story-step"><small>06</small><b>Track the decision</b><span>Gate records what was approved, why it was chosen, and what should be reviewed next.</span></div>
+        </div>
+        <div class="story-note">
+          <div><b>Advisor stays in control.</b><span>AI drafts options; the advisor reviews before anything reaches the VIP client.</span></div>
+          <div><b>Guardrails are visible.</b><span>Suitability, liquidity, risk, and product eligibility are shown before a recommendation is shared.</span></div>
+          <div><b>Every decision improves the system.</b><span>Gate learns what each VIP accepts, rejects, asks about, and revisits.</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="demo">
+      <div class="shell">
+        <div class="section-header">
+          <div>
+            <div class="eyebrow">Live demo pitch</div>
+            <h2>Now watch the product do it.</h2>
+          </div>
+          <p class="section-kicker">Run the scan, watch unsuitable routes get removed, review the advisor memo, answer the likely VIP concern, and see the business case update.</p>
+        </div>
+
+        <div class="demo-wrap">
+          <div class="demo-toolbar">
+            <div class="demo-title"><small>Gate AI Treasury Router · illustrative VIP workflow</small><b>VIP Client A Treasury Review</b></div>
+            <div class="demo-status"><span class="dot"></span><span id="workflowStatus">Ready to scan</span></div>
+          </div>
+
+          <div class="demo-body">
+            <div class="demo-step-note">
+              <b>Step 1: Gate AI detects idle capital.</b>
+              <span>$12.4M has sat mostly idle for 47 days. The product starts by showing the advisor what can safely be reviewed.</span>
+            </div>
+            <div class="overview-row">
+              <div class="metric"><small>Total portfolio</small><b>$28.4M</b><span>Across approved Gate accounts</span></div>
+              <div class="metric highlight"><small>Idle capital</small><b>$12.4M</b><span>47 days average idle time</span></div>
+              <div class="metric"><small>Current idle yield</small><b>0.30%</b><span>Illustrative account rate</span></div>
+              <div class="metric"><small>Deployable now</small><b id="deployableMetric">$9.4M</b><span id="reserveMetric">After $3.0M liquidity reserve</span></div>
+            </div>
+
+            <div class="simulation-grid">
+              <aside class="controls-panel" aria-label="Advisor controls">
+                <h3>Step 2: advisor confirms client constraints.</h3>
+                <p class="panel-intro">The product starts with a safe default profile. Advisors can adjust liquidity, duration, risk, and asset preferences before anything is packaged for the VIP.</p>
+
+                <div class="control">
+                  <label for="reserveInput"><span>Liquidity reserve</span><output id="reserveOut">$3.0M</output></label>
+                  <input id="reserveInput" type="range" min="1" max="6" step=".5" value="3" />
+                </div>
+
+                <div class="control">
+                  <label for="lockupInput"><span>Maximum lockup</span><output id="lockupOut">90 days</output></label>
+                  <input id="lockupInput" type="range" min="7" max="180" step="1" value="90" />
+                </div>
+
+                <div class="control">
+                  <label><span>Risk comfort</span><output id="riskOut">Balanced</output></label>
+                  <div class="risk-buttons" role="group" aria-label="Risk comfort">
+                    <button class="risk-btn" type="button" data-risk="liquidity">Low</button>
+                    <button class="risk-btn active" type="button" data-risk="balanced">Balanced</button>
+                    <button class="risk-btn" type="button" data-risk="enhanced">Enhanced</button>
+                  </div>
+                </div>
+
+                <div class="control">
+                  <label for="assetInput"><span>Preferred assets</span></label>
+                  <select id="assetInput">
+                    <option value="stable">USDT / USDC only</option>
+                    <option value="expanded">Stablecoins + BTC / ETH</option>
+                  </select>
+                </div>
+
+                <button class="btn primary scan-button" type="button" id="scanBtn">Run Gate AI scan</button>
+              </aside>
+
+              <div>
+                <div class="scan-panel">
+                  <div class="scan-steps" aria-label="Gate AI scan steps">
+                    <div class="scan-step done" data-step="0"><div class="scan-dot">1</div><span>Reading VIP balance</span><small>$12.4M idle</small></div>
+                    <div class="scan-step done" data-step="1"><div class="scan-dot">2</div><span>Checking client constraints</span><small id="stepReserve">$3.0M reserve</small></div>
+                    <div class="scan-step done" data-step="2"><div class="scan-dot">3</div><span>Scanning approved Gate routes</span><small>Earn, lending, wealth</small></div>
+                    <div class="scan-step done" data-step="3"><div class="scan-dot">4</div><span id="excludeStep">Applying suitability guardrails</span><small>Clear reasons</small></div>
+                    <div class="scan-step done" data-step="4"><div class="scan-dot">5</div><span>Building advisor package</span><small>VIP decides</small></div>
+                  </div>
+
+                  <div class="route-board">
+                    <div class="route-head">
+                      <div><b>Steps 3-4: scan routes, apply guardrails</b><span id="routeSummary">10 eligible · 8 excluded</span></div>
+                      <span class="pill">Advisor view</span>
+                    </div>
+                    <div class="route-columns">
+                      <div>
+                        <div class="route-column-title">Best-fit evidence</div>
+                        <div class="route-list" id="eligibleRoutes"></div>
+                      </div>
+                      <div>
+                        <div class="route-column-title">Removed by AI</div>
+                        <div class="route-list" id="excludedRoutes"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="plans-memo-grid">
+                  <section class="output-panel" aria-label="Generated strategies">
+                    <h3>Step 5: Gate AI prepares three advisor-ready paths.</h3>
+                    <p class="panel-intro">Each option is framed for a real VIP conversation: what it may earn, how liquid it is, how risky it is, and where capital would go.</p>
+                    <div class="plan-tabs" id="planTabs"></div>
+                    <div class="strategy-detail">
+                      <div class="allocation" id="allocation"></div>
+                      <div class="strategy-stats">
+                        <div class="strategy-stat"><small>Indicative yield</small><b id="strategyYield">4.9%-6.4%</b></div>
+                        <div class="strategy-stat"><small>Annual income potential</small><b id="strategyIncome">~$701K</b></div>
+                        <div class="strategy-stat"><small>Risk score</small><b id="strategyRisk">46 / 100</b></div>
+                        <div class="strategy-stat"><small>Liquidity coverage</small><b id="strategyLiquidity">100%</b></div>
+                      </div>
+                    </div>
+                  </section>
+
+                  <div class="memo-impact-grid">
+                    <section class="memo-panel" aria-label="Advisor memo">
+                      <div class="memo-body">
+                        <span class="memo-badge"><span class="dot"></span> AI draft · advisor review required</span>
+                        <h3 id="memoTitle">Balanced treasury recommendation</h3>
+                        <p id="memoSummary"></p>
+                        <div class="memo-block">
+                          <small>Why this fits</small>
+                          <ul id="memoFits"></ul>
+                        </div>
+                        <div class="memo-block">
+                          <small>What the advisor should discuss</small>
+                          <ul id="memoQuestions"></ul>
+                        </div>
+                        <div class="guardrail-list" aria-label="Suitability guardrails">
+                          <div class="guardrail-item"><b>Eligibility</b><span id="guardrailEligibility">Only approved Gate routes are included.</span></div>
+                          <div class="guardrail-item"><b>Liquidity</b><span id="guardrailLiquidity">Reserve target is preserved before activation.</span></div>
+                          <div class="guardrail-item"><b>Risk</b><span id="guardrailRisk">Routes above client risk comfort are removed.</span></div>
+                          <div class="guardrail-item"><b>Review</b><span>Advisor approval required before client package.</span></div>
+                        </div>
+                        <div class="client-dialogue" aria-label="Client concern and advisor response">
+                          <div class="dialogue-card"><small>Likely VIP concern</small><p id="vipConcern"></p></div>
+                          <div class="dialogue-card"><small>Advisor-ready response</small><p id="advisorResponse"></p></div>
+                        </div>
+                      </div>
+                      <div class="memo-actions">
+                        <button class="btn" type="button" id="rerunBtn">Refresh memo</button>
+                        <button class="btn primary" type="button" id="approveBtn">Approve client package</button>
+                      </div>
+                    </section>
+
+                    <section class="impact-panel" aria-label="Gate business impact">
+                      <h3>Step 6: Gate sees capital activated.</h3>
+                      <p class="panel-intro">The MVP can prove value with existing products: capital activated, Gate product usage, advisor capacity, revenue influence, and what VIPs actually choose.</p>
+                      <div class="impact-row"><span>Capital activated from this VIP</span><b id="activatedCapital">$7.9M</b></div>
+                      <div class="impact-row scale"><span>20-client pilot activation</span><b id="pilotSignal">~$158M</b></div>
+                      <div class="impact-row"><span>Gate products used</span><b id="productsUsed">5</b></div>
+                      <div class="impact-row"><span>Advisor hours saved</span><b id="advisorCapacity">~50h</b></div>
+                      <div class="impact-row scale"><span>Illustrative annual revenue influence</span><b id="platformEconomics">~$790K</b></div>
+                      <div class="approval-status" id="approvalStatus">Advisor package ready. VIP decision pending.</div>
+                    </section>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section compact" id="value">
+      <div class="shell">
+        <div class="section-header">
+          <div>
+            <div class="eyebrow">Why it matters</div>
+            <h2>More capital activated. More Gate product usage. Better VIP outcomes.</h2>
+          </div>
+          <p class="section-kicker">Treasury Router is not trying to replace advisors. It gives them the AI layer they need to put idle VIP capital to work inside Gate's ecosystem.</p>
+        </div>
+        <div class="value-grid">
+          <div class="value-card">
+            <div class="role">VIP client</div>
+            <h3>A clearer path to put capital to work.</h3>
+            <p>VIP clients get a small number of advisor-reviewed options instead of trying to compare every earning product alone.</p>
+            <div class="value-stat"><span>Value:</span> easier decisions, clearer tradeoffs, and more potential utility from assets already on Gate.</div>
+          </div>
+          <div class="value-card">
+            <div class="role">VIP advisor</div>
+            <h3>A stronger way to grow VIP relationships.</h3>
+            <p>Advisors get a ready-to-review package with constraints, tradeoffs, likely concerns, and next questions already organized.</p>
+            <div class="value-stat"><span>Value:</span> better service quality, faster preparation, and more productive client conversations.</div>
+          </div>
+          <div class="value-card">
+            <div class="role">Gate</div>
+            <h3>Idle capital becomes active ecosystem value.</h3>
+            <p>Gate can earn more from products it already operates when more VIP capital moves into approved Gate routes.</p>
+            <div class="value-stat"><span>Value:</span> more product usage, stronger VIP retention, better preference data, and measurable revenue influence.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section compact" id="pilot">
+      <div class="shell">
+        <div class="pilot-card">
+          <div>
+            <div class="eyebrow">Pilot push</div>
+            <h2>Pilot Treasury Router around the only question that matters: can Gate AI activate idle VIP capital?</h2>
+            <p>Pilot Treasury Router with 5-10 VIP clients and 20-30 approved Gate routes. Measure the only things that matter: capital activated, acceptance rate, product usage, advisor time saved, and revenue influence.</p>
+          </div>
+          <div class="pilot-metrics">
+            <div class="pilot-metric"><b>5-10</b><span>VIP clients</span></div>
+            <div class="pilot-metric"><b>20-30</b><span>approved routes</span></div>
+            <div class="pilot-metric"><b>5</b><span>success metrics</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="shell footer-inner">
+      <div>Gate AI Treasury Router · VIP advisor workflow concept</div>
+      <div class="disclaimer">Illustrative concept for strategic discussion only. Not an official Gate product, not investment advice, not an offer or recommendation, and not a promise of return. Any live implementation would require legal, compliance, suitability, security, product, and risk review.</div>
+    </div>
+  </footer>
+
+  <script>
+    const client = {
+      portfolio: 28.4,
+      idle: 12.4,
+      idleDays: 47,
+      currentYield: 0.003
+    };
+
+    const riskMap = {
+      liquidity: { label: "Low", maxRisk: 3, utilization: .72 },
+      balanced: { label: "Balanced", maxRisk: 5, utilization: .84 },
+      enhanced: { label: "Enhanced", maxRisk: 7, utilization: .90 }
+    };
+
+    const routes = [
+      { code: "FE", name: "Flexible USDT Earn", category: "Flexible Earn", yieldLow: 3.8, yieldHigh: 5.0, lockup: 0, liquidity: "Same day", risk: 1, assets: ["stable"], note: "Variable rate · high liquidity" },
+      { code: "FC", name: "USDC Flexible Liquidity", category: "Flexible Earn", yieldLow: 3.4, yieldHigh: 4.6, lockup: 0, liquidity: "Same day", risk: 1, assets: ["stable"], note: "Low complexity · liquid reserve" },
+      { code: "LD", name: "VIP USDT Lending", category: "Lending", yieldLow: 4.7, yieldHigh: 6.2, lockup: 7, liquidity: "7 day", risk: 3, assets: ["stable"], note: "Short duration · platform risk" },
+      { code: "FT", name: "Fixed Term Stablecoin 30D", category: "Fixed Term", yieldLow: 6.2, yieldHigh: 8.0, lockup: 30, liquidity: "30 day", risk: 3, assets: ["stable"], note: "Term yield · limited liquidity" },
+      { code: "F9", name: "VIP Fixed Term 90D", category: "Fixed Term", yieldLow: 7.0, yieldHigh: 8.6, lockup: 90, liquidity: "90 day", risk: 4, assets: ["stable"], note: "Higher term income" },
+      { code: "TR", name: "Gate Treasury RWA Route", category: "Private Wealth", yieldLow: 4.2, yieldHigh: 5.3, lockup: 2, liquidity: "T+1 / T+2", risk: 3, assets: ["stable"], note: "Treasury-backed exposure" },
+      { code: "MN", name: "Market-Neutral Quant Fund", category: "Quant Fund", yieldLow: 7.5, yieldHigh: 10.0, lockup: 30, liquidity: "30 day", risk: 5, assets: ["stable"], note: "Strategy risk · capacity review" },
+      { code: "PW", name: "Private Wealth Stable Income", category: "Private Wealth", yieldLow: 6.0, yieldHigh: 7.8, lockup: 90, liquidity: "90 day", risk: 4, assets: ["stable"], note: "Advisor-reviewed allocation" },
+      { code: "PL", name: "Premium Loan Liquidity Buffer", category: "Premium Loan", yieldLow: 2.8, yieldHigh: 4.0, lockup: 0, liquidity: "Same day", risk: 3, assets: ["stable"], note: "Liquidity support route" },
+      { code: "LP", name: "Launchpool VIP Allocation", category: "Launchpool", yieldLow: 4.0, yieldHigh: 8.0, lockup: 7, liquidity: "7 day", risk: 5, assets: ["stable"], note: "Variable capacity · event driven" },
+      { code: "DI", name: "Dual Investment BTC/USDT", category: "Dual Investment", yieldLow: 9.0, yieldHigh: 16.0, lockup: 14, liquidity: "14 day", risk: 6, assets: ["expanded"], note: "Conditional settlement risk" },
+      { code: "SY", name: "Structured Yield Route", category: "Structured", yieldLow: 8.5, yieldHigh: 13.0, lockup: 30, liquidity: "30 day", risk: 6, assets: ["stable"], note: "Scenario-based outcome" },
+      { code: "RW", name: "Private Credit RWA Route", category: "RWA", yieldLow: 8.0, yieldHigh: 11.0, lockup: 120, liquidity: "120 day", risk: 5, assets: ["stable"], note: "Longer redemption window" },
+      { code: "ES", name: "ETH Soft Staking", category: "Staking", yieldLow: 3.0, yieldHigh: 4.2, lockup: 0, liquidity: "Variable", risk: 3, assets: ["expanded"], note: "ETH exposure required" },
+      { code: "BS", name: "BTC Structured Income", category: "Structured", yieldLow: 7.0, yieldHigh: 12.0, lockup: 45, liquidity: "45 day", risk: 6, assets: ["expanded"], note: "BTC exposure required" },
+      { code: "HQ", name: "High Velocity Quant Strategy", category: "Quant Fund", yieldLow: 12.0, yieldHigh: 18.0, lockup: 30, liquidity: "30 day", risk: 7, assets: ["stable"], note: "Active strategy complexity" },
+      { code: "LT", name: "Long Duration Fixed 180D", category: "Fixed Term", yieldLow: 8.4, yieldHigh: 10.5, lockup: 180, liquidity: "180 day", risk: 4, assets: ["stable"], note: "Lockup beyond default" },
+      { code: "NF", name: "NFT-Linked Yield Campaign", category: "Campaign", yieldLow: 5.0, yieldHigh: 14.0, lockup: 21, liquidity: "21 day", risk: 7, assets: ["expanded"], note: "Not aligned to treasury objective" }
+    ];
+
+    const planTemplates = {
+      liquidity: {
+        name: "Liquidity First",
+        promise: "Keep access while making idle capital productive.",
+        yield: "3.8%-4.9%",
+        risk: "22 / 100",
+        allocation: [
+          ["Flexible stablecoin earning", 40],
+          ["Gate Treasury RWA route", 25],
+          ["Same-day liquidity reserve", 25],
+          ["Short-duration lending", 10]
+        ],
+        fits: [
+          "Preserves more than the required liquidity reserve.",
+          "Uses simple routes that are easier for a VIP client to understand.",
+          "Keeps duration short while still improving on the current idle yield."
+        ],
+        questions: [
+          "Is the client willing to accept variable rates?",
+          "Should the reserve be larger before deploying capital?",
+          "Does the client prefer only same-day liquidity?"
+        ],
+        concern: "I do not want to lock up capital or explain a complicated product to my investment committee.",
+        response: "This path keeps the largest liquidity buffer, uses simple Gate routes, and can be reviewed again before moving into longer-duration options."
+      },
+      balanced: {
+        name: "Balanced Income",
+        promise: "Activate more capital while preserving a clear reserve.",
+        yield: "4.9%-6.4%",
+        risk: "46 / 100",
+        allocation: [
+          ["Flexible stablecoin earning", 25],
+          ["Gate Treasury RWA route", 20],
+          ["Fixed-term stablecoin route", 25],
+          ["Market-neutral quant route", 15],
+          ["Same-day liquidity reserve", 15]
+        ],
+        fits: [
+          "Maintains the required liquidity reserve.",
+          "Uses several return sources instead of one product.",
+          "Keeps default lockups inside the advisor-confirmed limit."
+        ],
+        questions: [
+          "Which route should be capped for concentration risk?",
+          "Is the client comfortable with a limited market-neutral sleeve?",
+          "Should the 30-day term allocation be staged over time?"
+        ],
+        concern: "I like the return potential, but I do not want this to become a black-box AI recommendation.",
+        response: "The AI only prepares the comparison. The advisor can show every route, every exclusion, the liquidity reserve, and the exact tradeoffs before the client approves anything."
+      },
+      enhanced: {
+        name: "Enhanced Return",
+        promise: "Use higher-duration routes as a controlled satellite.",
+        yield: "7.4%-10.4%",
+        risk: "69 / 100",
+        allocation: [
+          ["Fixed-term stablecoin route", 30],
+          ["Market-neutral quant route", 25],
+          ["Structured yield route", 20],
+          ["Private Wealth / RWA route", 15],
+          ["Same-day liquidity reserve", 10]
+        ],
+        fits: [
+          "Targets materially higher income potential without active directional trading.",
+          "Uses multiple routes so the client is not relying on one product.",
+          "Keeps a defined reserve even while pursuing enhanced return."
+        ],
+        questions: [
+          "Does the client accept scenario-based outcomes?",
+          "Which products require deeper suitability review?",
+          "Should this profile be offered as a smaller satellite allocation first?"
+        ],
+        concern: "This may be too much duration and complexity for idle treasury capital.",
+        response: "The advisor can cap this as a smaller satellite allocation, keep a defined reserve, and require deeper suitability review before showing it as the primary path."
+      }
+    };
+
+    const state = {
+      reserve: 3,
+      lockup: 90,
+      risk: "balanced",
+      assetMode: "stable",
+      plan: "balanced",
+      approved: false
+    };
+
+    const els = {
+      reserveInput: document.getElementById("reserveInput"),
+      lockupInput: document.getElementById("lockupInput"),
+      assetInput: document.getElementById("assetInput"),
+      reserveOut: document.getElementById("reserveOut"),
+      lockupOut: document.getElementById("lockupOut"),
+      riskOut: document.getElementById("riskOut"),
+      deployableMetric: document.getElementById("deployableMetric"),
+      reserveMetric: document.getElementById("reserveMetric"),
+      stepReserve: document.getElementById("stepReserve"),
+      excludeStep: document.getElementById("excludeStep"),
+      routeSummary: document.getElementById("routeSummary"),
+      eligibleRoutes: document.getElementById("eligibleRoutes"),
+      excludedRoutes: document.getElementById("excludedRoutes"),
+      planTabs: document.getElementById("planTabs"),
+      allocation: document.getElementById("allocation"),
+      strategyYield: document.getElementById("strategyYield"),
+      strategyIncome: document.getElementById("strategyIncome"),
+      strategyRisk: document.getElementById("strategyRisk"),
+      strategyLiquidity: document.getElementById("strategyLiquidity"),
+      memoTitle: document.getElementById("memoTitle"),
+      memoSummary: document.getElementById("memoSummary"),
+      memoFits: document.getElementById("memoFits"),
+      memoQuestions: document.getElementById("memoQuestions"),
+      guardrailEligibility: document.getElementById("guardrailEligibility"),
+      guardrailLiquidity: document.getElementById("guardrailLiquidity"),
+      guardrailRisk: document.getElementById("guardrailRisk"),
+      vipConcern: document.getElementById("vipConcern"),
+      advisorResponse: document.getElementById("advisorResponse"),
+      activatedCapital: document.getElementById("activatedCapital"),
+      pilotSignal: document.getElementById("pilotSignal"),
+      productsUsed: document.getElementById("productsUsed"),
+      advisorCapacity: document.getElementById("advisorCapacity"),
+      platformEconomics: document.getElementById("platformEconomics"),
+      approvalStatus: document.getElementById("approvalStatus"),
+      workflowStatus: document.getElementById("workflowStatus")
+    };
+
+    function money(value, digits = 1) {
+      return "$" + value.toFixed(digits) + "M";
+    }
+
+    function shortMoney(value) {
+      if (value >= 1) return "$" + value.toFixed(1) + "M";
+      return "~$" + Math.round(value * 1000) + "K";
+    }
+
+    function evaluateRoute(route) {
+      const reasons = [];
+      if (route.lockup > state.lockup) reasons.push("lockup too long");
+      if (route.risk > riskMap[state.risk].maxRisk) reasons.push("risk above client comfort");
+      if (state.assetMode === "stable" && !route.assets.includes("stable")) reasons.push("asset mismatch");
+      if (state.risk !== "enhanced" && route.category === "Campaign") reasons.push("not aligned to treasury objective");
+      return { eligible: reasons.length === 0, reason: reasons[0] || "fits constraints" };
+    }
+
+    function getEvaluatedRoutes() {
+      return routes.map(route => ({ ...route, ...evaluateRoute(route) }));
+    }
+
+    function selectedPlan() {
+      return planTemplates[state.plan];
+    }
+
+    function deployableCapital() {
+      return Math.max(0, client.idle - state.reserve);
+    }
+
+    function incomePotential() {
+      const plan = selectedPlan();
+      const parts = plan.yield.replace("%", "").split("-");
+      const low = parseFloat(parts[0]);
+      const high = parseFloat(parts[1]);
+      const mid = (low + high) / 2 / 100;
+      return deployableCapital() * riskMap[state.plan].utilization * mid;
+    }
+
+    function renderRoutes(evaluated) {
+      const eligible = evaluated.filter(route => route.eligible);
+      const excluded = evaluated.filter(route => !route.eligible);
+      const visibleEligible = eligible.slice(0, 5);
+      const visibleExcluded = excluded.slice(0, 4);
+
+      els.routeSummary.textContent = eligible.length + " eligible · " + excluded.length + " excluded";
+      els.excludeStep.textContent = "Applying guardrails: " + excluded.length + " removed";
+
+      els.eligibleRoutes.innerHTML = visibleEligible.map(route =>
+        '<div class="route-card">' +
+          '<div class="route-icon">' + route.code + '</div>' +
+          '<div class="route-main"><b>' + route.name + '</b><span>' + route.category + ' · ' + route.note + '</span></div>' +
+          '<div class="route-meta"><b>' + route.yieldLow.toFixed(1) + '%-' + route.yieldHigh.toFixed(1) + '%</b><span>' + route.liquidity + '</span></div>' +
+        '</div>'
+      ).join("") + (eligible.length > visibleEligible.length
+        ? '<div class="route-more">+' + (eligible.length - visibleEligible.length) + ' more eligible routes considered</div>'
+        : '');
+
+      els.excludedRoutes.innerHTML = visibleExcluded.map(route =>
+        '<div class="route-card excluded">' +
+          '<div class="route-icon">' + route.code + '</div>' +
+          '<div class="route-main"><b>' + route.name + '</b><span>' + route.category + ' · ' + route.note + '</span></div>' +
+          '<div class="route-meta"><b>' + route.reason + '</b><span>' + route.lockup + 'd lockup</span></div>' +
+        '</div>'
+      ).join("") + (excluded.length > visibleExcluded.length
+        ? '<div class="route-more">+' + (excluded.length - visibleExcluded.length) + ' more exclusions hidden</div>'
+        : '');
+    }
+
+    function renderPlans() {
+      els.planTabs.innerHTML = Object.entries(planTemplates).map(([key, plan]) =>
+        '<button class="plan-card ' + (state.plan === key ? 'active' : '') + '" type="button" data-plan="' + key + '">' +
+          '<b>' + plan.name + '</b>' +
+          '<span>' + plan.promise + '</span>' +
+          '<strong>' + plan.yield + '</strong>' +
+        '</button>'
+      ).join("");
+
+      document.querySelectorAll("[data-plan]").forEach(button => {
+        button.addEventListener("click", () => {
+          state.plan = button.dataset.plan;
+          state.approved = false;
+          render();
+        });
+      });
+    }
+
+    function renderStrategy() {
+      const plan = selectedPlan();
+      const income = incomePotential();
+      els.allocation.innerHTML = plan.allocation.map(([label, value]) =>
+        '<div class="alloc-row">' +
+          '<span>' + label + '</span>' +
+          '<div class="track"><div class="fill" style="width:' + value + '%"></div></div>' +
+          '<strong>' + value + '%</strong>' +
+        '</div>'
+      ).join("");
+
+      els.strategyYield.textContent = plan.yield;
+      els.strategyIncome.textContent = shortMoney(income);
+      els.strategyRisk.textContent = plan.risk;
+      els.strategyLiquidity.textContent = state.reserve >= 3 ? "100%" : "Below target";
+
+      els.memoTitle.textContent = plan.name + " recommendation";
+      els.memoSummary.textContent = "Gate AI found " + money(deployableCapital()) + " of deployable idle capital after preserving a " + money(state.reserve) + " liquidity reserve. The " + plan.name + " profile gives the advisor a simple way to discuss potential income, liquidity tradeoffs, and product risks with the VIP client before any action is taken.";
+      els.memoFits.innerHTML = plan.fits.map(item => '<li>' + item + '</li>').join("");
+      els.memoQuestions.innerHTML = plan.questions.map(item => '<li>' + item + '</li>').join("");
+      els.guardrailEligibility.textContent = "Only routes from the approved Gate library are included.";
+      els.guardrailLiquidity.textContent = state.reserve >= 3 ? "Liquidity reserve target is preserved before activation." : "Reserve is below the default target and needs advisor review.";
+      els.guardrailRisk.textContent = "Routes above " + riskMap[state.risk].label.toLowerCase() + " risk comfort are removed.";
+      els.vipConcern.textContent = plan.concern;
+      els.advisorResponse.textContent = plan.response;
+    }
+
+    function renderImpact(evaluated) {
+      const eligible = evaluated.filter(route => route.eligible);
+      const activated = deployableCapital() * riskMap[state.plan].utilization;
+      const pilotActivated = activated * 20;
+      const economics = pilotActivated * .005;
+      els.activatedCapital.textContent = money(activated);
+      els.pilotSignal.textContent = "~" + money(pilotActivated, 0);
+      els.productsUsed.textContent = Math.min(eligible.length, state.plan === "liquidity" ? 4 : state.plan === "balanced" ? 5 : 6);
+      els.advisorCapacity.textContent = "~50h";
+      els.platformEconomics.textContent = shortMoney(economics);
+      els.approvalStatus.textContent = state.approved
+        ? "Advisor approved. Simulated VIP selects " + selectedPlan().name + ". Gate logs routes chosen, capital activated, objection handled, and next review date."
+        : "Advisor package ready. VIP decision pending.";
+    }
+
+    function renderControls() {
+      els.reserveOut.textContent = money(state.reserve);
+      els.lockupOut.textContent = state.lockup + " days";
+      els.riskOut.textContent = riskMap[state.risk].label;
+      els.deployableMetric.textContent = money(deployableCapital());
+      els.reserveMetric.textContent = "After " + money(state.reserve) + " liquidity reserve";
+      els.stepReserve.textContent = money(state.reserve) + " reserve";
+
+      document.querySelectorAll("[data-risk]").forEach(button => {
+        button.classList.toggle("active", button.dataset.risk === state.risk);
+      });
+    }
+
+    function render() {
+      const evaluated = getEvaluatedRoutes();
+      renderControls();
+      renderRoutes(evaluated);
+      renderPlans();
+      renderStrategy();
+      renderImpact(evaluated);
+      els.workflowStatus.textContent = state.approved ? "Advisor approved" : "Advisor review ready";
+    }
+
+    function runScanAnimation() {
+      const steps = Array.from(document.querySelectorAll(".scan-step"));
+      steps.forEach(step => step.classList.remove("done", "active"));
+      els.workflowStatus.textContent = "Gate AI scanning";
+      let index = 0;
+      const timer = setInterval(() => {
+        steps.forEach((step, stepIndex) => {
+          step.classList.toggle("done", stepIndex < index);
+          step.classList.toggle("active", stepIndex === index);
+        });
+        index += 1;
+        if (index > steps.length) {
+          clearInterval(timer);
+          steps.forEach(step => {
+            step.classList.remove("active");
+            step.classList.add("done");
+          });
+          state.approved = false;
+          render();
+        }
+      }, 520);
+    }
+
+    els.reserveInput.addEventListener("input", event => {
+      state.reserve = Number(event.target.value);
+      state.approved = false;
+      render();
+    });
+
+    els.lockupInput.addEventListener("input", event => {
+      state.lockup = Number(event.target.value);
+      state.approved = false;
+      render();
+    });
+
+    els.assetInput.addEventListener("change", event => {
+      state.assetMode = event.target.value;
+      state.approved = false;
+      render();
+    });
+
+    document.querySelectorAll("[data-risk]").forEach(button => {
+      button.addEventListener("click", () => {
+        state.risk = button.dataset.risk;
+        if (state.risk === "liquidity") state.plan = "liquidity";
+        if (state.risk === "enhanced") state.plan = "enhanced";
+        if (state.risk === "balanced") state.plan = "balanced";
+        state.approved = false;
+        render();
+      });
+    });
+
+    document.getElementById("scanBtn").addEventListener("click", runScanAnimation);
+    document.getElementById("rerunBtn").addEventListener("click", runScanAnimation);
+    document.getElementById("approveBtn").addEventListener("click", () => {
+      state.approved = true;
+      render();
+    });
+
+    render();
+  </script>
+</body>
+</html>
