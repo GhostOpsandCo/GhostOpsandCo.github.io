@@ -155,7 +155,7 @@
       box-shadow: 0 0 18px var(--green);
     }
 
-    .hero { padding: 58px 0 38px; }
+    .hero { padding: 54px 0 30px; }
     .hero-grid {
       display: grid;
       grid-template-columns: minmax(0, 1.05fr) minmax(360px, .95fr);
@@ -237,7 +237,7 @@
       display: flex;
       flex-wrap: wrap;
       gap: 12px;
-      margin-top: 28px;
+      margin-top: 24px;
     }
 
     .btn {
@@ -266,7 +266,7 @@
       display: flex;
       flex-wrap: wrap;
       gap: 10px 18px;
-      margin-top: 22px;
+      margin-top: 18px;
       color: var(--muted);
       font-size: 13px;
       font-weight: 650;
@@ -279,9 +279,9 @@
     }
 
     .hero-note {
-      margin-top: 20px;
+      margin-top: 18px;
       max-width: 760px;
-      padding: 16px 18px;
+      padding: 14px 16px;
       border: 1px solid rgba(101,217,255,.22);
       border-radius: var(--radius);
       background: rgba(101,217,255,.07);
@@ -420,8 +420,8 @@
     }
 
     .route-count { color: var(--green); font-size: 12px; font-weight: 800; white-space: nowrap; }
-    .section { padding: 48px 0; scroll-margin-top: 88px; }
-    .section.compact { padding: 38px 0; }
+    .section { padding: 44px 0; scroll-margin-top: 88px; }
+    .section.compact { padding: 32px 0; }
     #demo { padding-bottom: 24px; }
     #pilot { padding-top: 24px; }
 
@@ -451,7 +451,7 @@
 
     .story-grid {
       display: grid;
-      grid-template-columns: repeat(6, minmax(0, 1fr));
+      grid-template-columns: repeat(5, minmax(0, 1fr));
       gap: 10px;
     }
 
@@ -522,9 +522,11 @@
       gap: 12px;
     }
 
+    .pitch-grid.three-up { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+
     .pitch-card {
-      min-height: 198px;
-      padding: 20px;
+      min-height: 164px;
+      padding: 18px;
       border: 1px solid var(--soft);
       border-radius: var(--radius);
       background: rgba(5,7,13,.34);
@@ -624,7 +626,7 @@
     }
 
     .value-card {
-      min-height: 250px;
+      min-height: 188px;
       padding: 24px;
       background: linear-gradient(155deg, rgba(255,255,255,.09), rgba(255,255,255,.035));
     }
@@ -1420,12 +1422,7 @@
         <div>
           <div class="pill"><span class="dot"></span> Gate AI wealth workflow for VIP advisors</div>
           <h1>Gate AI Treasury Router puts <span class="gradient">idle VIP capital</span> to work.</h1>
-          <p class="hero-copy">It helps VIP advisors move passive client balances into approved Gate earning routes with clear recommendations, advisor review, and client approval.</p>
-          <div class="hero-impact" aria-label="Illustrative value unlock">
-            <div class="hero-impact-item"><small>Capital identified</small><b>$12.4M idle</b><span>Stablecoin balance mostly inactive for 47 days.</span></div>
-            <div class="hero-impact-item"><small>Capital activated</small><b>$7.9M</b><span>Illustrative client-approved plan after advisor review.</span></div>
-            <div class="hero-impact-item"><small>20-client pilot</small><b>~$158M</b><span>Similar VIP reviews could prove the build case quickly.</span></div>
-          </div>
+          <p class="hero-copy">It finds idle balances, scans approved Gate routes, and gives advisors a client-ready recommendation the VIP can approve.</p>
           <div class="hero-actions">
             <a class="btn primary" href="#demo">Run the product demo</a>
             <a class="btn" href="#problem">Start the pitch</a>
@@ -1434,10 +1431,9 @@
             <span>More capital activated</span>
             <span>More Gate product usage</span>
             <span>Better VIP outcomes</span>
-            <span>Advisor review</span>
           </div>
           <div class="hero-note">
-            <b>The value:</b> Gate already has the clients, the balances, the advisors, and the products. Treasury Router connects them into one revenue-generating workflow.
+            <b>The value:</b> Gate already has the clients, balances, advisors, and products. Treasury Router connects them into one revenue-generating workflow.
           </div>
         </div>
 
@@ -1475,30 +1471,25 @@
         <div class="section-header">
           <div>
             <div class="eyebrow">The problem</div>
-            <h2>Gate already has the clients, products, and advisors. The missing piece is turning idle capital into clear client action.</h2>
+            <h2>Idle VIP capital is already inside Gate. It just needs a faster path to action.</h2>
           </div>
-          <p class="section-kicker">Instead of capital sitting idle, Gate AI helps advisors identify where it can be deployed inside Gate's ecosystem, explain the tradeoffs, and move the client toward a decision.</p>
+          <p class="section-kicker">The blocker is not product supply. It is turning the next best move into a clear advisor conversation.</p>
         </div>
-        <div class="pitch-grid">
+        <div class="pitch-grid three-up">
           <div class="pitch-card">
             <div class="role">Decision gap</div>
             <h3>Idle capital is unrealized ecosystem value.</h3>
-            <p>It does not create client value or product usage until someone turns it into an approved plan the VIP can understand.</p>
+            <p>It does not create client value or product usage until it becomes an approved plan.</p>
           </div>
           <div class="pitch-card">
             <div class="role">VIP confidence</div>
             <h3>VIP clients need confidence, not a product maze.</h3>
-            <p>They need a small set of clear options with liquidity, risk, and tradeoffs explained in plain English.</p>
+            <p>They need a few clear options with liquidity, risk, and tradeoffs explained in plain English.</p>
           </div>
           <div class="pitch-card">
             <div class="role">Advisor capacity</div>
             <h3>Preparation is too manual.</h3>
-            <p>Advisors need to check liquidity, lockup, asset fit, route eligibility, suitability, and client history before the conversation can happen.</p>
-          </div>
-          <div class="pitch-card">
-            <div class="role">Gate impact</div>
-            <h3>Manual decisions hide revenue opportunities.</h3>
-            <p>If recommendations happen offline, Gate loses the data loop around what VIPs accept, reject, ask about, and activate.</p>
+            <p>Advisors need faster prep before they can turn idle balances into high-value conversations.</p>
           </div>
         </div>
       </div>
@@ -1509,9 +1500,9 @@
         <div class="section-header">
           <div>
             <div class="eyebrow">The solution</div>
-            <h2>Treasury Router gives advisors a direct path from idle balance to approved Gate product activity.</h2>
+            <h2>Treasury Router turns the next best action into an advisor-ready recommendation.</h2>
           </div>
-          <p class="section-kicker">It monitors idle balances, compares approved Gate routes, applies client constraints, drafts the advisor memo, and records the outcome so Gate can activate more capital over time.</p>
+          <p class="section-kicker">AI does the scanning. Advisors keep control. VIP clients make the final decision.</p>
         </div>
         <div class="solution-panel">
           <div class="equation-card">
@@ -1523,10 +1514,9 @@
             <p class="panel-intro">The advisor stays accountable. The VIP makes the decision. Gate gets more product usage, measurable revenue influence, and a clearer view of client demand.</p>
           </div>
           <div class="solution-list">
-            <div class="solution-item"><b>Find idle VIP capital before it stays passive.</b><span>Gate AI surfaces high-value balances that deserve a proactive wealth conversation.</span></div>
-            <div class="solution-item"><b>Compare approved Gate earning routes.</b><span>Earn, lending, staking, quant, structured, and Private Wealth routes become comparable in one simple format.</span></div>
-            <div class="solution-item"><b>Apply suitability and client constraints.</b><span>Routes that violate liquidity, lockup, asset preference, risk comfort, or approval rules are removed with reasons.</span></div>
-            <div class="solution-item"><b>Turn the scan into an advisor-ready package.</b><span>The system drafts client-ready options, then records what the VIP accepts, rejects, or wants to revisit.</span></div>
+            <div class="solution-item"><b>Find idle VIP capital.</b><span>Gate AI surfaces high-value balances that deserve a proactive wealth conversation.</span></div>
+            <div class="solution-item"><b>Compare approved Gate earning routes.</b><span>Earn, lending, staking, quant, structured, and Private Wealth routes become comparable.</span></div>
+            <div class="solution-item"><b>Create the advisor package.</b><span>The system drafts client-ready options, removes poor-fit routes, and records what the VIP chooses.</span></div>
           </div>
         </div>
       </div>
@@ -1537,30 +1527,25 @@
         <div class="section-header">
           <div>
             <div class="eyebrow">Why this belongs in Gate AI</div>
-            <h2>Gate AI should create measurable business outcomes, not just better answers.</h2>
+            <h2>This is where Gate AI creates measurable ROI.</h2>
           </div>
-          <p class="section-kicker">Treasury Router is the VIP Wealth use case: high-value balances, existing products, advisor relationships, and a direct path to more activated capital inside Gate's ecosystem.</p>
+          <p class="section-kicker">High-value balances, existing products, advisor relationships, and a direct path to more activated capital.</p>
         </div>
-        <div class="pitch-grid">
+        <div class="pitch-grid three-up">
           <div class="pitch-card">
             <div class="role">AI strategy</div>
             <h3>It turns Gate AI into a revenue workflow.</h3>
-            <p>The value is not another chat box. It is AI that detects an opportunity, prepares a recommendation, and moves it into advisor review.</p>
+            <p>AI detects the opportunity, prepares the recommendation, and moves it into advisor review.</p>
           </div>
           <div class="pitch-card">
             <div class="role">VIP Wealth</div>
             <h3>It helps relationship managers grow VIP value.</h3>
-            <p>Advisors can cover more VIPs with more personalized, data-backed conversations without lowering the service standard.</p>
+            <p>Advisors can prepare better conversations faster without lowering the service standard.</p>
           </div>
           <div class="pitch-card">
             <div class="role">Existing products</div>
             <h3>It activates products Gate already operates.</h3>
             <p>The MVP can route idle capital into approved Gate products before Gate has to create anything new.</p>
-          </div>
-          <div class="pitch-card">
-            <div class="role">Learning loop</div>
-            <h3>It creates proprietary VIP preference data.</h3>
-            <p>Every approval, rejection, objection, and activation makes future recommendations smarter for that client and more useful for Gate.</p>
           </div>
         </div>
       </div>
@@ -1571,22 +1556,16 @@
         <div class="section-header">
           <div>
             <div class="eyebrow">How it works</div>
-            <h2>The product is built to move from AI analysis to advisor review to client-approved activation.</h2>
+            <h2>The workflow is simple: detect, scan, recommend, approve, measure.</h2>
           </div>
-          <p class="section-kicker">AI does the comparison work, but the output stays practical: approved routes, suitability guardrails, plain tradeoffs, advisor review, VIP decision, and outcome tracking.</p>
+          <p class="section-kicker">The detail stays inside the product. The story stays easy to follow.</p>
         </div>
         <div class="story-grid" aria-label="Gate AI Treasury Router walkthrough">
-          <div class="story-step"><small>01</small><b>Find idle capital</b><span>Gate AI detects balances that have been sitting underused inside the client account.</span></div>
-          <div class="story-step"><small>02</small><b>Confirm constraints</b><span>The advisor sets liquidity reserve, maximum lockup, risk comfort, and preferred assets.</span></div>
-          <div class="story-step"><small>03</small><b>Scan Gate routes</b><span>Approved Earn, lending, staking, quant, structured, and Private Wealth routes are compared.</span></div>
-          <div class="story-step"><small>04</small><b>Apply guardrails</b><span>Routes are removed when liquidity, lockup, risk, asset fit, or suitability checks fail.</span></div>
-          <div class="story-step"><small>05</small><b>Prepare the advisor memo</b><span>The advisor gets options, likely client concerns, and simple language for the conversation.</span></div>
-          <div class="story-step"><small>06</small><b>Track the decision</b><span>Gate records what was approved, why it was chosen, and what should be reviewed next.</span></div>
-        </div>
-        <div class="story-note">
-          <div><b>Advisor stays in control.</b><span>AI drafts options; the advisor reviews before anything reaches the VIP client.</span></div>
-          <div><b>Guardrails are visible.</b><span>Suitability, liquidity, risk, and product eligibility are shown before a recommendation is shared.</span></div>
-          <div><b>Every decision improves the system.</b><span>Gate learns what each VIP accepts, rejects, asks about, and revisits.</span></div>
+          <div class="story-step"><small>01</small><b>Detect</b><span>Find idle balances that deserve review.</span></div>
+          <div class="story-step"><small>02</small><b>Scan</b><span>Compare approved Gate routes.</span></div>
+          <div class="story-step"><small>03</small><b>Recommend</b><span>Create three advisor-ready paths.</span></div>
+          <div class="story-step"><small>04</small><b>Approve</b><span>Advisor reviews. VIP decides.</span></div>
+          <div class="story-step"><small>05</small><b>Measure</b><span>Track capital activated and product usage.</span></div>
         </div>
       </div>
     </section>
@@ -1755,26 +1734,23 @@
             <div class="eyebrow">Why it matters</div>
             <h2>More capital activated. More Gate product usage. Better VIP outcomes.</h2>
           </div>
-          <p class="section-kicker">Treasury Router is not trying to replace advisors. It gives them the AI layer they need to put idle VIP capital to work inside Gate's ecosystem.</p>
+          <p class="section-kicker">The product works because each side gets a direct benefit.</p>
         </div>
         <div class="value-grid">
           <div class="value-card">
             <div class="role">VIP client</div>
             <h3>A clearer path to put capital to work.</h3>
-            <p>VIP clients get a small number of advisor-reviewed options instead of trying to compare every earning product alone.</p>
-            <div class="value-stat"><span>Value:</span> easier decisions, clearer tradeoffs, and more potential utility from assets already on Gate.</div>
+            <p>VIP clients see a few advisor-reviewed options with simple tradeoffs.</p>
           </div>
           <div class="value-card">
             <div class="role">VIP advisor</div>
             <h3>A stronger way to grow VIP relationships.</h3>
-            <p>Advisors get a ready-to-review package with constraints, tradeoffs, likely concerns, and next questions already organized.</p>
-            <div class="value-stat"><span>Value:</span> better service quality, faster preparation, and more productive client conversations.</div>
+            <p>Advisors get faster prep and a cleaner conversation with the client.</p>
           </div>
           <div class="value-card">
             <div class="role">Gate</div>
             <h3>Idle capital becomes active ecosystem value.</h3>
-            <p>Gate can earn more from products it already operates when more VIP capital moves into approved Gate routes.</p>
-            <div class="value-stat"><span>Value:</span> more product usage, stronger VIP retention, better preference data, and measurable revenue influence.</div>
+            <p>Gate gets more product usage, stronger retention signals, and measurable revenue influence.</p>
           </div>
         </div>
       </div>
