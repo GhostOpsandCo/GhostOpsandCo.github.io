@@ -9,13 +9,13 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Elijah Paul",
+  title: "Elijah Paul | AI Solutions Architect & Product Builder",
   description:
-    "Strategic partnerships and revenue operator helping teams accelerate growth through distribution and execution.",
+    "AI solutions architect and product builder creating customer-led products across crypto, fintech, and agentic AI.",
   openGraph: {
-    title: "Elijah Paul",
+    title: "Elijah Paul | AI Solutions Architect & Product Builder",
     description:
-      "Strategic partnerships and revenue operator helping teams accelerate growth through distribution and execution.",
+      "AI solutions architect and product builder creating customer-led products across crypto, fintech, and agentic AI.",
     type: "website",
     url: "https://elijahpaul.io",
   },

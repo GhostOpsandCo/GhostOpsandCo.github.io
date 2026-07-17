@@ -22,31 +22,47 @@ export default function Home() {
             Elijah Paul
           </h1>
 
-          <p className="text-lg sm:text-xl text-white/60 font-medium tracking-tight mb-6">
-            Strategic Partnerships and Revenue Operator
+          <p className="text-lg sm:text-xl text-white/65 font-medium tracking-tight mb-6">
+            AI Solutions Architect &amp; Product Builder
           </p>
 
-          <p className="text-base sm:text-lg text-white/40 max-w-[620px] leading-relaxed">
-            God calls us to serve others and I strive to follow that calling in business and life.
+          <p className="text-xl sm:text-2xl text-white/90 max-w-[720px] leading-relaxed font-medium">
+            I turn customer problems into working AI and financial products.
           </p>
         </section>
 
         {/* Professional Summary */}
-        <section className="w-full max-w-[680px] mb-16 sm:mb-20">
-          <div className="rounded-2xl border border-white/[0.06] bg-white/[0.02] px-8 py-8 sm:px-10 sm:py-10">
-            <p className="text-base sm:text-lg text-white/70 leading-[1.75]">
-              Growth & Revenue Operator who has scaled from $8M+ in annual revenue targets into a
-              seasoned career, producing $20M+ in primary revenue, scaling to $100M+ in ongoing revenue
-              generation. My primary focus is in strategy development, partnership alignment, and execution
-              in a company of passionate individuals whose mission matters deeply.
-            </p>
+        <section className="w-full max-w-[760px] mb-16 sm:mb-20">
+          <div className="rounded-2xl border border-white/[0.07] bg-white/[0.025] px-8 py-8 sm:px-10 sm:py-10">
+            <div className="space-y-6 text-base sm:text-lg text-white/70 leading-[1.75]">
+              <p>
+                I work across crypto, fintech, and AI to map complex workflows, uncover product and
+                operational bottlenecks, and build practical solutions teams can test and bring to market.
+                My work spans product strategy, systems architecture, API integrations, agentic workflows,
+                and human-in-the-loop controls.
+              </p>
+
+              <p>
+                Most recently at Gate AI, I designed and built Treasury Router, a governed advisor workflow
+                that identifies idle capital, matches it to approved products, prepares client and operations
+                packets, and uses x402 for agent-to-agent access. I also audited Gate Router across the
+                product experience, documentation, customer journey, and positioning, turning enterprise
+                feedback into clearer product priorities.
+              </p>
+
+              <p className="border-t border-white/[0.07] pt-6 text-sm sm:text-base text-white/50">
+                $20M+ in launch revenue &middot; $100M+ in ecosystem and trading volume &middot; Founder of a
+                Web3 company that reached a $50M venture-backed valuation
+              </p>
+            </div>
           </div>
         </section>
 
         {/* Footer CTA */}
         <section className="flex flex-col items-center text-center">
           <p className="text-base sm:text-lg text-white/50 mb-8 max-w-[520px] leading-relaxed">
-            If you are building and need growth, I can help. Let&apos;s talk.
+            Building AI-native finance or crypto infrastructure? I can help turn the workflow into a
+            working product.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4">
@@ -66,6 +82,10 @@ export default function Home() {
             </a>
           </div>
         </section>
+
+        <p className="mt-16 text-sm sm:text-base text-white/30 max-w-[600px] text-center leading-relaxed">
+          God calls us to serve others, and I strive to follow that calling in business and life.
+        </p>
 
         {/* Footer */}
         <footer className="mt-20 sm:mt-28 text-center">
