@@ -1,0 +1,31 @@
+# Elijah Paul
+
+Elijah Paul is an AI solutions architect and product builder who turns customer and operating problems into working AI products for crypto, fintech, and agentic systems.
+
+Canonical site: https://elijahpaul.io
+Contact: elijah@elijahpaul.io
+LinkedIn: https://www.linkedin.com/in/elijahpaul
+GitHub: https://github.com/GhostOpsandCo
+
+## Main pages
+
+- Portfolio: https://elijahpaul.io/work
+- AI product consulting and solutions architecture: https://elijahpaul.io/services
+- About: https://elijahpaul.io/about
+- Resume: https://elijahpaul.io/resume
+- Contact: https://elijahpaul.io/contact
+
+## Selected work
+
+- Treasury Router: governed AI financial-advisor workflow and x402 merchant proof-of-flow. Working prototype with deterministic development data; no autonomous execution or live client funds.
+- GridSynapse: buyer-side AI compute procurement workflow using public pricing and carbon inputs with deterministic optimization. Modeled capacity, latency, and availability; no provider reservation or spend.
+- Orelis: inbound voice-agent product for service-business qualification and human handoff. Production telephony and CRM behavior depend on final implementation.
+- Monarch Doctor: open-source build-time preflight for supported x402 payment-code patterns. It is not runtime payment enforcement, fraud prevention, or compliance software.
+
+## Services
+
+- AI Product Opportunity Sprint
+- AI Product Build
+- Embedded AI Solutions Architect
+
+Elijah is available for full-time AI solutions and product roles, selected consulting engagements, custom implementations, and appropriate product partnership or acquisition discussions.

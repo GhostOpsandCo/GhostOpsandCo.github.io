@@ -1,99 +1,195 @@
 import Image from "next/image";
+import Link from "next/link";
+import { JsonLd } from "@/components/JsonLd";
+import { ProjectCard } from "@/components/ProjectCard";
+import { mailto, projects, site } from "@/lib/site";
+
+const audiencePaths = [
+  {
+    label: "Hiring full-time",
+    title: "Add a customer-led AI product builder",
+    copy: "I work between customers, product, and engineering to turn ambiguous needs into working products and implementation plans.",
+    href: "/resume",
+    action: "Review experience",
+  },
+  {
+    label: "Need a product built",
+    title: "Go from product gap to a testable build",
+    copy: "I can audit the workflow, design the solution, build the product foundation, and help the team validate it with users.",
+    href: "/services",
+    action: "View services",
+  },
+  {
+    label: "Exploring a product",
+    title: "Inspect, use, license, or acquire selected work",
+    copy: "Each case study identifies what works today, the operating boundary, and the most relevant next step.",
+    href: "/work",
+    action: "Browse products",
+  },
+];
 
 export default function Home() {
   return (
-    <div className="bg-gradient-dark min-h-screen flex items-center justify-center px-6 py-20 sm:py-28">
-      <main className="w-full max-w-[980px] flex flex-col items-center">
-        {/* Hero */}
-        <section className="flex flex-col items-center text-center mb-16 sm:mb-20">
-          <div className="relative mb-8">
-            <Image
-              src="/headshot.jpg"
-              alt="Elijah Paul"
-              width={140}
-              height={140}
-              priority
-              className="rounded-2xl border border-white/10 object-cover"
-              style={{ width: 140, height: 140 }}
-            />
+    <main id="main-content">
+      <JsonLd
+        data={[
+          {
+            "@context": "https://schema.org",
+            "@type": "Person",
+            name: site.name,
+            url: site.url,
+            image: `${site.url}/headshot.jpg`,
+            jobTitle: site.title,
+            description: site.description,
+            sameAs: [site.linkedin, site.github],
+            knowsAbout: [
+              "AI product development",
+              "AI solutions architecture",
+              "agentic AI",
+              "financial technology",
+              "crypto infrastructure",
+              "x402 payments",
+            ],
+          },
+          {
+            "@context": "https://schema.org",
+            "@type": "WebSite",
+            name: "Elijah Paul Portfolio",
+            url: site.url,
+            description: site.description,
+          },
+        ]}
+      />
+
+      <section className="home-hero" aria-labelledby="hero-title">
+        <div className="hero-shade" />
+        <div className="site-shell hero-content">
+          <div className="identity-line">
+            <Image src="/headshot.jpg" alt="Elijah Paul" width={48} height={48} priority />
+            <span>AI Solutions Architect · Product Builder</span>
           </div>
-
-          <h1 className="text-5xl sm:text-6xl font-semibold tracking-tight text-white leading-none mb-4">
-            Elijah Paul
-          </h1>
-
-          <p className="text-lg sm:text-xl text-white/65 font-medium tracking-tight mb-6">
-            AI Solutions Architect &amp; Product Builder
+          <h1 id="hero-title">Elijah Paul turns customer problems into working AI products.</h1>
+          <p>
+            I work with crypto, fintech, and AI teams to find product gaps, design the workflow,
+            and build the version customers and internal teams can actually test.
           </p>
+          <div className="hero-actions">
+            <Link className="button button-primary" href="/work">View selected work</Link>
+            <a className="button button-secondary" href={mailto("AI role or product build")}>Discuss a role or build</a>
+            <Link className="button button-quiet" href="/resume">Resume</Link>
+          </div>
+          <div className="capability-line" aria-label="Selected capabilities">
+            <span>Advisor workflows</span>
+            <span>Compute optimization</span>
+            <span>Voice agents</span>
+            <span>x402 payments</span>
+          </div>
+        </div>
+      </section>
 
-          <p className="text-xl sm:text-2xl text-white/90 max-w-[720px] leading-relaxed font-medium">
-            I turn customer problems into working AI and financial products.
-          </p>
-        </section>
+      <section className="section-band section-intro">
+        <div className="site-shell intro-grid">
+          <div>
+            <p className="eyebrow">What I do</p>
+            <h2>I find the expensive bottleneck, then build the product that removes it.</h2>
+          </div>
+          <div className="large-copy">
+            <p>
+              My work sits between customer feedback, product strategy, solution architecture, and
+              implementation. I am most useful when a team has a real market opportunity but the path
+              from customer need to working product is still unclear.
+            </p>
+            <p>
+              The case studies below show the operating workflow, my role, what works today, and the
+              boundaries that still require real integrations or production validation.
+            </p>
+          </div>
+        </div>
+      </section>
 
-        {/* Professional Summary */}
-        <section className="w-full max-w-[760px] mb-16 sm:mb-20">
-          <div className="rounded-2xl border border-white/[0.07] bg-white/[0.025] px-8 py-8 sm:px-10 sm:py-10">
-            <div className="space-y-6 text-base sm:text-lg text-white/70 leading-[1.75]">
-              <p>
-                I work across crypto, fintech, and AI to map complex workflows, uncover product and
-                operational bottlenecks, and build practical solutions teams can test and bring to market.
-                My work spans product strategy, systems architecture, API integrations, agentic workflows,
-                and human-in-the-loop controls.
-              </p>
-
-              <p>
-                Most recently at Gate AI, I designed and built Treasury Router, a governed advisor workflow
-                that identifies idle capital, matches it to approved products, prepares client and operations
-                packets, and uses x402 for agent-to-agent access. I also audited Gate Router across the
-                product experience, documentation, customer journey, and positioning, turning enterprise
-                feedback into clearer product priorities.
-              </p>
-
-              <p className="border-t border-white/[0.07] pt-6 text-sm sm:text-base text-white/50">
-                $20M+ in launch revenue &middot; $100M+ in ecosystem and trading volume &middot; Founder of a
-                Web3 company that reached a $50M venture-backed valuation
-              </p>
+      <section className="section-band section-soft" aria-labelledby="paths-title">
+        <div className="site-shell">
+          <div className="section-heading">
+            <div>
+              <p className="eyebrow">Choose the relevant path</p>
+              <h2 id="paths-title">How I can create value</h2>
             </div>
           </div>
-        </section>
-
-        {/* Footer CTA */}
-        <section className="flex flex-col items-center text-center">
-          <p className="text-base sm:text-lg text-white/50 mb-8 max-w-[520px] leading-relaxed">
-            Building AI-native finance or crypto infrastructure? I can help turn the workflow into a
-            working product.
-          </p>
-
-          <div className="flex flex-col sm:flex-row gap-4">
-            <a
-              href="mailto:elijah@elijahpaul.io"
-              className="inline-flex items-center justify-center h-12 px-8 rounded-full bg-white text-black text-sm font-medium tracking-tight hover:bg-white/90 transition-colors"
-            >
-              Email Me
-            </a>
-            <a
-              href="https://www.linkedin.com/in/elijahpaul"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center justify-center h-12 px-8 rounded-full border border-white/15 text-white/80 text-sm font-medium tracking-tight hover:bg-white/[0.06] transition-colors"
-            >
-              LinkedIn
-            </a>
+          <div className="path-grid">
+            {audiencePaths.map((path, index) => (
+              <article className="path-item" key={path.title}>
+                <span className="path-index">0{index + 1}</span>
+                <p className="path-label">{path.label}</p>
+                <h3>{path.title}</h3>
+                <p>{path.copy}</p>
+                <Link className="text-link" href={path.href}>{path.action}</Link>
+              </article>
+            ))}
           </div>
-        </section>
+        </div>
+      </section>
 
-        <p className="mt-16 text-sm sm:text-base text-white/30 max-w-[600px] text-center leading-relaxed">
-          God calls us to serve others, and I strive to follow that calling in business and life.
-        </p>
+      <section className="section-band" aria-labelledby="selected-work-title">
+        <div className="site-shell">
+          <div className="section-heading">
+            <div>
+              <p className="eyebrow">Selected work</p>
+              <h2 id="selected-work-title">Working products, not slide-deck concepts</h2>
+            </div>
+            <Link className="text-link" href="/work">View all work</Link>
+          </div>
+          <div className="project-grid">
+            {projects.map((project) => <ProjectCard key={project.slug} project={project} />)}
+          </div>
+        </div>
+      </section>
 
-        {/* Footer */}
-        <footer className="mt-20 sm:mt-28 text-center">
-          <p className="text-xs text-white/20">
-            &copy; {new Date().getFullYear()} Elijah Paul
-          </p>
-        </footer>
-      </main>
-    </div>
+      <section className="section-band section-dark" aria-labelledby="method-title">
+        <div className="site-shell method-layout">
+          <div>
+            <p className="eyebrow eyebrow-light">Working method</p>
+            <h2 id="method-title">From customer signal to usable product</h2>
+          </div>
+          <ol className="method-list">
+            <li><span>01</span><div><strong>Find the bottleneck</strong><p>Listen to customers, inspect the current workflow, and identify where value is being lost.</p></div></li>
+            <li><span>02</span><div><strong>Design the operating flow</strong><p>Define the user, decision logic, controls, data contracts, and the smallest credible product.</p></div></li>
+            <li><span>03</span><div><strong>Build and validate</strong><p>Ship the working version, test it with real users, and turn feedback into product priorities.</p></div></li>
+          </ol>
+        </div>
+      </section>
+
+      <section className="section-band section-soft" aria-labelledby="services-title">
+        <div className="site-shell service-preview">
+          <div>
+            <p className="eyebrow">Available for selected work</p>
+            <h2 id="services-title">Product strategy that ends in something usable</h2>
+            <p>
+              Start with a focused product opportunity sprint, a working AI product build, or an
+              embedded solutions role alongside customers and your internal team.
+            </p>
+          </div>
+          <div className="service-preview-actions">
+            <Link className="button button-primary" href="/services">View services</Link>
+            <a className="button button-outline" href={mailto("AI product opportunity")}>Describe the problem</a>
+          </div>
+        </div>
+      </section>
+
+      <section className="contact-band" aria-labelledby="contact-title">
+        <div className="site-shell contact-band-inner">
+          <div>
+            <p className="eyebrow eyebrow-light">Start a useful conversation</p>
+            <h2 id="contact-title">Hiring for this skill set or have a workflow worth fixing?</h2>
+          </div>
+          <div>
+            <p>
+              Send the product, customer problem, or role. I will tell you where I can help and what I
+              would examine first.
+            </p>
+            <a className="button button-inverse" href={mailto("AI product or solutions conversation")}>Email Elijah</a>
+          </div>
+        </div>
+      </section>
+    </main>
   );
 }
