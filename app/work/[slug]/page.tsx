@@ -62,17 +62,24 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
 
       <section className="case-hero">
         <div className="case-hero-image">
-          <Image src={project.image} alt={project.imageAlt} fill priority sizes="100vw" />
+          <Image src={project.image} alt={project.imageAlt} fill loading="eager" sizes="100vw" />
           <div className="case-hero-shade" />
         </div>
         <div className="site-shell case-hero-content">
           <Link className="back-link" href="/work">All work</Link>
-          <p className="eyebrow eyebrow-light">{project.category}</p>
-          <h1>{project.name}</h1>
-          <p>{project.summary}</p>
-          <div className="case-actions">
-            {project.liveUrl && <a className="button button-inverse" href={project.liveUrl} target="_blank" rel="noreferrer">{project.primaryAction}</a>}
-            {project.sourceUrl && <a className="button button-dark-outline" href={project.sourceUrl} target="_blank" rel="noreferrer">Inspect source</a>}
+          <div className="case-hero-grid">
+            <div className="case-hero-copy">
+              <p className="eyebrow eyebrow-light">{project.category}</p>
+              <h1>{project.name}</h1>
+              <p>{project.summary}</p>
+              <div className="case-actions">
+                {project.liveUrl && <a className="button button-inverse" href={project.liveUrl} target="_blank" rel="noreferrer">{project.primaryAction}</a>}
+                {project.sourceUrl && <a className="button button-dark-outline" href={project.sourceUrl} target="_blank" rel="noreferrer">Inspect source</a>}
+              </div>
+            </div>
+            <div className="case-hero-window" aria-hidden="true">
+              <Image src={project.image} alt="" fill loading="eager" sizes="(max-width: 760px) 90vw, 42vw" />
+            </div>
           </div>
         </div>
       </section>
@@ -82,6 +89,14 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
           <div><span>Status</span><strong>{project.status}</strong></div>
           <div><span>Primary use case</span><strong>{project.primaryIntent}</strong></div>
           <div><span>My role</span><strong>{project.role}</strong></div>
+        </div>
+      </section>
+
+      <section className="case-product-proof" aria-label={`${project.name} product preview`}>
+        <div className="site-shell">
+          <div className="case-product-frame">
+            <Image src={project.image} alt={project.imageAlt} width={1440} height={900} sizes="(max-width: 760px) 100vw, 1120px" />
+          </div>
         </div>
       </section>
 

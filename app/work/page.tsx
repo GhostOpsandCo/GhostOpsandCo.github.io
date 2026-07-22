@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { ProjectCard } from "@/components/ProjectCard";
 import { projects } from "@/lib/site";
 
@@ -18,22 +19,29 @@ export const metadata: Metadata = {
 export default function WorkPage() {
   return (
     <main id="main-content">
-      <section className="page-hero">
+      <section className="page-hero page-hero-work">
         <div className="site-shell page-hero-grid">
           <div>
             <p className="eyebrow">Selected work</p>
             <h1>AI products built around real customer and operating problems.</h1>
           </div>
           <p className="large-copy">
-            These case studies show what I built, the decisions behind it, what works today, and what
-            still requires production integration. The point is not a polished mockup. It is the ability
-            to turn an ambiguous problem into a working, testable system.
+            Each case study shows the customer problem, product decisions, working surface, and
+            operating boundaries, so you can evaluate how I turn ambiguity into something a team can
+            test and improve.
           </p>
+        </div>
+        <div className="work-preview-strip" aria-hidden="true">
+          {projects.map((project) => (
+            <div key={project.slug}><Image src={project.image} alt="" fill loading="eager" sizes="25vw" /></div>
+          ))}
         </div>
       </section>
       <section className="section-band">
-        <div className="site-shell project-grid">
-          {projects.map((project) => <ProjectCard key={project.slug} project={project} />)}
+        <div className="site-shell project-grid project-grid-editorial">
+          {projects.map((project, index) => (
+            <ProjectCard key={project.slug} project={project} featured={index < 2} reverse={index === 1} />
+          ))}
         </div>
       </section>
     </main>

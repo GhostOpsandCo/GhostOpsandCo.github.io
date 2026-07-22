@@ -5,7 +5,6 @@ const navigation = [
   { href: "/services", label: "Services" },
   { href: "/about", label: "About" },
   { href: "/resume", label: "Resume" },
-  { href: "/contact", label: "Contact" },
 ];
 
 export function SiteHeader() {
@@ -26,12 +25,18 @@ export function SiteHeader() {
           ))}
         </nav>
 
+        <div className="header-actions">
+          <span className="header-availability"><i aria-hidden="true" /> Available for selected work</span>
+          <Link className="header-contact" href="/contact">Start a conversation</Link>
+        </div>
+
         <details className="mobile-nav">
           <summary aria-label="Open navigation">Menu</summary>
           <nav aria-label="Mobile navigation">
             {navigation.map((item) => (
               <Link href={item.href} key={item.href}>{item.label}</Link>
             ))}
+            <Link href="/contact">Contact</Link>
           </nav>
         </details>
       </div>

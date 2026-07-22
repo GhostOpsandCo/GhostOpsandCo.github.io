@@ -62,11 +62,22 @@ export default function Home() {
       />
 
       <section className="home-hero" aria-labelledby="hero-title">
-        <div className="hero-shade" />
+        <div className="hero-grid" aria-hidden="true" />
+        <div className="hero-product-scene" aria-hidden="true">
+          <div className="hero-shot hero-shot-primary">
+            <Image src="/projects/gridsynapse.png" alt="" fill loading="eager" sizes="(max-width: 760px) 92vw, 58vw" />
+          </div>
+          <div className="hero-shot hero-shot-secondary">
+            <Image src="/projects/treasury-router.png" alt="" fill loading="eager" sizes="(max-width: 760px) 72vw, 38vw" />
+          </div>
+          <div className="hero-shot hero-shot-tertiary">
+            <Image src="/projects/orelis.jpg" alt="" fill loading="eager" sizes="(max-width: 760px) 40vw, 20vw" />
+          </div>
+        </div>
         <div className="site-shell hero-content">
           <div className="identity-line">
-            <Image src="/headshot.jpg" alt="Elijah Paul" width={48} height={48} priority />
-            <span>AI Solutions Architect · Product Builder</span>
+            <Image src="/headshot.jpg" alt="Elijah Paul" width={48} height={48} loading="eager" />
+            <span>AI Solutions Architect <b>Product Builder</b></span>
           </div>
           <h1 id="hero-title">Elijah Paul turns customer problems into working AI products.</h1>
           <p>
@@ -75,8 +86,8 @@ export default function Home() {
           </p>
           <div className="hero-actions">
             <Link className="button button-primary" href="/work">View selected work</Link>
-            <a className="button button-secondary" href={mailto("AI role or product build")}>Discuss a role or build</a>
-            <Link className="button button-quiet" href="/resume">Resume</Link>
+            <a className="button button-secondary" href={mailto("AI role or product build")}>Work with me</a>
+            <Link className="hero-resume-link" href="/resume">View resume</Link>
           </div>
           <div className="capability-line" aria-label="Selected capabilities">
             <span>Advisor workflows</span>
@@ -84,6 +95,15 @@ export default function Home() {
             <span>Voice agents</span>
             <span>x402 payments</span>
           </div>
+        </div>
+      </section>
+
+      <section className="proof-rail" aria-label="Portfolio summary">
+        <div className="site-shell proof-rail-grid">
+          <div><strong>04</strong><span>Working product systems</span></div>
+          <div><strong>$20M+</strong><span>Launch revenue contributed</span></div>
+          <div><strong>$100M+</strong><span>Ecosystem and trading volume supported</span></div>
+          <div><strong>$50M</strong><span>Founder-built venture valuation</span></div>
         </div>
       </section>
 
@@ -107,6 +127,23 @@ export default function Home() {
         </div>
       </section>
 
+      <section className="section-band selected-work-band" aria-labelledby="selected-work-title">
+        <div className="site-shell">
+          <div className="section-heading">
+            <div>
+              <p className="eyebrow">Selected work</p>
+              <h2 id="selected-work-title">Products built to be used, tested, and improved</h2>
+            </div>
+            <Link className="text-link" href="/work">View all work</Link>
+          </div>
+          <div className="project-grid project-grid-editorial">
+            {projects.map((project, index) => (
+              <ProjectCard key={project.slug} project={project} featured={index < 2} reverse={index === 1} />
+            ))}
+          </div>
+        </div>
+      </section>
+
       <section className="section-band section-soft" aria-labelledby="paths-title">
         <div className="site-shell">
           <div className="section-heading">
@@ -125,21 +162,6 @@ export default function Home() {
                 <Link className="text-link" href={path.href}>{path.action}</Link>
               </article>
             ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="section-band" aria-labelledby="selected-work-title">
-        <div className="site-shell">
-          <div className="section-heading">
-            <div>
-              <p className="eyebrow">Selected work</p>
-              <h2 id="selected-work-title">Working products, not slide-deck concepts</h2>
-            </div>
-            <Link className="text-link" href="/work">View all work</Link>
-          </div>
-          <div className="project-grid">
-            {projects.map((project) => <ProjectCard key={project.slug} project={project} />)}
           </div>
         </div>
       </section>

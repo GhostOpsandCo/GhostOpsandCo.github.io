@@ -47,7 +47,7 @@ export default function AboutPage() {
       <section className="about-hero">
         <div className="site-shell about-hero-grid">
           <div className="about-portrait">
-            <Image src="/headshot.jpg" alt="Elijah Paul" fill priority sizes="(max-width: 760px) 100vw, 42vw" />
+            <Image src="/headshot.jpg" alt="Elijah Paul" fill loading="eager" sizes="(max-width: 760px) 100vw, 42vw" />
           </div>
           <div className="about-intro">
             <p className="eyebrow">About</p>
