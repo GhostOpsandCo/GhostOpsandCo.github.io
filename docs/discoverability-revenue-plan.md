@@ -8,7 +8,7 @@ The site has three commercial jobs:
 
 1. Help hiring teams evaluate Elijah for AI Solutions Architect, AI Product, and forward-deployed product roles.
 2. Help crypto, fintech, and AI companies hire Elijah to find and build a product solution.
-3. Help product buyers, partners, and acquirers inspect working products and start a commercial conversation.
+3. Help product buyers, partners, and acquirers inspect product systems at their accurately labeled current state and start a commercial conversation.
 
 Traffic without qualified conversations is not success. The primary scorecard is interviews, consulting inquiries, product conversations, and booked revenue.
 
@@ -49,7 +49,7 @@ The site should not ask one page to rank for every service. Its search architect
 | Treasury Router | AI treasury and institutional advisor workflow | Discuss product or role fit |
 | GridSynapse | AI compute optimization and procurement | Inspect product and source |
 | Orelis | AI voice agent for service businesses | Inspect commercial product |
-| Monarch Doctor | x402 and agent payment developer tooling | Inspect open-source implementation |
+| Monarch Shield | x402 and agent payment developer tooling | Inspect open-source implementation |
 | Services | AI product consulting and solutions architecture | Start a scoped build conversation |
 | Resume | AI solutions architect resume | Download resume or discuss a role |
 | Contact | Hire an AI product builder | Send a qualified inquiry |
@@ -81,7 +81,7 @@ Generic calls to action are secondary. Page-specific actions should use the visi
 - Outcome: working MVP, deterministic core logic, AI-assisted workflow where useful, instrumentation, and pilot-ready handoff.
 - Typical duration: 4-8 weeks.
 - Starting range: $15,000-$40,000+ depending on integrations and risk.
-- Proof: Treasury Router, GridSynapse, Orelis, and Monarch Doctor.
+- Proof: Treasury Router, GridSynapse, Orelis, and Monarch Shield.
 
 ### Embedded AI Solutions Architect
 
@@ -97,7 +97,7 @@ Generic calls to action are secondary. Page-specific actions should use the visi
 | Treasury Router | Institutional AI workflow, product strategy, advisor UX, x402 | AI treasury/advisor workflow build | Gate-aligned concept and product foundation | x402 proof-of-flow only; no live execution claim | Partnership or licensed workflow discussion where rights allow |
 | GridSynapse | Data products, recommendation logic, procurement UX | Compute optimization dashboard and integration | Public product and source | Adapter-ready; paid procurement data is not enabled | Product/IP discussion |
 | Orelis | Voice AI, service workflow, conversion UX | Voice agent implementation for service businesses | Public commercial site | Product-led commercial inquiry | Commercial partnership or acquisition inquiry subject to rights |
-| Monarch Doctor | Agent tooling, x402, developer experience | x402 integration and static preflight tooling | Public source | Open-source tool; MIT license | Support, integration, or derivative build |
+| Monarch Shield | Agent tooling, x402, developer experience | x402 integration and static preflight tooling | Public source | Open-source tool; MIT license | Support, integration, or derivative build |
 
 ## Organic Search and Answer-Engine Foundation
 

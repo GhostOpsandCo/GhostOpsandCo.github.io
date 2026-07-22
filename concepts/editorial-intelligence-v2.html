@@ -1,0 +1,375 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Editorial Intelligence V2 — Art Direction</title>
+  <style>
+    :root {
+      --paper: #f3efe5;
+      --paper-deep: #e9e2d4;
+      --ink: #111b27;
+      --ink-soft: #4e5963;
+      --night: #101820;
+      --night-2: #18232d;
+      --cobalt: #1546e8;
+      --copper: #8f3c1b;
+      --line: rgba(17, 27, 39, 0.18);
+      --sans: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      --serif: Iowan Old Style, Baskerville, "Times New Roman", serif;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--paper);
+      font-family: var(--sans);
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: inherit; }
+    img { display: block; max-width: 100%; }
+    .shell { width: min(1320px, calc(100% - 64px)); margin: 0 auto; }
+    .eyebrow {
+      margin: 0;
+      color: var(--copper);
+      font-size: 12px;
+      font-weight: 750;
+      letter-spacing: .16em;
+      line-height: 1.3;
+      text-transform: uppercase;
+    }
+    .nav {
+      position: absolute;
+      z-index: 5;
+      inset: 0 0 auto;
+      border-bottom: 1px solid rgba(17, 27, 39, .12);
+    }
+    .nav-inner {
+      min-height: 80px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 28px;
+    }
+    .brand { min-height: 44px; display: flex; align-items: center; gap: 12px; text-decoration: none; font-weight: 760; }
+    .brand-mark {
+      width: 34px; height: 34px; border: 1px solid var(--ink); border-radius: 50%;
+      display: grid; place-items: center; font: italic 20px/1 var(--serif);
+    }
+    .nav-links { display: flex; align-items: center; gap: 28px; font-size: 14px; }
+    .nav-links a { text-decoration: none; }
+    .nav-cta {
+      min-height: 44px;
+      padding: 0 14px;
+      display: inline-flex;
+      align-items: center;
+      color: var(--ink);
+      background: transparent;
+      border: 1px solid var(--line);
+      border-radius: 6px;
+    }
+    a:focus-visible { outline: 3px solid var(--cobalt); outline-offset: 4px; }
+
+    .hero {
+      position: relative;
+      min-height: 820px;
+      overflow: hidden;
+      background:
+        linear-gradient(90deg, transparent 0 49.92%, rgba(17,27,39,.06) 50%, transparent 50.08%),
+        radial-gradient(circle at 75% 30%, rgba(21,70,232,.11), transparent 28%),
+        var(--paper);
+    }
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      opacity: .22;
+      pointer-events: none;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.16'/%3E%3C/svg%3E");
+    }
+    .hero-inner {
+      position: relative;
+      z-index: 2;
+      min-height: 820px;
+      padding-top: 118px;
+      display: grid;
+      grid-template-columns: minmax(0, 1.05fr) minmax(430px, .95fr);
+      align-items: end;
+      gap: 56px;
+    }
+    .hero-copy { align-self: center; padding: 48px 0 64px; }
+    .hero h1 {
+      max-width: 760px;
+      margin: 26px 0 28px;
+      font-family: var(--serif);
+      font-size: 72px;
+      font-weight: 460;
+      letter-spacing: -.052em;
+      line-height: .94;
+    }
+    .hero h1 em { color: var(--cobalt); font-weight: 460; }
+    .hero-summary {
+      max-width: 590px;
+      margin: 0 0 34px;
+      color: var(--ink-soft);
+      font-size: 20px;
+      line-height: 1.55;
+    }
+    .actions { display: flex; align-items: center; gap: 24px; flex-wrap: wrap; }
+    .button {
+      min-height: 52px;
+      padding: 0 21px;
+      border: 1px solid var(--cobalt);
+      border-radius: 6px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 24px;
+      background: var(--cobalt);
+      color: white;
+      font-weight: 720;
+      text-decoration: none;
+    }
+    .button span { font-size: 18px; }
+    .text-link { font-weight: 700; text-underline-offset: 6px; }
+    .cta-note { max-width: 470px; margin: 16px 0 0; color: var(--ink-soft); font-size: 14px; line-height: 1.5; }
+
+    .portrait-stage { position: relative; height: 670px; align-self: end; }
+    .portrait-stage::before {
+      content: "";
+      position: absolute;
+      z-index: -1;
+      width: 90px;
+      height: 410px;
+      top: 74px;
+      right: -34px;
+      background:
+        radial-gradient(circle at 50% 2%, var(--cobalt) 0 4px, transparent 5px),
+        radial-gradient(circle at 50% 34%, var(--cobalt) 0 4px, transparent 5px),
+        radial-gradient(circle at 50% 67%, var(--copper) 0 4px, transparent 5px),
+        radial-gradient(circle at 50% 98%, var(--copper) 0 4px, transparent 5px),
+        linear-gradient(var(--cobalt), var(--copper)) center / 1px 100% no-repeat;
+    }
+    .portrait {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      width: min(100%, 590px);
+      height: 630px;
+      object-fit: cover;
+      object-position: 50% 35%;
+      filter: saturate(.88) contrast(1.03);
+      clip-path: polygon(7% 0, 100% 0, 100% 100%, 0 100%, 0 12%);
+    }
+    .author-tag {
+      position: absolute;
+      left: 6px;
+      bottom: 64px;
+      width: 238px;
+      padding: 16px 18px;
+      color: white;
+      background: var(--night);
+      border-left: 4px solid var(--cobalt);
+    }
+    .author-tag strong { display: block; font-size: 17px; }
+    .author-tag span { display: block; margin-top: 5px; color: #b7c1c9; font-size: 13px; line-height: 1.45; }
+
+    .notation-band { position: relative; z-index: 3; margin-top: -1px; color: white; background: var(--night); }
+    .notation-grid {
+      display: grid;
+      grid-template-columns: .92fr 1.5fr;
+      gap: 64px;
+      padding: 110px 0 120px;
+    }
+    .case-intro { display: flex; flex-direction: column; align-items: flex-start; }
+    .case-index { color: #87a5ff; font-size: 12px; font-weight: 750; letter-spacing: .18em; text-transform: uppercase; }
+    .case-intro h2 {
+      margin: 25px 0 18px;
+      font: 500 clamp(48px, 5vw, 78px)/.98 var(--serif);
+      letter-spacing: -.035em;
+    }
+    .case-intro > p { color: #b8c1c8; font-size: 17px; line-height: 1.6; }
+    .case-link { margin-top: auto; color: white; font-weight: 720; text-underline-offset: 6px; }
+    .case-object { position: relative; }
+    .product-frame {
+      padding: 9px;
+      background: #dfe5ef;
+      border: 1px solid rgba(255,255,255,.22);
+      box-shadow: 0 42px 90px rgba(0,0,0,.34);
+    }
+    .product-frame img { width: 100%; height: auto; }
+    .evidence-steps {
+      position: relative;
+      margin-top: 32px;
+      padding-top: 28px;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+      border-top: 1px solid rgba(255,255,255,.22);
+    }
+    .evidence-steps::before {
+      content: "";
+      position: absolute;
+      top: -1px; left: 0;
+      width: 54%; height: 2px;
+      background: linear-gradient(90deg, var(--copper), var(--cobalt));
+    }
+    .evidence-step span { display: block; color: #87a5ff; font-size: 12px; font-weight: 800; letter-spacing: .11em; text-transform: uppercase; }
+    .evidence-step p { margin: 9px 0 0; color: #d8dfe4; font-size: 14px; line-height: 1.48; }
+
+    .selected {
+      padding: 118px 0 128px;
+      background: var(--paper);
+    }
+    .selected-head {
+      display: grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap: 56px;
+      align-items: end;
+      padding-bottom: 52px;
+      border-bottom: 1px solid var(--line);
+    }
+    .selected h2 { margin: 20px 0 0; font: 500 clamp(50px,5vw,76px)/1 var(--serif); letter-spacing: -.04em; }
+    .selected-head > p { margin: 0; color: var(--ink-soft); font-size: 17px; line-height: 1.6; }
+    .work-row {
+      display: grid;
+      grid-template-columns: .78fr 1.22fr;
+      gap: 56px;
+      align-items: center;
+      padding-top: 64px;
+    }
+    .work-copy h3 { margin: 18px 0 16px; font: 500 40px/1.05 var(--serif); letter-spacing: -.025em; }
+    .work-copy p { color: var(--ink-soft); line-height: 1.62; }
+    .work-meta { padding-left: 18px; border-left: 3px solid var(--cobalt); }
+    .work-meta strong { display: block; margin-bottom: 7px; }
+    .work-visual {
+      overflow: hidden;
+      background: #edf0f4;
+      border: 1px solid rgba(17,27,39,.16);
+      box-shadow: 0 24px 60px rgba(17,27,39,.13);
+    }
+    .work-visual img { width: 100%; }
+
+    @media (max-width: 900px) {
+      .shell { width: min(100% - 32px, 720px); }
+      .nav-inner { min-height: 64px; }
+      .nav-links a:not(.nav-cta) { display: none; }
+      .nav-cta { padding: 0 12px; }
+      .hero, .hero-inner { min-height: auto; }
+      .hero-inner { padding-top: 108px; grid-template-columns: 1fr; gap: 32px; }
+      .hero-copy { padding: 34px 0 0; }
+      .hero h1 { margin-top: 18px; font-size: 58px; }
+      .hero-summary { font-size: 17px; }
+      .actions { align-items: stretch; gap: 14px; }
+      .button { width: 100%; justify-content: space-between; }
+      .text-link { display: inline-flex; min-height: 44px; align-items: center; }
+      .portrait-stage { height: 470px; }
+      .portrait { height: 470px; width: 100%; object-position: 50% 28%; }
+      .author-tag { left: 0; bottom: 20px; }
+      .notation-grid { grid-template-columns: 1fr; gap: 46px; padding: 78px 0 84px; }
+      .case-link { margin-top: 22px; }
+      .evidence-steps { grid-template-columns: 1fr 1fr; }
+      .selected { padding: 84px 0; }
+      .selected-head, .work-row { grid-template-columns: 1fr; gap: 32px; }
+      .work-visual { grid-row: 1; }
+    }
+
+    @media (max-width: 480px) {
+      .shell { width: calc(100% - 28px); }
+      .brand-mark { width: 30px; height: 30px; font-size: 17px; }
+      .brand span { font-size: 14px; }
+      .nav-cta { font-size: 12px; }
+      .hero { background: radial-gradient(circle at 75% 45%, rgba(21,70,232,.1), transparent 30%), var(--paper); }
+      .hero-inner { padding-top: 94px; }
+      .hero-copy { padding-top: 24px; }
+      .eyebrow { font-size: 11px; letter-spacing: .12em; }
+      .hero h1 { margin: 17px 0 21px; font-size: 43px; line-height: 1; }
+      .hero-summary { margin-bottom: 24px; font-size: 16px; line-height: 1.5; }
+      .cta-note { font-size: 14px; }
+      .portrait-stage { height: 400px; }
+      .portrait { height: 400px; }
+      .author-tag { width: 210px; padding: 13px 15px; }
+      .case-intro h2 { font-size: 50px; }
+      .evidence-steps { grid-template-columns: 1fr; gap: 22px; }
+      .evidence-step p { font-size: 14px; }
+      .selected h2 { font-size: 50px; }
+      .work-copy h3 { font-size: 36px; }
+    }
+
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+  </style>
+</head>
+<body>
+  <header class="nav">
+    <div class="shell nav-inner">
+      <a class="brand" href="#top"><span class="brand-mark">ep</span><span>elijahpaul.io</span></a>
+      <nav class="nav-links" aria-label="Primary">
+        <a href="#work">Work</a><a href="#method">Method</a><a href="#about">About</a>
+        <a class="nav-cta" href="https://elijahpaul.io/contact">Project brief →</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="shell hero-inner">
+        <div class="hero-copy">
+          <p class="eyebrow">AI product builder for crypto, fintech, and AI teams</p>
+          <h1 id="hero-title">Turn a costly product bottleneck into a <em>working AI product.</em></h1>
+          <p class="hero-summary">I’m Elijah Paul. I shape the operating logic, design the experience, and build the working product—without hiding the decisions or the limits.</p>
+          <div class="actions" id="brief">
+            <a class="button" href="https://elijahpaul.io/contact"><span>Start a project brief</span><span aria-hidden="true">→</span></a>
+            <a class="text-link" href="#work">View case studies</a>
+          </div>
+          <p class="cta-note">Answer four focused questions and review everything before sending.</p>
+        </div>
+        <div class="portrait-stage" id="about">
+          <img class="portrait" src="../public/headshot.jpg" alt="Elijah Paul" />
+          <div class="author-tag"><strong>Elijah Paul</strong><span>Product strategy, operating logic, UX, and build execution.</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="notation-band" id="work" aria-labelledby="case-title">
+      <div class="shell notation-grid">
+        <div class="case-intro">
+          <span class="case-index">Selected case 01 / 04</span>
+          <h2 id="case-title">Treasury Router</h2>
+          <p>A governed advisor workflow that turns a modeled opportunity into client materials and a human-confirmed operations handoff.</p>
+          <a class="case-link" href="https://elijahpaul.io/work/treasury-router">View case study →</a>
+        </div>
+        <div class="case-object">
+          <div class="product-frame"><img src="../public/projects/treasury-router.png" alt="Treasury Router working prototype using deterministic development data" /></div>
+          <div class="evidence-steps">
+            <div class="evidence-step"><span>Problem</span><p>Idle-balance analysis, controlled routing, and handoff were fragmented.</p></div>
+            <div class="evidence-step"><span>Decision</span><p>Keep suitability and matching deterministic; use AI for explanation and materials.</p></div>
+            <div class="evidence-step"><span>Working artifact</span><p>Inspectable prototype using deterministic development data.</p></div>
+            <div class="evidence-step"><span>Role / boundary</span><p>Strategy, workflow, UX/UI, architecture. No live client funds or autonomous execution.</p></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="selected" id="method" aria-labelledby="selected-title">
+      <div class="shell">
+        <div class="selected-head">
+          <div><p class="eyebrow">The portfolio is the proof</p><h2 id="selected-title">Real systems. Explicit decisions. Honest boundaries.</h2></div>
+          <p>Each case study shows what was stuck, what I decided, what now works, what I owned, and where a prototype ends.</p>
+        </div>
+        <article class="work-row">
+          <div class="work-copy">
+            <p class="eyebrow">Selected case 02 / 04</p>
+            <h3>GridSynapse</h3>
+            <p>A buyer-side compute workflow that compares public price and carbon inputs, applies workload constraints, and produces an approval-ready plan.</p>
+            <div class="work-meta"><strong>Public product foundation</strong><span>Public inputs + deterministic optimization. Capacity, latency, and availability remain modeled.</span></div>
+            <p><a class="text-link" href="https://elijahpaul.io/work/gridsynapse">View case study →</a></p>
+          </div>
+          <div class="work-visual"><img src="../public/projects/gridsynapse.png" alt="GridSynapse public product foundation with modeled capacity, latency, and availability" /></div>
+        </article>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
