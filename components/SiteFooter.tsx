@@ -12,7 +12,7 @@ export function SiteFooter() {
         <nav aria-label="Footer navigation">
           <Link href="/work">Work</Link>
           <Link href="/services">Services</Link>
-          <Link href="/contact">Contact</Link>
+          <Link href="/contact">Request a fit call</Link>
           <a href={site.linkedin} target="_blank" rel="noreferrer">LinkedIn</a>
           <a href={site.github} target="_blank" rel="noreferrer">GitHub</a>
         </nav>

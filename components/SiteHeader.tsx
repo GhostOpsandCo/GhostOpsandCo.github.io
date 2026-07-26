@@ -27,7 +27,7 @@ export function SiteHeader() {
 
         <div className="header-actions">
           <span className="header-availability"><i aria-hidden="true" /> Available for selected work</span>
-          <Link className="header-contact" href="/contact">Start a conversation</Link>
+          <Link className="header-contact" href="/contact">Request a fit call</Link>
         </div>
 
         <details className="mobile-nav">
@@ -36,7 +36,7 @@ export function SiteHeader() {
             {navigation.map((item) => (
               <Link href={item.href} key={item.href}>{item.label}</Link>
             ))}
-            <Link href="/contact">Contact</Link>
+            <Link href="/contact">Request a fit call</Link>
           </nav>
         </details>
       </div>

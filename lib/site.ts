@@ -2,7 +2,7 @@ export const site = {
   name: "Elijah Paul",
   title: "AI Solutions Architect & Product Builder",
   description:
-    "Elijah Paul turns customer and operational problems into working AI products for crypto, fintech, and agentic systems.",
+    "Elijah Paul turns customer problems into working AI products for crypto, fintech, and agentic systems.",
   url: "https://elijahpaul.io",
   email: "elijah@elijahpaul.io",
   linkedin: "https://www.linkedin.com/in/elijahpaul",
@@ -182,7 +182,7 @@ export const projects: Project[] = [
     shortOutcome:
       "Turns a recurring agent-payment implementation risk into a deterministic check developers can run before release.",
     image: "/projects/monarch.jpg",
-    imageAlt: "Monarch Shield banner for the x402 payment preflight tool",
+    imageAlt: "Monarch Doctor banner for the x402 payment preflight tool",
     liveUrl: "https://x402ms.ai/",
     sourceUrl: "https://github.com/GhostMonarch/x402ms",
     primaryAction: "View developer tool",

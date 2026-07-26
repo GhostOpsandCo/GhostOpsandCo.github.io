@@ -89,8 +89,10 @@ Required browser checks for V7 must be completed in local Chrome at 320, 390, 76
 
 The prior independent review result applied to a rejected candidate and is superseded. V7 requires fresh responsive review and independent review before it can be called ready for implementation.
 
-The candidate remains unapproved until Elijah explicitly approves the art direction.
+The candidate is approved for implementation after Elijah's July 26, 2026 instruction to run the Premium Revenue Sites skill and redo the site from first principles. It is not approved for production release.
 
 ## Approval boundary
 
-No prior concept is approved. No application source may adopt the active direction until Elijah explicitly approves the complete responsive concept. Concept approval authorizes implementation only; publication still requires separate explicit release approval.
+No prior concept is approved. Concept approval authorizes implementation only; publication still requires separate explicit release approval.
+
+Implementation approval for the active V7 direction was recorded on July 26, 2026 through the instruction to run the Premium Revenue Sites skill and redo the website from first principles. Publication still requires separate explicit release approval.

@@ -1,32 +1,170 @@
 import Image from "next/image";
 import Link from "next/link";
 import { JsonLd } from "@/components/JsonLd";
-import { ProjectCard } from "@/components/ProjectCard";
-import { mailto, projects, site } from "@/lib/site";
+import { mailto, projects, site, type Project } from "@/lib/site";
 
-const audiencePaths = [
+function getProject(slug: string): Project {
+  const project = projects.find((item) => item.slug === slug);
+
+  if (!project) {
+    throw new Error(`Missing project: ${slug}`);
+  }
+
+  return project;
+}
+
+const gridSynapse = getProject("gridsynapse");
+const treasuryRouter = getProject("treasury-router");
+const orelis = getProject("orelis");
+const monarchDoctor = getProject("x402-agent-payments");
+
+const proofProjects = [
+  { project: gridSynapse, href: "#gridsynapse", label: "01" },
+  { project: treasuryRouter, href: "#treasury-router", label: "02" },
+  { project: orelis, href: "#orelis", label: "03" },
+  { project: monarchDoctor, href: "#monarch-doctor", label: "04" },
+];
+
+const methodSteps = [
   {
-    label: "Hiring full-time",
-    title: "Add a customer-led AI product builder",
-    copy: "I work between customers, product, and engineering to turn ambiguous needs into working products and implementation plans.",
-    href: "/resume",
-    action: "Review experience",
+    title: "Start with the expensive customer problem",
+    copy: "I look for the workflow where delay, ambiguity, or manual coordination is costing the team money or momentum.",
   },
   {
-    label: "Need a product built",
-    title: "Go from product gap to a testable build",
-    copy: "I can audit the workflow, design the solution, build the product foundation, and help the team validate it with users.",
-    href: "/services",
-    action: "View services",
+    title: "Design the operating system",
+    copy: "I map the user, controls, data inputs, decision rules, approval points, and the smallest useful product surface.",
   },
   {
-    label: "Exploring a product",
-    title: "Inspect, use, license, or acquire selected work",
-    copy: "Each case study identifies what works today, the operating boundary, and the most relevant next step.",
-    href: "/work",
-    action: "Browse products",
+    title: "Build the inspectable version",
+    copy: "I ship the working artifact with honest boundaries so customers, teammates, and leadership can test the real thing.",
   },
 ];
+
+const fitQuestions = [
+  "What customer or internal workflow is stuck?",
+  "Who needs to use or approve the first working version?",
+  "What source system, policy, or integration creates the hard part?",
+  "What proof would make the next decision easier?",
+];
+
+function ProjectTags({ project }: { project: Project }) {
+  return (
+    <div className="v7-tags" aria-label={`${project.name} capabilities`}>
+      {project.skills.slice(0, 4).map((skill) => (
+        <span key={`${project.slug}-${skill}`}>{skill}</span>
+      ))}
+    </div>
+  );
+}
+
+function CaseSection({
+  project,
+  anchor,
+  label,
+  title,
+  lead,
+}: {
+  project: Project;
+  anchor: string;
+  label: string;
+  title: string;
+  lead: string;
+}) {
+  const facts = [
+    { label: "Problem", value: project.challenge },
+    { label: "Role", value: project.role },
+    { label: "Built", value: project.approach[0] },
+    { label: "Works today", value: project.proof.slice(0, 2).join("; ") },
+    { label: "Boundary", value: project.boundary },
+  ];
+
+  return (
+    <section className="v7-section v7-case-section" id={anchor} aria-labelledby={`${anchor}-title`}>
+      <div className="site-shell v7-case">
+        <div className="v7-case-copy">
+          <p className="eyebrow">{label}</p>
+          <h2 id={`${anchor}-title`}>{title}</h2>
+          <p className="v7-large-copy">{lead}</p>
+          <ProjectTags project={project} />
+
+          <div className="v7-detail-table" aria-label={`${project.name} case details`}>
+            {facts.map((fact) => (
+              <div key={`${project.slug}-${fact.label}`}>
+                <strong>{fact.label}</strong>
+                <p>{fact.value}</p>
+              </div>
+            ))}
+          </div>
+
+          <div className="v7-actions">
+            <Link className="button button-primary" href={`/work/${project.slug}`}>Read case study</Link>
+            {project.liveUrl ? (
+              <a className="button button-outline" href={project.liveUrl} target="_blank" rel="noreferrer">
+                {project.primaryAction}
+              </a>
+            ) : null}
+            {project.sourceUrl ? (
+              <a className="text-link" href={project.sourceUrl} target="_blank" rel="noreferrer">
+                Inspect source
+              </a>
+            ) : null}
+          </div>
+        </div>
+
+        <figure className="v7-artifact">
+          <Image
+            src={project.image}
+            alt={project.imageAlt}
+            width={1440}
+            height={1100}
+            sizes="(max-width: 900px) 92vw, 44vw"
+          />
+          <figcaption>
+            <span>{project.status}</span>
+            <strong>{project.name}</strong>
+          </figcaption>
+        </figure>
+      </div>
+    </section>
+  );
+}
+
+function SupportingProject({ project, href }: { project: Project; href: string }) {
+  return (
+    <article className="v7-support-card">
+      <div className="v7-support-image">
+        <Image src={project.image} alt={project.imageAlt} width={900} height={700} sizes="(max-width: 760px) 92vw, 40vw" />
+      </div>
+      <div className="v7-support-body">
+        <p className="eyebrow">{project.category}</p>
+        <h3>{project.name}</h3>
+        <p>{project.summary}</p>
+        <div className="v7-detail-table v7-detail-table-compact">
+          <div>
+            <strong>Role</strong>
+            <p>{project.role}</p>
+          </div>
+          <div>
+            <strong>Evidence</strong>
+            <p>{project.proof[0]}</p>
+          </div>
+          <div>
+            <strong>Boundary</strong>
+            <p>{project.boundary}</p>
+          </div>
+        </div>
+        <div className="v7-actions">
+          <Link className="button button-outline" href={href}>Read case study</Link>
+          {project.liveUrl ? (
+            <a className="text-link" href={project.liveUrl} target="_blank" rel="noreferrer">
+              {project.primaryAction}
+            </a>
+          ) : null}
+        </div>
+      </div>
+    </article>
+  );
+}
 
 export default function Home() {
   return (
@@ -61,154 +199,154 @@ export default function Home() {
         ]}
       />
 
-      <section className="home-hero" aria-labelledby="hero-title">
-        <div className="hero-grid" aria-hidden="true" />
-        <div className="hero-product-scene" aria-hidden="true">
-          <div className="hero-shot hero-shot-primary">
-            <Image src="/projects/gridsynapse.png" alt="" fill loading="eager" sizes="(max-width: 760px) 92vw, 58vw" />
-          </div>
-          <div className="hero-shot hero-shot-secondary">
-            <Image src="/projects/treasury-router.png" alt="" fill loading="eager" sizes="(max-width: 760px) 72vw, 38vw" />
-          </div>
-          <div className="hero-shot hero-shot-tertiary">
-            <Image src="/projects/orelis.jpg" alt="" fill loading="eager" sizes="(max-width: 760px) 40vw, 20vw" />
-          </div>
-        </div>
-        <div className="site-shell hero-content">
-          <div className="identity-line">
-            <Image src="/headshot.jpg" alt="Elijah Paul" width={48} height={48} loading="eager" />
-            <span>AI Solutions Architect <b>Product Builder</b></span>
-          </div>
-          <h1 id="hero-title">Elijah Paul turns customer problems into working AI products.</h1>
-          <p>
-            I work with crypto, fintech, and AI teams to find product gaps, design the workflow,
-            and build the version customers and internal teams can actually test.
-          </p>
-          <div className="hero-actions">
-            <Link className="button button-primary" href="/work">View selected work</Link>
-            <a className="button button-secondary" href={mailto("AI role or product build")}>Work with me</a>
-            <Link className="hero-resume-link" href="/resume">View resume</Link>
-          </div>
-          <div className="capability-line" aria-label="Selected capabilities">
-            <span>Advisor workflows</span>
-            <span>Compute optimization</span>
-            <span>Voice agents</span>
-            <span>x402 payments</span>
-          </div>
-        </div>
-      </section>
-
-      <section className="proof-rail" aria-label="Portfolio summary">
-        <div className="site-shell proof-rail-grid">
-          <div><strong>04</strong><span>Working product systems</span></div>
-          <div><strong>$20M+</strong><span>Launch revenue contributed</span></div>
-          <div><strong>$100M+</strong><span>Ecosystem and trading volume supported</span></div>
-          <div><strong>$50M</strong><span>Founder-built venture valuation</span></div>
-        </div>
-      </section>
-
-      <section className="section-band section-intro">
-        <div className="site-shell intro-grid">
-          <div>
-            <p className="eyebrow">What I do</p>
-            <h2>I find the expensive bottleneck, then build the product that removes it.</h2>
-          </div>
-          <div className="large-copy">
-            <p>
-              My work sits between customer feedback, product strategy, solution architecture, and
-              implementation. I am most useful when a team has a real market opportunity but the path
-              from customer need to working product is still unclear.
-            </p>
-            <p>
-              The case studies below show the operating workflow, my role, what works today, and the
-              boundaries that still require real integrations or production validation.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      <section className="section-band selected-work-band" aria-labelledby="selected-work-title">
-        <div className="site-shell">
-          <div className="section-heading">
-            <div>
-              <p className="eyebrow">Selected work</p>
-              <h2 id="selected-work-title">Products built to be used, tested, and improved</h2>
+      <section className="v7-hero" aria-labelledby="hero-title">
+        <div className="site-shell v7-hero-grid">
+          <div className="v7-hero-copy">
+            <div className="v7-person">
+              <Image src="/headshot.jpg" alt="Elijah Paul" width={56} height={56} priority />
+              <div>
+                <strong>Elijah Paul</strong>
+                <span>AI Solutions Architect / Product Builder</span>
+              </div>
             </div>
-            <Link className="text-link" href="/work">View all work</Link>
+            <p className="eyebrow">Crypto, fintech, AI teams, and agentic systems</p>
+            <h1 id="hero-title">Elijah Paul turns customer problems into working AI products.</h1>
+            <p className="v7-hero-lede">
+              I work with crypto, fintech, and AI teams to find product gaps, design the workflow,
+              and build the version customers and internal teams can actually test.
+            </p>
+            <div className="v7-hero-actions">
+              <Link className="button button-primary" href="#contact">Request a fit call</Link>
+              <Link className="button button-outline" href="#work">See the work</Link>
+              <Link className="v7-resume-link" href="/resume">Resume and background</Link>
+            </div>
+            <ul className="v7-hero-signals" aria-label="How Elijah creates value">
+              <li>Find the bottleneck</li>
+              <li>Design the workflow</li>
+              <li>Build the testable product</li>
+            </ul>
           </div>
-          <div className="project-grid project-grid-editorial">
-            {projects.map((project, index) => (
-              <ProjectCard key={project.slug} project={project} featured={index < 2} reverse={index === 1} />
+
+          <aside className="v7-hero-proof" aria-label="Featured product proof">
+            <div className="v7-proof-top">
+              <span>Featured proof</span>
+              <strong>{gridSynapse.name}</strong>
+            </div>
+            <div className="v7-proof-image">
+              <Image
+                src={gridSynapse.image}
+                alt={gridSynapse.imageAlt}
+                fill
+                priority
+                sizes="(max-width: 900px) 92vw, 42vw"
+              />
+            </div>
+            <div className="v7-proof-body">
+              <p>{gridSynapse.shortOutcome}</p>
+              <div className="v7-proof-actions">
+                <Link className="text-link" href="/work/gridsynapse">Inspect case study</Link>
+                <a className="text-link" href={gridSynapse.liveUrl} target="_blank" rel="noreferrer">Open product</a>
+              </div>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <section className="v7-section v7-index-section" id="work" aria-labelledby="work-title">
+        <div className="site-shell">
+          <div className="v7-section-head">
+            <p className="eyebrow">Inspectable work</p>
+            <h2 id="work-title">Four product systems, each with the mechanism and boundary visible.</h2>
+            <p>
+              Each project shows the customer problem, what I built, why it matters, and what
+              can be inspected next.
+            </p>
+          </div>
+          <div className="v7-proof-grid">
+            {proofProjects.map(({ project, href, label }) => (
+              <Link className="v7-proof-card" href={href} key={project.slug}>
+                <span>{label}</span>
+                <strong>{project.name}</strong>
+                <small>{project.category}</small>
+                <p>{project.shortOutcome}</p>
+              </Link>
             ))}
           </div>
         </div>
       </section>
 
-      <section className="section-band section-soft" aria-labelledby="paths-title">
+      <CaseSection
+        project={gridSynapse}
+        anchor="gridsynapse"
+        label="Flagship case study"
+        title="GridSynapse turns messy compute sourcing into an approval-ready product workflow."
+        lead="The strongest proof is not a claim. It is a product surface a buyer can inspect: public inputs, deterministic optimization, a procurement packet, and clear limits before any provider action."
+      />
+
+      <CaseSection
+        project={treasuryRouter}
+        anchor="treasury-router"
+        label="Financial workflow case study"
+        title="Treasury Router shows product judgment in a controlled AI finance workflow."
+        lead="The work is valuable because the system does not pretend an AI should move money. It turns advisor analysis, suitability constraints, client materials, and operations handoff into a governed prototype."
+      />
+
+      <section className="v7-section v7-section-soft" aria-labelledby="supporting-work-title">
         <div className="site-shell">
-          <div className="section-heading">
-            <div>
-              <p className="eyebrow">Choose the relevant path</p>
-              <h2 id="paths-title">How I can create value</h2>
-            </div>
+          <div className="v7-section-head">
+            <p className="eyebrow">Additional proof</p>
+            <h2 id="supporting-work-title">The same pattern across voice AI and agent payments.</h2>
+            <p>
+              Each project is included because it makes the skill set inspectable: customer problem,
+              workflow design, product surface, and honest operating boundary.
+            </p>
           </div>
-          <div className="path-grid">
-            {audiencePaths.map((path, index) => (
-              <article className="path-item" key={path.title}>
-                <span className="path-index">0{index + 1}</span>
-                <p className="path-label">{path.label}</p>
-                <h3>{path.title}</h3>
-                <p>{path.copy}</p>
-                <Link className="text-link" href={path.href}>{path.action}</Link>
-              </article>
-            ))}
+          <div className="v7-support-grid">
+            <SupportingProject project={orelis} href="/work/orelis" />
+            <SupportingProject project={monarchDoctor} href="/work/x402-agent-payments" />
           </div>
         </div>
       </section>
 
-      <section className="section-band section-dark" aria-labelledby="method-title">
-        <div className="site-shell method-layout">
-          <div>
-            <p className="eyebrow eyebrow-light">Working method</p>
-            <h2 id="method-title">From customer signal to usable product</h2>
+      <section className="v7-section" id="method" aria-labelledby="method-title">
+        <div className="site-shell v7-method">
+          <div className="v7-section-head">
+            <p className="eyebrow">Working method</p>
+            <h2 id="method-title">A simple operating model for useful AI products.</h2>
           </div>
-          <ol className="method-list">
-            <li><span>01</span><div><strong>Find the bottleneck</strong><p>Listen to customers, inspect the current workflow, and identify where value is being lost.</p></div></li>
-            <li><span>02</span><div><strong>Design the operating flow</strong><p>Define the user, decision logic, controls, data contracts, and the smallest credible product.</p></div></li>
-            <li><span>03</span><div><strong>Build and validate</strong><p>Ship the working version, test it with real users, and turn feedback into product priorities.</p></div></li>
+          <ol className="v7-method-grid">
+            {methodSteps.map((step, index) => (
+              <li key={step.title}>
+                <span>{String(index + 1).padStart(2, "0")}</span>
+                <strong>{step.title}</strong>
+                <p>{step.copy}</p>
+              </li>
+            ))}
           </ol>
         </div>
       </section>
 
-      <section className="section-band section-soft" aria-labelledby="services-title">
-        <div className="site-shell service-preview">
+      <section className="v7-section v7-section-dark" id="contact" aria-labelledby="contact-title">
+        <div className="site-shell v7-fit">
           <div>
-            <p className="eyebrow">Available for selected work</p>
-            <h2 id="services-title">Product strategy that ends in something usable</h2>
-            <p>
-              Start with a focused product opportunity sprint, a working AI product build, or an
-              embedded solutions role alongside customers and your internal team.
-            </p>
-          </div>
-          <div className="service-preview-actions">
-            <Link className="button button-primary" href="/services">View services</Link>
-            <a className="button button-outline" href={mailto("AI product opportunity")}>Describe the problem</a>
-          </div>
-        </div>
-      </section>
-
-      <section className="contact-band" aria-labelledby="contact-title">
-        <div className="site-shell contact-band-inner">
-          <div>
-            <p className="eyebrow eyebrow-light">Start a useful conversation</p>
-            <h2 id="contact-title">Hiring for this skill set or have a workflow worth fixing?</h2>
-          </div>
-          <div>
+            <p className="eyebrow eyebrow-light">Request a fit call</p>
+            <h2 id="contact-title">Hiring for this skill set or building something customers need to test?</h2>
             <p>
               Send the product, customer problem, or role. I will tell you where I can help and what I
               would examine first.
             </p>
-            <a className="button button-inverse" href={mailto("AI product or solutions conversation")}>Email Elijah</a>
+            <div className="v7-fit-actions">
+              <a className="button button-inverse" href={mailto("AI product fit call")}>Request a fit call</a>
+              <Link className="text-link text-link-light" href="/work">See the work</Link>
+            </div>
+          </div>
+          <div className="v7-fit-card">
+            <strong>A useful first note answers four questions.</strong>
+            <ul>
+              {fitQuestions.map((question) => (
+                <li key={question}>{question}</li>
+              ))}
+            </ul>
           </div>
         </div>
       </section>
