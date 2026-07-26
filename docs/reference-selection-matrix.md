@@ -36,6 +36,7 @@ This is the active inspiration contract for the next Elijah Paul portfolio redes
 | A | Product Evidence OS | Light Apple/OpenAI-style product evidence system with clear H1 and dominant GridSynapse/Treasury proof | Real artifacts first, then selected systems | Small author block keeps Elijah present without replacing proof | `Request a fit call` primary; `See the work` secondary | Fastest comprehension for founders and hiring leads who need to know what Elijah does |
 | B | Founder Operator Studio | Dark Profound-style operating room: portrait, promise, and product theater in one grid | GridSynapse as the flagship dashboard proof; Treasury Router as a supporting static artifact until a dashboard asset exists | Larger portrait and first-person intro make the site clearly hireable and human | `Request a fit call` primary; `See the work` secondary | Strongest premium impression and best alignment with the original near-black product-system plan |
 | V6 | Builder Profile OS | Clean modern profile anchored to the current `elijahpaul.io` headline and subheader | Interactive inspection console plus inspectable selected-work rows | Exact headshot, name, AI Solutions Architect / Product Builder role, and current site language | `Request a fit call` primary; `See the work` secondary | Best alignment with the current build, five-second comprehension, and the user's requirement that every project be inspectable |
+| V7 | Case Study Magazine | Clean modern homepage with long-form project sections instead of a carousel/panel | GridSynapse and Treasury Router get full case-study sections; Orelis and Monarch Doctor get detailed supporting sections | Exact headshot, current site language, and case-study detail without invented metrics | `Request a fit call` primary; `See the work` secondary | Best response to the user's critique: it shows enough detail for a serious portfolio while keeping proof truthful and inspectable |
 
 ## Five-Second Money Test
 
@@ -49,4 +50,4 @@ Both passes must answer yes:
 
 ## Recommendation
 
-Use V6 as the leading direction. It keeps the current site language, removes unverified metric emphasis from the homepage concept, and makes inspectability the central interaction rather than a decorative style choice.
+Use V7 as the leading direction. V6 corrected the message and proof boundaries, but V7 is more appropriate for a portfolio because it shows project depth directly on the homepage instead of hiding it behind a selector.

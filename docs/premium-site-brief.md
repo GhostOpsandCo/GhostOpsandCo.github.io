@@ -49,7 +49,7 @@
 - Framework and hosting: preserve Next.js static export and GitHub Pages.
 - Typography: use only free/open fonts. The concept stage may test a restrained grotesk/editorial pairing; no paid font is required.
 - Components: use the existing component system and semantic HTML; do not add shadcn or Radix without a specific need.
-- Visual direction: clean modern Builder Profile OS. Use the current `elijahpaul.io` headline and subheader as source language, then make each project inspectable through real artifacts, status, role, proof path, boundary, and concrete actions. Keep Elijah's real PFP and exact product artifacts; avoid generic AI/SaaS styling, decorative glassmorphism, repeated bento cards, fake metrics, invented taglines, or copied reference layouts.
+- Visual direction: clean modern Case Study Magazine. Use the current `elijahpaul.io` headline and subheader as source language, then show each selected project with enough homepage detail to feel like a serious portfolio: problem, role, what was built, what works today, boundary, artifact, and concrete actions. Keep Elijah's real PFP and exact product artifacts; avoid generic AI/SaaS styling, decorative glassmorphism, carousel-only work presentation, repeated bento cards, fake metrics, invented taglines, or copied reference layouts.
 - Claims: unverified financial or performance metrics remain off the redesigned homepage until evidence is supplied.
 - Approved paid budget: SaaSFrame monthly at $14 only; no Figma, Mobbin annual plan, paid font, or $50-plus tool.
 - Release authorization: implementation may begin only after concept approval. Publication requires a separate explicit release approval after QA and independent review.

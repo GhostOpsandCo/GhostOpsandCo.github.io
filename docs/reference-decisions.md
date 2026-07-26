@@ -57,7 +57,7 @@ The active contract is now [reference-selection-matrix.md](./reference-selection
 4. The actual GridSynapse dashboard and available Treasury Router static artifact as inspectable product evidence; Treasury Router cannot be treated as a dashboard until a real dashboard asset exists.
 5. A truthful systems navigator: four inspectable systems and their exact states, with no borrowed customer logos.
 6. A three-step mechanism: find the bottleneck, design the operating logic, build the testable product.
-7. Orelis and Monarch Shield as supporting evidence with clear role and current-state boundaries.
+7. Orelis and Monarch Doctor as supporting evidence with clear role and current-state boundaries.
 8. A real fit-call or short-brief conversion surface that does not claim provider delivery until verified.
 
 ### Direction-specific rejection tests
@@ -82,4 +82,4 @@ The active contract is now [reference-selection-matrix.md](./reference-selection
 
 ## Direction gate
 
-V5 has two active concept passes: Product Evidence OS and Founder Operator Studio. Founder Operator Studio is the recommended lead because it better preserves the near-black product-system ambition while still making Elijah visible as a hireable human. No application source will be changed before Elijah explicitly approves one complete responsive direction.
+V7 is the active concept direction: a case-study-led homepage that keeps the current site language and shows project detail directly instead of relying on a selector or carousel. No application source will be changed before Elijah explicitly approves one complete responsive direction.
