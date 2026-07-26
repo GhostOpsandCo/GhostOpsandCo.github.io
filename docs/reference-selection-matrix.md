@@ -10,7 +10,7 @@ This is the active inspiration contract for the next Elijah Paul portfolio redes
 - Primary business goal: generate qualified paid work through consulting, embedded product, and role conversations.
 - Primary CTA: `Request a fit call` until a real scheduler is verified; `Book a fit call` only after provider setup is confirmed.
 - Supporting proof path: `See the work`.
-- Human trust signal: exact Elijah headshot plus a concise first-person operator intro.
+- Human trust signal: exact Elijah headshot plus the current build's plain AI Solutions Architect / Product Builder identity.
 - Revenue success signal: qualified conversations, proposals, and closed work, not page views.
 - Provider truth: no verified scheduler, CRM, form, or analytics provider is active yet.
 
@@ -35,6 +35,7 @@ This is the active inspiration contract for the next Elijah Paul portfolio redes
 | --- | --- | --- | --- | --- | --- | --- |
 | A | Product Evidence OS | Light Apple/OpenAI-style product evidence system with clear H1 and dominant GridSynapse/Treasury proof | Real artifacts first, then selected systems | Small author block keeps Elijah present without replacing proof | `Request a fit call` primary; `See the work` secondary | Fastest comprehension for founders and hiring leads who need to know what Elijah does |
 | B | Founder Operator Studio | Dark Profound-style operating room: portrait, promise, and product theater in one grid | GridSynapse as the flagship dashboard proof; Treasury Router as a supporting static artifact until a dashboard asset exists | Larger portrait and first-person intro make the site clearly hireable and human | `Request a fit call` primary; `See the work` secondary | Strongest premium impression and best alignment with the original near-black product-system plan |
+| V6 | Builder Profile OS | Clean modern profile anchored to the current `elijahpaul.io` headline and subheader | Interactive inspection console plus inspectable selected-work rows | Exact headshot, name, AI Solutions Architect / Product Builder role, and current site language | `Request a fit call` primary; `See the work` secondary | Best alignment with the current build, five-second comprehension, and the user's requirement that every project be inspectable |
 
 ## Five-Second Money Test
 
@@ -48,4 +49,4 @@ Both passes must answer yes:
 
 ## Recommendation
 
-Use Pass B as the leading direction and keep Pass A as the comprehension-safe alternative. Pass B better matches the premium product-builder ambition, while Pass A is useful if the dark system feels too heavy after mobile review.
+Use V6 as the leading direction. It keeps the current site language, removes unverified metric emphasis from the homepage concept, and makes inspectability the central interaction rather than a decorative style choice.

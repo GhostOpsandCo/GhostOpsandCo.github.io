@@ -18,7 +18,7 @@
 ## Message
 
 - Positioning: AI product builder for crypto, fintech, and AI teams.
-- Core promise: Turn a costly product bottleneck into a working AI product.
+- Core promise: Elijah Paul turns customer problems into working AI products.
 - Primary CTA: Request a fit call. Use Book a fit call only after a real scheduler is verified.
 - Supporting path: See the work.
 - Page story: costly workflow gap, inspectable product systems, explicit operating boundaries, controlled build method, ways to engage, objection handling, and one qualified contact action.
@@ -27,7 +27,7 @@
 
 - Preserve the current routes: home, work, individual case studies, services, about, resume, and contact.
 - The homepage prioritizes consulting and embedded-product buyers. Hiring remains visible in navigation, resume, and contact.
-- Lead proof with the GridSynapse dashboard. Show Treasury Router as a static concept/prototype artifact until a real dashboard asset exists, followed by Orelis and Monarch Shield.
+- Lead proof with the GridSynapse dashboard. Show Treasury Router as a static concept/prototype artifact until a real dashboard asset exists, followed by Orelis and Monarch Doctor.
 - Mobile must show the promise, explanation, primary CTA, supporting proof path, and first proof signal without clipped text or horizontal overflow.
 
 ## Discovery
@@ -49,7 +49,7 @@
 - Framework and hosting: preserve Next.js static export and GitHub Pages.
 - Typography: use only free/open fonts. The concept stage may test a restrained grotesk/editorial pairing; no paid font is required.
 - Components: use the existing component system and semantic HTML; do not add shadcn or Radix without a specific need.
-- Visual direction: reference-led product-builder portfolio. Use the site-specific reference matrix to choose between a light Product Evidence OS pass and a darker Founder Operator Studio pass. Both must show what Elijah does, who should hire him, real product proof, a human author signal, and one paid-work CTA within the first viewport. Keep Elijah's real PFP and exact product artifacts; avoid generic AI/SaaS styling, decorative glassmorphism, repeated bento cards, fake metrics, or copied reference layouts.
+- Visual direction: clean modern Builder Profile OS. Use the current `elijahpaul.io` headline and subheader as source language, then make each project inspectable through real artifacts, status, role, proof path, boundary, and concrete actions. Keep Elijah's real PFP and exact product artifacts; avoid generic AI/SaaS styling, decorative glassmorphism, repeated bento cards, fake metrics, invented taglines, or copied reference layouts.
 - Claims: unverified financial or performance metrics remain off the redesigned homepage until evidence is supplied.
 - Approved paid budget: SaaSFrame monthly at $14 only; no Figma, Mobbin annual plan, paid font, or $50-plus tool.
 - Release authorization: implementation may begin only after concept approval. Publication requires a separate explicit release approval after QA and independent review.
