@@ -18,6 +18,7 @@ The supporting copy stays close to the existing site:
 - Use `Request a fit call` as the primary CTA until a real scheduler is verified.
 - Keep `See the work` as the supporting CTA.
 - Show detailed project sections on the homepage instead of hiding work behind a carousel or selector.
+- Treat Orelis and GridSynapse as paired flagship proof: Orelis appears first as the commercial voice-agent offer most directly tied to paid services, while GridSynapse shows AI product and optimization depth.
 - For each project, show problem, role, built artifact, what works today, and evidence boundary.
 - Do not feature unsupported revenue, volume, valuation, customer, or outcome metrics.
 - Use exact repository assets, not invented dashboard states or stock visuals.

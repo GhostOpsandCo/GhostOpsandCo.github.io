@@ -2,7 +2,7 @@ export const site = {
   name: "Elijah Paul",
   title: "AI Solutions Architect & Product Builder",
   description:
-    "Elijah Paul turns customer problems into working AI products for crypto, fintech, and agentic systems.",
+    "Elijah Paul turns customer problems into working AI products for crypto, fintech, voice AI, and agentic systems.",
   url: "https://elijahpaul.io",
   email: "elijah@elijahpaul.io",
   linkedin: "https://www.linkedin.com/in/elijahpaul",

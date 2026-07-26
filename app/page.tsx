@@ -19,9 +19,9 @@ const orelis = getProject("orelis");
 const monarchDoctor = getProject("x402-agent-payments");
 
 const proofProjects = [
-  { project: gridSynapse, href: "#gridsynapse", label: "01" },
-  { project: treasuryRouter, href: "#treasury-router", label: "02" },
-  { project: orelis, href: "#orelis", label: "03" },
+  { project: orelis, href: "#orelis", label: "01" },
+  { project: gridSynapse, href: "#gridsynapse", label: "02" },
+  { project: treasuryRouter, href: "#treasury-router", label: "03" },
   { project: monarchDoctor, href: "#monarch-doctor", label: "04" },
 ];
 
@@ -129,6 +129,28 @@ function CaseSection({
   );
 }
 
+function FeaturedProof({ project, href, label }: { project: Project; href: string; label: string }) {
+  return (
+    <Link className="v7-feature-card" href={href}>
+      <div className="v7-feature-image">
+        <Image
+          src={project.image}
+          alt={project.imageAlt}
+          fill
+          priority={project.slug === "orelis" || project.slug === "gridsynapse"}
+          sizes="(max-width: 900px) 92vw, 40vw"
+        />
+      </div>
+      <div className="v7-feature-body">
+        <span>{label}</span>
+        <strong>{project.name}</strong>
+        <p>{project.shortOutcome}</p>
+        <small>Inspect case study</small>
+      </div>
+    </Link>
+  );
+}
+
 function SupportingProject({ project, href }: { project: Project; href: string }) {
   return (
     <article className="v7-support-card">
@@ -186,6 +208,7 @@ export default function Home() {
               "agentic AI",
               "financial technology",
               "crypto infrastructure",
+              "voice AI agents",
               "x402 payments",
             ],
           },
@@ -230,23 +253,11 @@ export default function Home() {
           <aside className="v7-hero-proof" aria-label="Featured product proof">
             <div className="v7-proof-top">
               <span>Featured proof</span>
-              <strong>{gridSynapse.name}</strong>
+              <strong>Product systems and voice agents</strong>
             </div>
-            <div className="v7-proof-image">
-              <Image
-                src={gridSynapse.image}
-                alt={gridSynapse.imageAlt}
-                fill
-                priority
-                sizes="(max-width: 900px) 92vw, 42vw"
-              />
-            </div>
-            <div className="v7-proof-body">
-              <p>{gridSynapse.shortOutcome}</p>
-              <div className="v7-proof-actions">
-                <Link className="text-link" href="/work/gridsynapse">Inspect case study</Link>
-                <a className="text-link" href={gridSynapse.liveUrl} target="_blank" rel="noreferrer">Open product</a>
-              </div>
+            <div className="v7-proof-duo">
+              <FeaturedProof project={orelis} href="/work/orelis" label="Voice agent offering" />
+              <FeaturedProof project={gridSynapse} href="/work/gridsynapse" label="AI compute procurement" />
             </div>
           </aside>
         </div>
@@ -276,9 +287,17 @@ export default function Home() {
       </section>
 
       <CaseSection
+        project={orelis}
+        anchor="orelis"
+        label="Primary voice-agent offering"
+        title="Orelis turns inbound calls and intake gaps into a usable voice agent workflow."
+        lead="This is the most direct services offer on the site: a branded voice-agent surface for high-ticket businesses that need consistent intake, qualification, and handoff instead of another missed lead."
+      />
+
+      <CaseSection
         project={gridSynapse}
         anchor="gridsynapse"
-        label="Flagship case study"
+        label="Flagship product system"
         title="GridSynapse turns messy compute sourcing into an approval-ready product workflow."
         lead="The strongest proof is not a claim. It is a product surface a buyer can inspect: public inputs, deterministic optimization, a procurement packet, and clear limits before any provider action."
       />
@@ -294,15 +313,14 @@ export default function Home() {
       <section className="v7-section v7-section-soft" aria-labelledby="supporting-work-title">
         <div className="site-shell">
           <div className="v7-section-head">
-            <p className="eyebrow">Additional proof</p>
-            <h2 id="supporting-work-title">The same pattern across voice AI and agent payments.</h2>
+            <p className="eyebrow">Developer tooling proof</p>
+            <h2 id="supporting-work-title">Monarch Doctor shows the same product discipline in agent payments.</h2>
             <p>
-              Each project is included because it makes the skill set inspectable: customer problem,
-              workflow design, product surface, and honest operating boundary.
+              The portfolio also shows release-time developer judgment: one narrow failure mode,
+              a deterministic check, and a clear boundary around what the tool does not claim.
             </p>
           </div>
-          <div className="v7-support-grid">
-            <SupportingProject project={orelis} href="/work/orelis" />
+          <div className="v7-support-grid v7-support-grid-single">
             <SupportingProject project={monarchDoctor} href="/work/x402-agent-payments" />
           </div>
         </div>

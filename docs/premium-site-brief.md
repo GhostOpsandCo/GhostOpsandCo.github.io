@@ -27,7 +27,7 @@
 
 - Preserve the current routes: home, work, individual case studies, services, about, resume, and contact.
 - The homepage prioritizes consulting and embedded-product buyers. Hiring remains visible in navigation, resume, and contact.
-- Lead proof with the GridSynapse dashboard. Show Treasury Router as a static concept/prototype artifact until a real dashboard asset exists, followed by Orelis and Monarch Doctor.
+- Lead proof with Orelis and GridSynapse as paired flagship proof. Orelis appears first because it is a primary commercial voice-agent offering, not a secondary supporting example. Show Treasury Router as a static concept/prototype artifact until a real dashboard asset exists, then Monarch Doctor as developer-tooling proof.
 - Mobile must show the promise, explanation, primary CTA, supporting proof path, and first proof signal without clipped text or horizontal overflow.
 
 ## Discovery
