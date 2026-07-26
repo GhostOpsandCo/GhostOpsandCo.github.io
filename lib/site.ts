@@ -92,7 +92,7 @@ export const projects: Project[] = [
       "Demonstrates how live public inputs, deterministic optimization, and operational approvals can replace spreadsheet-heavy compute sourcing.",
     image: "/projects/gridsynapse.png",
     imageAlt: "GridSynapse operator console comparing AI compute procurement options",
-    liveUrl: "https://gridsynapse.vercel.app",
+    liveUrl: "https://www.gridsynapse.xyz",
     sourceUrl: "https://github.com/GhostOpsandCo/gridsynapse-mvp",
     primaryAction: "Open product",
     primaryIntent: "AI compute optimization software",
