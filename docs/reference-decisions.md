@@ -47,41 +47,29 @@ Research date: July 22, 2026. References supply principles, not brand assets, co
 
 ## Active reference-to-element contract
 
-The redesign is now a single Profound-led direction. A reference only counts when its influence can be pointed to in the rendered page.
-
-| Reference | Visible implementation requirement | Acceptance check |
-| --- | --- | --- |
-| Profound | Near-black canvas; persistent vertical grid rails; compact fixed navigation; centered high-contrast hero; a large exact product artifact flowing directly out of the hero; proof, method, work, and CTA sections held inside the same grid system | At a glance, the page reads as one continuous product world rather than a stack of cards or a personal editorial portfolio |
-| Clutch | A high-contrast signal-to-system diagram with thin converging lines, sharp technical illustration, and decisive typography | The mechanism section explains how a messy customer signal becomes a controlled product without copying Clutch's logo, white palette, or exact beam composition |
-| WorkOS | Developer-grade product treatment, a deliberate dark-to-bright product transition, and crisp technical details | The Treasury Router and GridSynapse dashboards feel like serious working software rather than decorative marketing screenshots |
-| Wise | Bold, memorable headline typography, a confident human voice, and one real photographic story band | Elijah's PFP and two-sentence introduction create authorship in the hero; the later personal story feels human without turning the page into a resume or magazine |
-| Primer | A tactile selected-systems navigator with clean bordered modules, clear status labels, and purposeful hover/active states | Visitors can move between the four real systems without a generic bento gallery; the active project controls one dominant product surface |
-| Linear | Tight metadata, exact baselines, restrained type scale, thin rules, and dense-but-quiet product labels | Case-study status, role, boundary, and actions align cleanly without decorative chrome or oversized labels |
-| Raycast | Cinematic depth around the product theater, deliberate active states, and one controlled area of luminous color | The product artifact feels operated and dimensional while remaining legible; there is no ambient glow pasted behind every section |
-| Stripe | A clear mechanism for explaining complex work, a controlled spectral signal line, and enterprise-grade proof sequencing | The method communicates how work moves from bottleneck to decision to controlled product; color energy is confined to that causal system |
-| Apple | One immaculate focal product object per major band, generous negative space, and simple product-led copy | No section competes with multiple equally weighted screenshots, cards, or calls to action |
+The active contract is now [reference-selection-matrix.md](./reference-selection-matrix.md). A reference only counts when its influence can be pointed to in the rendered page, includes a rejection boundary, and supports the site goal: make it easy to understand what Elijah does, show off his skills, show he is human and ready for hire, and generate qualified paid work.
 
 ### Active page anatomy
 
-1. Compact navigation and one persistent `Start a project brief` action.
-2. Centered promise for founders and product leaders in crypto, fintech, and AI.
-3. The actual Treasury Router dashboard as the dominant exact product theater, with its status and operating boundary visible. The Treasury Router marketing-page snapshot is not permitted.
-4. A Primer-influenced truthful systems navigator: four inspectable systems and their exact states, with no borrowed customer logos.
-5. A three-step mechanism: find the bottleneck, design the operating logic, build the testable product.
-6. Full-width Treasury Router and GridSynapse dashboard bands; Orelis and Monarch Shield as supporting evidence.
-7. A trust band that makes current state, inspectable artifact, role, and operating boundary explicit.
-8. A real project-brief conversion surface.
+1. Compact navigation and one persistent `Request a fit call` action until a scheduler is verified.
+2. A first-viewport answer to five questions: what Elijah does, who should hire him, what proof shows skill, who the human is, and what to do next.
+3. Elijah's exact headshot as an authorship signal, paired with real product proof rather than replacing it.
+4. The actual GridSynapse dashboard and available Treasury Router static artifact as inspectable product evidence; Treasury Router cannot be treated as a dashboard until a real dashboard asset exists.
+5. A truthful systems navigator: four inspectable systems and their exact states, with no borrowed customer logos.
+6. A three-step mechanism: find the bottleneck, design the operating logic, build the testable product.
+7. Orelis and Monarch Shield as supporting evidence with clear role and current-state boundaries.
+8. A real fit-call or short-brief conversion surface that does not claim provider delivery until verified.
 
 ### Direction-specific rejection tests
 
-- Reject if the page could be mistaken for a magazine, resume, personal blog, or warm editorial portfolio.
+- Reject if the page could be mistaken for a generic AI consultant, magazine, resume, personal blog, or SaaS company with invented customer proof.
 - Reject if removing the background color makes the design indistinguishable from a generic centered SaaS hero plus dashboard screenshot.
 - Reject if the grid stops after the hero or is used only as decoration.
 - Reject if the product theater uses reconstructed, invented, or tiny unreadable product UI.
-- Reject if the Treasury Router marketing page appears anywhere the dashboard should appear.
+- Reject if the Treasury Router static page is described or positioned as a dashboard.
 - Reject if Elijah's exact PFP and concise two-sentence personal introduction are absent from the hero.
 - Reject if the layout becomes a repeated bento-card gallery.
-- Reject if Profound, Clutch, WorkOS, Wise, Primer, Linear, Raycast, Stripe, or Apple cannot each be mapped to a specific rendered element.
+- Reject if the active references in `docs/reference-selection-matrix.md` cannot each be mapped to a specific rendered element.
 - Reject if any visual effect outranks the real product evidence or the primary conversion action.
 
 ## Explicitly rejected
@@ -94,4 +82,4 @@ The redesign is now a single Profound-led direction. A reference only counts whe
 
 ## Direction gate
 
-Only the Profound-led AI Product Studio direction is active. Coordinated desktop and mobile section concepts will be generated from this contract, then assembled with the exact repository assets into a responsive approval prototype. No application source will be changed before Elijah explicitly approves that complete direction.
+V5 has two active concept passes: Product Evidence OS and Founder Operator Studio. Founder Operator Studio is the recommended lead because it better preserves the near-black product-system ambition while still making Elijah visible as a hireable human. No application source will be changed before Elijah explicitly approves one complete responsive direction.

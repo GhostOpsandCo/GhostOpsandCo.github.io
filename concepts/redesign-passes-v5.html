@@ -1,0 +1,977 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Elijah Paul - V5 Redesign Passes</title>
+  <meta name="description" content="Two reference-led concept passes for Elijah Paul's portfolio redesign." />
+  <style>
+    :root {
+      --ink: #080b12;
+      --ink-2: #202733;
+      --muted: #677080;
+      --paper: #fbfbf8;
+      --paper-2: #f1f3f6;
+      --line: #dfe3e8;
+      --line-2: #c9d0d8;
+      --blue: #0b5cff;
+      --blue-2: #dce8ff;
+      --green: #16b981;
+      --dark: #05070b;
+      --dark-2: #0a0f17;
+      --dark-3: #101823;
+      --dark-line: rgba(255, 255, 255, .12);
+      --dark-muted: #a1abb9;
+      --max: min(1248px, calc(100vw - 64px));
+      color-scheme: light;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--ink);
+      background: var(--paper);
+      letter-spacing: 0;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    body.show-a .pass-b,
+    body.show-b .pass-a { display: none; }
+
+    a { color: inherit; text-decoration: none; }
+    img { display: block; max-width: 100%; }
+    button, input, textarea { font: inherit; }
+    button { color: inherit; }
+    :focus-visible { outline: 2px solid var(--blue); outline-offset: 4px; }
+
+    .review-switch {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      border-bottom: 1px solid var(--line);
+      background: rgba(251, 251, 248, .92);
+      backdrop-filter: blur(18px);
+    }
+
+    .switch-inner {
+      width: var(--max);
+      min-height: 64px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .switch-title {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: baseline;
+      gap: 10px;
+      min-width: 0;
+    }
+
+    .switch-title strong {
+      font-size: 15px;
+      line-height: 1.2;
+    }
+
+    .switch-title span {
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.4;
+    }
+
+    .switch-actions {
+      display: flex;
+      gap: 8px;
+      padding: 6px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: white;
+    }
+
+    .switch-actions button {
+      min-height: 36px;
+      border: 0;
+      border-radius: 6px;
+      padding: 0 14px;
+      background: transparent;
+      color: var(--muted);
+      cursor: pointer;
+      font-size: 13px;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    body.show-a [data-pass="a"],
+    body.show-b [data-pass="b"] {
+      background: var(--ink);
+      color: white;
+    }
+
+    .container { width: var(--max); margin: 0 auto; }
+    .container > *, .hero-a > *, .hero-b > * { min-width: 0; }
+
+    .button {
+      min-height: 44px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      border: 1px solid currentColor;
+      border-radius: 6px;
+      padding: 0 18px;
+      font-size: 14px;
+      font-weight: 760;
+      white-space: nowrap;
+      cursor: pointer;
+    }
+
+    .button.primary {
+      border-color: var(--blue);
+      background: var(--blue);
+      color: white;
+      box-shadow: 0 12px 28px rgba(11, 92, 255, .22);
+    }
+
+    .button.secondary { background: transparent; }
+
+    .nav {
+      min-height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .brand {
+      font-size: 18px;
+      font-weight: 780;
+    }
+
+    .links {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+      font-size: 14px;
+      font-weight: 640;
+    }
+
+    .links a { min-height: 44px; display: inline-flex; align-items: center; }
+
+    .pass-a {
+      min-height: calc(100svh - 64px);
+      background:
+        linear-gradient(90deg, transparent calc(50% - 624px), rgba(8,11,18,.055) calc(50% - 623px), transparent calc(50% - 622px)),
+        linear-gradient(90deg, transparent calc(50% + 623px), rgba(8,11,18,.055) calc(50% + 624px), transparent calc(50% + 625px)),
+        radial-gradient(circle at 86% 12%, rgba(11, 92, 255, .08), transparent 34%),
+        var(--paper);
+    }
+
+    .hero-a {
+      min-height: 760px;
+      display: grid;
+      grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr);
+      align-items: center;
+      gap: 56px;
+      padding: 48px 0 42px;
+    }
+
+    h1, h2, h3, p { margin-top: 0; }
+
+    .hero-a h1,
+    .hero-b h1 {
+      margin-bottom: 22px;
+      max-width: 760px;
+      font-size: 72px;
+      line-height: .98;
+      font-weight: 780;
+      letter-spacing: 0;
+    }
+
+    .hero-a p,
+    .hero-b p {
+      color: var(--muted);
+      font-size: 20px;
+      line-height: 1.5;
+    }
+
+    .hero-a .intro {
+      max-width: 620px;
+      margin-bottom: 30px;
+    }
+
+    .hero-actions {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin-bottom: 44px;
+    }
+
+    .human-card {
+      display: grid;
+      grid-template-columns: 76px 1fr;
+      gap: 16px;
+      align-items: center;
+      max-width: 430px;
+      padding-top: 28px;
+      border-top: 1px solid var(--line);
+    }
+
+    .human-card img {
+      width: 76px;
+      height: 76px;
+      border-radius: 8px;
+      object-fit: cover;
+      border: 1px solid var(--line);
+    }
+
+    .human-card strong {
+      display: block;
+      font-size: 16px;
+      line-height: 1.25;
+    }
+
+    .human-card span {
+      display: block;
+      margin-top: 6px;
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 1.45;
+    }
+
+    .artifact-stage {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: white;
+      box-shadow: 0 24px 80px rgba(8, 11, 18, .12);
+      overflow: hidden;
+    }
+
+    .stage-meta {
+      min-height: 58px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      padding: 0 20px;
+      border-bottom: 1px solid var(--line);
+      font-size: 13px;
+      color: var(--muted);
+      font-weight: 680;
+    }
+
+    .status {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: #0f6b45;
+    }
+
+    .status::before {
+      content: "";
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background: var(--green);
+    }
+
+    .artifact-stage img,
+    .artifact-stage iframe {
+      width: 100%;
+      aspect-ratio: 16 / 10;
+      border: 0;
+      object-fit: cover;
+      background: #eef1f4;
+    }
+
+    .proof-strip {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+      background: rgba(255, 255, 255, .72);
+    }
+
+    .proof-strip a {
+      min-height: 92px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 18px 22px;
+      border-right: 1px solid var(--line);
+    }
+
+    .proof-strip a:last-child { border-right: 0; }
+    .proof-strip img { width: 36px; height: 36px; border-radius: 6px; object-fit: cover; }
+    .proof-strip strong { display: block; font-size: 15px; }
+    .proof-strip span { display: block; margin-top: 4px; color: var(--muted); font-size: 13px; line-height: 1.35; }
+
+    .section {
+      padding: 88px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .section-head {
+      display: grid;
+      grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr);
+      gap: 56px;
+      align-items: start;
+      margin-bottom: 34px;
+    }
+
+    .section-head h2 {
+      margin-bottom: 0;
+      font-size: 42px;
+      line-height: 1.08;
+      letter-spacing: 0;
+    }
+
+    .section-head p {
+      color: var(--muted);
+      font-size: 18px;
+      line-height: 1.55;
+    }
+
+    .systems {
+      display: grid;
+      grid-template-columns: .42fr .58fr;
+      gap: 24px;
+    }
+
+    .system-list {
+      display: grid;
+      gap: 10px;
+      align-content: start;
+    }
+
+    .system-list button {
+      min-height: 72px;
+      text-align: left;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: white;
+      padding: 14px 16px;
+      cursor: pointer;
+    }
+
+    .system-list button[aria-selected="true"] {
+      border-color: var(--blue);
+      box-shadow: inset 3px 0 0 var(--blue);
+    }
+
+    .system-list strong { display: block; font-size: 16px; }
+    .system-list span { display: block; margin-top: 6px; color: var(--muted); font-size: 13px; line-height: 1.35; }
+
+    .system-panel {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      overflow: hidden;
+      background: white;
+    }
+
+    .system-panel img,
+    .system-panel iframe {
+      width: 100%;
+      aspect-ratio: 16 / 10;
+      border: 0;
+      object-fit: cover;
+      background: #eef1f4;
+    }
+
+    .panel-copy {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 18px;
+      padding: 18px;
+      border-top: 1px solid var(--line);
+    }
+
+    .panel-copy h3 { margin-bottom: 6px; font-size: 22px; }
+    .panel-copy p { margin-bottom: 0; color: var(--muted); line-height: 1.5; }
+    .panel-copy .button { align-self: start; }
+
+    .method-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1px;
+      background: var(--line);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    .method-step {
+      background: white;
+      padding: 28px;
+      min-height: 220px;
+    }
+
+    .method-step span { color: var(--blue); font-size: 13px; font-weight: 780; }
+    .method-step h3 { margin: 18px 0 10px; font-size: 22px; }
+    .method-step p { color: var(--muted); line-height: 1.55; }
+
+    .fit-call {
+      display: grid;
+      grid-template-columns: .82fr 1.18fr;
+      gap: 48px;
+      align-items: start;
+      padding: 42px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: white;
+    }
+
+    .fit-call h2 { font-size: 42px; line-height: 1.08; margin-bottom: 14px; }
+    .fit-call p { color: var(--muted); line-height: 1.55; }
+
+    .form-grid {
+      display: grid;
+      gap: 14px;
+    }
+
+    label {
+      display: grid;
+      gap: 7px;
+      color: var(--ink-2);
+      font-size: 13px;
+      font-weight: 720;
+    }
+
+    input, textarea {
+      width: 100%;
+      border: 1px solid var(--line-2);
+      border-radius: 6px;
+      background: white;
+      padding: 12px 13px;
+      color: var(--ink);
+      font-size: 15px;
+      line-height: 1.4;
+    }
+
+    textarea { min-height: 112px; resize: vertical; }
+
+    .pass-b {
+      min-height: calc(100svh - 64px);
+      color: white;
+      background:
+        linear-gradient(90deg, transparent calc(50% - 624px), rgba(255,255,255,.09) calc(50% - 623px), transparent calc(50% - 622px)),
+        linear-gradient(90deg, transparent calc(50% + 0px), rgba(255,255,255,.075) calc(50% + 1px), transparent calc(50% + 2px)),
+        linear-gradient(90deg, transparent calc(50% + 623px), rgba(255,255,255,.09) calc(50% + 624px), transparent calc(50% + 625px)),
+        var(--dark);
+    }
+
+    .pass-b .nav { border-bottom: 1px solid var(--dark-line); }
+    .pass-b .links { color: rgba(255,255,255,.78); }
+
+    .hero-b {
+      min-height: 760px;
+      display: grid;
+      grid-template-columns: 250px minmax(0, .58fr) minmax(0, 1.06fr);
+      gap: 32px;
+      align-items: stretch;
+      border-bottom: 1px solid var(--dark-line);
+    }
+
+    .portrait-rail {
+      display: grid;
+      align-items: end;
+      min-height: 640px;
+      border-left: 1px solid var(--dark-line);
+      border-right: 1px solid var(--dark-line);
+      overflow: hidden;
+      background: #060a10;
+    }
+
+    .portrait-rail img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+      opacity: .94;
+    }
+
+    .copy-b {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 54px 0;
+    }
+
+    .hero-b h1 {
+      color: white;
+      font-size: 52px;
+      line-height: 1.05;
+      max-width: 560px;
+    }
+
+    .hero-b p {
+      color: var(--dark-muted);
+      max-width: 520px;
+      font-size: 19px;
+    }
+
+    .operator-note {
+      margin-top: 46px;
+      padding-top: 26px;
+      border-top: 1px solid var(--dark-line);
+      color: var(--dark-muted);
+      max-width: 450px;
+      line-height: 1.55;
+    }
+
+    .operator-note strong {
+      display: block;
+      margin-bottom: 8px;
+      color: white;
+    }
+
+    .stage-b {
+      align-self: center;
+      border: 1px solid var(--dark-line);
+      border-radius: 8px;
+      background: var(--dark-2);
+      box-shadow: 0 28px 90px rgba(0,0,0,.45);
+      overflow: hidden;
+    }
+
+    .stage-b .stage-meta {
+      border-color: var(--dark-line);
+      color: var(--dark-muted);
+      background: rgba(255,255,255,.025);
+    }
+
+    .stage-b img,
+    .stage-b iframe {
+      width: 100%;
+      aspect-ratio: 16 / 10;
+      border: 0;
+      object-fit: cover;
+      filter: saturate(.92) brightness(.82);
+      background: #0f1721;
+    }
+
+    .stage-b iframe { filter: none; }
+
+    .selected-b {
+      padding: 40px 0 78px;
+    }
+
+    .selected-b .section-head {
+      grid-template-columns: 1fr auto;
+      margin-bottom: 20px;
+    }
+
+    .selected-b h2 {
+      font-size: 18px;
+      color: rgba(255,255,255,.72);
+      font-weight: 560;
+    }
+
+    .work-grid-b {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .work-card-b {
+      border: 1px solid var(--dark-line);
+      border-radius: 8px;
+      overflow: hidden;
+      background: var(--dark-2);
+    }
+
+    .work-card-b img {
+      width: 100%;
+      aspect-ratio: 16 / 10;
+      object-fit: cover;
+      background: #0f1721;
+    }
+
+    .work-card-b div {
+      min-height: 70px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 16px;
+      border-top: 1px solid var(--dark-line);
+    }
+
+    .work-card-b strong { font-size: 16px; }
+    .work-card-b span { color: var(--dark-muted); font-size: 20px; }
+
+    .dark-band {
+      padding: 86px 0;
+      border-top: 1px solid var(--dark-line);
+      background: var(--dark-2);
+    }
+
+    .dark-band .section-head h2 { color: white; }
+    .dark-band .section-head p { color: var(--dark-muted); }
+
+    .method-dark {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1px;
+      border: 1px solid var(--dark-line);
+      background: var(--dark-line);
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    .method-dark article {
+      min-height: 210px;
+      padding: 28px;
+      background: var(--dark);
+    }
+
+    .method-dark span { color: var(--green); font-size: 13px; font-weight: 780; }
+    .method-dark h3 { margin: 18px 0 10px; font-size: 22px; }
+    .method-dark p { color: var(--dark-muted); line-height: 1.55; }
+
+    .dark-fit {
+      border-top: 1px solid var(--dark-line);
+      padding: 84px 0;
+    }
+
+    .fit-dark-card {
+      display: grid;
+      grid-template-columns: .8fr 1.2fr;
+      gap: 48px;
+      padding: 40px;
+      border: 1px solid var(--dark-line);
+      border-radius: 8px;
+      background: var(--dark-2);
+    }
+
+    .fit-dark-card h2 { margin-bottom: 14px; font-size: 42px; line-height: 1.08; }
+    .fit-dark-card p { color: var(--dark-muted); line-height: 1.55; }
+    .fit-dark-card input,
+    .fit-dark-card textarea {
+      background: #05070b;
+      border-color: rgba(255,255,255,.18);
+      color: white;
+    }
+    .fit-dark-card label { color: rgba(255,255,255,.88); }
+
+    @media (max-width: 1100px) {
+      .hero-a,
+      .hero-b,
+      .section-head,
+      .systems,
+      .fit-call,
+      .fit-dark-card {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-a h1 { font-size: 60px; }
+      .hero-b { gap: 0; }
+      .portrait-rail { min-height: 360px; max-width: 360px; border-bottom: 1px solid var(--dark-line); }
+      .copy-b { padding: 36px 0; }
+      .stage-b { margin-bottom: 42px; }
+      .proof-strip, .work-grid-b, .method-grid, .method-dark { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    }
+
+    @media (max-width: 680px) {
+      :root { --max: min(1248px, calc(100vw - 40px)); }
+      .switch-inner { min-height: 86px; align-items: flex-start; flex-direction: column; justify-content: center; gap: 8px; }
+      .switch-title { width: 100%; }
+      .switch-title span { max-width: 100%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+      .switch-actions { width: 100%; }
+      .switch-actions button { flex: 1; }
+      .links a:not(.button) { display: none; }
+      .nav { min-height: 64px; }
+      .hero-a { min-height: auto; padding: 46px 0 34px; gap: 28px; }
+      .hero-a h1, .hero-b h1 { font-size: 32px; line-height: 1.1; max-width: 100%; }
+      .hero-a p, .hero-b p { font-size: 17px; line-height: 1.5; }
+      .button { width: 100%; }
+      .hero-actions { align-items: stretch; flex-direction: column; margin-bottom: 32px; }
+      .human-card { grid-template-columns: 64px 1fr; }
+      .human-card img { width: 64px; height: 64px; }
+      .proof-strip, .work-grid-b, .method-grid, .method-dark { grid-template-columns: 1fr; }
+      .proof-strip a { border-right: 0; border-bottom: 1px solid var(--line); }
+      .proof-strip a:last-child { border-bottom: 0; }
+      .section { padding: 62px 0; }
+      .section-head h2, .fit-call h2, .fit-dark-card h2 { font-size: 32px; line-height: 1.12; }
+      .panel-copy { grid-template-columns: 1fr; }
+      .fit-call, .fit-dark-card { padding: 24px; }
+      .hero-b { min-height: auto; display: flex; flex-direction: column; }
+      .portrait-rail { order: 1; min-height: 180px; height: 180px; max-width: none; display: flex; align-items: center; justify-content: center; }
+      .portrait-rail img { width: 180px; height: 180px; object-fit: cover; object-position: center top; }
+      .copy-b { order: 2; padding: 32px 0; }
+      .stage-b { order: 3; width: 100%; margin-bottom: 34px; }
+      .stage-meta { flex-wrap: wrap; min-height: auto; padding: 14px; }
+      .selected-b { padding-bottom: 56px; }
+    }
+  </style>
+</head>
+<body class="show-b">
+  <div class="review-switch" aria-label="Concept pass switcher">
+    <div class="switch-inner">
+      <div class="switch-title">
+        <strong>Elijah Paul V5 redesign passes</strong>
+        <span>Pass B is recommended; no application source is approved yet.</span>
+      </div>
+      <div class="switch-actions" role="tablist" aria-label="Design passes">
+        <button type="button" data-pass="a" role="tab" aria-controls="product-evidence-os">Pass A</button>
+        <button type="button" data-pass="b" role="tab" aria-controls="founder-operator-studio">Pass B</button>
+      </div>
+    </div>
+  </div>
+
+  <section id="product-evidence-os" class="pass-a" aria-label="Product Evidence OS concept pass">
+    <header class="container nav">
+      <a class="brand" href="#">Elijah Paul</a>
+      <nav class="links" aria-label="Pass A navigation">
+        <a href="#work-a">Work</a>
+        <a href="#method-a">Method</a>
+        <a href="#fit-a" class="button secondary">Request a fit call</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="container hero-a">
+        <div>
+          <h1>I turn costly product gaps into working AI systems.</h1>
+          <p class="intro">Crypto, fintech, and AI teams hire me to find the workflow, design the operating logic, and build a testable product.</p>
+          <div class="hero-actions">
+            <a class="button primary" href="#fit-a">Request a fit call <span aria-hidden="true">-></span></a>
+            <a class="button secondary" href="#work-a">See the work</a>
+          </div>
+          <div class="human-card">
+            <img src="../public/headshot.jpg" alt="Elijah Paul" />
+            <div>
+              <strong>AI product builder.</strong>
+              <span>I work hands-on from customer signal to shipped prototype.</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="artifact-stage" aria-label="GridSynapse product evidence">
+          <div class="stage-meta">
+            <span>Flagship proof: GridSynapse</span>
+            <span class="status">Inspectable artifact</span>
+          </div>
+          <img src="../public/projects/gridsynapse.png" alt="GridSynapse optimization console screenshot" />
+        </div>
+      </section>
+
+      <nav class="proof-strip container" aria-label="Selected product systems">
+        <a href="#work-a"><img src="../public/projects/treasury-router.png" alt="" /><span><strong>Treasury Router</strong><span>Static concept artifact</span></span></a>
+        <a href="#work-a"><img src="../public/projects/gridsynapse.png" alt="" /><span><strong>GridSynapse</strong><span>Compute optimization foundation</span></span></a>
+        <a href="#work-a"><img src="../public/projects/orelis.jpg" alt="" /><span><strong>Orelis</strong><span>Voice-agent intake demo</span></span></a>
+        <a href="#work-a"><img src="../public/projects/monarch.jpg" alt="" /><span><strong>Monarch Shield</strong><span>x402 developer tooling</span></span></a>
+      </nav>
+
+      <section id="work-a" class="section">
+        <div class="container">
+          <div class="section-head">
+            <h2>Proof before promises.</h2>
+            <p>The page leads with inspectable systems, then explains role and boundary. Nothing depends on unverified revenue claims, borrowed logos, or fake customer outcomes.</p>
+          </div>
+          <div class="systems">
+            <div class="system-list" role="tablist" aria-label="Pass A systems">
+              <button type="button" aria-selected="false" data-system="treasury-a"><strong>Treasury Router</strong><span>Static advisor workflow artifact with deterministic development-data boundary.</span></button>
+              <button type="button" aria-selected="true" data-system="grid-a"><strong>GridSynapse</strong><span>Public product foundation for compute placement and resource decisions.</span></button>
+              <button type="button" aria-selected="false" data-system="orelis-a"><strong>Orelis</strong><span>Commercial voice-agent intake demo for service workflows.</span></button>
+              <button type="button" aria-selected="false" data-system="monarch-a"><strong>Monarch Shield</strong><span>Open-source x402 preflight and release tooling.</span></button>
+            </div>
+            <article class="system-panel">
+              <img id="system-artifact-a" src="../public/projects/gridsynapse.png" alt="GridSynapse optimization console screenshot" />
+              <div class="panel-copy">
+                <div>
+                  <h3 id="system-title-a">GridSynapse</h3>
+                  <p id="system-description-a">Public product foundation for compute placement and resource decisions using public inputs and modeled constraints.</p>
+                </div>
+                <a id="system-link-a" class="button secondary" href="#">Review artifact</a>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="method-a" class="section">
+        <div class="container">
+          <div class="section-head">
+            <h2>From signal to system.</h2>
+            <p>The method is intentionally plain: find the costly bottleneck, design the operating logic, then build the smallest credible product a team can test.</p>
+          </div>
+          <div class="method-grid">
+            <article class="method-step"><span>01</span><h3>Find the workflow</h3><p>Interview the customer, map the current path, and identify where time, risk, or revenue is leaking.</p></article>
+            <article class="method-step"><span>02</span><h3>Design the logic</h3><p>Turn ambiguity into data boundaries, user decisions, AI assistance rules, and implementation constraints.</p></article>
+            <article class="method-step"><span>03</span><h3>Build the proof</h3><p>Ship a working version, label its limits, and create the next decision packet for the team.</p></article>
+          </div>
+        </div>
+      </section>
+
+      <section id="fit-a" class="section">
+        <div class="container fit-call">
+          <div>
+            <h2>Request a fit call.</h2>
+            <p>Until a scheduler is verified, this is a short intake surface and honest email fallback. It should become a real booking flow only after provider setup.</p>
+          </div>
+          <form class="form-grid">
+            <label>Your role<input type="text" placeholder="Founder, product lead, hiring manager" /></label>
+            <label>Problem worth fixing<textarea placeholder="What workflow, customer problem, or product gap should Elijah look at?"></textarea></label>
+            <button class="button primary" type="button">Prepare request</button>
+          </form>
+        </div>
+      </section>
+    </main>
+  </section>
+
+  <section id="founder-operator-studio" class="pass-b" aria-label="Founder Operator Studio concept pass">
+    <header class="container nav">
+      <a class="brand" href="#">Elijah Paul</a>
+      <nav class="links" aria-label="Pass B navigation">
+        <a href="#work-b">Work</a>
+        <a href="#method-b">Method</a>
+        <a href="#fit-b" class="button primary">Request a fit call</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="container hero-b">
+        <div class="portrait-rail">
+          <img src="../public/headshot.jpg" alt="Elijah Paul" />
+        </div>
+        <div class="copy-b">
+          <h1>AI product builder for expensive workflow problems.</h1>
+          <p>I work with crypto, fintech, and AI teams to turn messy customer signal into working systems buyers can inspect and teams can test.</p>
+          <div class="hero-actions">
+            <a class="button primary" href="#fit-b">Request a fit call <span aria-hidden="true">-></span></a>
+            <a class="button secondary" href="#work-b">See the work</a>
+          </div>
+          <div class="operator-note">
+            <strong>I am Elijah.</strong>
+            I build the strategy, interface, and working prototype, then make the tradeoffs plain.
+          </div>
+        </div>
+        <div class="stage-b" aria-label="GridSynapse product evidence">
+          <div class="stage-meta">
+            <span>Flagship proof: GridSynapse</span>
+            <span class="status">Inspectable artifact</span>
+          </div>
+          <img src="../public/projects/gridsynapse.png" alt="GridSynapse optimization console screenshot" />
+        </div>
+      </section>
+
+      <section id="work-b" class="container selected-b">
+        <div class="section-head">
+          <h2>Selected work</h2>
+          <p>From signal to system.</p>
+        </div>
+        <div class="work-grid-b">
+          <a class="work-card-b" href="../public/treasuryrouter/index.html"><img src="../public/projects/treasury-router.png" alt="Treasury Router static concept artifact" /><div><strong>Treasury Router</strong><span>-></span></div></a>
+          <a class="work-card-b" href="#"><img src="../public/projects/gridsynapse.png" alt="GridSynapse screenshot" /><div><strong>GridSynapse</strong><span>-></span></div></a>
+          <a class="work-card-b" href="#"><img src="../public/projects/orelis.jpg" alt="Orelis image" /><div><strong>Orelis</strong><span>-></span></div></a>
+          <a class="work-card-b" href="#"><img src="../public/projects/monarch.jpg" alt="Monarch Shield image" /><div><strong>Monarch Shield</strong><span>-></span></div></a>
+        </div>
+      </section>
+
+      <section id="method-b" class="dark-band">
+        <div class="container">
+          <div class="section-head">
+            <h2>How the work becomes useful.</h2>
+            <p>Buyers do not need another AI pitch. They need a builder who can find the actual workflow, create the operating model, and ship something testable.</p>
+          </div>
+          <div class="method-dark">
+            <article><span>01</span><h3>Customer signal</h3><p>Capture the messy demand, broken handoff, or costly internal workaround.</p></article>
+            <article><span>02</span><h3>Operating logic</h3><p>Define the decisions, constraints, data boundaries, and human review points.</p></article>
+            <article><span>03</span><h3>Inspectable product</h3><p>Build the version a team can test, inspect, and use to make the next commercial decision.</p></article>
+          </div>
+        </div>
+      </section>
+
+      <section id="fit-b" class="dark-fit">
+        <div class="container fit-dark-card">
+          <div>
+            <h2>Bring a real workflow.</h2>
+            <p>Send the problem, current system, and what success would change. Elijah can quickly tell you whether it should be a sprint, build, or role conversation.</p>
+          </div>
+          <form class="form-grid">
+            <label>Who are you?<input type="text" placeholder="Founder, product lead, hiring manager" /></label>
+            <label>What should be fixed?<textarea placeholder="Describe the customer workflow, product gap, or role need."></textarea></label>
+            <button class="button primary" type="button">Request a fit call</button>
+          </form>
+        </div>
+      </section>
+    </main>
+  </section>
+
+  <script>
+    const buttons = document.querySelectorAll("[data-pass]");
+    function setPass(pass) {
+      document.body.classList.toggle("show-a", pass === "a");
+      document.body.classList.toggle("show-b", pass === "b");
+      buttons.forEach((button) => {
+        const selected = button.dataset.pass === pass;
+        button.setAttribute("aria-selected", selected ? "true" : "false");
+      });
+      if (location.hash !== (pass === "a" ? "#product-evidence-os" : "#founder-operator-studio")) {
+        history.replaceState(null, "", pass === "a" ? "#product-evidence-os" : "#founder-operator-studio");
+      }
+    }
+    buttons.forEach((button) => button.addEventListener("click", () => setPass(button.dataset.pass)));
+    setPass(location.hash === "#product-evidence-os" ? "a" : "b");
+
+    const systemsA = {
+      "treasury-a": {
+        title: "Treasury Router",
+        description: "Static advisor workflow artifact. It shows product direction and deterministic development-data boundaries, not live funds or autonomous execution.",
+        image: "../public/projects/treasury-router.png",
+        alt: "Treasury Router static concept artifact",
+        href: "../public/treasuryrouter/index.html"
+      },
+      "grid-a": {
+        title: "GridSynapse",
+        description: "Public product foundation for compute placement and resource decisions using public inputs and modeled constraints.",
+        image: "../public/projects/gridsynapse.png",
+        alt: "GridSynapse optimization console screenshot",
+        href: "#"
+      },
+      "orelis-a": {
+        title: "Orelis",
+        description: "Commercial voice-agent intake demo for service workflows, positioned as artifact evidence rather than unsupported production proof.",
+        image: "../public/projects/orelis.jpg",
+        alt: "Orelis product artifact image",
+        href: "#"
+      },
+      "monarch-a": {
+        title: "Monarch Shield",
+        description: "Open-source x402 preflight and release tooling, shown as developer-system proof without partner or production claims.",
+        image: "../public/projects/monarch.jpg",
+        alt: "Monarch Shield product artifact image",
+        href: "#"
+      }
+    };
+
+    const systemButtonsA = document.querySelectorAll("[data-system]");
+    const systemArtifactA = document.getElementById("system-artifact-a");
+    const systemTitleA = document.getElementById("system-title-a");
+    const systemDescriptionA = document.getElementById("system-description-a");
+    const systemLinkA = document.getElementById("system-link-a");
+
+    function setSystemA(systemId) {
+      const system = systemsA[systemId];
+      if (!system || !systemArtifactA || !systemTitleA || !systemDescriptionA || !systemLinkA) return;
+      systemButtonsA.forEach((button) => {
+        button.setAttribute("aria-selected", button.dataset.system === systemId ? "true" : "false");
+      });
+      systemArtifactA.src = system.image;
+      systemArtifactA.alt = system.alt;
+      systemTitleA.textContent = system.title;
+      systemDescriptionA.textContent = system.description;
+      systemLinkA.href = system.href;
+    }
+
+    systemButtonsA.forEach((button) => button.addEventListener("click", () => setSystemA(button.dataset.system)));
+    setSystemA("grid-a");
+  </script>
+</body>
+</html>

@@ -3,7 +3,7 @@
 ## Business outcome
 
 - Primary revenue outcome: qualified consulting and embedded-product conversations that can become paid work.
-- Primary conversion: a prospective buyer submits a four-question project brief; email remains the fallback until a form destination is verified.
+- Primary conversion: a prospective buyer requests a fit call; a four-question brief remains the short intake step behind the CTA until a real scheduler or form destination is verified.
 - Thirty-day success signal: qualified inquiries that reference a case study, a workflow problem, or a defined role.
 - Non-goals: maximize anonymous traffic, imitate another AI company, add a SaaS application shell, or introduce paid tools without measured need.
 
@@ -19,15 +19,15 @@
 
 - Positioning: AI product builder for crypto, fintech, and AI teams.
 - Core promise: Turn a costly product bottleneck into a working AI product.
-- Primary CTA: Start a project brief.
-- Supporting path: View selected work.
+- Primary CTA: Request a fit call. Use Book a fit call only after a real scheduler is verified.
+- Supporting path: See the work.
 - Page story: costly workflow gap, inspectable product systems, explicit operating boundaries, controlled build method, ways to engage, objection handling, and one qualified contact action.
 
 ## Information architecture
 
 - Preserve the current routes: home, work, individual case studies, services, about, resume, and contact.
 - The homepage prioritizes consulting and embedded-product buyers. Hiring remains visible in navigation, resume, and contact.
-- Lead proof with the Treasury Router dashboard and GridSynapse dashboard, followed by Orelis and Monarch Shield.
+- Lead proof with the GridSynapse dashboard. Show Treasury Router as a static concept/prototype artifact until a real dashboard asset exists, followed by Orelis and Monarch Shield.
 - Mobile must show the promise, explanation, primary CTA, supporting proof path, and first proof signal without clipped text or horizontal overflow.
 
 ## Discovery
@@ -49,7 +49,7 @@
 - Framework and hosting: preserve Next.js static export and GitHub Pages.
 - Typography: use only free/open fonts. The concept stage may test a restrained grotesk/editorial pairing; no paid font is required.
 - Components: use the existing component system and semantic HTML; do not add shadcn or Radix without a specific need.
-- Visual direction: Profound-led personal AI Product Studio. Use a continuous near-black grid, one dominant exact product artifact per major band, compact metadata, controlled signal geometry, and no decorative glassmorphism. Keep Elijah's real PFP and a tight two-sentence personal introduction in the hero so the experience remains unmistakably a portfolio for a person.
+- Visual direction: reference-led product-builder portfolio. Use the site-specific reference matrix to choose between a light Product Evidence OS pass and a darker Founder Operator Studio pass. Both must show what Elijah does, who should hire him, real product proof, a human author signal, and one paid-work CTA within the first viewport. Keep Elijah's real PFP and exact product artifacts; avoid generic AI/SaaS styling, decorative glassmorphism, repeated bento cards, fake metrics, or copied reference layouts.
 - Claims: unverified financial or performance metrics remain off the redesigned homepage until evidence is supplied.
 - Approved paid budget: SaaSFrame monthly at $14 only; no Figma, Mobbin annual plan, paid font, or $50-plus tool.
 - Release authorization: implementation may begin only after concept approval. Publication requires a separate explicit release approval after QA and independent review.

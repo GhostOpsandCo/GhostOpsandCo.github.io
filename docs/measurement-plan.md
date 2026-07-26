@@ -8,6 +8,7 @@ Does the site turn qualified discovery and case-study interest into product, con
 
 | Event | Trigger | Properties | Interpretation |
 | --- | --- | --- | --- |
+| `fit_call_requested` | Visitor clicks the primary fit-call CTA | page, placement, destination, UTM values when present | Qualified conversation intent only until scheduler/form provider confirms completion |
 | `project_brief_started` | Visitor opens or begins the project brief | page, placement, inquiry type when selected, UTM values when present | Qualified-flow intent only |
 | `project_brief_submitted` | A verified form destination confirms successful delivery | page, inquiry type, provider receipt or success state | Completed inquiry; qualification still requires review |
 | `email_fallback_clicked` | Visitor opens the direct email fallback | page, placement, destination, UTM values when present | Contact intent only |
@@ -19,7 +20,7 @@ Does the site turn qualified discovery and case-study interest into product, con
 
 ## Provider truth
 
-No analytics, form, CRM, or calendar provider is currently verified. The site must not load a fabricated key or claim that a click became a lead. Provider instrumentation can be added after a free account is selected and connected.
+No analytics, form, CRM, scheduler, or calendar provider is currently verified. The site must not load a fabricated key or claim that a click became a lead, booking, or qualified conversation. Provider instrumentation can be added after a free account is selected and connected.
 
 ## Weekly scorecard
 

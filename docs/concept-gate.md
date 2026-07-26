@@ -2,74 +2,83 @@
 
 ## Discarded directions
 
-The first generated concept set and Editorial Intelligence V2.1 are rejected and cannot be implemented.
+The first generated concept set, Editorial Intelligence V2.1, and Profound Personal AI Studio V3 are rejected and cannot be implemented.
 
 - The first set was under-researched, generic, visually flat, and did not establish a signature product world.
 - Editorial Intelligence V2.1 overcorrected into a warm personal editorial portfolio and abandoned the requested Profound-led AI/SaaS language.
+- Profound Personal AI Studio V3 looked like generic AI/SaaS styling instead of a well-scoped product system with visible Apple, OpenAI, SaaSFrame, and shadcn-caliber discipline.
 
 The previous Pasteur and Socrates scores are invalid for the active direction because they evaluated the wrong visual contract.
 
-## Active direction: Profound-led AI Product Studio
+## Active direction: Reference-Led V5 Passes
 
-Profound is the primary structural reference, not a loose mood reference. The site must use a continuous near-black grid, compact navigation, strong section rhythm, oversized exact product evidence, and full-width proof bands. Secondary references have bounded jobs:
+The active direction must read as a designed product-builder portfolio, not a themed AI landing page. It uses the site-specific inspiration contract in [reference-selection-matrix.md](./reference-selection-matrix.md), with Apple and OpenAI as quality references, SaaSFrame as the paid conversion-pattern reference, shadcn as a component-behavior reference, and real portfolio artifacts as the proof.
 
-- Linear: metadata precision and restrained density.
-- Raycast: cinematic product depth and purposeful states.
+Reference jobs:
+
+- Apple: restrained hierarchy, immaculate spacing, and one dominant artifact per major band.
+- OpenAI: calm technical editorial tone, geometric precision, and human warmth without decoration.
+- SaaSFrame: paid reference for conversion pattern selection, section sequencing, CTA density, and proof placement.
+- shadcn: familiar button, tab, form, and state behavior.
+- Linear: metadata precision and restrained product density.
 - Stripe: mechanism explanation and controlled color energy.
-- Apple: one immaculate focal artifact per major band.
-- Clutch: high-contrast signal geometry and precise technical explanation.
-- WorkOS: developer-grade product credibility and purposeful light/dark product contrast.
-- Wise: bold identity, memorable human voice, and confident photographic storytelling.
-- Primer: an interactive systems navigator with crisp module borders and tactile states.
+- Raycast: product depth and purposeful interaction states.
 
 The owned signature remains truthful operating evidence:
 
 > Current state → Product mechanism → Inspectable artifact → Role / boundary
 
-Unlike the rejected editorial execution, that evidence now lives inside a modern AI/SaaS product system and the product—not the portrait—is the focal object.
+The first viewport must answer: what Elijah does, who should hire him, what proof shows skill, who the human is, and what paid-work action to take.
 
 ## Required approval set
 
 The direction cannot be presented for approval until it includes:
 
-- desktop hero and Treasury Router product theater;
-- Elijah's exact PFP and two-sentence personal introduction in the hero without allowing the portrait to displace the first product proof;
+- desktop hero and flagship product theater;
+- Elijah's exact PFP and concise human introduction in the hero without allowing the portrait to displace product proof;
 - proof rail and three-step product mechanism;
-- selected-work system with the actual Treasury Router dashboard, exact GridSynapse dashboard, Orelis artifact, and Monarch Shield artifact;
-- trust/evidence band and project-brief conversion surface;
+- selected-work system with the exact GridSynapse dashboard, Treasury Router static concept artifact, Orelis artifact, and Monarch Shield artifact;
+- trust/evidence band and fit-call or short-brief conversion surface;
 - mobile hero and first product proof at 390px;
-- a reference-to-visible-element map for Profound, Clutch, WorkOS, Wise, Primer, Linear, Raycast, Stripe, and Apple;
-- exact repository assets in a responsive prototype after image-generated art direction is established; the Treasury Router marketing-page snapshot is explicitly prohibited.
+- a reference-to-visible-element map from `docs/reference-selection-matrix.md`;
+- exact repository assets in a responsive prototype after image-generated art direction is established; the Treasury Router static page or marketing-style screenshot is prohibited as flagship dashboard proof.
 
 ## Truth and conversion controls
 
 - Exact headshot and exact product screenshots only.
 - No unsupported financial, production, customer, or outcome claims.
-- Treasury Router is labeled as an inspectable prototype using deterministic development data with no live client funds or autonomous execution.
+- Treasury Router is labeled as a static concept/prototype artifact using deterministic development data with no live client funds or autonomous execution; it must not be called a dashboard until a real dashboard asset exists.
 - GridSynapse is labeled as a public product foundation using public inputs and deterministic optimization; capacity, latency, and availability remain modeled.
-- One dominant hero action: `Start a project brief`.
-- The final brief must ask four focused questions, allow review before submission, and use a real form destination rather than mailto.
-- `View selected work` remains the only supporting hero action.
+- One dominant hero action: `Request a fit call` until a real scheduler is verified.
+- The final brief must ask four focused questions, allow review before submission, and use a real form destination or honest email fallback; do not claim booking or form delivery until verified.
+- `See the work` remains the only supporting hero action.
 
-## Current responsive approval candidate
+## Current responsive approval candidates
 
-The active candidate is [`concepts/profound-personal-ai-studio-v3.html`](../concepts/profound-personal-ai-studio-v3.html). It uses only the exact local PFP and project artifacts, and it renders the real Treasury Router advisor dashboard directly from the local product markup rather than using the prohibited Treasury Router marketing-page image.
+The active V5 review candidates are:
 
-Browser checks completed at 390, 768, 1024, and 1440px confirm:
+- `concepts/redesign-passes-v5.html#product-evidence-os`
+- `concepts/redesign-passes-v5.html#founder-operator-studio`
+
+Image-generation references are preserved at:
+
+- `concepts/assets/product-evidence-os-v5-reference.png`
+- `concepts/assets/founder-operator-studio-v5-reference.png`
+
+V4 remains superseded and is not part of the active implementation candidate.
+
+Browser checks completed on July 26, 2026 in local Chrome at 320, 390, 768, 1024, and 1440px confirm:
 
 - no page-width overflow;
-- the personal identity, primary promise, CTA, and beginning of the Treasury Router dashboard remain in the opening composition;
-- the four-system navigator updates the dominant artifact, status, boundary, and case-study link;
-- the mobile menu opens and closes, supports Escape, and returns focus to its trigger;
-- GridSynapse, Orelis, Monarch Shield, the human story band, evidence standard, services, and project brief all recompose without clipping.
+- the personal identity, primary promise, CTA, and beginning of the first product proof remain in the opening composition;
+- the selected-systems tabs update the artifact, boundary, and role;
+- Treasury Router, GridSynapse, Orelis, Monarch Shield, the method section, and fit-call surface all recompose without clipping.
 
 ## Independent review result
 
-- Pasteur premium-design review: **96/100**, no fatal blocker, ready for Elijah's art-direction review.
-- First-time-user review: initial interaction and accessibility defects were corrected; focused re-check result: **Pass. Ready for concept approval.**
-- Corrections completed before presentation: AA-safe CTA and metadata contrast, visible illustrative-prototype labeling before Treasury figures, an accessibility-hidden/non-focusable Treasury visual with adjacent text summary, a working prefilled email fallback, a 2×2 mobile systems navigator, roving tab focus with Arrow/Home/End support, and explicit hidden-state enforcement for inactive product panels.
+The prior independent review result applied to the rejected V3 candidate and is superseded. V5 requires fresh responsive review and independent review before it can be called ready for implementation.
 
-The independent concept gates now pass. The candidate remains unapproved until Elijah explicitly approves the art direction.
+The candidate remains unapproved until Elijah explicitly approves the art direction.
 
 ## Approval boundary
 
