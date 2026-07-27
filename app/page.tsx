@@ -26,7 +26,7 @@ const focusSections = [
     label: "01 / Voice agent offering",
     title: "Orelis is the clearest commercial offer: Faith answers the calls your team misses.",
     lead:
-      "The site now has a real product anchor: a quiet, focused voice-agent experience with one proof artifact, one buyer problem, and one setup-call path.",
+      "A focused voice-agent experience with one proof artifact, one buyer problem, and one setup-call path.",
     artifactNote: "Latest Orelis site capture: Faith example call and setup-call CTA.",
     primary: true,
   },
@@ -275,7 +275,7 @@ export default function Home() {
               sizes="(max-width: 900px) 92vw, 46vw"
             />
             <figcaption>
-              <span>Primary commercial offer</span>
+              <span>Lead proof artifact</span>
               <strong>Orelis: Faith example call, setup-call CTA, and the voice-agent workflow.</strong>
             </figcaption>
           </figure>
@@ -286,12 +286,12 @@ export default function Home() {
         <div className="site-shell v8-work-intro-grid">
           <div>
             <p className="eyebrow">Inspectable work</p>
-            <h2 id="work-title">Each product gets one clear section, one artifact, and one reason it matters.</h2>
+            <h2 id="work-title">Five product systems, each with a clear problem, artifact, and reason to care.</h2>
           </div>
           <p>
-            This is the portfolio standard: no vague AI grid, no carousel hiding the details, no invented
-            metrics. Each section explains the product, the benefit, the key terms, and the boundary a
-            serious buyer would ask about.
+            Orelis handles missed high-ticket calls. Team Take Down protects creator releases.
+            Treasury Router stages advisor decisions. GridSynapse plans compute procurement.
+            Monarch Shield checks agent-payment code before funds move.
           </p>
         </div>
       </section>

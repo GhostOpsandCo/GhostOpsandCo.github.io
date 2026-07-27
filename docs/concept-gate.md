@@ -12,15 +12,15 @@ The first generated concept set, Editorial Intelligence V2.1, Profound Personal 
 
 The previous Pasteur and Socrates scores are invalid for the active direction because they evaluated the wrong visual contract.
 
-## Active direction: Quietly Capable Portfolio V8
+## Active direction: Focused Portfolio V8
 
-The active direction must read as a clean, modern product-builder portfolio with case-study depth on the homepage. It starts from the current `elijahpaul.io` build instead of inventing a new identity, references the current Orelis "quietly capable" direction, then expands each selected project into a visible story: what it does, benefits, keywords, problem, role, build, proof, boundary, and inspectable next action. It uses the site-specific inspiration contract in [reference-selection-matrix.md](./reference-selection-matrix.md), with Apple and OpenAI as quality references, SaaSFrame as the paid case-study/conversion reference, shadcn as a component-behavior reference, and real portfolio artifacts as the proof.
+The active direction must read as a clean, modern product-builder portfolio with case-study depth on the homepage. It starts from the current `elijahpaul.io` build instead of inventing a new identity or palette, references the current Orelis product page for focus and proof rhythm only, then expands each selected project into a visible story: what it does, benefits, keywords, problem, role, build, proof, boundary, and inspectable next action. It uses the site-specific inspiration contract in [reference-selection-matrix.md](./reference-selection-matrix.md), with Apple and OpenAI as quality references, SaaSFrame as the paid case-study/conversion reference, shadcn as a component-behavior reference, and real portfolio artifacts as the proof.
 
 Reference jobs:
 
 - Apple: restrained hierarchy, immaculate spacing, and one dominant artifact per major band.
 - OpenAI: calm technical editorial tone, geometric precision, and human warmth without decoration.
-- SaaSFrame: paid reference for conversion pattern selection, section sequencing, CTA density, and proof placement.
+- SaaSFrame: paid reference for conversion pattern selection, section sequencing, CTA density, proof placement, and single-focus project bands.
 - shadcn: familiar button, tab, form, and state behavior.
 - Linear: metadata precision and restrained product density.
 - Stripe: mechanism explanation and controlled color energy.
@@ -51,7 +51,7 @@ The direction cannot be presented for approval until it includes:
 - for every project section: what it does, benefits, keywords, problem, role, what was built, what works today, evidence boundary, and concrete links;
 - trust/evidence band and fit-call or short-brief conversion surface;
 - mobile hero and first product proof at 390px;
-- a reference-to-visible-element map from `docs/reference-selection-matrix.md`;
+- a reference-to-visible-element map from `docs/reference-selection-matrix.md`, including a clear note that Orelis and SaaSFrame inform layout and conversion structure, not a replacement color palette;
 - exact repository assets in a responsive prototype after image-generated art direction is established; invented product UI, generic AI art, or copied reference layouts are prohibited.
 
 ## Truth and conversion controls

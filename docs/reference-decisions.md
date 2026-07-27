@@ -84,4 +84,4 @@ The active contract is now [reference-selection-matrix.md](./reference-selection
 
 ## Direction gate
 
-V8 is the active implementation direction: an Orelis-inspired quietly capable homepage that keeps the current site language and gives each major product its own detailed section instead of relying on a selector, carousel, or proof grid. Production release still requires explicit approval after responsive QA and independent review.
+V8 is the active implementation direction: a palette-preserving focused homepage that keeps the current site language and gives each major product its own detailed section instead of relying on a selector, carousel, or proof grid. Orelis and SaaSFrame inform section focus, proof sequencing, and conversion rhythm, not a replacement visual palette. Production release still requires explicit approval after responsive QA and independent review.
