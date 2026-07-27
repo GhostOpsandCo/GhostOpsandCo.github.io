@@ -27,7 +27,7 @@ const contactPaths = [
   {
     label: "Product opportunity",
     title: "Use, partner on, license, or acquire selected work",
-    copy: "Best for GridSynapse, Orelis, Monarch Doctor, or a related implementation built around your market and technical stack.",
+    copy: "Best for Orelis, Team Take Down, GridSynapse, Monarch Shield, or a related implementation built around your market and technical stack.",
     action: "Discuss a product",
     subject: "Portfolio product opportunity",
   },

@@ -2,7 +2,7 @@ export const site = {
   name: "Elijah Paul",
   title: "AI Solutions Architect & Product Builder",
   description:
-    "Elijah Paul turns customer problems into working AI products for crypto, fintech, voice AI, and agentic systems.",
+    "Elijah Paul turns customer problems into working AI products for crypto, fintech, voice AI, creator protection, and agentic systems.",
   url: "https://elijahpaul.io",
   email: "elijah@elijahpaul.io",
   linkedin: "https://www.linkedin.com/in/elijahpaul",
@@ -17,6 +17,9 @@ export type Project = {
   summary: string;
   metaDescription: string;
   shortOutcome: string;
+  whatItDoes: string;
+  benefits: string[];
+  keywords: string[];
   image: string;
   imageAlt: string;
   liveUrl?: string;
@@ -35,18 +38,132 @@ export type Project = {
 
 export const projects: Project[] = [
   {
+    slug: "orelis",
+    name: "Orelis",
+    category: "Voice agent product",
+    status: "Commercial voice-agent demo",
+    summary:
+      "A focused inbound voice-agent offer for service businesses. Faith answers routed calls, qualifies the request, and prepares a booking request, structured summary, or human handoff.",
+    metaDescription:
+      "Orelis is a configurable AI voice-assistant service for service businesses that handles routed inbound-call intake, qualification, and prepared booking or human handoff.",
+    shortOutcome:
+      "Turns missed-call risk into a clear intake, qualification, and handoff workflow that a service business can evaluate from a real example call.",
+    whatItDoes:
+      "Orelis gives a service business one approved voice assistant, one routed number, and one call flow for missed calls, after-hours inquiries, and overflow.",
+    benefits: [
+      "Captures high-intent inbound demand when the team cannot answer.",
+      "Keeps qualification, urgency, and next-step details consistent.",
+      "Gives operators a scan-ready handoff instead of a vague voicemail.",
+    ],
+    keywords: ["voice AI", "missed calls", "high-ticket services", "intake", "qualification", "handoff"],
+    image: "/projects/orelis-latest.png",
+    imageAlt: "Latest Orelis website showing Faith, the example voice call, and Book a setup call action",
+    liveUrl: "https://orelis.io/",
+    primaryAction: "Open product",
+    primaryIntent: "voice AI agent for service businesses",
+    skills: ["Voice AI", "Conversation design", "B2B SaaS", "Lead qualification", "Product UX"],
+    role:
+      "Product positioning, conversation workflow, service-business use case, brand direction, UX, demo experience, and commercial packaging.",
+    challenge:
+      "High-ticket service businesses lose opportunities when inbound calls go unanswered or qualification and handoff details are inconsistent.",
+    approach: [
+      "Designed a clear caller journey from greeting through qualification and next step.",
+      "Kept the experience focused on business outcomes instead of generic chatbot features.",
+      "Created a branded product surface that can be adapted to different service categories.",
+      "Made human escalation and operator handoff part of the workflow rather than an exception.",
+    ],
+    workflow: [
+      "Answer the inbound request",
+      "Capture contact and service details",
+      "Qualify urgency and fit",
+      "Prepare a booking, summary, or operator handoff",
+      "Give the business a consistent follow-up record",
+    ],
+    proof: [
+      "Public product site with Faith as the primary example assistant",
+      "Listen-only 1:44 example call with identifying details redacted",
+      "Visible setup-call CTA and handoff summary pattern",
+      "Public boundary language for providers, workflow approval, and results",
+    ],
+    boundary:
+      "Orelis is a public commercial demo. Production telephony, CRM integrations, uptime, booking behavior, and customer outcomes depend on the final provider setup and tested workflow.",
+    availability:
+      "Available for custom voice-agent builds and commercial implementation discussions.",
+  },
+  {
+    slug: "team-take-down",
+    name: "Team Take Down",
+    category: "Creator protection platform",
+    status: "Public product foundation",
+    summary:
+      "A release-first creator protection workflow that prepares protected videos, watches accessible public sites after release, organizes proof, prepares takedown requests, and tracks outcomes with creator review.",
+    metaDescription:
+      "Team Take Down is a creator protection platform for release preparation, public-site leak checks, evidence organization, takedown support, and outcome tracking.",
+    shortOutcome:
+      "Turns leak cleanup into one controlled workspace from protected upload to evidence, creator approval, takedown support, and checked result.",
+    whatItDoes:
+      "Team Take Down clears private file details, adds private video and audio match signals, checks the finished MP4, watches accessible public sites, and keeps evidence and takedown follow-up connected.",
+    benefits: [
+      "Protects releases before they go public instead of reacting after proof is scattered.",
+      "Keeps match reasons, screenshots, filing routes, receipts, and outcomes in one place.",
+      "Keeps the creator in control of the final legal approval before any request is sent.",
+    ],
+    keywords: ["creator protection", "release watch", "digital fingerprinting", "evidence workflow", "takedown support", "privacy"],
+    image: "/projects/team-take-down.png",
+    imageAlt: "Team Take Down creator workspace showing protected release status, priorities, and recent protection activity",
+    liveUrl: "https://teamtakedown.xyz/",
+    primaryAction: "Open product",
+    primaryIntent: "creator content protection workflow",
+    skills: ["Creator protection", "AI workflows", "Digital fingerprinting", "Evidence systems", "Privacy UX", "Human review"],
+    role:
+      "Product strategy, creator workflow, privacy boundary, evidence model, dashboard UX, release positioning, and launch planning.",
+    challenge:
+      "Creators need a way to protect private media before release, recognize possible copies after release, organize proof, and approve takedown action without building a permanent media library or losing control of legal decisions.",
+    approach: [
+      "Designed the workflow around release preparation, not only post-leak cleanup.",
+      "Kept private media minimization, creator approval, evidence capture, and outcome checks visible in the product model.",
+      "Separated possible-copy detection from confirmed legal action so the product does not overclaim what it can see.",
+      "Built the creator workspace around the actions a creator actually needs next: protect, find, remove, and track.",
+    ],
+    workflow: [
+      "Upload and prepare a protected MP4",
+      "Remove private file details and add private match signals",
+      "Watch accessible public sites after release",
+      "Organize source links, screenshots, match reasons, and filing route",
+      "Ask the creator to approve the request and track the outcome",
+    ],
+    proof: [
+      "Public marketing site and creator workspace surface",
+      "Release Watch, evidence, review, request, and result states",
+      "Public privacy boundary that avoids whole-internet or guaranteed-removal claims",
+      "Creator-approved legal action model instead of autonomous takedowns",
+    ],
+    boundary:
+      "Team Take Down watches public sites it can legally access. It does not search private groups, locked accounts, paywalls, encrypted services, or the whole internet, and it does not guarantee every edited copy will be found or removed.",
+    availability:
+      "Available as a creator-protection product foundation and selected implementation discussion.",
+  },
+  {
     slug: "treasury-router",
     name: "Treasury Router",
     category: "AI financial workflow",
-    status: "Working prototype",
+    status: "Working advisor prototype",
     summary:
-      "A governed advisor workflow that finds modeled idle-capital opportunities, filters a controlled product library, prepares client materials, and creates a human-confirmed operations handoff.",
+      "A governed advisor workspace that surfaces modeled idle-capital opportunities, stages client cases, filters approved routes, prepares client materials, and keeps execution behind human approval.",
     metaDescription:
-      "Treasury Router is a governed AI advisor workflow for idle-capital analysis, controlled product matching, client materials, and human-approved handoff.",
+      "Treasury Router is a governed AI advisor workflow for modeled idle-capital analysis, controlled product matching, client materials, and human-approved handoff.",
     shortOutcome:
-      "Turned an AI product idea into a working advisor and x402 merchant workflow that stakeholders could inspect, test, and discuss.",
-    image: "/projects/treasury-router.png",
-    imageAlt: "Treasury Router public product concept showing its idle-capital workflow",
+      "Turns an AI financial workflow idea into a working advisor surface that stakeholders can inspect, test, and discuss without giving the AI authority over funds.",
+    whatItDoes:
+      "Treasury Router ranks idle-capital opportunities across a VIP book, opens the highest-impact client case, prepares an advisor review path, and creates a clean handoff packet.",
+    benefits: [
+      "Shows advisors which client case deserves attention first.",
+      "Turns route analysis into a packet a human can review with the client.",
+      "Protects the workflow with deterministic controls and explicit execution boundaries.",
+    ],
+    keywords: ["AI treasury", "idle capital", "advisor workflow", "financial UX", "human approval", "x402"],
+    image: "/projects/treasury-router-dashboard.png",
+    imageAlt: "Treasury Router advisor dashboard showing idle-capital opportunities and a client case workflow",
     liveUrl: "https://treasuryrouter.xyz/treasuryrouter/",
     primaryAction: "View public concept",
     primaryIntent: "AI financial advisor workflow",
@@ -90,6 +207,14 @@ export const projects: Project[] = [
       "GridSynapse compares public GPU pricing and carbon data, applies workload constraints, and produces approval-ready AI compute procurement plans.",
     shortOutcome:
       "Demonstrates how live public inputs, deterministic optimization, and operational approvals can replace spreadsheet-heavy compute sourcing.",
+    whatItDoes:
+      "GridSynapse turns fragmented compute options into a ranked procurement plan using workload constraints, public price inputs, carbon inputs, and deterministic optimization.",
+    benefits: [
+      "Helps buyers compare providers without relying on scattered spreadsheets.",
+      "Makes the tradeoff between cost, region, policy, carbon, and workload visible.",
+      "Produces an approval-ready packet before any reservation, provisioning, or spend.",
+    ],
+    keywords: ["AI compute", "GPU procurement", "optimization", "OR-Tools", "Supabase", "decision systems"],
     image: "/projects/gridsynapse.png",
     imageAlt: "GridSynapse operator console comparing AI compute procurement options",
     liveUrl: "https://gridsynapse.vercel.app",
@@ -126,67 +251,30 @@ export const projects: Project[] = [
       "Available as a portfolio product foundation for product partnerships, custom implementation discussions, or acquisition inquiries.",
   },
   {
-    slug: "orelis",
-    name: "Orelis",
-    category: "Voice agent product",
-    status: "Commercial demo",
-    summary:
-      "A branded inbound voice-agent experience for high-ticket service businesses that captures caller details, qualifies the request, and prepares a booking or operator handoff.",
-    metaDescription:
-      "Orelis is a voice AI agent for high-ticket service businesses that captures callers, qualifies demand, and prepares bookings or human handoffs.",
-    shortOutcome:
-      "Shows how an AI voice workflow can make missed-call handling more consistent while preserving a clear human handoff.",
-    image: "/projects/orelis.jpg",
-    imageAlt: "Orelis voice agent product interface for service businesses",
-    liveUrl: "https://orelis.io/",
-    primaryAction: "Open product",
-    primaryIntent: "voice AI agent for service businesses",
-    skills: ["Voice AI", "Conversation design", "B2B SaaS", "Lead qualification", "Product UX"],
-    role:
-      "Product positioning, conversation workflow, service-business use case, brand direction, UX, demo experience, and commercial packaging.",
-    challenge:
-      "High-ticket service businesses lose opportunities when inbound calls go unanswered or qualification and handoff details are inconsistent.",
-    approach: [
-      "Designed a clear caller journey from greeting through qualification and next step.",
-      "Kept the experience focused on business outcomes instead of generic chatbot features.",
-      "Created a branded product surface that can be adapted to different service categories.",
-      "Made human escalation and operator handoff part of the workflow rather than an exception.",
-    ],
-    workflow: [
-      "Answer the inbound request",
-      "Capture contact and service details",
-      "Qualify urgency and fit",
-      "Prepare a booking, summary, or operator handoff",
-      "Give the business a consistent follow-up record",
-    ],
-    proof: [
-      "Public product and sample voice interaction",
-      "Customer-facing workflow designed around service-business intake",
-      "Reusable branded experience for different high-ticket categories",
-      "Clear handoff boundary for downstream operators",
-    ],
-    boundary:
-      "Orelis is a public commercial demo. Production telephony, CRM integrations, uptime, and customer outcomes depend on the final implementation and are not claimed by this case study.",
-    availability:
-      "Available for custom voice-agent builds and commercial implementation discussions.",
-  },
-  {
     slug: "x402-agent-payments",
-    name: "Monarch Doctor",
-    category: "Agent payment developer tool",
+    name: "Monarch Shield",
+    category: "Agent payment safety infrastructure",
     status: "Open-source developer tool",
     summary:
-      "A CLI and CI preflight that detects supported payment-code patterns and can fail a build when money-moving code lacks a detectable policy guard.",
+      "A local-first CLI and CI safety gate for agent payment stacks. It detects supported money-moving code paths and blocks unsafe payment flows before they go live.",
     metaDescription:
-      "Monarch Doctor is an open-source CLI and CI preflight that flags supported x402 payment code when a detectable policy guard is missing.",
+      "Monarch Shield is an open-source CLI and CI preflight for agent payment stacks, x402 flows, wallets, stablecoins, cards, paid APIs, and paid MCP tools.",
     shortOutcome:
-      "Turns a recurring agent-payment implementation risk into a deterministic check developers can run before release.",
-    image: "/projects/monarch.jpg",
-    imageAlt: "Monarch Doctor banner for the x402 payment preflight tool",
+      "Turns agent-payment release risk into a deterministic preflight developers and coding agents can run before real funds move.",
+    whatItDoes:
+      "Monarch Shield gives coding agents and developers one command to inspect supported payment code, catch unsafe paths, and keep a safety check in CI before launch.",
+    benefits: [
+      "Blocks obvious unsafe payment paths before users, wallets, cards, stablecoins, or paid APIs touch code.",
+      "Gives reviewers reproducible proof packs instead of vague security claims.",
+      "Works locally without an account, API key, or hosted dependency to start.",
+    ],
+    keywords: ["agent payments", "x402", "payment safety", "CLI", "CI gate", "coding agents"],
+    image: "/projects/monarch-shield.png",
+    imageAlt: "Monarch Shield website showing agent payment safety infrastructure and Doctor preflight",
     liveUrl: "https://x402ms.ai/",
     sourceUrl: "https://github.com/GhostMonarch/x402ms",
     primaryAction: "View developer tool",
-    primaryIntent: "x402 agent payment developer",
+    primaryIntent: "agent payment safety gate",
     skills: ["x402", "CLI tooling", "CI/CD", "Static analysis", "Agent payments", "TypeScript"],
     role:
       "Product wedge, developer workflow, policy-guard model, CLI experience, CI behavior, testing, documentation, and public release.",
@@ -208,11 +296,11 @@ export const projects: Project[] = [
     proof: [
       "MIT-licensed public repository",
       "Installable CLI and CI-oriented strict mode",
-      "Deterministic tests for supported patterns",
+      "Public proof artifacts tied to shipped code",
       "Clear separation between build-time preflight and runtime enforcement",
     ],
     boundary:
-      "Monarch Doctor is a build-time static preflight. It is not runtime enforcement, fraud prevention, provider verification, wallet security, regulatory compliance, or settlement validation.",
+      "Monarch Shield is a build-time and CI preflight. It is not runtime enforcement by itself, fraud prevention, provider verification, wallet security, regulatory compliance, or settlement validation.",
     availability:
       "Available for open-source use. Related agent-payment workflow and integration work is available as a consulting engagement.",
   },
@@ -221,8 +309,8 @@ export const projects: Project[] = [
 export const services = [
   {
     name: "AI Product Opportunity Sprint",
-    timeline: "5–10 business days",
-    price: "Typical range: $3.5k–$7.5k",
+    timeline: "5-10 business days",
+    price: "Typical range: $3.5k-$7.5k",
     summary:
       "Find the expensive customer or operational problem, map the workflow, and define the smallest AI product worth building.",
     deliverables: [
@@ -235,8 +323,8 @@ export const services = [
   },
   {
     name: "AI Product Build",
-    timeline: "3–8 weeks",
-    price: "Typical range: $15k–$40k+",
+    timeline: "3-8 weeks",
+    price: "Typical range: $15k-$40k+",
     summary:
       "Turn the selected workflow into a working product teams and customers can test, including the user experience and required integrations.",
     deliverables: [
@@ -250,7 +338,7 @@ export const services = [
   {
     name: "Embedded AI Solutions Architect",
     timeline: "Monthly engagement",
-    price: "Typical range: $10k–$18k/month",
+    price: "Typical range: $10k-$18k/month",
     summary:
       "Work directly with customers and internal teams to uncover product gaps, shape solutions, and build the path from feedback to adoption.",
     deliverables: [

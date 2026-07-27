@@ -13,30 +13,90 @@ function getProject(slug: string): Project {
   return project;
 }
 
-const gridSynapse = getProject("gridsynapse");
-const treasuryRouter = getProject("treasury-router");
 const orelis = getProject("orelis");
-const monarchDoctor = getProject("x402-agent-payments");
+const teamTakeDown = getProject("team-take-down");
+const treasuryRouter = getProject("treasury-router");
+const gridSynapse = getProject("gridsynapse");
+const monarchShield = getProject("x402-agent-payments");
 
-const proofProjects = [
-  { project: orelis, href: "#orelis", label: "01" },
-  { project: gridSynapse, href: "#gridsynapse", label: "02" },
-  { project: treasuryRouter, href: "#treasury-router", label: "03" },
-  { project: monarchDoctor, href: "#monarch-doctor", label: "04" },
+const focusSections = [
+  {
+    project: orelis,
+    anchor: "orelis",
+    label: "01 / Voice agent offering",
+    title: "Orelis is the clearest commercial offer: Faith answers the calls your team misses.",
+    lead:
+      "The site now has a real product anchor: a quiet, focused voice-agent experience with one proof artifact, one buyer problem, and one setup-call path.",
+    artifactNote: "Latest Orelis site capture: Faith example call and setup-call CTA.",
+    primary: true,
+  },
+  {
+    project: teamTakeDown,
+    anchor: "team-take-down",
+    label: "02 / Creator protection",
+    title: "Team Take Down turns release protection into a workspace creators can trust.",
+    lead:
+      "The product is not another vague AI safety claim. It shows the concrete loop: protect the file, watch accessible public sites, organize evidence, approve the request, and check the result.",
+    artifactNote: "Creator workspace showing protected release status, evidence, and next actions.",
+  },
+  {
+    project: treasuryRouter,
+    anchor: "treasury-router",
+    label: "03 / Financial workflow",
+    title: "Treasury Router makes a controlled advisor workflow inspectable.",
+    lead:
+      "This section shows the exact advisor dashboard: idle-capital opportunities, a prioritized client case, recommendation steps, and human review before execution.",
+    artifactNote: "Advisor dashboard using illustrative development data.",
+    reverse: true,
+  },
+  {
+    project: gridSynapse,
+    anchor: "gridsynapse",
+    label: "04 / Compute procurement",
+    title: "GridSynapse shows the deeper product system: constraints, optimization, and approval.",
+    lead:
+      "This is the systems-thinking proof. The product turns fragmented GPU sourcing into a decision workflow a buyer can inspect before any provider action.",
+    artifactNote: "Public compute procurement product and source-backed workflow.",
+  },
+  {
+    project: monarchShield,
+    anchor: "monarch-shield",
+    label: "05 / Agent payment safety",
+    title: "Monarch Shield gives coding agents a payment safety gate before go-live.",
+    lead:
+      "The tool has a narrow, useful job: run Doctor, find supported unsafe payment paths, fail CI in strict mode, and keep the boundary around what a preflight can and cannot prove.",
+    artifactNote: "Live Monarch Shield site showing Doctor preflight and payment safety boundary.",
+    reverse: true,
+  },
 ];
 
 const methodSteps = [
   {
-    title: "Start with the expensive customer problem",
-    copy: "I look for the workflow where delay, ambiguity, or manual coordination is costing the team money or momentum.",
+    title: "Find the expensive customer problem",
+    copy: "I look for the workflow where delay, ambiguity, risk, or manual coordination is costing the team money or momentum.",
   },
   {
-    title: "Design the operating system",
-    copy: "I map the user, controls, data inputs, decision rules, approval points, and the smallest useful product surface.",
+    title: "Design the operating loop",
+    copy: "I map the user, inputs, rules, approval points, edge cases, and the smallest product surface that can prove value.",
   },
   {
     title: "Build the inspectable version",
-    copy: "I ship the working artifact with honest boundaries so customers, teammates, and leadership can test the real thing.",
+    copy: "I ship the working artifact with clear evidence, source where possible, and honest boundaries around what is not live yet.",
+  },
+];
+
+const thoughtNotes = [
+  {
+    title: "The workflow matters more than the model.",
+    copy: "Useful AI products are usually won by choosing the right moment, data boundary, handoff, and human approval pattern.",
+  },
+  {
+    title: "A portfolio should let buyers inspect the mechanism.",
+    copy: "Screenshots, case details, route boundaries, and source links create more trust than vague capability lists.",
+  },
+  {
+    title: "The boundary is part of the product.",
+    copy: "When money, identity, private media, or customer operations are involved, saying what the system does not do is a feature.",
   },
 ];
 
@@ -47,57 +107,89 @@ const fitQuestions = [
   "What proof would make the next decision easier?",
 ];
 
-function ProjectTags({ project }: { project: Project }) {
+function PillList({ items, label }: { items: string[]; label: string }) {
   return (
-    <div className="v7-tags" aria-label={`${project.name} capabilities`}>
-      {project.skills.slice(0, 4).map((skill) => (
-        <span key={`${project.slug}-${skill}`}>{skill}</span>
+    <div className="v8-pills" aria-label={label}>
+      {items.map((item) => (
+        <span key={item}>{item}</span>
       ))}
     </div>
   );
 }
 
-function CaseSection({
+function ProjectFocusSection({
   project,
   anchor,
   label,
   title,
   lead,
+  artifactNote,
+  primary = false,
+  reverse = false,
 }: {
   project: Project;
   anchor: string;
   label: string;
   title: string;
   lead: string;
+  artifactNote: string;
+  primary?: boolean;
+  reverse?: boolean;
 }) {
-  const facts = [
-    { label: "Problem", value: project.challenge },
-    { label: "Role", value: project.role },
-    { label: "Built", value: project.approach[0] },
-    { label: "Works today", value: project.proof.slice(0, 2).join("; ") },
-    { label: "Boundary", value: project.boundary },
-  ];
-
   return (
-    <section className="v7-section v7-case-section" id={anchor} aria-labelledby={`${anchor}-title`}>
-      <div className="site-shell v7-case">
-        <div className="v7-case-copy">
+    <section
+      className={`v8-section v8-project-section${primary ? " v8-project-primary" : ""}${reverse ? " v8-project-reverse" : ""}`}
+      id={anchor}
+      aria-labelledby={`${anchor}-title`}
+    >
+      <div className="site-shell v8-project-grid">
+        <figure className="v8-artifact">
+          <div className="v8-artifact-shot">
+            <Image
+              src={project.image}
+              alt={project.imageAlt}
+              width={1440}
+              height={1100}
+              sizes="(max-width: 900px) 92vw, 52vw"
+              priority={primary}
+            />
+          </div>
+          <figcaption>
+            <span>{project.status}</span>
+            <strong>{artifactNote}</strong>
+          </figcaption>
+        </figure>
+
+        <div className="v8-project-copy">
           <p className="eyebrow">{label}</p>
           <h2 id={`${anchor}-title`}>{title}</h2>
-          <p className="v7-large-copy">{lead}</p>
-          <ProjectTags project={project} />
+          <p className="v8-large-copy">{lead}</p>
 
-          <div className="v7-detail-table" aria-label={`${project.name} case details`}>
-            {facts.map((fact) => (
-              <div key={`${project.slug}-${fact.label}`}>
-                <strong>{fact.label}</strong>
-                <p>{fact.value}</p>
-              </div>
-            ))}
+          <div className="v8-detail-stack" aria-label={`${project.name} breakdown`}>
+            <div>
+              <strong>What it does</strong>
+              <p>{project.whatItDoes}</p>
+            </div>
+            <div>
+              <strong>Benefits</strong>
+              <ul>
+                {project.benefits.map((benefit) => (
+                  <li key={benefit}>{benefit}</li>
+                ))}
+              </ul>
+            </div>
+            <div>
+              <strong>Keywords</strong>
+              <PillList items={project.keywords} label={`${project.name} keywords`} />
+            </div>
+            <div>
+              <strong>Boundary</strong>
+              <p>{project.boundary}</p>
+            </div>
           </div>
 
-          <div className="v7-actions">
-            <Link className="button button-primary" href={`/work/${project.slug}`}>Read case study</Link>
+          <div className="v8-actions">
+            <Link className="button button-primary" href={`/work/${project.slug}`}>Inspect case study</Link>
             {project.liveUrl ? (
               <a className="button button-outline" href={project.liveUrl} target="_blank" rel="noreferrer">
                 {project.primaryAction}
@@ -110,81 +202,8 @@ function CaseSection({
             ) : null}
           </div>
         </div>
-
-        <figure className="v7-artifact">
-          <Image
-            src={project.image}
-            alt={project.imageAlt}
-            width={1440}
-            height={1100}
-            sizes="(max-width: 900px) 92vw, 44vw"
-          />
-          <figcaption>
-            <span>{project.status}</span>
-            <strong>{project.name}</strong>
-          </figcaption>
-        </figure>
       </div>
     </section>
-  );
-}
-
-function FeaturedProof({ project, href, label }: { project: Project; href: string; label: string }) {
-  return (
-    <Link className="v7-feature-card" href={href}>
-      <div className="v7-feature-image">
-        <Image
-          src={project.image}
-          alt={project.imageAlt}
-          fill
-          priority={project.slug === "orelis" || project.slug === "gridsynapse"}
-          sizes="(max-width: 900px) 92vw, 40vw"
-        />
-      </div>
-      <div className="v7-feature-body">
-        <span>{label}</span>
-        <strong>{project.name}</strong>
-        <p>{project.shortOutcome}</p>
-        <small>Inspect case study</small>
-      </div>
-    </Link>
-  );
-}
-
-function SupportingProject({ project, href }: { project: Project; href: string }) {
-  return (
-    <article className="v7-support-card">
-      <div className="v7-support-image">
-        <Image src={project.image} alt={project.imageAlt} width={900} height={700} sizes="(max-width: 760px) 92vw, 40vw" />
-      </div>
-      <div className="v7-support-body">
-        <p className="eyebrow">{project.category}</p>
-        <h3>{project.name}</h3>
-        <p>{project.summary}</p>
-        <div className="v7-detail-table v7-detail-table-compact">
-          <div>
-            <strong>Role</strong>
-            <p>{project.role}</p>
-          </div>
-          <div>
-            <strong>Evidence</strong>
-            <p>{project.proof[0]}</p>
-          </div>
-          <div>
-            <strong>Boundary</strong>
-            <p>{project.boundary}</p>
-          </div>
-        </div>
-        <div className="v7-actions">
-          <Link className="button button-outline" href={href}>Read case study</Link>
-          {project.liveUrl ? (
-            <a className="text-link" href={project.liveUrl} target="_blank" rel="noreferrer">
-              {project.primaryAction}
-            </a>
-          ) : null}
-        </div>
-      </div>
-    </article>
   );
 }
 
@@ -209,6 +228,7 @@ export default function Home() {
               "financial technology",
               "crypto infrastructure",
               "voice AI agents",
+              "creator protection",
               "x402 payments",
             ],
           },
@@ -222,117 +242,71 @@ export default function Home() {
         ]}
       />
 
-      <section className="v7-hero" aria-labelledby="hero-title">
-        <div className="site-shell v7-hero-grid">
-          <div className="v7-hero-copy">
-            <div className="v7-person">
-              <Image src="/headshot.jpg" alt="Elijah Paul" width={56} height={56} priority />
+      <section className="v8-hero" aria-labelledby="hero-title">
+        <div className="site-shell v8-hero-grid">
+          <div className="v8-hero-copy">
+            <div className="v8-person">
+              <Image src="/headshot.jpg" alt="Elijah Paul" width={58} height={58} priority />
               <div>
                 <strong>Elijah Paul</strong>
                 <span>AI Solutions Architect / Product Builder</span>
               </div>
             </div>
-            <p className="eyebrow">Crypto, fintech, AI teams, and agentic systems</p>
+            <p className="eyebrow">Crypto, fintech, voice AI, creator protection, and agentic systems</p>
             <h1 id="hero-title">Elijah Paul turns customer problems into working AI products.</h1>
-            <p className="v7-hero-lede">
+            <p className="v8-hero-lede">
               I work with crypto, fintech, and AI teams to find product gaps, design the workflow,
               and build the version customers and internal teams can actually test.
             </p>
-            <div className="v7-hero-actions">
-              <Link className="button button-primary" href="#contact">Request a fit call</Link>
+            <div className="v8-hero-actions">
+              <a className="button button-primary" href={mailto("AI product fit call")}>Request a fit call</a>
               <Link className="button button-outline" href="#work">See the work</Link>
-              <Link className="v7-resume-link" href="/resume">Resume and background</Link>
+              <Link className="v8-resume-link" href="/resume">Resume and background</Link>
             </div>
-            <ul className="v7-hero-signals" aria-label="How Elijah creates value">
-              <li>Find the bottleneck</li>
-              <li>Design the workflow</li>
-              <li>Build the testable product</li>
-            </ul>
           </div>
 
-          <aside className="v7-hero-proof" aria-label="Featured product proof">
-            <div className="v7-proof-top">
-              <span>Featured proof</span>
-              <strong>Product systems and voice agents</strong>
-            </div>
-            <div className="v7-proof-duo">
-              <FeaturedProof project={orelis} href="/work/orelis" label="Voice agent offering" />
-              <FeaturedProof project={gridSynapse} href="/work/gridsynapse" label="AI compute procurement" />
-            </div>
-          </aside>
+          <figure className="v8-hero-artifact">
+            <Image
+              src={orelis.image}
+              alt={orelis.imageAlt}
+              width={1440}
+              height={1100}
+              priority
+              sizes="(max-width: 900px) 92vw, 46vw"
+            />
+            <figcaption>
+              <span>Primary commercial offer</span>
+              <strong>Orelis: Faith example call, setup-call CTA, and the voice-agent workflow.</strong>
+            </figcaption>
+          </figure>
         </div>
       </section>
 
-      <section className="v7-section v7-index-section" id="work" aria-labelledby="work-title">
-        <div className="site-shell">
-          <div className="v7-section-head">
+      <section className="v8-section v8-work-intro" id="work" aria-labelledby="work-title">
+        <div className="site-shell v8-work-intro-grid">
+          <div>
             <p className="eyebrow">Inspectable work</p>
-            <h2 id="work-title">Four product systems, each with the mechanism and boundary visible.</h2>
-            <p>
-              Each project shows the customer problem, what I built, why it matters, and what
-              can be inspected next.
-            </p>
+            <h2 id="work-title">Each product gets one clear section, one artifact, and one reason it matters.</h2>
           </div>
-          <div className="v7-proof-grid">
-            {proofProjects.map(({ project, href, label }) => (
-              <Link className="v7-proof-card" href={href} key={project.slug}>
-                <span>{label}</span>
-                <strong>{project.name}</strong>
-                <small>{project.category}</small>
-                <p>{project.shortOutcome}</p>
-              </Link>
-            ))}
-          </div>
+          <p>
+            This is the portfolio standard: no vague AI grid, no carousel hiding the details, no invented
+            metrics. Each section explains the product, the benefit, the key terms, and the boundary a
+            serious buyer would ask about.
+          </p>
         </div>
       </section>
 
-      <CaseSection
-        project={orelis}
-        anchor="orelis"
-        label="Primary voice-agent offering"
-        title="Orelis turns inbound calls and intake gaps into a usable voice agent workflow."
-        lead="This is the most direct services offer on the site: a branded voice-agent surface for high-ticket businesses that need consistent intake, qualification, and handoff instead of another missed lead."
-      />
+      {focusSections.map((section) => (
+        <ProjectFocusSection key={section.project.slug} {...section} />
+      ))}
 
-      <CaseSection
-        project={gridSynapse}
-        anchor="gridsynapse"
-        label="Flagship product system"
-        title="GridSynapse turns messy compute sourcing into an approval-ready product workflow."
-        lead="The strongest proof is not a claim. It is a product surface a buyer can inspect: public inputs, deterministic optimization, a procurement packet, and clear limits before any provider action."
-      />
-
-      <CaseSection
-        project={treasuryRouter}
-        anchor="treasury-router"
-        label="Financial workflow case study"
-        title="Treasury Router shows product judgment in a controlled AI finance workflow."
-        lead="The work is valuable because the system does not pretend an AI should move money. It turns advisor analysis, suitability constraints, client materials, and operations handoff into a governed prototype."
-      />
-
-      <section className="v7-section v7-section-soft" aria-labelledby="supporting-work-title">
+      <section className="v8-section v8-method-section" id="method" aria-labelledby="method-title">
         <div className="site-shell">
-          <div className="v7-section-head">
-            <p className="eyebrow">Developer tooling proof</p>
-            <h2 id="supporting-work-title">Monarch Doctor shows the same product discipline in agent payments.</h2>
-            <p>
-              The portfolio also shows release-time developer judgment: one narrow failure mode,
-              a deterministic check, and a clear boundary around what the tool does not claim.
-            </p>
-          </div>
-          <div className="v7-support-grid v7-support-grid-single">
-            <SupportingProject project={monarchDoctor} href="/work/x402-agent-payments" />
-          </div>
-        </div>
-      </section>
-
-      <section className="v7-section" id="method" aria-labelledby="method-title">
-        <div className="site-shell v7-method">
-          <div className="v7-section-head">
-            <p className="eyebrow">Working method</p>
+          <div className="v8-section-head">
+            <p className="eyebrow">How I build</p>
             <h2 id="method-title">A simple operating model for useful AI products.</h2>
           </div>
-          <ol className="v7-method-grid">
+          <ol className="v8-method-list">
             {methodSteps.map((step, index) => (
               <li key={step.title}>
                 <span>{String(index + 1).padStart(2, "0")}</span>
@@ -344,8 +318,26 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="v7-section v7-section-dark" id="contact" aria-labelledby="contact-title">
-        <div className="site-shell v7-fit">
+      <section className="v8-section v8-thoughts" id="thinking" aria-labelledby="thinking-title">
+        <div className="site-shell v8-thoughts-grid">
+          <div>
+            <p className="eyebrow">How I think</p>
+            <h2 id="thinking-title">The products are different, but the judgment pattern is consistent.</h2>
+          </div>
+          <div className="v8-thought-list">
+            {thoughtNotes.map((note, index) => (
+              <article key={note.title}>
+                <span>{String(index + 1).padStart(2, "0")}</span>
+                <strong>{note.title}</strong>
+                <p>{note.copy}</p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="v8-section v8-fit-section" id="contact" aria-labelledby="contact-title">
+        <div className="site-shell v8-fit">
           <div>
             <p className="eyebrow eyebrow-light">Request a fit call</p>
             <h2 id="contact-title">Hiring for this skill set or building something customers need to test?</h2>
@@ -353,12 +345,12 @@ export default function Home() {
               Send the product, customer problem, or role. I will tell you where I can help and what I
               would examine first.
             </p>
-            <div className="v7-fit-actions">
+            <div className="v8-fit-actions">
               <a className="button button-inverse" href={mailto("AI product fit call")}>Request a fit call</a>
-              <Link className="text-link text-link-light" href="/work">See the work</Link>
+              <Link className="text-link text-link-light" href="/work">See all case studies</Link>
             </div>
           </div>
-          <div className="v7-fit-card">
+          <div className="v8-fit-card">
             <strong>A useful first note answers four questions.</strong>
             <ul>
               {fitQuestions.map((question) => (

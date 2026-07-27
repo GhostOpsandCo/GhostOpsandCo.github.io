@@ -118,7 +118,7 @@ export default function ResumePage() {
             </div>
             <div>
               <p className="eyebrow">Selected work</p>
-              <p>Treasury Router, GridSynapse, Orelis, and Monarch Doctor.</p>
+              <p>Orelis, Team Take Down, Treasury Router, GridSynapse, and Monarch Shield.</p>
               <Link className="text-link" href="/work">View case studies</Link>
             </div>
           </aside>

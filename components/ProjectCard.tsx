@@ -6,6 +6,7 @@ const availabilityLabels: Record<string, string> = {
   "treasury-router": "Employer case study",
   gridsynapse: "Custom build / acquisition",
   orelis: "Custom builds available",
+  "team-take-down": "Creator product",
   "x402-agent-payments": "Open source",
 };
 
@@ -21,6 +22,7 @@ export function ProjectCard({ project, featured = false, reverse = false }: { pr
           width={1280}
           height={800}
           sizes="(max-width: 760px) 100vw, 50vw"
+          priority={featured}
         />
       </Link>
       <div className="project-card-body">

@@ -46,9 +46,10 @@ The site should not ask one page to rank for every service. Its search architect
 | --- | --- | --- |
 | Home | AI solutions architect and product builder | Choose hiring, consulting, or product path |
 | Work | AI product builder portfolio | Open relevant proof |
+| Orelis | AI voice agent for service businesses | Inspect commercial product |
+| Team Take Down | Creator protection and release workflow | Inspect product and discuss implementation |
 | Treasury Router | AI treasury and institutional advisor workflow | Discuss product or role fit |
 | GridSynapse | AI compute optimization and procurement | Inspect product and source |
-| Orelis | AI voice agent for service businesses | Inspect commercial product |
 | Monarch Shield | x402 and agent payment developer tooling | Inspect open-source implementation |
 | Services | AI product consulting and solutions architecture | Start a scoped build conversation |
 | Resume | AI solutions architect resume | Download resume or discuss a role |
@@ -81,7 +82,7 @@ Generic calls to action are secondary. Page-specific actions should use the visi
 - Outcome: working MVP, deterministic core logic, AI-assisted workflow where useful, instrumentation, and pilot-ready handoff.
 - Typical duration: 4-8 weeks.
 - Starting range: $15,000-$40,000+ depending on integrations and risk.
-- Proof: Treasury Router, GridSynapse, Orelis, and Monarch Shield.
+- Proof: Orelis, Team Take Down, Treasury Router, GridSynapse, and Monarch Shield.
 
 ### Embedded AI Solutions Architect
 
@@ -94,9 +95,10 @@ Generic calls to action are secondary. Page-specific actions should use the visi
 
 | Product | Full-time proof | Work-for-hire offer | Product discovery | API or usage path | Acquisition path |
 | --- | --- | --- | --- | --- | --- |
+| Orelis | Voice AI, service workflow, conversion UX | Voice agent implementation for service businesses | Public commercial site | Product-led commercial inquiry | Commercial partnership or acquisition inquiry subject to rights |
+| Team Take Down | Creator protection, privacy UX, evidence workflow | Creator protection and takedown workflow implementation | Public product foundation | Product-led creator workspace | Partnership, implementation, or product discussion subject to rights and claim boundaries |
 | Treasury Router | Institutional AI workflow, product strategy, advisor UX, x402 | AI treasury/advisor workflow build | Gate-aligned concept and product foundation | x402 proof-of-flow only; no live execution claim | Partnership or licensed workflow discussion where rights allow |
 | GridSynapse | Data products, recommendation logic, procurement UX | Compute optimization dashboard and integration | Public product and source | Adapter-ready; paid procurement data is not enabled | Product/IP discussion |
-| Orelis | Voice AI, service workflow, conversion UX | Voice agent implementation for service businesses | Public commercial site | Product-led commercial inquiry | Commercial partnership or acquisition inquiry subject to rights |
 | Monarch Shield | Agent tooling, x402, developer experience | x402 integration and static preflight tooling | Public source | Open-source tool; MIT license | Support, integration, or derivative build |
 
 ## Organic Search and Answer-Engine Foundation

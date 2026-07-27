@@ -12,9 +12,9 @@ The first generated concept set, Editorial Intelligence V2.1, Profound Personal 
 
 The previous Pasteur and Socrates scores are invalid for the active direction because they evaluated the wrong visual contract.
 
-## Active direction: Case Study Magazine V7
+## Active direction: Quietly Capable Portfolio V8
 
-The active direction must read as a clean, modern product-builder portfolio with case-study depth on the homepage. It starts from the current `elijahpaul.io` build instead of inventing a new identity, then expands each selected project into a visible story: problem, role, build, proof, boundary, and inspectable next action. It uses the site-specific inspiration contract in [reference-selection-matrix.md](./reference-selection-matrix.md), with Apple and OpenAI as quality references, SaaSFrame as the paid case-study/conversion reference, shadcn as a component-behavior reference, and real portfolio artifacts as the proof.
+The active direction must read as a clean, modern product-builder portfolio with case-study depth on the homepage. It starts from the current `elijahpaul.io` build instead of inventing a new identity, references the current Orelis "quietly capable" direction, then expands each selected project into a visible story: what it does, benefits, keywords, problem, role, build, proof, boundary, and inspectable next action. It uses the site-specific inspiration contract in [reference-selection-matrix.md](./reference-selection-matrix.md), with Apple and OpenAI as quality references, SaaSFrame as the paid case-study/conversion reference, shadcn as a component-behavior reference, and real portfolio artifacts as the proof.
 
 Reference jobs:
 
@@ -46,48 +46,52 @@ The direction cannot be presented for approval until it includes:
 
 - desktop hero and flagship product theater;
 - Elijah's exact PFP and concise human introduction in the hero without allowing the portrait to displace product proof;
-- proof index and three-step product mechanism;
-- long-form selected-work sections with the exact GridSynapse dashboard, Treasury Router static concept artifact, Orelis artifact, and Monarch Doctor artifact;
-- for every project section: problem, role, what was built, what works today, evidence boundary, and concrete links;
+- a clear transition from promise to one-project-per-section selected work;
+- long-form selected-work sections with the latest Orelis site artifact, Team Take Down creator workspace, exact Treasury Router advisor dashboard, exact GridSynapse dashboard, and Monarch Shield artifact;
+- for every project section: what it does, benefits, keywords, problem, role, what was built, what works today, evidence boundary, and concrete links;
 - trust/evidence band and fit-call or short-brief conversion surface;
 - mobile hero and first product proof at 390px;
 - a reference-to-visible-element map from `docs/reference-selection-matrix.md`;
-- exact repository assets in a responsive prototype after image-generated art direction is established; the Treasury Router static page or marketing-style screenshot is prohibited as flagship dashboard proof.
+- exact repository assets in a responsive prototype after image-generated art direction is established; invented product UI, generic AI art, or copied reference layouts are prohibited.
 
 ## Truth and conversion controls
 
 - Exact headshot, current site copy, and exact product screenshots only.
 - No unsupported financial, production, customer, or outcome claims.
-- Treasury Router is labeled as a static concept/prototype artifact using deterministic development data with no live client funds or autonomous execution; it must not be called a dashboard until a real dashboard asset exists.
+- Treasury Router is labeled as a working advisor prototype using illustrative deterministic development data with no live client funds or autonomous execution.
 - GridSynapse is labeled as a public product foundation using public inputs and deterministic optimization; capacity, latency, and availability remain modeled.
+- Team Take Down is labeled as public-site watch, evidence organization, creator-approved takedown support, and outcome checks; it must not claim whole-internet coverage, guaranteed discovery, or guaranteed removal.
+- Monarch Shield is labeled as a build-time and CI preflight; it must not claim runtime enforcement, wallet security, regulatory compliance, fraud prevention, or settlement validation.
 - One dominant hero action: `Request a fit call` until a real scheduler is verified.
 - The final brief must ask four focused questions, allow review before submission, and use a real form destination or honest email fallback; do not claim booking or form delivery until verified.
 - `See the work` remains the only supporting hero action.
 
 ## Current responsive approval candidate
 
-The active V7 review candidate is:
+The active V8 implementation candidate is:
 
-- `concepts/case-study-magazine-v7.html`
+- the homepage implementation in `app/page.tsx`
+- the shared project data in `lib/site.ts`
 
-The preserved V5 image-generation references and V6 code-native concept remain historical exploration only:
+The preserved V5 image-generation references, V6 code-native concept, and V7 case-magazine concept remain historical exploration only:
 
 - `concepts/assets/product-evidence-os-v5-reference.png`
 - `concepts/assets/founder-operator-studio-v5-reference.png`
 - `concepts/builder-profile-os-v6.html`
+- `concepts/case-study-magazine-v7.html`
 
-V4, V5, and V6 remain superseded and are not part of the active implementation candidate.
+V4, V5, V6, and V7 remain superseded and are not part of the active implementation candidate.
 
-Required browser checks for V7 must be completed in local Chrome at 320, 390, 768, 1024, and 1440px before implementation:
+Required browser checks for V8 must be completed in local Chrome at 320, 390, 768, 1024, and 1440px before release:
 
 - no page-width overflow;
 - the personal identity, primary promise, CTA, and beginning of the first product proof remain in the opening composition;
 - the homepage shows project depth without requiring a carousel or selector interaction;
-- Treasury Router, GridSynapse, Orelis, Monarch Doctor, the method section, and fit-call surface all recompose without clipping.
+- Orelis, Team Take Down, Treasury Router, GridSynapse, Monarch Shield, the thought section, method section, and fit-call surface all recompose without clipping.
 
 ## Independent review result
 
-The prior independent review result applied to a rejected candidate and is superseded. V7 requires fresh responsive review and independent review before it can be called ready for implementation.
+The prior independent review result applied to a rejected candidate and is superseded. V8 requires fresh responsive review and independent review before it can be called ready for release.
 
 The candidate is approved for implementation after Elijah's July 26, 2026 instruction to run the Premium Revenue Sites skill and redo the site from first principles. It is not approved for production release.
 
@@ -95,4 +99,4 @@ The candidate is approved for implementation after Elijah's July 26, 2026 instru
 
 No prior concept is approved. Concept approval authorizes implementation only; publication still requires separate explicit release approval.
 
-Implementation approval for the active V7 direction was recorded on July 26, 2026 through the instruction to run the Premium Revenue Sites skill and redo the website from first principles. Publication still requires separate explicit release approval.
+Implementation approval for the active V8 direction was recorded on July 26, 2026 through the instruction to run the Premium Revenue Sites skill and redo the website from first principles. Publication still requires separate explicit release approval.

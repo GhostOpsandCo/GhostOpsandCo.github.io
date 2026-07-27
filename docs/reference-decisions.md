@@ -54,10 +54,10 @@ The active contract is now [reference-selection-matrix.md](./reference-selection
 1. Compact navigation and one persistent `Request a fit call` action until a scheduler is verified.
 2. A first-viewport answer to five questions: what Elijah does, who should hire him, what proof shows skill, who the human is, and what to do next.
 3. Elijah's exact headshot as an authorship signal, paired with real product proof rather than replacing it.
-4. The actual GridSynapse dashboard and available Treasury Router static artifact as inspectable product evidence; Treasury Router cannot be treated as a dashboard until a real dashboard asset exists.
-5. A truthful systems navigator: four inspectable systems and their exact states, with no borrowed customer logos.
+4. The latest Orelis site artifact, Team Take Down creator workspace, exact Treasury Router advisor dashboard, actual GridSynapse dashboard, and Monarch Shield site artifact as inspectable product evidence.
+5. A truthful systems sequence: five inspectable systems and their exact states, with no borrowed customer logos.
 6. A three-step mechanism: find the bottleneck, design the operating logic, build the testable product.
-7. Orelis and Monarch Doctor as supporting evidence with clear role and current-state boundaries.
+7. Every project section must show what it does, benefits, keywords, role, current evidence, and boundary.
 8. A real fit-call or short-brief conversion surface that does not claim provider delivery until verified.
 
 ### Direction-specific rejection tests
@@ -66,7 +66,9 @@ The active contract is now [reference-selection-matrix.md](./reference-selection
 - Reject if removing the background color makes the design indistinguishable from a generic centered SaaS hero plus dashboard screenshot.
 - Reject if the grid stops after the hero or is used only as decoration.
 - Reject if the product theater uses reconstructed, invented, or tiny unreadable product UI.
-- Reject if the Treasury Router static page is described or positioned as a dashboard.
+- Reject if Treasury Router is described as live client-fund execution or autonomous execution.
+- Reject if Team Take Down claims whole-internet coverage, guaranteed discovery, or guaranteed removals.
+- Reject if Monarch Shield claims runtime enforcement, fraud prevention, wallet security, regulatory compliance, or settlement validation.
 - Reject if Elijah's exact PFP and concise two-sentence personal introduction are absent from the hero.
 - Reject if the layout becomes a repeated bento-card gallery.
 - Reject if the active references in `docs/reference-selection-matrix.md` cannot each be mapped to a specific rendered element.
@@ -82,4 +84,4 @@ The active contract is now [reference-selection-matrix.md](./reference-selection
 
 ## Direction gate
 
-V7 is the active concept direction: a case-study-led homepage that keeps the current site language and shows project detail directly instead of relying on a selector or carousel. No application source will be changed before Elijah explicitly approves one complete responsive direction.
+V8 is the active implementation direction: an Orelis-inspired quietly capable homepage that keeps the current site language and gives each major product its own detailed section instead of relying on a selector, carousel, or proof grid. Production release still requires explicit approval after responsive QA and independent review.

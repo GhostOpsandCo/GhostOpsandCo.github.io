@@ -27,14 +27,14 @@
 
 - Preserve the current routes: home, work, individual case studies, services, about, resume, and contact.
 - The homepage prioritizes consulting and embedded-product buyers. Hiring remains visible in navigation, resume, and contact.
-- Lead proof with Orelis and GridSynapse as paired flagship proof. Orelis appears first because it is a primary commercial voice-agent offering, not a secondary supporting example. Show Treasury Router as a static concept/prototype artifact until a real dashboard asset exists, then Monarch Doctor as developer-tooling proof.
+- Lead proof with Orelis as the primary commercial voice-agent offering, then give Team Take Down, Treasury Router, GridSynapse, and Monarch Shield their own focused sections. Avoid proof grids or carousel-only presentation when the homepage needs to explain what each product does, why it matters, and what boundary applies.
 - Mobile must show the promise, explanation, primary CTA, supporting proof path, and first proof signal without clipped text or horizontal overflow.
 
 ## Discovery
 
 - Brand query: Elijah Paul AI product builder.
 - Commercial problem queries: AI product consultant, AI solutions architect, build an AI product MVP, crypto AI product consultant, fintech AI workflow consultant.
-- Proof queries: AI compute optimization portfolio, AI advisor workflow, x402 developer tooling, AI voice intake workflow.
+- Proof queries: AI voice intake workflow, creator protection workflow, AI advisor workflow, AI compute optimization portfolio, x402 developer tooling.
 - Answer-engine questions: What does an AI product builder do? How do you turn customer feedback into an AI product? How do you prototype a controlled AI workflow? Who can build an AI product for a crypto or fintech team?
 
 ## Measurement
@@ -49,7 +49,7 @@
 - Framework and hosting: preserve Next.js static export and GitHub Pages.
 - Typography: use only free/open fonts. The concept stage may test a restrained grotesk/editorial pairing; no paid font is required.
 - Components: use the existing component system and semantic HTML; do not add shadcn or Radix without a specific need.
-- Visual direction: clean modern Case Study Magazine. Use the current `elijahpaul.io` headline and subheader as source language, then show each selected project with enough homepage detail to feel like a serious portfolio: problem, role, what was built, what works today, boundary, artifact, and concrete actions. Keep Elijah's real PFP and exact product artifacts; avoid generic AI/SaaS styling, decorative glassmorphism, carousel-only work presentation, repeated bento cards, fake metrics, invented taglines, or copied reference layouts.
+- Visual direction: quiet capable editorial product system inspired by Orelis's current warm ivory, deep ink, electric violet, restrained surfaces, and one dominant action. Use the current `elijahpaul.io` headline and subheader as source language, then show each selected project with enough homepage detail to feel like a serious portfolio: what it does, benefits, keywords, role, what works today, boundary, artifact, and concrete actions. Keep Elijah's real PFP and exact product artifacts; avoid generic AI/SaaS styling, decorative glassmorphism, carousel-only work presentation, repeated bento cards, fake metrics, invented taglines, or copied reference layouts.
 - Claims: unverified financial or performance metrics remain off the redesigned homepage until evidence is supplied.
 - Approved paid budget: SaaSFrame monthly at $14 only; no Figma, Mobbin annual plan, paid font, or $50-plus tool.
 - Release authorization: implementation may begin only after concept approval. Publication requires a separate explicit release approval after QA and independent review.

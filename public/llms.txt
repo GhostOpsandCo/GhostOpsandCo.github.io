@@ -1,6 +1,6 @@
 # Elijah Paul
 
-Elijah Paul is an AI solutions architect and product builder who turns customer and operating problems into working AI products for crypto, fintech, and agentic systems.
+Elijah Paul is an AI solutions architect and product builder who turns customer and operating problems into working AI products for crypto, fintech, voice AI, creator protection, and agentic systems.
 
 Canonical site: https://elijahpaul.io
 Contact: elijah@elijahpaul.io
@@ -17,10 +17,11 @@ GitHub: https://github.com/GhostOpsandCo
 
 ## Selected work
 
+- Orelis: inbound voice-agent product for service-business intake, qualification, booking request, and human handoff. Production telephony, CRM behavior, uptime, and outcomes depend on final implementation.
+- Team Take Down: release-first creator protection workflow for private-file cleanup, protected media preparation, public-site watch, evidence organization, creator-approved takedown support, and outcome checks. It does not search the whole internet or guarantee every copy will be found or removed.
 - Treasury Router: governed AI financial-advisor workflow and x402 merchant proof-of-flow. Working prototype with deterministic development data; no autonomous execution or live client funds.
 - GridSynapse: buyer-side AI compute procurement workflow using public pricing and carbon inputs with deterministic optimization. Modeled capacity, latency, and availability; no provider reservation or spend.
-- Orelis: inbound voice-agent product for service-business qualification and human handoff. Production telephony and CRM behavior depend on final implementation.
-- Monarch Doctor: open-source build-time preflight for supported x402 payment-code patterns. It is not runtime payment enforcement, fraud prevention, or compliance software.
+- Monarch Shield: open-source build-time and CI preflight for supported agent-payment patterns. It is not runtime payment enforcement, fraud prevention, provider verification, wallet security, regulatory compliance, or settlement validation.
 
 ## Services
 
