@@ -105,16 +105,19 @@ const focusSections = [
 
 const methodSteps = [
   {
-    title: "Find the real problem",
-    copy: "I start with the place where customers, operators, or internal teams are already stuck.",
+    title: "Start where the work breaks",
+    copy: "I look at the call, ticket, spreadsheet, handoff, or approval step where the customer or team gets stuck.",
+    output: "The buyer, user, workflow, and first product surface are clear.",
   },
   {
-    title: "Map the work",
-    copy: "I turn calls, spreadsheets, handoffs, rules, and edge cases into a product flow people can follow.",
+    title: "Map what has to happen",
+    copy: "I turn the rules, edge cases, source systems, and handoffs into a flow the team can review.",
+    output: "Reviewers can see the screen, decision path, and handoff before engineering commits.",
   },
   {
-    title: "Ship the useful version",
-    copy: "I build the screen, workflow, or prototype that lets the team test the idea with real people.",
+    title: "Build the version people can try",
+    copy: "I ship the screen, agent flow, or prototype far enough for a real user or buyer to react to it.",
+    output: "The team can decide whether to fund, sell, extend, or stop the idea.",
   },
 ];
 
@@ -150,16 +153,19 @@ const buyingSituations = [
 
 const thoughtNotes = [
   {
-    title: "Most AI projects fail in the handoff.",
-    copy: "The model can be good and the product can still fail if the user, data, approval, and next action are unclear.",
+    title: "Handoff before model choice",
+    check: "Who uses it, who reviews it, and what happens when the answer is wrong.",
+    copy: "A good model still fails if the user, data, approval, and next action are unclear.",
   },
   {
-    title: "Show the work, not just the claim.",
-    copy: "A serious portfolio should make the product, role, limits, and working artifact easy to judge.",
+    title: "Proof before the claim",
+    check: "The product screen, role, source, current state, and boundary.",
+    copy: "A serious portfolio should let a buyer judge the work without guessing what was real.",
   },
   {
-    title: "The limit matters.",
-    copy: "When money, identity, private media, or customer operations are involved, the page should say what the system does and what it does not do.",
+    title: "Limits stay visible",
+    check: "Money movement, identity, private media, customer operations, and provider setup.",
+    copy: "When trust is involved, the page should say what the system does and what it does not do.",
   },
 ];
 
@@ -385,14 +391,21 @@ export default function Home() {
           </div>
 
           <div className="v8-offer-list">
+            <div className="v8-offer-table-head" aria-hidden="true">
+              <span>Engagement</span>
+              <span>Best when</span>
+              <span>You get</span>
+              <span>Timeline</span>
+              <span>Action</span>
+            </div>
             {buyingSituations.map(({ service, title, actionLabel, bestWhen, outcome }) => (
               <article key={service.name} className="v8-offer-row">
-                <div>
+                <div className="v8-offer-main">
                   <strong>{title}</strong>
                   <h3>{service.name}</h3>
                   <p>{service.summary}</p>
                 </div>
-                <dl>
+                <dl className="v8-offer-details">
                   <div>
                     <dt>Best when</dt>
                     <dd>{bestWhen}</dd>
@@ -424,11 +437,17 @@ export default function Home() {
               and keep the limits clear.
             </p>
           </div>
+          <div className="v8-method-table-head" aria-hidden="true">
+            <span>Step</span>
+            <span>What happens</span>
+            <span>Output</span>
+          </div>
           <ol className="v8-method-list">
             {methodSteps.map((step) => (
               <li key={step.title}>
                 <strong>{step.title}</strong>
                 <p>{step.copy}</p>
+                <span>{step.output}</span>
               </li>
             ))}
           </ol>
@@ -436,14 +455,24 @@ export default function Home() {
       </section>
 
       <section className="v8-section v8-thoughts" id="thinking" aria-labelledby="thinking-title">
-        <div className="site-shell v8-thoughts-grid">
-          <div>
+        <div className="site-shell">
+          <div className="v8-section-head">
             <h2 id="thinking-title">How I think when the product touches money, trust, or identity.</h2>
+            <p>
+              When a product touches money, identity, or reputation, I make the approval path,
+              evidence, and failure path visible before anyone has to trust it.
+            </p>
           </div>
           <div className="v8-thought-list">
+            <div className="v8-thought-table-head" aria-hidden="true">
+              <span>Principle</span>
+              <span>What I check</span>
+              <span>Why it matters</span>
+            </div>
             {thoughtNotes.map((note) => (
               <article key={note.title}>
                 <strong>{note.title}</strong>
+                <span>{note.check}</span>
                 <p>{note.copy}</p>
               </article>
             ))}

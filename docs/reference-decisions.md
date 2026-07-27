@@ -50,6 +50,14 @@ Research date: July 22, 2026. References supply principles, not brand assets, co
 
 The active contract is now [reference-selection-matrix.md](./reference-selection-matrix.md). A reference only counts when its influence can be pointed to in the rendered page, includes a rejection boundary, and supports the site goal: make it easy to understand what Elijah does, show off his skills, show he is human and ready for hire, and generate qualified paid work.
 
+## July 27 structure refresh
+
+| Question | Source | Reference lesson | Adopt | Reject | Visible change |
+| --- | --- | --- | --- | --- | --- |
+| How should the homepage read after the rejected wide/open layout? | [Profound](https://www.tryprofound.com/) homepage, July 27, 2026 | A single promise can lead a long page when the first viewport points the reader down one product story instead of splitting attention across loose columns. | Use a tighter top-down hero with profile facts as a compact table under the main promise. | Do not copy Profound's AI-search category, agents language, animated product world, logos, or dark identity. | `v8-hero-grid` becomes a one-column reading spine; `v8-profile-brief` becomes a three-cell facts table. |
+| How should the offer/service area sell without sounding generic? | [Hyros](https://hyros.com/) homepage/use-case flow, July 27, 2026 | Direct offer rows work when the reader can quickly see use case, proof, outcome, and next action. | Turn `What you can buy from me` into an aligned engagement table with clear columns and specific actions. | Do not copy Hyros revenue claims, testimonials, customer names, ad-tracking identity, or exact sales copy. | `v8-offer-list` now has visible `Engagement / Best when / You get / Timeline / Action` columns. |
+| How should the method and risk sections feel more premium? | Profound and Hyros page rhythm, July 27, 2026 | Dense information feels premium when it is aligned in rows and gives each row one job. | Convert `How I work` and `How I think...` into table-style operating rows with step, check, and output columns. | Do not add decorative metrics, fake proof, or over-designed AI language. | `v8-method-table-head` and `v8-thought-table-head` create repeatable premium rows. |
+
 ### Active page anatomy
 
 1. Compact navigation and one persistent `Request a fit call` action until a scheduler is verified.
@@ -85,4 +93,4 @@ The active contract is now [reference-selection-matrix.md](./reference-selection
 
 ## Direction gate
 
-V8.1 is the active implementation direction: a palette-preserving editorial homepage that keeps the current site language and gives each major product its own compact copy-first entry instead of relying on a selector, carousel, proof grid, or giant alternating landing-page band. Hyros, Orelis, and SaaSFrame inform direct language, use-case sequencing, proof placement, and conversion rhythm, not a replacement visual palette. Production release still requires explicit approval after responsive QA and independent review.
+V8.2 is the active implementation direction: a palette-preserving editorial homepage that keeps the current site language, keeps each major product in a dedicated copy-first section, and tightens the page into a single top-down reading path. Profound informs the singular hero spine and product-story discipline; Hyros informs direct offer rows, use-case clarity, proof placement, and specific actions. Neither source changes the palette or permits copied language, copied layouts, borrowed proof, or invented results. Production release still requires explicit approval after responsive QA and independent review.
