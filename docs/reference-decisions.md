@@ -85,4 +85,4 @@ The active contract is now [reference-selection-matrix.md](./reference-selection
 
 ## Direction gate
 
-V8 is the active implementation direction: a palette-preserving focused homepage that keeps the current site language and gives each major product its own detailed section instead of relying on a selector, carousel, or proof grid. Hyros, Orelis, and SaaSFrame inform section focus, use-case sequencing, proof placement, and conversion rhythm, not a replacement visual palette. Production release still requires explicit approval after responsive QA and independent review.
+V8.1 is the active implementation direction: a palette-preserving editorial homepage that keeps the current site language and gives each major product its own compact copy-first entry instead of relying on a selector, carousel, proof grid, or giant alternating landing-page band. Hyros, Orelis, and SaaSFrame inform direct language, use-case sequencing, proof placement, and conversion rhythm, not a replacement visual palette. Production release still requires explicit approval after responsive QA and independent review.

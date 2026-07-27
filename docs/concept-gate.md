@@ -12,9 +12,9 @@ The first generated concept set, Editorial Intelligence V2.1, Profound Personal 
 
 The previous Pasteur and Socrates scores are invalid for the active direction because they evaluated the wrong visual contract.
 
-## Active direction: Focused Portfolio V8
+## Active direction: Focused Portfolio V8.1
 
-The active direction must read as a clean, modern product-builder portfolio with case-study depth on the homepage. It starts from the current `elijahpaul.io` build instead of inventing a new identity or palette, references the current Orelis product page for focus and proof rhythm only, then expands each selected project into a visible story: what it does, benefits, keywords, problem, role, build, proof, boundary, and inspectable next action. It uses the site-specific inspiration contract in [reference-selection-matrix.md](./reference-selection-matrix.md), with Apple and OpenAI as quality references, SaaSFrame as the paid case-study/conversion reference, shadcn as a component-behavior reference, and real portfolio artifacts as the proof.
+The active direction must read as a clean, modern product-builder portfolio with case-study depth on the homepage, but the page must now feel closer to an editorial resume/newsletter than stacked product landing pages. It starts from the current `elijahpaul.io` build instead of inventing a new identity or palette, references the current Orelis product page for focus and proof rhythm only, then expands each selected project into a compact copy-first entry: what it does, benefits, problem, role, build, proof, boundary, and inspectable next action. It uses the site-specific inspiration contract in [reference-selection-matrix.md](./reference-selection-matrix.md), with Apple and OpenAI as quality references, SaaSFrame as the paid case-study/conversion reference, shadcn as a component-behavior reference, and real portfolio artifacts as supporting proof.
 
 Reference jobs:
 
@@ -48,7 +48,7 @@ The direction cannot be presented for approval until it includes:
 - desktop hero and flagship product theater;
 - Elijah's exact PFP and concise human introduction in the hero without allowing the portrait to displace product proof;
 - a clear transition from promise to one-project-per-section selected work;
-- long-form selected-work sections with the latest Orelis site artifact, Team Take Down creator workspace, exact Treasury Router advisor dashboard, exact GridSynapse dashboard, and Monarch Shield artifact;
+- compact editorial selected-work entries with the latest Orelis site artifact, Team Take Down creator workspace, exact Treasury Router advisor dashboard, exact GridSynapse dashboard, and Monarch Shield artifact;
 - for every project section: summary, use case, who it is for, proof, benefits, problem, role, what was built, what works today, evidence boundary, and concrete links;
 - trust/evidence band and fit-call or short-brief conversion surface;
 - mobile hero and first product proof at 390px;
@@ -88,7 +88,7 @@ Required browser checks for V8 must be completed in local Chrome at 320, 390, 76
 - no page-width overflow;
 - the personal identity, primary promise, CTA, and beginning of the first product proof remain in the opening composition;
 - the homepage shows project depth without requiring a carousel or selector interaction;
-- Orelis, Team Take Down, Treasury Router, GridSynapse, Monarch Shield, the thought section, method section, and fit-call surface all recompose without clipping.
+- Orelis, Team Take Down, Treasury Router, GridSynapse, Monarch Shield, the thought section, method section, and fit-call surface all recompose without clipping, scattered text, or oversized competing type.
 
 ## Independent review result
 

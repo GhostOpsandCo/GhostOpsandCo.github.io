@@ -2,7 +2,7 @@
 
 ## Active Direction
 
-The active implementation direction is Focused Portfolio V8. It preserves the current `elijahpaul.io` palette and uses Hyros, Orelis, SaaSFrame, Apple, OpenAI, and shadcn as structure references: direct outcome copy, focused sections, restrained hierarchy, visible product evidence, familiar controls, and one dominant action.
+The active implementation direction is Focused Portfolio V8.1: an editorial resume-style portfolio. It preserves the current `elijahpaul.io` palette and uses Hyros, Orelis, SaaSFrame, Apple, OpenAI, and shadcn as structure references: direct outcome copy, restrained hierarchy, visible product evidence, familiar controls, and one dominant action.
 
 The homepage must make Elijah easy to understand, credible, human, and ready for hire. The core promise is:
 
@@ -17,12 +17,14 @@ The supporting copy stays close to the existing site:
 - Lead with what Elijah does, who should hire him, what proof is visible, who the human is, and what action to take.
 - Use `Request a fit call` as the primary CTA until a real scheduler is verified.
 - Keep `View my work` as the supporting CTA.
-- Show detailed project sections on the homepage instead of hiding work behind a carousel or selector.
+- Make the homepage read like an editorial profile or resume: one calm reading spine, stable section rhythm, and consistent type scale.
+- Show detailed project sections on the homepage instead of hiding work behind a carousel or selector, but keep each section compact and copy-first.
 - Lead with Orelis as the commercial voice-agent offer most directly tied to paid services, while borrowing its one-focus section discipline rather than its palette.
-- Give Team Take Down, Treasury Router, GridSynapse, and Monarch Shield their own standalone sections instead of collapsing them into a carousel or proof grid.
+- Give Team Take Down, Treasury Router, GridSynapse, and Monarch Shield their own standalone entries instead of alternating landing-page bands, a carousel, or a proof grid.
 - For each project, show problem, role, built artifact, what works today, and evidence boundary.
 - Include summary, use case, who it is for, proof, benefits, and boundary for every project section.
 - Use project-specific `Learn more about similar...` CTAs when a visitor is interested in a similar product or workflow.
+- Screenshots are supporting evidence. They should not overpower the reading path or make each project feel like a separate landing page.
 - Do not feature unsupported revenue, volume, valuation, customer, or outcome metrics.
 - Use exact repository assets, not invented dashboard states or stock visuals.
 
@@ -30,8 +32,8 @@ The supporting copy stays close to the existing site:
 
 - Apple: restrained hierarchy, generous spacing, and one dominant artifact per major section.
 - OpenAI: calm technical editorial tone, precision, and human warmth without decoration.
-- SaaSFrame: conversion sequencing, proof placement, section-level focus, and CTA density.
-- Hyros: direct outcome language, use-case segmentation, proof-first product sections, and clear next actions.
+- SaaSFrame: conversion sequencing, proof placement, case-study hierarchy, and CTA density.
+- Hyros: direct outcome language, use-case segmentation, clear next actions, and readable page flow.
 - shadcn: familiar button, link, card, and state behavior.
 - The owned signature is truthful operating evidence: current state, product mechanism, inspectable artifact, and role or boundary.
 

@@ -68,7 +68,6 @@ const focusSections = [
     interestSubject: "controlled financial workflow like Treasury Router",
     learnMoreLabel: "Learn more about similar financial workflow projects",
     artifactNote: "Advisor dashboard using illustrative development data.",
-    reverse: true,
   },
   {
     project: gridSynapse,
@@ -101,7 +100,6 @@ const focusSections = [
     interestSubject: "payment-safety tool like Monarch Shield",
     learnMoreLabel: "Learn more about similar agent-payment safety projects",
     artifactNote: "Live Monarch Shield site showing Doctor preflight and payment safety boundary.",
-    reverse: true,
   },
 ];
 
@@ -142,7 +140,23 @@ const fitQuestions = [
   "What proof would make the next decision easier?",
 ];
 
+const profileNotes = [
+  {
+    label: "Role",
+    copy: "AI Solutions Architect / Product Builder",
+  },
+  {
+    label: "Focus",
+    copy: "Crypto, fintech, voice AI, creator protection, and agentic workflows.",
+  },
+  {
+    label: "Best fit",
+    copy: "Teams with a valuable product problem, messy workflow, or prototype that needs to become inspectable.",
+  },
+];
+
 function ProjectFocusSection({
+  index,
   project,
   anchor,
   title,
@@ -154,8 +168,8 @@ function ProjectFocusSection({
   learnMoreLabel,
   artifactNote,
   primary = false,
-  reverse = false,
 }: {
+  index: number;
   project: Project;
   anchor: string;
   title: string;
@@ -167,32 +181,18 @@ function ProjectFocusSection({
   learnMoreLabel: string;
   artifactNote: string;
   primary?: boolean;
-  reverse?: boolean;
 }) {
   return (
     <section
-      className={`v8-section v8-project-section${primary ? " v8-project-primary" : ""}${reverse ? " v8-project-reverse" : ""}`}
+      className={`v8-section v8-project-section${primary ? " v8-project-primary" : ""}`}
       id={anchor}
       aria-labelledby={`${anchor}-title`}
     >
-      <div className="site-shell v8-project-grid">
-        <figure className="v8-artifact">
-          <div className="v8-artifact-shot">
-            <Image
-              src={project.image}
-              alt={project.imageAlt}
-              width={1440}
-              height={1100}
-              sizes="(max-width: 900px) 92vw, 52vw"
-              priority={primary}
-            />
-          </div>
-          <figcaption>
-            <span>{project.category}</span>
-            <strong>{artifactNote}</strong>
-          </figcaption>
-        </figure>
-
+      <article className="site-shell v8-project-article">
+        <div className="v8-project-kicker" aria-label={`${project.name} project number and category`}>
+          <span>{String(index + 1).padStart(2, "0")}</span>
+          <span>{project.category}</span>
+        </div>
         <div className="v8-project-copy">
           <h2 id={`${anchor}-title`}>{title}</h2>
           <p className="v8-large-copy">{lead}</p>
@@ -232,7 +232,7 @@ function ProjectFocusSection({
             <a className="button button-primary" href={mailto(`Interested in a ${interestSubject}`)}>
               {learnMoreLabel}
             </a>
-            <Link className="button button-outline" href={`/work/${project.slug}`}>View case study</Link>
+            <Link className="text-link" href={`/work/${project.slug}`}>View case study</Link>
             {project.liveUrl ? (
               <a className="text-link" href={project.liveUrl} target="_blank" rel="noreferrer">
                 {project.primaryAction}
@@ -240,7 +240,24 @@ function ProjectFocusSection({
             ) : null}
           </div>
         </div>
-      </div>
+
+        <figure className="v8-artifact">
+          <div className="v8-artifact-shot">
+            <Image
+              src={project.image}
+              alt={project.imageAlt}
+              width={1440}
+              height={1100}
+              sizes="(max-width: 900px) 92vw, 34vw"
+              priority={primary}
+            />
+          </div>
+          <figcaption>
+            <span>{project.category}</span>
+            <strong>{artifactNote}</strong>
+          </figcaption>
+        </figure>
+      </article>
     </section>
   );
 }
@@ -303,20 +320,14 @@ export default function Home() {
             </div>
           </div>
 
-          <figure className="v8-hero-artifact">
-            <Image
-              src={orelis.image}
-              alt={orelis.imageAlt}
-              width={1440}
-              height={1100}
-              priority
-              sizes="(max-width: 900px) 92vw, 46vw"
-            />
-            <figcaption>
-              <span>Orelis example call</span>
-              <strong>Orelis: Faith example call, setup-call CTA, and the voice-agent workflow.</strong>
-            </figcaption>
-          </figure>
+          <aside className="v8-profile-brief" aria-label="Profile summary">
+            {profileNotes.map((note) => (
+              <div key={note.label}>
+                <strong>{note.label}</strong>
+                <p>{note.copy}</p>
+              </div>
+            ))}
+          </aside>
         </div>
       </section>
 
@@ -333,8 +344,8 @@ export default function Home() {
         </div>
       </section>
 
-      {focusSections.map((section) => (
-        <ProjectFocusSection key={section.project.slug} {...section} />
+      {focusSections.map((section, index) => (
+        <ProjectFocusSection key={section.project.slug} index={index} {...section} />
       ))}
 
       <section className="v8-section v8-method-section" id="method" aria-labelledby="method-title">
