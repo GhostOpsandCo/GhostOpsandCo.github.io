@@ -16,6 +16,7 @@ Research date: July 22, 2026. References supply principles, not brand assets, co
 | [Wise](https://www.saasframe.io/saas/wise) | Landing + about | Distinctive display type, bold 3D hero asset, functional interactive tool | A strong typographic voice and one owned visual object can create recall | Its condensed type, globe/coin imagery, or green palette |
 | Peec AI | Landing | Clear proposition and polished product screenshot | Keep its clarity benchmark, but reject its generic centered AI-SaaS formula | Dashboard collage, gray gradient headline, or standard two-CTA hero |
 | [Clutch](https://www.saasframe.io/saas/clutch) | Landing, features, use cases, and contact | Bold black-and-blue signal geometry, technical illustration, sharp typography, and low-friction conversion | Use one owned signal-to-system visual to explain how customer inputs converge into controlled product decisions | Its identity mark, white palette, security language, exact beam composition, or customer proof |
+| [Hyros](https://hyros.com/) | Homepage, use cases, product sections, and CTA flow | Direct result language, use-case segmentation, proof-first page rhythm, and clear action labels | Model the portfolio flow as result, work, use case, proof, and specific learn-more CTAs | Its revenue claims, testimonials, customer logos, ad-tracking identity, dark visuals, or exact phrasing |
 | [WorkOS](https://www.saasframe.io/saas/workos) | Landing and developer product sections | Developer-grade clarity, custom product objects, purposeful light/dark contrast, and strong integration storytelling | Give exact dashboards a bright, serious product stage and let technical details carry credibility | Its prismatic logo object, pastel palette, code samples, or enterprise-auth language |
 | [Primer](https://www.saasframe.io/saas/primer) | Landing and integrations library | Airy fintech restraint, crisp module borders, tactile integration states, and app-like discovery | Use an interactive systems navigator for Elijah's four real products and keep product selection visually responsive | Its payment-network identity, integration logos, mint palette, or connections-page grid |
 
@@ -57,7 +58,7 @@ The active contract is now [reference-selection-matrix.md](./reference-selection
 4. The latest Orelis site artifact, Team Take Down creator workspace, exact Treasury Router advisor dashboard, actual GridSynapse dashboard, and Monarch Shield site artifact as inspectable product evidence.
 5. A truthful systems sequence: five inspectable systems and their exact states, with no borrowed customer logos.
 6. A three-step mechanism: find the bottleneck, design the operating logic, build the testable product.
-7. Every project section must show what it does, benefits, keywords, role, current evidence, and boundary.
+7. Every project section must show summary, use case, who it is for, proof, benefits, role, current evidence, and boundary.
 8. A real fit-call or short-brief conversion surface that does not claim provider delivery until verified.
 
 ### Direction-specific rejection tests
@@ -84,4 +85,4 @@ The active contract is now [reference-selection-matrix.md](./reference-selection
 
 ## Direction gate
 
-V8 is the active implementation direction: a palette-preserving focused homepage that keeps the current site language and gives each major product its own detailed section instead of relying on a selector, carousel, or proof grid. Orelis and SaaSFrame inform section focus, proof sequencing, and conversion rhythm, not a replacement visual palette. Production release still requires explicit approval after responsive QA and independent review.
+V8 is the active implementation direction: a palette-preserving focused homepage that keeps the current site language and gives each major product its own detailed section instead of relying on a selector, carousel, or proof grid. Hyros, Orelis, and SaaSFrame inform section focus, use-case sequencing, proof placement, and conversion rhythm, not a replacement visual palette. Production release still requires explicit approval after responsive QA and independent review.

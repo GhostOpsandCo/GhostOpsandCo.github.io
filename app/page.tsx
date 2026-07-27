@@ -23,48 +23,83 @@ const focusSections = [
   {
     project: orelis,
     anchor: "orelis",
-    label: "01 / Voice agent offering",
-    title: "Orelis is the clearest commercial offer: Faith answers the calls your team misses.",
+    title: "Orelis: stop letting qualified calls die in voicemail.",
     lead:
-      "A focused voice-agent experience with one proof artifact, one buyer problem, and one setup-call path.",
+      "Faith answers the call, qualifies the request, and gives the operator a clean next step.",
+    sectionSummary:
+      "A voice-agent product for service businesses that need every serious inquiry handled the same way, even after hours.",
+    useCase:
+      "Missed calls, overflow, after-hours requests, intake routing, and service qualification.",
+    audience:
+      "High-ticket service businesses, local operators, clinics, agencies, home services, and sales teams where one missed call can matter.",
+    interestSubject: "voice agent like Orelis",
+    learnMoreLabel: "Learn more about similar voice-agent projects",
     artifactNote: "Latest Orelis site capture: Faith example call and setup-call CTA.",
     primary: true,
   },
   {
     project: teamTakeDown,
     anchor: "team-take-down",
-    label: "02 / Creator protection",
-    title: "Team Take Down turns release protection into a workspace creators can trust.",
+    title: "Team Take Down: protect a creator release before the leak becomes the workflow.",
     lead:
-      "The product is not another vague AI safety claim. It shows the concrete loop: protect the file, watch accessible public sites, organize evidence, approve the request, and check the result.",
+      "The workspace connects protected uploads, public-site watch, evidence, creator approval, and outcome tracking.",
+    sectionSummary:
+      "A creator protection platform for people whose video or audio can be copied, impersonated, or re-uploaded.",
+    useCase:
+      "Protect a release, monitor accessible public sites, collect proof, prepare takedown requests, and track outcomes.",
+    audience:
+      "Creators, talent managers, agencies, and rights teams with high-value video or audio releases.",
+    interestSubject: "creator protection workflow like Team Take Down",
+    learnMoreLabel: "Learn more about similar creator-protection projects",
     artifactNote: "Creator workspace showing protected release status, evidence, and next actions.",
   },
   {
     project: treasuryRouter,
     anchor: "treasury-router",
-    label: "03 / Financial workflow",
-    title: "Treasury Router makes a controlled advisor workflow inspectable.",
+    title: "Treasury Router: turn idle capital into an advisor-ready decision path.",
     lead:
-      "This section shows the exact advisor dashboard: idle-capital opportunities, a prioritized client case, recommendation steps, and human review before execution.",
+      "The dashboard finds the next client case, explains the route, and keeps execution behind human approval.",
+    sectionSummary:
+      "A governed advisor prototype for ranking modeled idle-capital opportunities and preparing client review packets.",
+    useCase:
+      "Portfolio review, treasury routing, advisor prioritization, client approval, and operations handoff.",
+    audience:
+      "Fintech, wealth, crypto treasury, and advisor teams that need controlled AI workflows with clear boundaries.",
+    interestSubject: "controlled financial workflow like Treasury Router",
+    learnMoreLabel: "Learn more about similar financial workflow projects",
     artifactNote: "Advisor dashboard using illustrative development data.",
     reverse: true,
   },
   {
     project: gridSynapse,
     anchor: "gridsynapse",
-    label: "04 / Compute procurement",
-    title: "GridSynapse shows the deeper product system: constraints, optimization, and approval.",
+    title: "GridSynapse: replace GPU sourcing chaos with an approval-ready compute plan.",
     lead:
-      "This is the systems-thinking proof. The product turns fragmented GPU sourcing into a decision workflow a buyer can inspect before any provider action.",
+      "It compares public provider inputs against real constraints so teams can choose before they spend.",
+    sectionSummary:
+      "A compute procurement workflow that ranks options by cost, region, carbon, policy, and workload fit.",
+    useCase:
+      "GPU sourcing, AI workload planning, procurement comparison, budget review, and deployment planning.",
+    audience:
+      "AI teams, infrastructure buyers, procurement leads, and founders trying to buy compute without spreadsheet drift.",
+    interestSubject: "compute procurement product like GridSynapse",
+    learnMoreLabel: "Learn more about similar procurement workflow projects",
     artifactNote: "Public compute procurement product and source-backed workflow.",
   },
   {
     project: monarchShield,
     anchor: "monarch-shield",
-    label: "05 / Agent payment safety",
-    title: "Monarch Shield gives coding agents a payment safety gate before go-live.",
+    title: "Monarch Shield: catch unsafe agent-payment paths before money moves.",
     lead:
-      "The tool has a narrow, useful job: run Doctor, find supported unsafe payment paths, fail CI in strict mode, and keep the boundary around what a preflight can and cannot prove.",
+      "A local CLI and CI gate gives reviewers a deterministic preflight before launch.",
+    sectionSummary:
+      "An open-source safety check for developers building x402, wallet, stablecoin, card, paid API, or paid MCP flows.",
+    useCase:
+      "Pre-release payment review, CI blocking, policy guard checks, and reproducible proof packs.",
+    audience:
+      "Developers, coding-agent teams, protocol builders, and startups shipping agent-payment workflows.",
+    interestSubject: "payment-safety tool like Monarch Shield",
+    learnMoreLabel: "Learn more about similar agent-payment safety projects",
     artifactNote: "Live Monarch Shield site showing Doctor preflight and payment safety boundary.",
     reverse: true,
   },
@@ -107,31 +142,29 @@ const fitQuestions = [
   "What proof would make the next decision easier?",
 ];
 
-function PillList({ items, label }: { items: string[]; label: string }) {
-  return (
-    <div className="v8-pills" aria-label={label}>
-      {items.map((item) => (
-        <span key={item}>{item}</span>
-      ))}
-    </div>
-  );
-}
-
 function ProjectFocusSection({
   project,
   anchor,
-  label,
   title,
   lead,
+  sectionSummary,
+  useCase,
+  audience,
+  interestSubject,
+  learnMoreLabel,
   artifactNote,
   primary = false,
   reverse = false,
 }: {
   project: Project;
   anchor: string;
-  label: string;
   title: string;
   lead: string;
+  sectionSummary: string;
+  useCase: string;
+  audience: string;
+  interestSubject: string;
+  learnMoreLabel: string;
   artifactNote: string;
   primary?: boolean;
   reverse?: boolean;
@@ -155,32 +188,39 @@ function ProjectFocusSection({
             />
           </div>
           <figcaption>
-            <span>{project.status}</span>
+            <span>{project.category}</span>
             <strong>{artifactNote}</strong>
           </figcaption>
         </figure>
 
         <div className="v8-project-copy">
-          <p className="eyebrow">{label}</p>
           <h2 id={`${anchor}-title`}>{title}</h2>
           <p className="v8-large-copy">{lead}</p>
 
           <div className="v8-detail-stack" aria-label={`${project.name} breakdown`}>
             <div>
-              <strong>What it does</strong>
-              <p>{project.whatItDoes}</p>
+              <strong>Summary</strong>
+              <p>{sectionSummary}</p>
             </div>
             <div>
-              <strong>Benefits</strong>
+              <strong>Use case</strong>
+              <p>{useCase}</p>
+            </div>
+            <div>
+              <strong>Who it is for</strong>
+              <p>{audience}</p>
+            </div>
+            <div>
+              <strong>Proof</strong>
+              <p>{project.shortOutcome}</p>
+            </div>
+            <div>
+              <strong>Why it matters</strong>
               <ul>
                 {project.benefits.map((benefit) => (
                   <li key={benefit}>{benefit}</li>
                 ))}
               </ul>
-            </div>
-            <div>
-              <strong>Keywords</strong>
-              <PillList items={project.keywords} label={`${project.name} keywords`} />
             </div>
             <div>
               <strong>Boundary</strong>
@@ -189,15 +229,13 @@ function ProjectFocusSection({
           </div>
 
           <div className="v8-actions">
-            <Link className="button button-primary" href={`/work/${project.slug}`}>Inspect case study</Link>
+            <a className="button button-primary" href={mailto(`Interested in a ${interestSubject}`)}>
+              {learnMoreLabel}
+            </a>
+            <Link className="button button-outline" href={`/work/${project.slug}`}>View case study</Link>
             {project.liveUrl ? (
-              <a className="button button-outline" href={project.liveUrl} target="_blank" rel="noreferrer">
+              <a className="text-link" href={project.liveUrl} target="_blank" rel="noreferrer">
                 {project.primaryAction}
-              </a>
-            ) : null}
-            {project.sourceUrl ? (
-              <a className="text-link" href={project.sourceUrl} target="_blank" rel="noreferrer">
-                Inspect source
               </a>
             ) : null}
           </div>
@@ -249,18 +287,18 @@ export default function Home() {
               <Image src="/headshot.jpg" alt="Elijah Paul" width={58} height={58} priority />
               <div>
                 <strong>Elijah Paul</strong>
-                <span>AI Solutions Architect / Product Builder</span>
+                <span>Available for serious product builds</span>
               </div>
             </div>
-            <p className="eyebrow">Crypto, fintech, voice AI, creator protection, and agentic systems</p>
             <h1 id="hero-title">Elijah Paul turns customer problems into working AI products.</h1>
+            <p className="v8-role-title">AI Solutions Architect / Product Builder</p>
             <p className="v8-hero-lede">
               I work with crypto, fintech, and AI teams to find product gaps, design the workflow,
               and build the version customers and internal teams can actually test.
             </p>
             <div className="v8-hero-actions">
               <a className="button button-primary" href={mailto("AI product fit call")}>Request a fit call</a>
-              <Link className="button button-outline" href="#work">See the work</Link>
+              <Link className="button button-outline" href="#work">View my work</Link>
               <Link className="v8-resume-link" href="/resume">Resume and background</Link>
             </div>
           </div>
@@ -275,7 +313,7 @@ export default function Home() {
               sizes="(max-width: 900px) 92vw, 46vw"
             />
             <figcaption>
-              <span>Lead proof artifact</span>
+              <span>Orelis example call</span>
               <strong>Orelis: Faith example call, setup-call CTA, and the voice-agent workflow.</strong>
             </figcaption>
           </figure>
@@ -285,8 +323,7 @@ export default function Home() {
       <section className="v8-section v8-work-intro" id="work" aria-labelledby="work-title">
         <div className="site-shell v8-work-intro-grid">
           <div>
-            <p className="eyebrow">Inspectable work</p>
-            <h2 id="work-title">Five product systems, each with a clear problem, artifact, and reason to care.</h2>
+            <h2 id="work-title">View my work: five product systems built around expensive problems.</h2>
           </div>
           <p>
             Orelis handles missed high-ticket calls. Team Take Down protects creator releases.
@@ -303,8 +340,11 @@ export default function Home() {
       <section className="v8-section v8-method-section" id="method" aria-labelledby="method-title">
         <div className="site-shell">
           <div className="v8-section-head">
-            <p className="eyebrow">How I build</p>
-            <h2 id="method-title">A simple operating model for useful AI products.</h2>
+            <h2 id="method-title">How I turn messy demand into a product customers can test.</h2>
+            <p>
+              The job is not to make an impressive demo. The job is to find the point where a customer
+              is stuck, design the operating loop, and ship the smallest version that proves the decision.
+            </p>
           </div>
           <ol className="v8-method-list">
             {methodSteps.map((step, index) => (
@@ -321,8 +361,7 @@ export default function Home() {
       <section className="v8-section v8-thoughts" id="thinking" aria-labelledby="thinking-title">
         <div className="site-shell v8-thoughts-grid">
           <div>
-            <p className="eyebrow">How I think</p>
-            <h2 id="thinking-title">The products are different, but the judgment pattern is consistent.</h2>
+            <h2 id="thinking-title">How I think when the product touches money, trust, or identity.</h2>
           </div>
           <div className="v8-thought-list">
             {thoughtNotes.map((note, index) => (
@@ -339,7 +378,6 @@ export default function Home() {
       <section className="v8-section v8-fit-section" id="contact" aria-labelledby="contact-title">
         <div className="site-shell v8-fit">
           <div>
-            <p className="eyebrow eyebrow-light">Request a fit call</p>
             <h2 id="contact-title">Hiring for this skill set or building something customers need to test?</h2>
             <p>
               Send the product, customer problem, or role. I will tell you where I can help and what I
@@ -347,7 +385,7 @@ export default function Home() {
             </p>
             <div className="v8-fit-actions">
               <a className="button button-inverse" href={mailto("AI product fit call")}>Request a fit call</a>
-              <Link className="text-link text-link-light" href="/work">See all case studies</Link>
+              <Link className="text-link text-link-light" href="/work">View all case studies</Link>
             </div>
           </div>
           <div className="v8-fit-card">

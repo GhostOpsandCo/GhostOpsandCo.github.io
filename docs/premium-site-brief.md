@@ -20,7 +20,7 @@
 - Positioning: AI product builder for crypto, fintech, and AI teams.
 - Core promise: Elijah Paul turns customer problems into working AI products.
 - Primary CTA: Request a fit call. Use Book a fit call only after a real scheduler is verified.
-- Supporting path: See the work.
+- Supporting path: View my work.
 - Page story: costly workflow gap, inspectable product systems, explicit operating boundaries, controlled build method, ways to engage, objection handling, and one qualified contact action.
 
 ## Information architecture
@@ -49,7 +49,7 @@
 - Framework and hosting: preserve Next.js static export and GitHub Pages.
 - Typography: use only free/open fonts. The concept stage may test a restrained grotesk/editorial pairing; no paid font is required.
 - Components: use the existing component system and semantic HTML; do not add shadcn or Radix without a specific need.
-- Visual direction: focused product-builder portfolio that preserves the current `elijahpaul.io` palette and applies Orelis/SaaSFrame as structure references, not color references. Use the current `elijahpaul.io` headline and subheader as source language, then show each selected project with enough homepage detail to feel like a serious portfolio: what it does, benefits, keywords, role, what works today, boundary, artifact, and concrete actions. Keep Elijah's real PFP and exact product artifacts; avoid generic AI/SaaS styling, decorative glassmorphism, carousel-only work presentation, repeated bento cards, fake metrics, invented taglines, copied reference layouts, or a replacement palette.
+- Visual direction: focused product-builder portfolio that preserves the current `elijahpaul.io` palette and applies Hyros/Orelis/SaaSFrame as structure references, not color references. Use the current `elijahpaul.io` headline and subheader as source language, then show each selected project with enough homepage detail to feel like a serious portfolio: summary, use case, who it is for, proof, benefits, role, what works today, boundary, artifact, and concrete actions. Keep Elijah's real PFP and exact product artifacts; avoid generic AI/SaaS styling, decorative glassmorphism, carousel-only work presentation, repeated bento cards, fake metrics, invented taglines, copied reference layouts, or a replacement palette.
 - Claims: unverified financial or performance metrics remain off the redesigned homepage until evidence is supplied.
 - Approved paid budget: SaaSFrame monthly at $14 only; no Figma, Mobbin annual plan, paid font, or $50-plus tool.
 - Release authorization: implementation may begin only after concept approval. Publication requires a separate explicit release approval after QA and independent review.

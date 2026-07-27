@@ -21,6 +21,7 @@ Reference jobs:
 - Apple: restrained hierarchy, immaculate spacing, and one dominant artifact per major band.
 - OpenAI: calm technical editorial tone, geometric precision, and human warmth without decoration.
 - SaaSFrame: paid reference for conversion pattern selection, section sequencing, CTA density, proof placement, and single-focus project bands.
+- Hyros: public reference for direct outcome copy, use-case segmentation, proof-first flow, and specific learn-more actions without copying claims, testimonials, or ad-tracking identity.
 - shadcn: familiar button, tab, form, and state behavior.
 - Linear: metadata precision and restrained product density.
 - Stripe: mechanism explanation and controlled color energy.
@@ -48,7 +49,7 @@ The direction cannot be presented for approval until it includes:
 - Elijah's exact PFP and concise human introduction in the hero without allowing the portrait to displace product proof;
 - a clear transition from promise to one-project-per-section selected work;
 - long-form selected-work sections with the latest Orelis site artifact, Team Take Down creator workspace, exact Treasury Router advisor dashboard, exact GridSynapse dashboard, and Monarch Shield artifact;
-- for every project section: what it does, benefits, keywords, problem, role, what was built, what works today, evidence boundary, and concrete links;
+- for every project section: summary, use case, who it is for, proof, benefits, problem, role, what was built, what works today, evidence boundary, and concrete links;
 - trust/evidence band and fit-call or short-brief conversion surface;
 - mobile hero and first product proof at 390px;
 - a reference-to-visible-element map from `docs/reference-selection-matrix.md`, including a clear note that Orelis and SaaSFrame inform layout and conversion structure, not a replacement color palette;
@@ -64,7 +65,7 @@ The direction cannot be presented for approval until it includes:
 - Monarch Shield is labeled as a build-time and CI preflight; it must not claim runtime enforcement, wallet security, regulatory compliance, fraud prevention, or settlement validation.
 - One dominant hero action: `Request a fit call` until a real scheduler is verified.
 - The final brief must ask four focused questions, allow review before submission, and use a real form destination or honest email fallback; do not claim booking or form delivery until verified.
-- `See the work` remains the only supporting hero action.
+- `View my work` remains the only supporting hero action.
 
 ## Current responsive approval candidate
 

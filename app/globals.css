@@ -3780,6 +3780,16 @@ h3 {
   text-wrap: balance;
 }
 
+.v8-role-title {
+  max-width: 700px;
+  margin-bottom: 18px;
+  color: var(--ink);
+  font-size: 28px;
+  font-weight: 780;
+  line-height: 1.12;
+  text-wrap: balance;
+}
+
 .v8-hero-lede {
   max-width: 650px;
   margin-bottom: 30px;
@@ -3801,6 +3811,8 @@ h3 {
 .v8-project-copy .button,
 .v8-fit .button {
   border-radius: 8px;
+  max-width: 100%;
+  white-space: normal;
 }
 
 .v8-hero .button-primary,
@@ -3869,9 +3881,9 @@ h3 {
 .v8-hero-artifact figcaption span,
 .v8-artifact figcaption span {
   color: var(--blue);
-  font-size: 12px;
-  font-weight: 850;
-  text-transform: uppercase;
+  font-size: 13px;
+  font-weight: 780;
+  line-height: 1.35;
 }
 
 .v8-hero-artifact figcaption strong {
@@ -3997,8 +4009,9 @@ h3 {
 
 .v8-detail-stack strong {
   color: var(--ink);
-  font-size: 12px;
-  text-transform: uppercase;
+  font-size: 14px;
+  font-weight: 760;
+  line-height: 1.35;
 }
 
 .v8-detail-stack p,
@@ -4193,6 +4206,10 @@ h3 {
     font-size: 48px;
   }
 
+  .v8-role-title {
+    font-size: 24px;
+  }
+
   .v8-project-copy h2,
   .v8-fit h2 {
     font-size: 38px;
@@ -4241,6 +4258,11 @@ h3 {
     font-size: 32px;
     line-height: 1.1;
     text-wrap: wrap;
+  }
+
+  .v8-role-title {
+    max-width: 100%;
+    font-size: 21px;
   }
 
   .v8-hero-lede {

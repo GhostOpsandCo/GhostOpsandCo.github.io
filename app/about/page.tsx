@@ -58,7 +58,7 @@ export default function AboutPage() {
               the opportunity is valuable, and the product path is not obvious yet.
             </p>
             <div className="hero-actions">
-              <Link className="button button-primary" href="/work">See the work</Link>
+              <Link className="button button-primary" href="/work">View my work</Link>
               <a className="button button-outline" href={mailto("Role or product conversation")}>Start a conversation</a>
             </div>
           </div>
