@@ -3910,6 +3910,7 @@ h3 {
 
 .v8-work-intro h2,
 .v8-section-head h2,
+.v8-offer h2,
 .v8-thoughts h2,
 .v8-fit h2 {
   max-width: 760px;
@@ -3919,6 +3920,7 @@ h3 {
 
 .v8-work-intro h2,
 .v8-section-head h2,
+.v8-offer h2,
 .v8-thoughts h2 {
   color: var(--ink);
   text-wrap: balance;
@@ -4030,6 +4032,76 @@ h3 {
 .v8-method-section {
   border-top: 1px solid var(--line);
   background: var(--paper);
+}
+
+.v8-offer-section {
+  border-top: 1px solid var(--line);
+  background: var(--soft);
+}
+
+.v8-offer-list {
+  display: grid;
+  border-top: 1px solid var(--line-strong);
+}
+
+.v8-offer-row {
+  display: grid;
+  grid-template-columns: minmax(220px, 0.4fr) minmax(0, 1fr) auto;
+  align-items: start;
+  gap: 30px;
+  padding-block: 28px;
+  border-bottom: 1px solid var(--line);
+}
+
+.v8-offer-row > div {
+  display: grid;
+  gap: 8px;
+}
+
+.v8-offer-row strong {
+  color: var(--blue-dark);
+  font-size: 14px;
+  font-weight: 760;
+  line-height: 1.35;
+}
+
+.v8-offer-row h3 {
+  margin: 0;
+  color: var(--ink);
+  font-size: 22px;
+  line-height: 1.22;
+}
+
+.v8-offer-row p,
+.v8-offer-row dd {
+  color: var(--ink-soft);
+  font-size: 15px;
+  line-height: 1.58;
+}
+
+.v8-offer-row dl {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 22px;
+  margin: 0;
+}
+
+.v8-offer-row dt {
+  margin-bottom: 6px;
+  color: var(--ink);
+  font-size: 13px;
+  font-weight: 760;
+  line-height: 1.35;
+}
+
+.v8-offer-row dd {
+  margin: 0;
+}
+
+.v8-offer-row .button {
+  justify-self: end;
+  border-radius: 8px;
+  white-space: nowrap;
 }
 
 .v8-section-head {
@@ -4156,6 +4228,7 @@ h3 {
   .v8-hero-grid,
   .v8-work-intro-grid,
   .v8-project-article,
+  .v8-offer-row,
   .v8-thoughts-grid,
   .v8-fit {
     grid-template-columns: 1fr;
@@ -4184,6 +4257,7 @@ h3 {
   .v8-project-copy h2,
   .v8-work-intro h2,
   .v8-section-head h2,
+  .v8-offer h2,
   .v8-thoughts h2,
   .v8-fit h2 {
     font-size: 31px;
@@ -4199,6 +4273,14 @@ h3 {
   .v8-method-list li {
     grid-template-columns: 1fr;
     gap: 8px;
+  }
+
+  .v8-offer-row dl {
+    grid-template-columns: 1fr;
+  }
+
+  .v8-offer-row .button {
+    justify-self: start;
   }
 
   .v8-thought-list article {
@@ -4218,6 +4300,7 @@ h3 {
   .v8-hero-grid,
   .v8-work-intro-grid,
   .v8-project-article,
+  .v8-offer-row,
   .v8-thoughts-grid,
   .v8-fit {
     gap: 34px;
@@ -4281,6 +4364,7 @@ h3 {
   .v8-project-copy h2,
   .v8-work-intro h2,
   .v8-section-head h2,
+  .v8-offer h2,
   .v8-thoughts h2,
   .v8-fit h2 {
     font-size: 28px;
@@ -4303,6 +4387,7 @@ h3 {
   .v8-project-copy h2,
   .v8-work-intro h2,
   .v8-section-head h2,
+  .v8-offer h2,
   .v8-thoughts h2,
   .v8-fit h2 {
     font-size: 27px;

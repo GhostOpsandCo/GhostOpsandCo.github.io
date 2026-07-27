@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { JsonLd } from "@/components/JsonLd";
-import { mailto, projects, site, type Project } from "@/lib/site";
+import { mailto, projects, services, site, type Project } from "@/lib/site";
 
 function getProject(slug: string): Project {
   const project = projects.find((item) => item.slug === slug);
@@ -33,7 +33,7 @@ const focusSections = [
     audience:
       "High-ticket service businesses, local operators, clinics, agencies, home services, and sales teams where one missed call can matter.",
     interestSubject: "voice agent like Orelis",
-    learnMoreLabel: "Learn more about similar voice-agent projects",
+    learnMoreLabel: "Talk about a similar voice-agent build",
     artifactNote: "Latest Orelis site capture: Faith example call and setup-call CTA.",
     primary: true,
   },
@@ -50,7 +50,7 @@ const focusSections = [
     audience:
       "Creators, talent managers, agencies, and rights teams with high-value video or audio releases.",
     interestSubject: "creator protection workflow like Team Take Down",
-    learnMoreLabel: "Learn more about similar creator-protection projects",
+    learnMoreLabel: "Talk about a similar creator-protection build",
     artifactNote: "Creator workspace showing protected release status, evidence, and next actions.",
   },
   {
@@ -66,7 +66,7 @@ const focusSections = [
     audience:
       "Fintech, wealth, crypto treasury, and advisor teams that need controlled AI workflows with clear boundaries.",
     interestSubject: "controlled financial workflow like Treasury Router",
-    learnMoreLabel: "Learn more about similar financial workflow projects",
+    learnMoreLabel: "Talk about a similar financial workflow",
     artifactNote: "Advisor dashboard using illustrative development data.",
   },
   {
@@ -82,7 +82,7 @@ const focusSections = [
     audience:
       "AI teams, infrastructure buyers, procurement leads, and founders trying to buy compute without spreadsheet drift.",
     interestSubject: "compute procurement product like GridSynapse",
-    learnMoreLabel: "Learn more about similar procurement workflow projects",
+    learnMoreLabel: "Talk about a similar procurement workflow",
     artifactNote: "Public compute procurement product and source-backed workflow.",
   },
   {
@@ -98,7 +98,7 @@ const focusSections = [
     audience:
       "Developers, coding-agent teams, protocol builders, and startups shipping agent-payment workflows.",
     interestSubject: "payment-safety tool like Monarch Shield",
-    learnMoreLabel: "Learn more about similar agent-payment safety projects",
+    learnMoreLabel: "Talk about a similar payment-safety tool",
     artifactNote: "Live Monarch Shield site showing the build-time payment safety preflight.",
   },
 ];
@@ -115,6 +115,36 @@ const methodSteps = [
   {
     title: "Ship the useful version",
     copy: "I build the screen, workflow, or prototype that lets the team test the idea with real people.",
+  },
+];
+
+const buyingSituations = [
+  {
+    service: services[0],
+    title: "Find the product worth building",
+    actionLabel: "Ask about the sprint",
+    bestWhen:
+      "Customers or internal teams keep asking for something, but the product path is still unclear.",
+    outcome:
+      "You leave with the problem, user, workflow, first product surface, and build plan clearly defined.",
+  },
+  {
+    service: services[1],
+    title: "Build the first usable version",
+    actionLabel: "Ask about the build",
+    bestWhen:
+      "You know the problem matters and need a working product, agent workflow, or prototype people can test.",
+    outcome:
+      "You get the product experience, logic, controls, and handoff needed to evaluate the idea with real users.",
+  },
+  {
+    service: services[2],
+    title: "Bring me into the team",
+    actionLabel: "Ask about embedded help",
+    bestWhen:
+      "You need someone who can sit between customers, product, sales, and engineering and keep the build moving.",
+    outcome:
+      "You get hands-on product judgment, customer discovery, solution design, prototypes, and implementation support.",
   },
 ];
 
@@ -146,12 +176,12 @@ const profileNotes = [
     copy: "AI Solutions Architect / Product Builder",
   },
   {
-    label: "Focus",
-    copy: "Crypto, fintech, voice AI, creator protection, and agentic workflows.",
+    label: "What I do",
+    copy: "Turn customer workflows into usable AI products, prototypes, and implementation plans.",
   },
   {
     label: "Best fit",
-    copy: "Teams with a valuable product problem, customer workflow, or prototype that needs a clear build path.",
+    copy: "Teams with customer demand, a broken workflow, or a product idea that needs the first useful version.",
   },
 ];
 
@@ -203,6 +233,10 @@ function ProjectFocusSection({
             <div>
               <strong>Who it is for</strong>
               <p>{audience}</p>
+            </div>
+            <div>
+              <strong>My role</strong>
+              <p>{project.role}</p>
             </div>
             <div>
               <strong>Proof</strong>
@@ -303,8 +337,8 @@ export default function Home() {
             <h1 id="hero-title">Elijah Paul turns customer problems into working AI products.</h1>
             <p className="v8-role-title">AI Solutions Architect / Product Builder</p>
             <p className="v8-hero-lede">
-              I work with crypto, fintech, and AI teams to find product gaps, design the workflow,
-              and build the version customers and internal teams can actually test.
+              I work with crypto, fintech, voice AI, and creator-protection teams to turn a real
+              workflow problem into a screen, agent, or prototype people can try.
             </p>
             <div className="v8-hero-actions">
               <a className="button button-primary" href={mailto("AI product fit call")}>Request a fit call</a>
@@ -327,12 +361,11 @@ export default function Home() {
       <section className="v8-section v8-work-intro" id="work" aria-labelledby="work-title">
         <div className="site-shell v8-work-intro-grid">
           <div>
-            <h2 id="work-title">View my work: five product builds with enough detail to judge the work.</h2>
+            <h2 id="work-title">Proof: five products that show how I think and build.</h2>
           </div>
           <p>
-            Orelis handles missed high-ticket calls. Team Take Down protects creator releases.
-            Treasury Router stages advisor decisions. GridSynapse plans compute procurement.
-            Monarch Shield checks agent-payment code before funds move.
+            Each one shows the user, the problem, what I built, what works today, and what is not
+            being claimed. That is the fastest way to understand whether I can help with your build.
           </p>
         </div>
       </section>
@@ -340,6 +373,47 @@ export default function Home() {
       {focusSections.map((section) => (
         <ProjectFocusSection key={section.project.slug} {...section} />
       ))}
+
+      <section className="v8-section v8-offer-section" id="services" aria-labelledby="services-title">
+        <div className="site-shell v8-offer">
+          <div className="v8-section-head">
+            <h2 id="services-title">What you can buy from me</h2>
+            <p>
+              If you have a product problem worth fixing, I can help you decide what to build,
+              build the first useful version, or work inside the team while the product takes shape.
+            </p>
+          </div>
+
+          <div className="v8-offer-list">
+            {buyingSituations.map(({ service, title, actionLabel, bestWhen, outcome }) => (
+              <article key={service.name} className="v8-offer-row">
+                <div>
+                  <strong>{title}</strong>
+                  <h3>{service.name}</h3>
+                  <p>{service.summary}</p>
+                </div>
+                <dl>
+                  <div>
+                    <dt>Best when</dt>
+                    <dd>{bestWhen}</dd>
+                  </div>
+                  <div>
+                    <dt>You get</dt>
+                    <dd>{outcome}</dd>
+                  </div>
+                  <div>
+                    <dt>Timeline</dt>
+                    <dd>{service.timeline}</dd>
+                  </div>
+                </dl>
+                <a className="button button-outline" href={mailto(service.subject)}>
+                  {actionLabel}
+                </a>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
 
       <section className="v8-section v8-method-section" id="method" aria-labelledby="method-title">
         <div className="site-shell">

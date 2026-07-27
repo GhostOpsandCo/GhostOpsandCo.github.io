@@ -52,6 +52,7 @@ The direction cannot be presented for approval until it includes:
 - a clear transition from promise to one-project-per-section selected work;
 - compact editorial selected-work entries with the latest Orelis site artifact, Team Take Down creator workspace, exact Treasury Router advisor dashboard, exact GridSynapse dashboard, and Monarch Shield artifact;
 - for every project section: summary, use case, who it is for, proof, benefits, problem, role, what was built, what works today, evidence boundary, and concrete links;
+- a plain-language offer section that states what buyers can purchase: product opportunity sprint, product build, or embedded AI solutions architecture;
 - trust/evidence band and fit-call or short-brief conversion surface;
 - mobile hero and first product proof at 390px;
 - a reference-to-visible-element map from `docs/reference-selection-matrix.md`, including a clear note that Orelis and SaaSFrame inform layout and conversion structure, not a replacement color palette;

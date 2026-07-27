@@ -326,7 +326,7 @@ export const services = [
     timeline: "3-8 weeks",
     price: "Typical range: $15k-$40k+",
     summary:
-      "Turn the selected workflow into a working product teams and customers can test, including the user experience and required integrations.",
+      "Turn the selected workflow into a working product that teams and customers can test, including the user experience and required integrations.",
     deliverables: [
       "Product and solution architecture",
       "Working web product or agent workflow",
