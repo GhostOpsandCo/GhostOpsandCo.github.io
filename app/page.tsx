@@ -40,7 +40,7 @@ const focusSections = [
   {
     project: teamTakeDown,
     anchor: "team-take-down",
-    title: "Team Take Down: protect a creator release before the leak becomes the workflow.",
+    title: "Team Take Down: protect a creator release before copies spread.",
     lead:
       "The workspace connects protected uploads, public-site watch, evidence, creator approval, and outcome tracking.",
     sectionSummary:
@@ -72,11 +72,11 @@ const focusSections = [
   {
     project: gridSynapse,
     anchor: "gridsynapse",
-    title: "GridSynapse: replace GPU sourcing chaos with an approval-ready compute plan.",
+    title: "GridSynapse: compare GPU options without rebuilding the spreadsheet.",
     lead:
-      "It compares public provider inputs against real constraints so teams can choose before they spend.",
+      "It helps teams see cost, region, carbon, policy, and workload tradeoffs before they commit to a provider.",
     sectionSummary:
-      "A compute procurement workflow that ranks options by cost, region, carbon, policy, and workload fit.",
+      "A compute planning workflow that turns scattered provider information into a ranked shortlist a team can review.",
     useCase:
       "GPU sourcing, AI workload planning, procurement comparison, budget review, and deployment planning.",
     audience:
@@ -99,37 +99,37 @@ const focusSections = [
       "Developers, coding-agent teams, protocol builders, and startups shipping agent-payment workflows.",
     interestSubject: "payment-safety tool like Monarch Shield",
     learnMoreLabel: "Learn more about similar agent-payment safety projects",
-    artifactNote: "Live Monarch Shield site showing Doctor preflight and payment safety boundary.",
+    artifactNote: "Live Monarch Shield site showing the build-time payment safety preflight.",
   },
 ];
 
 const methodSteps = [
   {
-    title: "Find the expensive customer problem",
-    copy: "I look for the workflow where delay, ambiguity, risk, or manual coordination is costing the team money or momentum.",
+    title: "Find the real problem",
+    copy: "I start with the place where customers, operators, or internal teams are already stuck.",
   },
   {
-    title: "Design the operating loop",
-    copy: "I map the user, inputs, rules, approval points, edge cases, and the smallest product surface that can prove value.",
+    title: "Map the work",
+    copy: "I turn calls, spreadsheets, handoffs, rules, and edge cases into a product flow people can follow.",
   },
   {
-    title: "Build the inspectable version",
-    copy: "I ship the working artifact with clear evidence, source where possible, and honest boundaries around what is not live yet.",
+    title: "Ship the useful version",
+    copy: "I build the screen, workflow, or prototype that lets the team test the idea with real people.",
   },
 ];
 
 const thoughtNotes = [
   {
-    title: "The workflow matters more than the model.",
-    copy: "Useful AI products are usually won by choosing the right moment, data boundary, handoff, and human approval pattern.",
+    title: "Most AI projects fail in the handoff.",
+    copy: "The model can be good and the product can still fail if the user, data, approval, and next action are unclear.",
   },
   {
-    title: "A portfolio should let buyers inspect the mechanism.",
-    copy: "Screenshots, case details, route boundaries, and source links create more trust than vague capability lists.",
+    title: "Show the work, not just the claim.",
+    copy: "A serious portfolio should make the product, role, limits, and working artifact easy to judge.",
   },
   {
-    title: "The boundary is part of the product.",
-    copy: "When money, identity, private media, or customer operations are involved, saying what the system does not do is a feature.",
+    title: "The limit matters.",
+    copy: "When money, identity, private media, or customer operations are involved, the page should say what the system does and what it does not do.",
   },
 ];
 
@@ -151,12 +151,11 @@ const profileNotes = [
   },
   {
     label: "Best fit",
-    copy: "Teams with a valuable product problem, messy workflow, or prototype that needs to become inspectable.",
+    copy: "Teams with a valuable product problem, customer workflow, or prototype that needs a clear build path.",
   },
 ];
 
 function ProjectFocusSection({
-  index,
   project,
   anchor,
   title,
@@ -169,7 +168,6 @@ function ProjectFocusSection({
   artifactNote,
   primary = false,
 }: {
-  index: number;
   project: Project;
   anchor: string;
   title: string;
@@ -189,10 +187,6 @@ function ProjectFocusSection({
       aria-labelledby={`${anchor}-title`}
     >
       <article className="site-shell v8-project-article">
-        <div className="v8-project-kicker" aria-label={`${project.name} project number and category`}>
-          <span>{String(index + 1).padStart(2, "0")}</span>
-          <span>{project.category}</span>
-        </div>
         <div className="v8-project-copy">
           <h2 id={`${anchor}-title`}>{title}</h2>
           <p className="v8-large-copy">{lead}</p>
@@ -253,7 +247,6 @@ function ProjectFocusSection({
             />
           </div>
           <figcaption>
-            <span>{project.category}</span>
             <strong>{artifactNote}</strong>
           </figcaption>
         </figure>
@@ -334,7 +327,7 @@ export default function Home() {
       <section className="v8-section v8-work-intro" id="work" aria-labelledby="work-title">
         <div className="site-shell v8-work-intro-grid">
           <div>
-            <h2 id="work-title">View my work: five product systems built around expensive problems.</h2>
+            <h2 id="work-title">View my work: five product builds with enough detail to judge the work.</h2>
           </div>
           <p>
             Orelis handles missed high-ticket calls. Team Take Down protects creator releases.
@@ -344,23 +337,22 @@ export default function Home() {
         </div>
       </section>
 
-      {focusSections.map((section, index) => (
-        <ProjectFocusSection key={section.project.slug} index={index} {...section} />
+      {focusSections.map((section) => (
+        <ProjectFocusSection key={section.project.slug} {...section} />
       ))}
 
       <section className="v8-section v8-method-section" id="method" aria-labelledby="method-title">
         <div className="site-shell">
           <div className="v8-section-head">
-            <h2 id="method-title">How I turn messy demand into a product customers can test.</h2>
+            <h2 id="method-title">How I work</h2>
             <p>
-              The job is not to make an impressive demo. The job is to find the point where a customer
-              is stuck, design the operating loop, and ship the smallest version that proves the decision.
+              I start with the customer problem, map the workflow, build the first usable version,
+              and keep the limits clear.
             </p>
           </div>
           <ol className="v8-method-list">
-            {methodSteps.map((step, index) => (
+            {methodSteps.map((step) => (
               <li key={step.title}>
-                <span>{String(index + 1).padStart(2, "0")}</span>
                 <strong>{step.title}</strong>
                 <p>{step.copy}</p>
               </li>
@@ -375,9 +367,8 @@ export default function Home() {
             <h2 id="thinking-title">How I think when the product touches money, trust, or identity.</h2>
           </div>
           <div className="v8-thought-list">
-            {thoughtNotes.map((note, index) => (
+            {thoughtNotes.map((note) => (
               <article key={note.title}>
-                <span>{String(index + 1).padStart(2, "0")}</span>
                 <strong>{note.title}</strong>
                 <p>{note.copy}</p>
               </article>

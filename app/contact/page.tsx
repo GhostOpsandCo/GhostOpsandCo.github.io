@@ -64,9 +64,8 @@ export default function ContactPage() {
 
       <section className="section-band">
         <div className="site-shell contact-paths">
-          {contactPaths.map((path, index) => (
+          {contactPaths.map((path) => (
             <article key={path.title}>
-              <span>0{index + 1}</span>
               <p className="eyebrow">{path.label}</p>
               <h2>{path.title}</h2>
               <p>{path.copy}</p>

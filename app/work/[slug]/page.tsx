@@ -103,11 +103,11 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
       <section className="section-band">
         <div className="site-shell case-reading-grid">
           <aside className="case-index" aria-label="Case study sections">
-            <span>01 · Problem</span>
-            <span>02 · Build</span>
-            <span>03 · Workflow</span>
-            <span>04 · Evidence</span>
-            <span>05 · Boundary</span>
+            <span>Problem</span>
+            <span>Build</span>
+            <span>Workflow</span>
+            <span>Evidence</span>
+            <span>Boundary</span>
           </aside>
           <div className="case-content">
             <section>
@@ -128,8 +128,8 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
               <p className="eyebrow">Working flow</p>
               <h2>From input to controlled action</h2>
               <ol className="workflow-list">
-                {project.workflow.map((item, index) => (
-                  <li key={item}><span>{String(index + 1).padStart(2, "0")}</span><strong>{item}</strong></li>
+                {project.workflow.map((item) => (
+                  <li key={item}><strong>{item}</strong></li>
                 ))}
               </ol>
             </section>

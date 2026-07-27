@@ -16,6 +16,8 @@ The previous Pasteur and Socrates scores are invalid for the active direction be
 
 The active direction must read as a clean, modern product-builder portfolio with case-study depth on the homepage, but the page must now feel closer to an editorial resume/newsletter than stacked product landing pages. It starts from the current `elijahpaul.io` build instead of inventing a new identity or palette, references the current Orelis product page for focus and proof rhythm only, then expands each selected project into a compact copy-first entry: what it does, benefits, problem, role, build, proof, boundary, and inspectable next action. It uses the site-specific inspiration contract in [reference-selection-matrix.md](./reference-selection-matrix.md), with Apple and OpenAI as quality references, SaaSFrame as the paid case-study/conversion reference, shadcn as a component-behavior reference, and real portfolio artifacts as supporting proof.
 
+The page must pass a human copy gate before review. Remove miniature project headers such as numbered labels or abstract category kickers, reject AI-sounding phrases such as "messy demand," "operating loop," "approval-ready," and "smallest version that proves the decision," and preserve exact product names. The product is `Monarch Shield`, never `Monarch Doctor`.
+
 Reference jobs:
 
 - Apple: restrained hierarchy, immaculate spacing, and one dominant artifact per major band.

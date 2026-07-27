@@ -100,9 +100,8 @@ export default function ServicesPage() {
             </div>
           </div>
           <div className="services-stack">
-            {services.map((service, index) => (
+            {services.map((service) => (
               <article className="service-row" key={service.name}>
-                <div className="service-number">0{index + 1}</div>
                 <div className="service-title-block">
                   <h3>{service.name}</h3>
                   <p>{service.summary}</p>

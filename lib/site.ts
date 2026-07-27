@@ -199,12 +199,12 @@ export const projects: Project[] = [
   {
     slug: "gridsynapse",
     name: "GridSynapse",
-    category: "AI compute procurement",
+    category: "Compute planning",
     status: "Public product foundation",
     summary:
-      "A buyer-side compute procurement workflow that compares public GPU pricing and carbon inputs, applies workload constraints, and produces an approval-ready compute plan.",
+      "A buyer-side compute planning workflow that compares public GPU pricing and carbon inputs, applies workload constraints, and gives teams a ranked shortlist before they buy.",
     metaDescription:
-      "GridSynapse compares public GPU pricing and carbon data, applies workload constraints, and produces approval-ready AI compute procurement plans.",
+      "GridSynapse compares public GPU pricing and carbon data, applies workload constraints, and helps teams review compute options before they commit spend.",
     shortOutcome:
       "Demonstrates how live public inputs, deterministic optimization, and operational approvals can replace spreadsheet-heavy compute sourcing.",
     whatItDoes:
@@ -212,11 +212,11 @@ export const projects: Project[] = [
     benefits: [
       "Helps buyers compare providers without relying on scattered spreadsheets.",
       "Makes the tradeoff between cost, region, policy, carbon, and workload visible.",
-      "Produces an approval-ready packet before any reservation, provisioning, or spend.",
+      "Prepares the review packet before any reservation, provisioning, or spend.",
     ],
     keywords: ["AI compute", "GPU procurement", "optimization", "OR-Tools", "Supabase", "decision systems"],
     image: "/projects/gridsynapse.png",
-    imageAlt: "GridSynapse operator console comparing AI compute procurement options",
+    imageAlt: "GridSynapse operator console comparing compute options",
     liveUrl: "https://gridsynapse.vercel.app",
     sourceUrl: "https://github.com/GhostOpsandCo/gridsynapse-mvp",
     primaryAction: "Open product",
@@ -230,7 +230,7 @@ export const projects: Project[] = [
       "Normalized public provider catalog inputs into a comparable decision model.",
       "Used deterministic optimization instead of opaque AI allocation decisions.",
       "Separated measured public inputs from modeled capacity, latency, and availability.",
-      "Created a spend-capped procurement packet and inspectable SkyPilot artifact before any provider action.",
+      "Created a spend-capped review packet and SkyPilot artifact before any provider action.",
     ],
     workflow: [
       "Define workload and policy constraints",
@@ -270,7 +270,7 @@ export const projects: Project[] = [
     ],
     keywords: ["agent payments", "x402", "payment safety", "CLI", "CI gate", "coding agents"],
     image: "/projects/monarch-shield.png",
-    imageAlt: "Monarch Shield website showing agent payment safety infrastructure and Doctor preflight",
+    imageAlt: "Monarch Shield website showing agent payment safety infrastructure and build-time preflight",
     liveUrl: "https://x402ms.ai/",
     sourceUrl: "https://github.com/GhostMonarch/x402ms",
     primaryAction: "View developer tool",
@@ -296,7 +296,7 @@ export const projects: Project[] = [
     proof: [
       "MIT-licensed public repository",
       "Installable CLI and CI-oriented strict mode",
-      "Public proof artifacts tied to shipped code",
+      "Public evidence tied to shipped code",
       "Clear separation between build-time preflight and runtime enforcement",
     ],
     boundary:
@@ -312,7 +312,7 @@ export const services = [
     timeline: "5-10 business days",
     price: "Typical range: $3.5k-$7.5k",
     summary:
-      "Find the expensive customer or operational problem, map the workflow, and define the smallest AI product worth building.",
+      "Find the customer or operational problem, map the workflow, and define the first AI product worth building.",
     deliverables: [
       "Customer and workflow audit",
       "Problem and opportunity map",

@@ -19,7 +19,7 @@ export const metadata: Metadata = {
 
 const strengths = [
   ["Customer signal", "I work directly with users and commercial teams to separate real demand from feature noise."],
-  ["Product judgment", "I reduce an ambiguous opportunity to the smallest workflow that can prove value."],
+  ["Product judgment", "I reduce an ambiguous opportunity to the first workflow worth testing."],
   ["Working build", "I create the product surface, decision logic, and implementation path instead of stopping at a deck."],
   ["Commercial context", "I connect product decisions to adoption, revenue, partnerships, and what a buyer must believe."],
 ];
@@ -54,7 +54,7 @@ export default function AboutPage() {
             <h1>I build the bridge between a customer problem and a product that works.</h1>
             <p className="large-copy">
               I am an AI solutions architect and product builder working across crypto, fintech, and
-              AI. I am strongest in the messy middle: when customers are describing a real problem,
+              AI. I am strongest when customers are describing a real problem,
               the opportunity is valuable, and the product path is not obvious yet.
             </p>
             <div className="hero-actions">
@@ -80,7 +80,7 @@ export default function AboutPage() {
             <p>
               That commercial background matters. It helps me recognize when a product problem is
               actually a positioning problem, when a requested feature will not change adoption, and
-              when a focused build can unlock a customer, partnership, or new revenue path.
+              when a focused build can open a customer, partnership, or new revenue path.
             </p>
           </div>
         </div>
@@ -95,9 +95,8 @@ export default function AboutPage() {
             </div>
           </div>
           <div className="strength-grid">
-            {strengths.map(([title, copy], index) => (
+            {strengths.map(([title, copy]) => (
               <article key={title}>
-                <span>0{index + 1}</span>
                 <h3>{title}</h3>
                 <p>{copy}</p>
               </article>
