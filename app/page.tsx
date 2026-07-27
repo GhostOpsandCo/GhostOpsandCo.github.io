@@ -35,6 +35,8 @@ const focusSections = [
     interestSubject: "voice agent like Orelis",
     learnMoreLabel: "Talk about a similar voice-agent build",
     artifactNote: "Latest Orelis site capture: Faith example call and setup-call CTA.",
+    proofLabel: "Voice intake",
+    proofCue: "Missed calls, after-hours requests, qualification.",
     primary: true,
   },
   {
@@ -52,6 +54,8 @@ const focusSections = [
     interestSubject: "creator protection workflow like Team Take Down",
     learnMoreLabel: "Talk about a similar creator-protection build",
     artifactNote: "Creator workspace showing protected release status, evidence, and next actions.",
+    proofLabel: "Creator protection",
+    proofCue: "Protected uploads, release watch, takedown evidence.",
   },
   {
     project: treasuryRouter,
@@ -68,6 +72,8 @@ const focusSections = [
     interestSubject: "controlled financial workflow like Treasury Router",
     learnMoreLabel: "Talk about a similar financial workflow",
     artifactNote: "Advisor dashboard using illustrative development data.",
+    proofLabel: "Advisor workflow",
+    proofCue: "Idle capital review, route scan, human approval.",
   },
   {
     project: gridSynapse,
@@ -84,6 +90,8 @@ const focusSections = [
     interestSubject: "compute procurement product like GridSynapse",
     learnMoreLabel: "Talk about a similar procurement workflow",
     artifactNote: "Public compute procurement product and source-backed workflow.",
+    proofLabel: "Compute buying",
+    proofCue: "GPU cost, region, carbon, policy, and workload tradeoffs.",
   },
   {
     project: monarchShield,
@@ -100,6 +108,8 @@ const focusSections = [
     interestSubject: "payment-safety tool like Monarch Shield",
     learnMoreLabel: "Talk about a similar payment-safety tool",
     artifactNote: "Live Monarch Shield site showing the build-time payment safety preflight.",
+    proofLabel: "Payment safety",
+    proofCue: "Build-time preflight for agent-payment flows.",
   },
 ];
 
@@ -373,6 +383,27 @@ export default function Home() {
             Each one shows the user, the problem, what I built, what works today, and what is not
             being claimed. That is the fastest way to understand whether I can help with your build.
           </p>
+        </div>
+      </section>
+
+      <section className="v8-proof-index-section" aria-labelledby="proof-index-title">
+        <div className="site-shell v8-proof-index-wrap">
+          <div className="v8-proof-index-head">
+            <h2 id="proof-index-title">Choose the proof that matches your problem.</h2>
+            <p>
+              Each path jumps to a real product section with the use case, buyer, role, proof, and
+              boundary spelled out.
+            </p>
+          </div>
+          <nav className="v8-proof-index" aria-label="Project proof index">
+            {focusSections.map(({ project, anchor, proofLabel, proofCue }) => (
+              <a key={project.slug} href={`#${anchor}`} aria-label={`Jump to ${project.name}`}>
+                <span>{proofLabel}</span>
+                <strong>{project.name}</strong>
+                <p>{proofCue}</p>
+              </a>
+            ))}
+          </nav>
         </div>
       </section>
 

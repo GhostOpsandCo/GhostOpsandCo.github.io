@@ -57,6 +57,7 @@ The active contract is now [reference-selection-matrix.md](./reference-selection
 | How should the homepage read after the rejected wide/open layout? | [Profound](https://www.tryprofound.com/) homepage, July 27, 2026 | A single promise can lead a long page when the first viewport points the reader down one product story instead of splitting attention across loose columns. | Use a tighter top-down hero with profile facts as a compact table under the main promise. | Do not copy Profound's AI-search category, agents language, animated product world, logos, or dark identity. | `v8-hero-grid` becomes a one-column reading spine; `v8-profile-brief` becomes a three-cell facts table. |
 | How should the offer/service area sell without sounding generic? | [Hyros](https://hyros.com/) homepage/use-case flow, July 27, 2026 | Direct offer rows work when the reader can quickly see use case, proof, outcome, and next action. | Turn `What you can buy from me` into an aligned engagement table with clear columns and specific actions. | Do not copy Hyros revenue claims, testimonials, customer names, ad-tracking identity, or exact sales copy. | `v8-offer-list` now has visible `Engagement / Best when / You get / Timeline / Action` columns. |
 | How should the method and risk sections feel more premium? | Profound and Hyros page rhythm, July 27, 2026 | Dense information feels premium when it is aligned in rows and gives each row one job. | Convert `How I work` and `How I think...` into table-style operating rows with step, check, and output columns. | Do not add decorative metrics, fake proof, or over-designed AI language. | `v8-method-table-head` and `v8-thought-table-head` create repeatable premium rows. |
+| How can the long project run be easier to enter? | [Hyros](https://hyros.com/) use-case chooser and [Profound](https://www.tryprofound.com/) platform module paths, July 27, 2026 | A buyer should be able to self-select the relevant proof path before reading every section. | Add a compact proof index that links to Orelis, Team Take Down, Treasury Router, GridSynapse, and Monarch Shield by buyer problem. | Do not add fake proof, customer logos, animated agents, a product catalog clone, or a decorative bento grid. | `v8-proof-index` now gives five jump paths before the detailed project sections. |
 
 ### Active page anatomy
 
@@ -64,10 +65,11 @@ The active contract is now [reference-selection-matrix.md](./reference-selection
 2. A first-viewport answer to five questions: what Elijah does, who should hire him, what proof shows skill, who the human is, and what to do next.
 3. Elijah's exact headshot as an authorship signal, paired with real product proof rather than replacing it.
 4. The latest Orelis site artifact, Team Take Down creator workspace, exact Treasury Router advisor dashboard, actual GridSynapse dashboard, and Monarch Shield site artifact as inspectable product evidence.
-5. A truthful systems sequence: five inspectable systems and their exact states, with no borrowed customer logos.
-6. A three-step mechanism: find the bottleneck, design the operating logic, build the testable product.
-7. Every project section must show summary, use case, who it is for, proof, benefits, role, current evidence, and boundary.
-8. A real fit-call or short-brief conversion surface that does not claim provider delivery until verified.
+5. A compact proof index that lets buyers jump to the product closest to their problem before reading the full project run.
+6. A truthful systems sequence: five inspectable systems and their exact states, with no borrowed customer logos.
+7. A three-step mechanism: find the bottleneck, design the operating logic, build the testable product.
+8. Every project section must show summary, use case, who it is for, proof, benefits, role, current evidence, and boundary.
+9. A real fit-call or short-brief conversion surface that does not claim provider delivery until verified.
 
 ### Direction-specific rejection tests
 
@@ -93,4 +95,4 @@ The active contract is now [reference-selection-matrix.md](./reference-selection
 
 ## Direction gate
 
-V8.2 is the active implementation direction: a palette-preserving editorial homepage that keeps the current site language, keeps each major product in a dedicated copy-first section, and tightens the page into a single top-down reading path. Profound informs the singular hero spine and product-story discipline; Hyros informs direct offer rows, use-case clarity, proof placement, and specific actions. Neither source changes the palette or permits copied language, copied layouts, borrowed proof, or invented results. Production release still requires explicit approval after responsive QA and independent review.
+V8.3 is the active implementation direction: a palette-preserving editorial homepage that keeps the current site language, keeps each major product in a dedicated copy-first section, and tightens the page into a single top-down reading path with a compact proof index before the project run. Profound informs the singular hero spine, product-story discipline, and module-path clarity; Hyros informs direct offer rows, use-case clarity, proof placement, and specific actions. Neither source changes the palette or permits copied language, copied layouts, borrowed proof, or invented results. Production release still requires explicit approval after responsive QA and independent review.
