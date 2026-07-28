@@ -354,11 +354,9 @@ export default function Home() {
               <Image src="/headshot.jpg" alt="Elijah Paul" width={58} height={58} priority />
               <div>
                 <strong>Elijah Paul</strong>
-                <span>Available for product builds that need a first usable version</span>
               </div>
             </div>
-            <h1 id="hero-title">Elijah Paul turns customer problems into working AI products.</h1>
-            <p className="v8-role-title">AI Solutions Architect / Product Builder</p>
+            <h1 id="hero-title">I turn customer problems into working AI products.</h1>
             <p className="v8-hero-lede">
               I help crypto, fintech, voice AI, and creator-protection teams find the stuck
               workflow, design the product path, and ship the version a customer, operator, or
@@ -385,11 +383,12 @@ export default function Home() {
       <section className="v8-section v8-work-intro" id="work" aria-labelledby="work-title">
         <div className="site-shell v8-work-intro-grid">
           <div>
-            <h2 id="work-title">The work is different. The pattern is the same.</h2>
+            <h2 id="work-title">Five builds that show what I can do for your team.</h2>
           </div>
           <p>
-            Find the stuck workflow, make it usable, and keep the proof and limits visible. The
-            projects below show what I built, who it helps, and where the current boundary is.
+            Each project starts with a real business problem: missed calls, creator leaks, idle
+            capital, GPU buying, or payment safety. I show the product, who it helps, what works
+            today, and where the limits are so you can judge the fit quickly.
           </p>
         </div>
       </section>
