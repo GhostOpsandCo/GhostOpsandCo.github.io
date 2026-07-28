@@ -4004,7 +4004,8 @@ h3 {
   overflow: hidden;
   padding: 18px 16px 20px;
   border-right: 1px solid var(--line);
-  color: inherit;
+  background: var(--index-wash, transparent);
+  color: var(--index-ink, inherit);
   transition:
     background-color 160ms ease,
     color 160ms ease;
@@ -4017,38 +4018,102 @@ h3 {
   bottom: 0;
   left: 0;
   width: 3px;
-  background: var(--section-accent, var(--blue));
+  background: var(--index-accent, var(--section-accent, var(--black)));
   opacity: 0.68;
 }
 
 .v8-proof-index a[data-tone="orelis"],
 .v8-project-tone-orelis {
-  --section-accent: #7652d8;
-  --section-wash: #fbfaff;
+  --index-accent: var(--black);
+  --index-copy: var(--ink-soft);
+  --index-hover: #f8f9fb;
+  --index-ink: var(--ink);
+  --index-label: var(--ink);
+  --index-wash: var(--paper);
+  --section-accent: var(--black);
+  --section-accent-label: var(--ink);
+  --section-copy: var(--ink-soft);
+  --section-ink: var(--ink);
+  --section-label: var(--ink);
+  --section-line: var(--line);
+  --section-proof-bg: rgba(11, 13, 18, 0.035);
+  --section-wash: var(--paper);
 }
 
 .v8-proof-index a[data-tone="team"],
 .v8-project-tone-team {
-  --section-accent: #12854a;
-  --section-wash: #f7fbf8;
+  --index-accent: #ffffff;
+  --index-copy: rgba(255, 255, 255, 0.72);
+  --index-hover: var(--night-soft);
+  --index-ink: #ffffff;
+  --index-label: #ffffff;
+  --index-wash: var(--black);
+  --section-accent: #ffffff;
+  --section-accent-label: #ffffff;
+  --section-copy: rgba(255, 255, 255, 0.76);
+  --section-ink: #ffffff;
+  --section-label: rgba(255, 255, 255, 0.9);
+  --section-line: rgba(255, 255, 255, 0.18);
+  --section-link: #ffffff;
+  --section-link-hover: rgba(255, 255, 255, 0.78);
+  --section-proof-bg: rgba(255, 255, 255, 0.07);
+  --section-wash: var(--black);
 }
 
 .v8-proof-index a[data-tone="treasury"],
 .v8-project-tone-treasury {
-  --section-accent: var(--blue);
-  --section-wash: #f7faff;
+  --index-accent: var(--black);
+  --index-copy: var(--ink-soft);
+  --index-hover: #f8f9fb;
+  --index-ink: var(--ink);
+  --index-label: var(--ink);
+  --index-wash: var(--paper);
+  --section-accent: var(--black);
+  --section-accent-label: var(--ink);
+  --section-copy: var(--ink-soft);
+  --section-ink: var(--ink);
+  --section-label: var(--ink);
+  --section-line: var(--line);
+  --section-proof-bg: rgba(11, 13, 18, 0.035);
+  --section-wash: var(--paper);
 }
 
 .v8-proof-index a[data-tone="grid"],
 .v8-project-tone-grid {
-  --section-accent: #0f766e;
-  --section-wash: #f6fbfb;
+  --index-accent: #ffffff;
+  --index-copy: rgba(255, 255, 255, 0.72);
+  --index-hover: var(--night-soft);
+  --index-ink: #ffffff;
+  --index-label: #ffffff;
+  --index-wash: var(--black);
+  --section-accent: #ffffff;
+  --section-accent-label: #ffffff;
+  --section-copy: rgba(255, 255, 255, 0.76);
+  --section-ink: #ffffff;
+  --section-label: rgba(255, 255, 255, 0.9);
+  --section-line: rgba(255, 255, 255, 0.18);
+  --section-link: #ffffff;
+  --section-link-hover: rgba(255, 255, 255, 0.78);
+  --section-proof-bg: rgba(255, 255, 255, 0.07);
+  --section-wash: var(--black);
 }
 
 .v8-proof-index a[data-tone="monarch"],
 .v8-project-tone-monarch {
-  --section-accent: #111827;
-  --section-wash: #f8f9fb;
+  --index-accent: var(--black);
+  --index-copy: var(--ink-soft);
+  --index-hover: #f8f9fb;
+  --index-ink: var(--ink);
+  --index-label: var(--ink);
+  --index-wash: var(--paper);
+  --section-accent: var(--black);
+  --section-accent-label: var(--ink);
+  --section-copy: var(--ink-soft);
+  --section-ink: var(--ink);
+  --section-label: var(--ink);
+  --section-line: var(--line);
+  --section-proof-bg: rgba(11, 13, 18, 0.035);
+  --section-wash: var(--paper);
 }
 
 .v8-proof-index a:last-child {
@@ -4057,25 +4122,25 @@ h3 {
 
 .v8-proof-index a:hover,
 .v8-proof-index a:focus-visible {
-  background: var(--section-wash, #ffffff);
-  color: var(--blue-dark);
+  background: var(--index-hover, #ffffff);
+  color: var(--index-ink, var(--blue-dark));
 }
 
 .v8-proof-index span {
-  color: var(--blue-dark);
+  color: var(--index-label, var(--ink));
   font-size: 13px;
   font-weight: 800;
   line-height: 1.3;
 }
 
 .v8-proof-index strong {
-  color: var(--ink);
+  color: var(--index-ink, var(--ink));
   font-size: 17px;
   line-height: 1.28;
 }
 
 .v8-proof-index p {
-  color: var(--ink-soft);
+  color: var(--index-copy, var(--ink-soft));
   font-size: 13px;
   line-height: 1.48;
 }
@@ -4107,7 +4172,7 @@ h3 {
     linear-gradient(
       90deg,
       var(--section-accent, var(--blue)) 0%,
-      rgba(255, 255, 255, 0) 72%
+      transparent 72%
     );
   opacity: 0.74;
 }
@@ -4145,6 +4210,7 @@ h3 {
 
 .v8-project-copy h2 {
   max-width: 740px;
+  color: var(--section-ink, var(--ink));
   font-size: 34px;
   line-height: 1.16;
   text-wrap: balance;
@@ -4152,9 +4218,18 @@ h3 {
 
 .v8-large-copy {
   max-width: 64ch;
-  color: var(--ink-soft);
+  color: var(--section-copy, var(--ink-soft));
   font-size: 17px;
   line-height: 1.58;
+}
+
+.v8-project-section .text-link {
+  color: var(--section-link, var(--blue-dark));
+}
+
+.v8-project-section .text-link:hover,
+.v8-project-section .text-link:focus-visible {
+  color: var(--section-link-hover, var(--blue));
 }
 
 .v8-artifact {
@@ -4176,7 +4251,7 @@ h3 {
 
 .v8-detail-stack {
   display: grid;
-  border-top: 1px solid var(--line);
+  border-top: 1px solid var(--section-line, var(--line));
 }
 
 .v8-detail-stack > div {
@@ -4184,7 +4259,7 @@ h3 {
   grid-template-columns: minmax(120px, 0.24fr) minmax(0, 1fr);
   gap: 20px;
   padding-block: 15px;
-  border-bottom: 1px solid var(--line);
+  border-bottom: 1px solid var(--section-line, var(--line));
 }
 
 .v8-detail-stack .v8-detail-proof,
@@ -4192,11 +4267,11 @@ h3 {
   padding-left: 14px;
   border-left: 2px solid var(--section-accent, var(--blue));
   background:
-    linear-gradient(90deg, rgba(255, 255, 255, 0.64), rgba(255, 255, 255, 0));
+    linear-gradient(90deg, var(--section-proof-bg, rgba(255, 255, 255, 0.64)), transparent);
 }
 
 .v8-detail-stack strong {
-  color: var(--ink);
+  color: var(--section-label, var(--ink));
   font-size: 14px;
   font-weight: 760;
   line-height: 1.35;
@@ -4204,12 +4279,12 @@ h3 {
 
 .v8-detail-proof strong,
 .v8-detail-boundary strong {
-  color: var(--section-accent, var(--blue-dark));
+  color: var(--section-accent-label, var(--section-accent, var(--blue-dark)));
 }
 
 .v8-detail-stack p,
 .v8-detail-stack li {
-  color: var(--ink-soft);
+  color: var(--section-copy, var(--ink-soft));
   font-size: 15px;
   line-height: 1.58;
 }
