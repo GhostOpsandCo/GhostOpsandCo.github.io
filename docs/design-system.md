@@ -2,7 +2,7 @@
 
 ## Active Direction
 
-The active implementation direction is Focused Portfolio V8.5: an editorial resume-style portfolio with premium table sections, a compact proof index, and black/white product chaptering. It preserves the current `elijahpaul.io` palette and uses Profound, Hyros, Orelis, SaaSFrame, Apple, OpenAI, and shadcn as structure references: one top-down reading path, direct outcome copy, restrained hierarchy, visible product evidence, familiar controls, and one dominant action.
+The active implementation direction is Focused Portfolio V8.6: an editorial resume-style portfolio with premium table sections, a compact proof index, black/white product chaptering, and buyer-specific conversion copy. It preserves the current `elijahpaul.io` palette and uses Profound, Hyros, Orelis, SaaSFrame, Apple, OpenAI, and shadcn as structure references: one top-down reading path, direct outcome copy, restrained hierarchy, visible product evidence, familiar controls, and one dominant action.
 
 The homepage must make Elijah easy to understand, credible, human, and ready for hire. The core promise is:
 
@@ -15,6 +15,8 @@ The supporting copy stays close to the existing site:
 ## Experience Rules
 
 - Lead with what Elijah does, who should hire him, what proof is visible, who the human is, and what action to take.
+- Write public copy in this order: buyer situation, stuck workflow, product mechanism, visible proof, boundary, and next action.
+- Replace broad portfolio claims with direct hiring language: what the buyer can hire Elijah to find, build, or own inside the team.
 - Use `Request a fit call` as the primary CTA until a real scheduler is verified.
 - Keep `View my work` as the supporting CTA.
 - Make the homepage read like an editorial profile or resume: one calm reading spine, stable section rhythm, and consistent type scale.

@@ -2,7 +2,7 @@ export const site = {
   name: "Elijah Paul",
   title: "AI Solutions Architect & Product Builder",
   description:
-    "Elijah Paul turns customer problems into working AI products for crypto, fintech, voice AI, creator protection, and agentic systems.",
+    "AI product builder helping crypto, fintech, voice AI, and creator-protection teams turn stuck workflows into products people can test, buy, or approve.",
   url: "https://elijahpaul.io",
   email: "elijah@elijahpaul.io",
   linkedin: "https://www.linkedin.com/in/elijahpaul",
@@ -312,7 +312,7 @@ export const services = [
     timeline: "5-10 business days",
     price: "Typical range: $3.5k-$7.5k",
     summary:
-      "Find the customer or operational problem, map the workflow, and define the first AI product worth building.",
+      "Find the customer or operations problem worth building before your team spends weeks on the wrong thing.",
     deliverables: [
       "Customer and workflow audit",
       "Problem and opportunity map",
@@ -326,7 +326,7 @@ export const services = [
     timeline: "3-8 weeks",
     price: "Typical range: $15k-$40k+",
     summary:
-      "Turn the selected workflow into a working product that teams and customers can test, including the user experience and required integrations.",
+      "Turn the selected workflow into a working product people can test, including the screens, logic, controls, and required integrations.",
     deliverables: [
       "Product and solution architecture",
       "Working web product or agent workflow",
@@ -340,7 +340,7 @@ export const services = [
     timeline: "Monthly engagement",
     price: "Typical range: $10k-$18k/month",
     summary:
-      "Work directly with customers and internal teams to uncover product gaps, shape solutions, and build the path from feedback to adoption.",
+      "Work with customers, product, sales, and engineering to find gaps, shape the product, and keep the build moving.",
     deliverables: [
       "Customer-facing solution discovery",
       "Product audits and technical design",
