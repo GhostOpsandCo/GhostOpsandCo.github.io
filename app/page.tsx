@@ -320,7 +320,9 @@ function ProjectFocusSection({
               width={1440}
               height={1100}
               sizes="(max-width: 900px) 92vw, 34vw"
-              priority={primary}
+              preload={primary}
+              loading={primary ? "eager" : "lazy"}
+              fetchPriority={primary ? "high" : "auto"}
             />
           </div>
           <figcaption>
