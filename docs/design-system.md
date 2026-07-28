@@ -2,7 +2,7 @@
 
 ## Active Direction
 
-The active implementation direction is Focused Portfolio V8.6: an editorial resume-style portfolio with premium table sections, a compact proof index, black/white product chaptering, and buyer-specific conversion copy. It preserves the current `elijahpaul.io` palette and uses Profound, Hyros, Orelis, SaaSFrame, Apple, OpenAI, and shadcn as structure references: one top-down reading path, direct outcome copy, restrained hierarchy, visible product evidence, familiar controls, and one dominant action.
+The active implementation direction is Focused Portfolio V8.7: an editorial resume-style portfolio with premium table sections, a clean proof-choice table, black/white product chaptering, and buyer-specific conversion copy. It preserves the current `elijahpaul.io` palette and uses Profound, Hyros, Orelis, SaaSFrame, Apple, OpenAI, and shadcn as structure references: one top-down reading path, direct outcome copy, restrained hierarchy, visible product evidence, familiar controls, and one dominant action.
 
 The homepage must make Elijah easy to understand, credible, human, and ready for hire. The core promise is:
 
@@ -22,9 +22,10 @@ The supporting copy stays close to the existing site:
 - Make the homepage read like an editorial profile or resume: one calm reading spine, stable section rhythm, and consistent type scale.
 - The hero should read top to bottom. Do not split the main promise and profile explanation into competing wide columns.
 - Use table-like rows for commercial and trust-heavy sections when the content needs comparison: engagement, best fit, output, timeline, method, check, and limit.
-- Add a compact proof index before the long project run so buyers can self-select the relevant project by problem without hiding work in a carousel.
+- Add a clean proof-choice table before the long project run so buyers can self-select the relevant project by problem without hiding work in a carousel.
 - Show detailed project sections on the homepage instead of hiding work behind a carousel or selector, but keep each section compact and copy-first.
-- Alternate project chapters between white and black. Do not use mint, teal, or product-colored washes for the long project run; the contrast exists to create editorial rhythm, not a new palette.
+- Alternate project chapters between white and black. Do not alternate the proof-choice table itself between black and white; it should read as one clean navigational table, not five separate tiles.
+- Keep homepage typography on a restrained scale. Avoid poster-size headings paired with tiny metadata labels unless the contrast has a clear editorial purpose and passes mobile review.
 - Use scroll feedback only when it clarifies anchor navigation. It must be subtle, CSS-only, non-looping, and disabled for reduced-motion users.
 - Lead with Orelis as the commercial voice-agent offer most directly tied to paid services, while borrowing its one-focus section discipline rather than its palette.
 - Give Team Take Down, Treasury Router, GridSynapse, and Monarch Shield their own standalone entries instead of alternating landing-page bands, a carousel, or a proof grid.

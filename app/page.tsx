@@ -36,8 +36,8 @@ const focusSections = [
     interestSubject: "voice agent like Orelis",
     learnMoreLabel: "Talk about a similar voice-agent build",
     artifactNote: "Latest Orelis site capture: Faith example call and setup-call CTA.",
-    proofLabel: "Voice intake",
-    proofCue: "Missed calls, after-hours requests, qualification.",
+    proofLabel: "Missed calls",
+    proofCue: "A voice agent answers, qualifies, and hands off the caller.",
     primary: true,
   },
   {
@@ -56,8 +56,8 @@ const focusSections = [
     interestSubject: "creator protection workflow like Team Take Down",
     learnMoreLabel: "Talk about a similar creator-protection build",
     artifactNote: "Creator workspace showing protected release status, evidence, and next actions.",
-    proofLabel: "Creator protection",
-    proofCue: "Protected uploads, release watch, takedown evidence.",
+    proofLabel: "Creator leaks",
+    proofCue: "A creator workspace prepares releases, watches public sites, and saves proof.",
   },
   {
     project: treasuryRouter,
@@ -75,8 +75,8 @@ const focusSections = [
     interestSubject: "controlled financial workflow like Treasury Router",
     learnMoreLabel: "Talk about a similar financial workflow",
     artifactNote: "Advisor dashboard using illustrative development data.",
-    proofLabel: "Advisor workflow",
-    proofCue: "Idle capital review, route scan, human approval.",
+    proofLabel: "Advisor reviews",
+    proofCue: "An advisor dashboard ranks idle-capital cases and keeps approval human.",
   },
   {
     project: gridSynapse,
@@ -94,8 +94,8 @@ const focusSections = [
     interestSubject: "compute procurement product like GridSynapse",
     learnMoreLabel: "Talk about a similar procurement workflow",
     artifactNote: "Public compute procurement product and source-backed workflow.",
-    proofLabel: "Compute buying",
-    proofCue: "GPU cost, region, carbon, policy, and workload tradeoffs.",
+    proofLabel: "GPU buying",
+    proofCue: "A compute planner compares provider options before spend is committed.",
   },
   {
     project: monarchShield,
@@ -113,8 +113,8 @@ const focusSections = [
     interestSubject: "payment-safety tool like Monarch Shield",
     learnMoreLabel: "Talk about a similar payment-safety tool",
     artifactNote: "Live Monarch Shield site showing the build-time payment safety preflight.",
-    proofLabel: "Payment safety",
-    proofCue: "Build-time preflight for agent-payment flows.",
+    proofLabel: "Payment code",
+    proofCue: "A CLI preflight catches unsafe agent-payment paths before release.",
   },
 ];
 
@@ -385,11 +385,11 @@ export default function Home() {
       <section className="v8-section v8-work-intro" id="work" aria-labelledby="work-title">
         <div className="site-shell v8-work-intro-grid">
           <div>
-            <h2 id="work-title">Five real builds. Five different problems. One pattern.</h2>
+            <h2 id="work-title">The work is different. The pattern is the same.</h2>
           </div>
           <p>
-            Find the stuck workflow, make it usable, and keep the proof and limits visible. Each
-            project shows the buyer, problem, product, proof, and boundary.
+            Find the stuck workflow, make it usable, and keep the proof and limits visible. The
+            projects below show what I built, who it helps, and where the current boundary is.
           </p>
         </div>
       </section>
@@ -397,10 +397,10 @@ export default function Home() {
       <section className="v8-proof-index-section" aria-labelledby="proof-index-title">
         <div className="site-shell v8-proof-index-wrap">
           <div className="v8-proof-index-head">
-            <h2 id="proof-index-title">Pick the problem closest to yours.</h2>
+            <h2 id="proof-index-title">Start with the problem you recognize.</h2>
             <p>
-              Jump to the build that matches your situation: missed calls, creator leaks, advisor
-              workflows, compute buying, or payment safety.
+              Choose the closest buyer problem, then read the matching product section. Each one
+              shows the use case, artifact, proof, and limit.
             </p>
           </div>
           <nav className="v8-proof-index" aria-label="Project proof index">
