@@ -217,7 +217,7 @@ export const projects: Project[] = [
     keywords: ["AI compute", "GPU procurement", "optimization", "OR-Tools", "Supabase", "decision systems"],
     image: "/projects/gridsynapse.png",
     imageAlt: "GridSynapse operator console comparing compute options",
-    liveUrl: "https://gridsynapse.vercel.app",
+    liveUrl: "https://www.gridsynapse.xyz",
     sourceUrl: "https://github.com/GhostOpsandCo/gridsynapse-mvp",
     primaryAction: "Open product",
     primaryIntent: "AI compute optimization software",
