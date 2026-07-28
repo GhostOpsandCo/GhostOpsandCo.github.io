@@ -1765,24 +1765,6 @@ h3 {
   gap: 14px;
 }
 
-.header-availability {
-  display: inline-flex;
-  align-items: center;
-  gap: 7px;
-  color: #626b78;
-  font-size: 11px;
-  font-weight: 600;
-  white-space: nowrap;
-}
-
-.header-availability i {
-  width: 7px;
-  height: 7px;
-  border-radius: 50%;
-  background: var(--green);
-  box-shadow: 0 0 0 3px rgba(22, 131, 84, 0.1);
-}
-
 .header-contact {
   display: inline-flex;
   min-height: 42px;
@@ -2592,10 +2574,6 @@ h3 {
 @media (max-width: 1100px) {
   .site-shell {
     width: min(calc(100% - 64px), var(--shell));
-  }
-
-  .header-availability {
-    display: none;
   }
 
   .home-hero,

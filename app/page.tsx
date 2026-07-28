@@ -402,8 +402,8 @@ export default function Home() {
               what is assumed, and what still needs approval.
             </p>
             <div className="v8-hero-actions">
-              <a className="button button-primary" href={mailto("AI product fit call")}>Request a product-fit call</a>
-              <Link className="button button-outline" href="#work">View product examples</Link>
+              <a className="button button-primary" href={mailto("Product fit call")}>Request a fit call</a>
+              <Link className="button button-outline" href="#work">View my work</Link>
               <Link className="v8-resume-link" href="/resume">Resume and background</Link>
             </div>
           </div>
@@ -584,7 +584,7 @@ export default function Home() {
               engagement fits.
             </p>
             <div className="v8-fit-actions">
-              <a className="button button-inverse" href={mailto("AI product fit call")}>Request a product-fit call</a>
+              <a className="button button-inverse" href={mailto("Product fit call")}>Request a fit call</a>
               <Link className="text-link text-link-light" href="/work">View all case studies</Link>
             </div>
           </div>
