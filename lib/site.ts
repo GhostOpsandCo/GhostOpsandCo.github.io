@@ -270,7 +270,7 @@ export const projects: Project[] = [
     ],
     keywords: ["venture studio", "startup validation", "agent workflow", "decision gates", "PRD", "QA"],
     image: "/projects/venture-labs-control-room.png",
-    imageAlt: "GhostOps Venture Labs control room showing venture stages, artifact readiness, and decision gates",
+    imageAlt: "GhostOps Venture Labs dashboard showing a sample venture queue, decision gate, artifact readiness, and stage controls",
     primaryAction: "View case study",
     primaryIntent: "venture studio operating system",
     skills: ["Product strategy", "Venture validation", "Agent workflow design", "Artifact systems", "QA gates", "Launch planning"],
@@ -295,7 +295,7 @@ export const projects: Project[] = [
       "Verified GhostOps Venture Studio OS and technical architecture docs",
       "Explicit intake to launch-memo stage model",
       "Router, Watchguard, State Layer, and Artifact Contract responsibilities",
-      "Generated control-room artifact with clear illustrative boundary",
+      "Rendered dashboard artifact with clear illustrative boundary",
     ],
     boundary:
       "The Venture Labs control room is an illustrative artifact based on internal GhostOps system docs. It is not a live production dashboard, customer result, revenue claim, autonomous startup launch claim, or proof that every stage has been automated.",
