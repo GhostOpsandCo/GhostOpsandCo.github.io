@@ -31,6 +31,12 @@ html {
   scroll-behavior: smooth;
 }
 
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
 body {
   margin: 0;
   background: var(--paper);
@@ -3991,9 +3997,11 @@ h3 {
 }
 
 .v8-proof-index a {
+  position: relative;
   display: grid;
   min-height: 148px;
   gap: 8px;
+  overflow: hidden;
   padding: 18px 16px 20px;
   border-right: 1px solid var(--line);
   color: inherit;
@@ -4002,13 +4010,54 @@ h3 {
     color 160ms ease;
 }
 
+.v8-proof-index a::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 3px;
+  background: var(--section-accent, var(--blue));
+  opacity: 0.68;
+}
+
+.v8-proof-index a[data-tone="orelis"],
+.v8-project-tone-orelis {
+  --section-accent: #7652d8;
+  --section-wash: #fbfaff;
+}
+
+.v8-proof-index a[data-tone="team"],
+.v8-project-tone-team {
+  --section-accent: #12854a;
+  --section-wash: #f7fbf8;
+}
+
+.v8-proof-index a[data-tone="treasury"],
+.v8-project-tone-treasury {
+  --section-accent: var(--blue);
+  --section-wash: #f7faff;
+}
+
+.v8-proof-index a[data-tone="grid"],
+.v8-project-tone-grid {
+  --section-accent: #0f766e;
+  --section-wash: #f6fbfb;
+}
+
+.v8-proof-index a[data-tone="monarch"],
+.v8-project-tone-monarch {
+  --section-accent: #111827;
+  --section-wash: #f8f9fb;
+}
+
 .v8-proof-index a:last-child {
   border-right: 0;
 }
 
 .v8-proof-index a:hover,
 .v8-proof-index a:focus-visible {
-  background: #ffffff;
+  background: var(--section-wash, #ffffff);
   color: var(--blue-dark);
 }
 
@@ -4032,19 +4081,51 @@ h3 {
 }
 
 .v8-project-section {
+  position: relative;
+  scroll-margin-top: 84px;
   border-top: 1px solid var(--line);
-  background: var(--paper);
+  background: var(--section-wash, var(--paper));
 }
 
 .v8-project-section:nth-of-type(2n) {
-  background: var(--paper);
+  background: var(--section-wash, var(--paper));
 }
 
 .v8-project-primary {
-  background: var(--paper);
+  background: var(--section-wash, var(--paper));
+}
+
+.v8-project-section::before {
+  content: "";
+  position: absolute;
+  z-index: 0;
+  top: 0;
+  right: 0;
+  left: 0;
+  height: 3px;
+  background:
+    linear-gradient(
+      90deg,
+      var(--section-accent, var(--blue)) 0%,
+      rgba(255, 255, 255, 0) 72%
+    );
+  opacity: 0.74;
+}
+
+.v8-project-section:target {
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.42), rgba(255, 255, 255, 0) 34%),
+    var(--section-wash, var(--paper));
+}
+
+.v8-project-section:target::before {
+  height: 4px;
+  opacity: 1;
 }
 
 .v8-project-article {
+  position: relative;
+  z-index: 1;
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(280px, 360px);
   align-items: start;
@@ -4106,11 +4187,24 @@ h3 {
   border-bottom: 1px solid var(--line);
 }
 
+.v8-detail-stack .v8-detail-proof,
+.v8-detail-stack .v8-detail-boundary {
+  padding-left: 14px;
+  border-left: 2px solid var(--section-accent, var(--blue));
+  background:
+    linear-gradient(90deg, rgba(255, 255, 255, 0.64), rgba(255, 255, 255, 0));
+}
+
 .v8-detail-stack strong {
   color: var(--ink);
   font-size: 14px;
   font-weight: 760;
   line-height: 1.35;
+}
+
+.v8-detail-proof strong,
+.v8-detail-boundary strong {
+  color: var(--section-accent, var(--blue-dark));
 }
 
 .v8-detail-stack p,
@@ -4410,6 +4504,36 @@ h3 {
   border-left: 2px solid var(--blue);
 }
 
+@keyframes v8-anchor-settle {
+  from {
+    transform: translateY(10px);
+  }
+
+  to {
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .v8-project-section:target .v8-project-article {
+    animation: v8-anchor-settle 420ms cubic-bezier(.2, 0, 0, 1);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .v8-project-section:target .v8-project-article {
+    animation: none;
+  }
+}
+
+@media (min-width: 1121px) {
+  .v8-project-article .v8-artifact {
+    position: sticky;
+    top: 104px;
+    align-self: start;
+  }
+}
+
 @media (max-width: 1120px) {
   .v8-hero-grid,
   .v8-work-intro-grid,
@@ -4660,7 +4784,7 @@ h3 {
 
   .v8-proof-index a {
     min-height: auto;
-    padding: 16px 0;
+    padding: 16px 0 16px 18px;
     border-right: 0;
     border-top: 1px solid var(--line);
   }

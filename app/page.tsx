@@ -23,6 +23,7 @@ const focusSections = [
   {
     project: orelis,
     anchor: "orelis",
+    tone: "orelis",
     title: "Orelis: stop letting qualified calls die in voicemail.",
     lead:
       "Faith answers the call, qualifies the request, and gives the operator a clean next step.",
@@ -42,6 +43,7 @@ const focusSections = [
   {
     project: teamTakeDown,
     anchor: "team-take-down",
+    tone: "team",
     title: "Team Take Down: protect a creator release before copies spread.",
     lead:
       "The workspace connects protected uploads, public-site watch, evidence, creator approval, and outcome tracking.",
@@ -60,6 +62,7 @@ const focusSections = [
   {
     project: treasuryRouter,
     anchor: "treasury-router",
+    tone: "treasury",
     title: "Treasury Router: turn idle capital into an advisor-ready decision path.",
     lead:
       "The dashboard finds the next client case, explains the route, and keeps execution behind human approval.",
@@ -78,6 +81,7 @@ const focusSections = [
   {
     project: gridSynapse,
     anchor: "gridsynapse",
+    tone: "grid",
     title: "GridSynapse: compare GPU options without rebuilding the spreadsheet.",
     lead:
       "It helps teams see cost, region, carbon, policy, and workload tradeoffs before they commit to a provider.",
@@ -96,6 +100,7 @@ const focusSections = [
   {
     project: monarchShield,
     anchor: "monarch-shield",
+    tone: "monarch",
     title: "Monarch Shield: catch unsafe agent-payment paths before money moves.",
     lead:
       "A local CLI and CI gate gives reviewers a deterministic preflight before launch.",
@@ -204,6 +209,7 @@ const profileNotes = [
 function ProjectFocusSection({
   project,
   anchor,
+  tone,
   title,
   lead,
   sectionSummary,
@@ -216,6 +222,7 @@ function ProjectFocusSection({
 }: {
   project: Project;
   anchor: string;
+  tone: string;
   title: string;
   lead: string;
   sectionSummary: string;
@@ -228,7 +235,7 @@ function ProjectFocusSection({
 }) {
   return (
     <section
-      className={`v8-section v8-project-section${primary ? " v8-project-primary" : ""}`}
+      className={`v8-section v8-project-section v8-project-tone-${tone}${primary ? " v8-project-primary" : ""}`}
       id={anchor}
       aria-labelledby={`${anchor}-title`}
     >
@@ -254,7 +261,7 @@ function ProjectFocusSection({
               <strong>My role</strong>
               <p>{project.role}</p>
             </div>
-            <div>
+            <div className="v8-detail-proof">
               <strong>Proof</strong>
               <p>{project.shortOutcome}</p>
             </div>
@@ -266,7 +273,7 @@ function ProjectFocusSection({
                 ))}
               </ul>
             </div>
-            <div>
+            <div className="v8-detail-boundary">
               <strong>Boundary</strong>
               <p>{project.boundary}</p>
             </div>
@@ -396,8 +403,13 @@ export default function Home() {
             </p>
           </div>
           <nav className="v8-proof-index" aria-label="Project proof index">
-            {focusSections.map(({ project, anchor, proofLabel, proofCue }) => (
-              <a key={project.slug} href={`#${anchor}`} aria-label={`Jump to ${project.name}`}>
+            {focusSections.map(({ project, anchor, proofLabel, proofCue, tone }) => (
+              <a
+                key={project.slug}
+                href={`#${anchor}`}
+                aria-label={`Jump to ${project.name}`}
+                data-tone={tone}
+              >
                 <span>{proofLabel}</span>
                 <strong>{project.name}</strong>
                 <p>{proofCue}</p>
