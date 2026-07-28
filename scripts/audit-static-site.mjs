@@ -8,17 +8,17 @@ const siteUrl = "https://elijahpaul.io";
 
 const pages = [
   ["/", "index.html"],
-  ["/work", "work.html"],
-  ["/work/venture-labs", "work/venture-labs.html"],
-  ["/work/orelis", "work/orelis.html"],
-  ["/work/team-take-down", "work/team-take-down.html"],
-  ["/work/treasury-router", "work/treasury-router.html"],
-  ["/work/gridsynapse", "work/gridsynapse.html"],
-  ["/work/x402-agent-payments", "work/x402-agent-payments.html"],
-  ["/services", "services.html"],
-  ["/about", "about.html"],
-  ["/resume", "resume.html"],
-  ["/contact", "contact.html"],
+  ["/work", "work/index.html"],
+  ["/work/venture-labs", "work/venture-labs/index.html"],
+  ["/work/orelis", "work/orelis/index.html"],
+  ["/work/team-take-down", "work/team-take-down/index.html"],
+  ["/work/treasury-router", "work/treasury-router/index.html"],
+  ["/work/gridsynapse", "work/gridsynapse/index.html"],
+  ["/work/x402-agent-payments", "work/x402-agent-payments/index.html"],
+  ["/services", "services/index.html"],
+  ["/about", "about/index.html"],
+  ["/resume", "resume/index.html"],
+  ["/contact", "contact/index.html"],
 ];
 
 const requiredFiles = [
@@ -58,7 +58,7 @@ for (const [route, file] of pages) {
   const html = readFileSync(filePath, "utf8");
   const title = html.match(/<title>([^<]+)<\/title>/)?.[1];
   const description = html.match(/<meta name="description" content="([^"]+)"/)?.[1];
-  const canonical = route === "/" ? siteUrl : `${siteUrl}${route}`;
+  const canonical = route === "/" ? `${siteUrl}/` : `${siteUrl}${route}/`;
 
   if (!title) fail(`${route} has no title`);
   else if (titles.has(title)) fail(`${route} repeats title: ${title}`);
@@ -94,7 +94,7 @@ const sitemapPath = join(output, "sitemap.xml");
 if (existsSync(sitemapPath)) {
   const sitemap = readFileSync(sitemapPath, "utf8");
   for (const [route] of pages) {
-    const url = route === "/" ? siteUrl : `${siteUrl}${route}`;
+    const url = route === "/" ? `${siteUrl}/` : `${siteUrl}${route}/`;
     if (!sitemap.includes(`<loc>${url}</loc>`)) fail(`Sitemap is missing ${url}`);
   }
 }
