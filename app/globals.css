@@ -4043,19 +4043,19 @@ h3 {
 .v8-proof-index a[data-tone="team"],
 .v8-project-tone-team {
   --index-accent: #ffffff;
-  --index-copy: rgba(255, 255, 255, 0.72);
+  --index-copy: #ffffff;
   --index-hover: var(--night-soft);
   --index-ink: #ffffff;
   --index-label: #ffffff;
   --index-wash: var(--black);
   --section-accent: #ffffff;
   --section-accent-label: #ffffff;
-  --section-copy: rgba(255, 255, 255, 0.76);
+  --section-copy: #ffffff;
   --section-ink: #ffffff;
-  --section-label: rgba(255, 255, 255, 0.9);
+  --section-label: #ffffff;
   --section-line: rgba(255, 255, 255, 0.18);
   --section-link: #ffffff;
-  --section-link-hover: rgba(255, 255, 255, 0.78);
+  --section-link-hover: #ffffff;
   --section-proof-bg: rgba(255, 255, 255, 0.07);
   --section-wash: var(--black);
 }
@@ -4081,19 +4081,19 @@ h3 {
 .v8-proof-index a[data-tone="grid"],
 .v8-project-tone-grid {
   --index-accent: #ffffff;
-  --index-copy: rgba(255, 255, 255, 0.72);
+  --index-copy: #ffffff;
   --index-hover: var(--night-soft);
   --index-ink: #ffffff;
   --index-label: #ffffff;
   --index-wash: var(--black);
   --section-accent: #ffffff;
   --section-accent-label: #ffffff;
-  --section-copy: rgba(255, 255, 255, 0.76);
+  --section-copy: #ffffff;
   --section-ink: #ffffff;
-  --section-label: rgba(255, 255, 255, 0.9);
+  --section-label: #ffffff;
   --section-line: rgba(255, 255, 255, 0.18);
   --section-link: #ffffff;
-  --section-link-hover: rgba(255, 255, 255, 0.78);
+  --section-link-hover: #ffffff;
   --section-proof-bg: rgba(255, 255, 255, 0.07);
   --section-wash: var(--black);
 }
