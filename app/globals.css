@@ -20,7 +20,7 @@
 @theme inline {
   --color-background: var(--paper);
   --color-foreground: var(--ink);
-  --font-sans: var(--font-inter);
+  --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 }
 
 * {
@@ -41,7 +41,7 @@ body {
   margin: 0;
   background: var(--paper);
   color: var(--ink);
-  font-family: var(--font-inter), -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   font-size: 16px;
   line-height: 1.55;
   letter-spacing: 0;
@@ -1317,6 +1317,30 @@ dl:last-child {
   .resume-layout {
     grid-template-columns: 1fr;
     gap: 38px;
+  }
+
+  .resume-layout,
+  .resume-aside,
+  .experience-list,
+  .experience-item,
+  .experience-heading,
+  .experience-heading > div {
+    min-width: 0;
+  }
+
+  .resume-aside {
+    position: static;
+    top: auto;
+  }
+
+  .experience-heading {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+
+  .experience-heading > span {
+    white-space: normal;
   }
 
   .path-grid,
@@ -3700,6 +3724,7 @@ h3 {
 .v8-project-article > *,
 .v8-thoughts-grid > *,
 .v8-fit > *,
+.v8-hero-proof figcaption > *,
 .v8-hero-artifact figcaption > *,
 .v8-artifact figcaption > * {
   min-width: 0;
@@ -3815,6 +3840,51 @@ h3 {
   color: var(--ink-soft);
   font-size: 15px;
   line-height: 1.58;
+}
+
+.v8-hero-proof {
+  overflow: hidden;
+  width: 100%;
+  margin: 2px 0 4px;
+  border: 1px solid var(--line-strong);
+  border-radius: 8px;
+  background: var(--black);
+  box-shadow: 0 16px 42px rgba(17, 24, 39, 0.09);
+}
+
+.v8-hero-proof-shot {
+  overflow: hidden;
+  aspect-ratio: 16 / 7;
+  background: var(--black);
+}
+
+.v8-hero-proof img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+}
+
+.v8-hero-proof figcaption {
+  display: grid;
+  grid-template-columns: minmax(180px, 0.32fr) minmax(0, 1fr);
+  gap: 18px;
+  padding: 15px 18px;
+  border-top: 1px solid var(--line);
+  background: var(--paper);
+}
+
+.v8-hero-proof figcaption strong {
+  color: var(--ink);
+  font-size: 15px;
+  font-weight: 740;
+  line-height: 1.35;
+}
+
+.v8-hero-proof figcaption span {
+  color: var(--ink-soft);
+  font-size: 15px;
+  line-height: 1.5;
 }
 
 .v8-hero-actions,
@@ -4405,11 +4475,26 @@ h3 {
   line-height: 1.22;
 }
 
+.v8-offer-price {
+  margin: 0;
+  color: var(--ink);
+  font-size: 14px;
+  font-weight: 720;
+  line-height: 1.45;
+}
+
 .v8-offer-row p,
 .v8-offer-row dd {
   color: var(--ink-soft);
   font-size: 15px;
   line-height: 1.58;
+}
+
+.v8-offer-row .v8-offer-price {
+  color: var(--ink);
+  font-size: 14px;
+  font-weight: 720;
+  line-height: 1.45;
 }
 
 .v8-offer-row dl {
@@ -4563,7 +4648,7 @@ h3 {
 
 .v8-fit p,
 .v8-fit li {
-  color: rgba(255, 255, 255, 0.76);
+  color: #eef2f8;
 }
 
 .v8-fit p {
@@ -4969,6 +5054,14 @@ h3 {
   line-height: 1.56;
 }
 
+.v8-hero-proof {
+  max-width: 1040px;
+}
+
+.v8-hero-proof-shot {
+  aspect-ratio: 16 / 6.8;
+}
+
 .v8-section {
   padding-block: 76px;
 }
@@ -5151,6 +5244,10 @@ h3 {
   line-height: 1.28;
 }
 
+.v8-offer-price {
+  font-size: 14px;
+}
+
 .v8-method-list strong,
 .v8-thought-list strong {
   font-size: 17px;
@@ -5209,6 +5306,20 @@ h3 {
 
   .v8-proof-index-wrap {
     width: min(calc(100% - 40px), 1040px);
+  }
+
+  .v8-profile-brief {
+    display: none;
+  }
+
+  .v8-hero-proof-shot {
+    aspect-ratio: 16 / 9;
+  }
+
+  .v8-hero-proof figcaption {
+    grid-template-columns: 1fr;
+    gap: 5px;
+    padding: 14px;
   }
 
   .v8-hero h1 {
@@ -5301,5 +5412,37 @@ h3 {
 
   .case-index span {
     padding-right: 0;
+  }
+}
+
+@media (max-width: 860px) {
+  .resume-layout {
+    grid-template-columns: minmax(0, 1fr) !important;
+    gap: 38px;
+  }
+
+  .resume-aside {
+    position: static;
+    top: auto;
+  }
+
+  .experience-list,
+  .experience-item,
+  .experience-heading,
+  .experience-heading > div,
+  .experience-summary,
+  .evidence-list {
+    min-width: 0;
+    max-width: 100%;
+  }
+
+  .experience-heading {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 8px;
+  }
+
+  .experience-heading > span {
+    white-space: normal;
   }
 }

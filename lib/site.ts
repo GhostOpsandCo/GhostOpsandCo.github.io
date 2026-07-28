@@ -2,7 +2,7 @@ export const site = {
   name: "Elijah Paul",
   title: "AI Solutions Architect & Product Builder",
   description:
-    "AI product builder helping crypto, fintech, voice AI, venture, and creator-protection teams turn stuck workflows into products people can test, buy, or approve.",
+    "AI product builder helping crypto, fintech, voice AI, venture, and creator-protection teams turn stuck workflows into usable products with clear evidence, limits, and handoff.",
   url: "https://elijahpaul.io",
   email: "elijah@elijahpaul.io",
   linkedin: "https://www.linkedin.com/in/elijahpaul",
@@ -40,36 +40,36 @@ export const projects: Project[] = [
   {
     slug: "venture-labs",
     name: "Venture Labs",
-    category: "Agentic orchestration system",
-    status: "Agent-orchestration dashboard artifact",
+    category: "Product decision system",
+    status: "Doc-backed control room concept",
     summary:
-      "A full agentic orchestration system artifact for deciding which ideas deserve engineering time. It routes ventures through intake, research, red-team review, decision gate, PRD, architecture, build package, QA, and launch memo before build work starts.",
+      "A control-room concept for deciding which ideas deserve engineering time. It routes ventures through intake, research, red-team review, a build/hold/kill decision, PRD, architecture, QA, and launch planning before build work starts.",
     metaDescription:
-      "Venture Labs is a GhostOps agentic orchestration dashboard artifact for moving startup ideas through research, red-team review, decision gates, PRD, architecture, QA, and launch planning.",
+      "Venture Labs is a GhostOps product decision control room for moving startup ideas through research, red-team review, decision gates, PRD, architecture, QA, and launch planning.",
     shortOutcome:
-      "Shows how I design the system behind serious builds: agents need a route, state, evidence, approval gates, QA, and a clear stop condition.",
+      "Shows how I turn a crowded idea queue into a decision path with stages, evidence, approval gates, QA, and a hard stop when the idea does not deserve engineering time.",
     whatItDoes:
-      "Venture Labs gives founders and operators a control room for turning raw ideas into a kill, hold, or build decision with required artifacts at each stage.",
+      "Venture Labs gives founders and operators one place to turn raw ideas into a build, hold, or kill decision with the required work product for each stage.",
     benefits: [
       "Prevents expensive build work from starting until research, red-team review, and a decision record exist.",
-      "Shows how agent roles, state, evidence, QA, and approval gates work together in one operating system.",
-      "Turns startup ideas into artifacts a founder, investor, operator, or engineering team can inspect before funding the build.",
+      "Shows how agent roles, state, evidence, QA, and approval gates work together before engineering starts.",
+      "Turns startup ideas into work a founder, investor, operator, or engineering team can inspect before funding the build.",
     ],
-    keywords: ["agentic orchestration", "venture studio", "startup validation", "agent workflow", "decision gates", "QA"],
+    keywords: ["product decision system", "venture studio", "startup validation", "AI workflow", "decision gates", "QA"],
     image: "/projects/venture-labs-control-room.png",
     imageAlt: "GhostOps Venture Labs dashboard showing a sample venture queue, decision gate, artifact readiness, and stage controls",
     primaryAction: "View case study",
-    primaryIntent: "agentic venture orchestration system",
-    skills: ["Agent orchestration", "Product strategy", "Workflow architecture", "Evidence systems", "QA gates", "Venture validation"],
+    primaryIntent: "venture product decision system",
+    skills: ["Product decision systems", "Product strategy", "Workflow architecture", "Evidence systems", "QA gates", "Venture validation"],
     role:
-      "Designed the orchestration model, agent-role boundaries, Router and Watchguard responsibilities, state layer, artifact contracts, decision gates, QA controls, and public dashboard artifact.",
+      "Designed the stage model, review roles, state layer, work-product requirements, decision gates, QA controls, and public dashboard concept.",
     challenge:
       "Teams with AI agents, builders, and multiple product ideas need a way to decide what should be built, what should be killed, what still needs evidence, and what must stay blocked.",
     approach: [
-      "Designed the venture path as an orchestration system instead of a loose planning doc.",
-      "Separated routing, validation, state tracking, artifact contracts, stage ownership, and QA so each agent or operator has a clear job.",
+      "Designed the venture path as a product decision system instead of a loose planning doc.",
+      "Separated routing, validation, state tracking, work-product contracts, stage ownership, and QA so each agent or operator has a clear job.",
       "Made the decision gate the point where research, red-team risk, and build readiness meet.",
-      "Rendered the dashboard as a portfolio-safe artifact that shows the architecture without pretending it is live production ops.",
+      "Rendered the dashboard as a portfolio-safe concept that shows the architecture without pretending it is live production ops.",
     ],
     workflow: [
       "Ingest the venture idea",
@@ -81,13 +81,13 @@ export const projects: Project[] = [
     proof: [
       "Verified GhostOps Venture Studio OS and technical architecture docs",
       "Explicit intake to launch-memo stage model",
-      "Router, Watchguard, State Layer, and Artifact Contract responsibilities",
-      "Rendered dashboard artifact with clear illustrative boundary",
+      "Defined review roles, state tracking, and work-product responsibilities",
+      "Rendered dashboard concept with a clear illustrative boundary",
     ],
     boundary:
-      "The Venture Labs control room is an illustrative artifact based on internal GhostOps system docs. It is not a live production dashboard, customer result, revenue claim, autonomous startup launch claim, or proof that every stage has been automated.",
+      "The Venture Labs control room is an illustrative concept based on internal GhostOps system docs. It is not a live production dashboard, customer result, revenue claim, autonomous startup launch claim, or proof that every stage has been automated.",
     availability:
-      "Available for agentic workflow architecture, venture-studio systems, product-validation systems, and AI operating-system discussions.",
+      "Available for product decision systems, venture-studio workflows, validation systems, and AI workflow architecture discussions.",
   },
   {
     slug: "orelis",
@@ -193,7 +193,7 @@ export const projects: Project[] = [
     boundary:
       "Team Take Down watches public sites it can legally access. It does not search private groups, locked accounts, paywalls, encrypted services, or the whole internet, and it does not guarantee every edited copy will be found or removed.",
     availability:
-      "Available as a creator-protection product foundation and selected implementation discussion.",
+      "Available for creator-protection workflow builds, product strategy, and implementation discussions.",
   },
   {
     slug: "treasury-router",
@@ -308,7 +308,7 @@ export const projects: Project[] = [
     category: "Agent payment safety infrastructure",
     status: "Open-source developer tool",
     summary:
-      "A local-first CLI and CI safety gate for agent payment stacks. It detects supported money-moving code paths and blocks unsafe payment flows before they go live.",
+      "A local-first CLI and CI safety gate for agent payment stacks. It detects supported money-moving code paths and fails strict checks when expected payment guards are missing.",
     metaDescription:
       "Monarch Shield is an open-source CLI and CI preflight for agent payment stacks, x402 flows, wallets, stablecoins, cards, paid APIs, and paid MCP tools.",
     shortOutcome:
@@ -316,7 +316,7 @@ export const projects: Project[] = [
     whatItDoes:
       "Monarch Shield gives coding agents and developers one command to inspect supported payment code, catch unsafe paths, and keep a safety check in CI before launch.",
     benefits: [
-      "Blocks obvious unsafe payment paths before users, wallets, cards, stablecoins, or paid APIs touch code.",
+      "Fails strict checks when supported payment code lacks the expected guard before release.",
       "Gives reviewers reproducible proof packs instead of vague security claims.",
       "Works locally without an account, API key, or hosted dependency to start.",
     ],
@@ -364,7 +364,7 @@ export const services = [
     timeline: "5-10 business days",
     price: "Typical range: $3.5k-$7.5k",
     summary:
-      "Find the customer or operations problem worth building before your team spends weeks on the wrong thing.",
+      "Find the customer or operations problem worth building before the team spends weeks on the wrong thing.",
     deliverables: [
       "Customer and workflow audit",
       "Problem and opportunity map",
@@ -392,7 +392,7 @@ export const services = [
     timeline: "Monthly engagement",
     price: "Typical range: $10k-$18k/month",
     summary:
-      "Work with customers, product, sales, and engineering to find gaps, shape the product, and keep the build moving.",
+      "Work with customers, product, sales, and engineering to find the gap, shape the product, and keep the build moving.",
     deliverables: [
       "Customer-facing solution discovery",
       "Product audits and technical design",

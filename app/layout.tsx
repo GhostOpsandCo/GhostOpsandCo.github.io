@@ -1,15 +1,8 @@
 import type { Metadata, Viewport } from "next";
-import { Inter } from "next/font/google";
 import { SiteFooter } from "@/components/SiteFooter";
 import { SiteHeader } from "@/components/SiteHeader";
 import { site } from "@/lib/site";
 import "./globals.css";
-
-const inter = Inter({
-  variable: "--font-inter",
-  subsets: ["latin"],
-  display: "swap",
-});
 
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
@@ -34,7 +27,7 @@ export const metadata: Metadata = {
         url: "/projects/venture-labs-control-room.png",
         width: 2400,
         height: 1500,
-        alt: "Elijah Paul's Venture Labs agentic orchestration dashboard artifact",
+        alt: "Elijah Paul's Venture Labs product decision control room",
       },
     ],
   },
@@ -61,7 +54,7 @@ export const viewport: Viewport = {
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en">
-      <body className={inter.variable}>
+      <body>
         <a className="skip-link" href="#main-content">Skip to content</a>
         <SiteHeader />
         {children}

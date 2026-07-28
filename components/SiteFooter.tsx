@@ -7,12 +7,12 @@ export function SiteFooter() {
       <div className="site-shell footer-grid">
         <div>
           <strong>Elijah Paul</strong>
-          <p>AI products for crypto, fintech, and agentic systems.</p>
+          <p>AI products for high-stakes customer workflows.</p>
         </div>
         <nav aria-label="Footer navigation">
           <Link href="/work">Work</Link>
           <Link href="/services">Services</Link>
-          <Link href="/contact">Request a fit call</Link>
+          <Link href="/contact">Request a product-fit call</Link>
           <a href={site.linkedin} target="_blank" rel="noreferrer">LinkedIn</a>
           <a href={site.github} target="_blank" rel="noreferrer">GitHub</a>
         </nav>

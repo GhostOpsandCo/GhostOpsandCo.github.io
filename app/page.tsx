@@ -25,20 +25,20 @@ const focusSections = [
     project: ventureLabs,
     anchor: "venture-labs",
     tone: "venture",
-    title: "Venture Labs: the agentic orchestration system behind serious builds.",
+    title: "Venture Labs: decide what deserves engineering time before you build.",
     lead:
-      "It shows how I structure agents, evidence, state, approvals, QA, and launch controls before a team spends engineering time.",
+      "Founders and teams waste weeks when every idea sounds promising. Venture Labs forces each idea through research, risk review, a build/hold/kill decision, and the handoff engineering needs next.",
     sectionSummary:
-      "A full orchestration artifact for teams that need a stricter path from idea to build decision.",
+      "A control-room concept for teams with too many product ideas and no strict way to decide what moves forward.",
     useCase:
-      "Agentic workflow design, startup validation, venture review, product planning, red-team review, and pre-build decision gates.",
+      "Venture review, product validation, pre-build planning, AI workflow design, and launch readiness.",
     audience:
       "Founders, venture studios, AI teams, operators, and product leaders with more ideas than engineering capacity.",
-    interestSubject: "agentic orchestration system like Venture Labs",
-    learnMoreLabel: "Talk about a similar orchestration system",
-    artifactNote: "Rendered dashboard artifact showing the venture queue, decision gate, stage controls, and artifact readiness.",
-    proofLabel: "Agent orchestration",
-    proofCue: "A control room routes ideas through evidence, gates, QA, and launch boundaries.",
+    interestSubject: "product decision system like Venture Labs",
+    learnMoreLabel: "Discuss a decision system",
+    artifactNote: "Doc-backed Venture Labs concept showing a sample queue, decision gate, stage controls, and launch-readiness work.",
+    proofLabel: "Startup ideas",
+    proofCue: "A control room turns raw ideas into build, hold, or kill decisions.",
     primary: true,
   },
   {
@@ -55,7 +55,7 @@ const focusSections = [
     audience:
       "High-ticket service businesses, local operators, clinics, agencies, home services, and sales teams where one missed call can matter.",
     interestSubject: "voice agent like Orelis",
-    learnMoreLabel: "Talk about a similar voice-agent build",
+    learnMoreLabel: "Discuss a voice-agent build",
     artifactNote: "Latest Orelis site capture: Faith example call and setup-call CTA.",
     proofLabel: "Missed calls",
     proofCue: "A voice agent answers, qualifies, and hands off the caller.",
@@ -74,7 +74,7 @@ const focusSections = [
     audience:
       "Creators, talent managers, agencies, and rights teams with high-value video or audio releases.",
     interestSubject: "creator protection workflow like Team Take Down",
-    learnMoreLabel: "Talk about a similar creator-protection build",
+    learnMoreLabel: "Discuss creator protection",
     artifactNote: "Creator workspace showing protected release status, evidence, and next actions.",
     proofLabel: "Creator leaks",
     proofCue: "A creator workspace prepares releases, watches public sites, and saves proof.",
@@ -93,7 +93,7 @@ const focusSections = [
     audience:
       "Fintech, wealth, crypto treasury, and advisor teams that need controlled AI workflows with clear boundaries.",
     interestSubject: "controlled financial workflow like Treasury Router",
-    learnMoreLabel: "Talk about a similar financial workflow",
+    learnMoreLabel: "Discuss a financial workflow",
     artifactNote: "Advisor dashboard using illustrative development data.",
     proofLabel: "Advisor reviews",
     proofCue: "An advisor dashboard ranks idle-capital cases and keeps approval human.",
@@ -112,7 +112,7 @@ const focusSections = [
     audience:
       "AI teams, infrastructure buyers, procurement leads, and founders trying to buy compute without spreadsheet drift.",
     interestSubject: "compute procurement product like GridSynapse",
-    learnMoreLabel: "Talk about a similar procurement workflow",
+    learnMoreLabel: "Discuss compute procurement",
     artifactNote: "Public compute procurement product and source-backed workflow.",
     proofLabel: "GPU buying",
     proofCue: "A compute planner compares provider options before spend is committed.",
@@ -131,8 +131,8 @@ const focusSections = [
     audience:
       "Developers, coding-agent teams, protocol builders, and startups shipping agent-payment workflows.",
     interestSubject: "payment-safety tool like Monarch Shield",
-    learnMoreLabel: "Talk about a similar payment-safety tool",
-    artifactNote: "Live Monarch Shield site showing the build-time payment safety preflight.",
+    learnMoreLabel: "Discuss payment safety",
+    artifactNote: "Public Monarch Shield site capture showing the build-time payment safety preflight.",
     proofLabel: "Payment code",
     proofCue: "A CLI preflight catches unsafe agent-payment paths before release.",
   },
@@ -140,49 +140,49 @@ const focusSections = [
 
 const methodSteps = [
   {
-    title: "Find the expensive bottleneck",
-    copy: "I start with the call, ticket, spreadsheet, handoff, or approval step that slows customers or the team down.",
-    output: "You know the buyer, user, workflow, and first screen worth building.",
+    title: "Find the stuck handoff",
+    copy: "I start with the call, ticket, spreadsheet, approval, or source system where the work breaks.",
+    output: "The buyer, user, problem, and first screen are clear.",
   },
   {
-    title: "Turn it into a product path",
-    copy: "I map the rules, edge cases, source systems, and decisions into a flow people can review.",
-    output: "Your team can see what gets built before engineering burns weeks.",
+    title: "Design the product flow",
+    copy: "I map the rules, edge cases, data sources, approvals, and failure states into a flow a real user can follow.",
+    output: "Scope, risks, and handoffs are visible before the build.",
   },
   {
-    title: "Ship the testable version",
-    copy: "I build the screen, agent flow, or prototype far enough for a real user to try.",
-    output: "You can decide to sell it, fund it, expand it, or stop.",
+    title: "Build the first testable version",
+    copy: "I build the screen, dashboard, voice flow, CLI check, or prototype far enough for a buyer or operator to use.",
+    output: "You can decide to sell, fund, expand, integrate, or stop.",
   },
 ];
 
 const buyingSituations = [
   {
     service: services[0],
-    title: "Stop guessing what to build",
-    actionLabel: "Ask about the sprint",
+    title: "Find the product worth building",
+    actionLabel: "Request a sprint call",
     bestWhen:
-      "Customers or operators keep asking for something, but no one has turned it into a clear product path.",
+      "Customers or operators keep asking for something, but no one has turned it into a clear product and build plan.",
     outcome:
-      "You get the user, workflow, first screen, build plan, and risks in writing.",
+      "You get the buyer, workflow, first screen, build plan, risks, and a build/hold/stop recommendation.",
   },
   {
-    title: "Build the first usable version",
+    title: "Ship the first useful version",
     service: services[1],
-    actionLabel: "Ask about the build",
+    actionLabel: "Request a build call",
     bestWhen:
       "The problem is real and you need a working screen, agent, or prototype before committing to a larger build.",
     outcome:
-      "You get the product surface, core logic, review points, and handoff your team can test.",
+      "You get the product surface, core logic, controls, review points, and handoff your team can test.",
   },
   {
     service: services[2],
     title: "Add product judgment to the team",
-    actionLabel: "Ask about embedded help",
+    actionLabel: "Request an embedded call",
     bestWhen:
       "Customers, product, sales, and engineering all see the problem differently and the build needs a clear owner.",
     outcome:
-      "You get hands-on discovery, product judgment, prototypes, implementation support, and sharper customer feedback.",
+      "You get customer discovery, product shaping, prototypes, technical planning, implementation support, and feedback loops.",
   },
 ];
 
@@ -214,15 +214,15 @@ const fitQuestions = [
 const profileNotes = [
   {
     label: "Hire me when",
-    copy: "Customers keep asking for something your current product or workflow cannot handle.",
+    copy: "A customer need is obvious, but the product, workflow, or next build is not.",
   },
   {
     label: "What I build",
-    copy: "Agent workflows, product dashboards, decision systems, and prototypes people can test.",
+    copy: "Dashboards, voice agents, workflow tools, payment checks, and decision systems.",
   },
   {
     label: "Best fit",
-    copy: "Crypto, fintech, voice AI, creator-protection, and teams where approval and trust matter.",
+    copy: "High-stakes work where money, identity, approvals, or reputation are involved.",
   },
 ];
 
@@ -266,7 +266,7 @@ function ProjectFocusSection({
 
           <div className="v8-detail-stack" aria-label={`${project.name} breakdown`}>
             <div>
-              <strong>Summary</strong>
+              <strong>What it is</strong>
               <p>{sectionSummary}</p>
             </div>
             <div>
@@ -274,7 +274,7 @@ function ProjectFocusSection({
               <p>{useCase}</p>
             </div>
             <div>
-              <strong>Who it is for</strong>
+              <strong>Who it helps</strong>
               <p>{audience}</p>
             </div>
             <div>
@@ -282,7 +282,7 @@ function ProjectFocusSection({
               <p>{project.role}</p>
             </div>
             <div className="v8-detail-proof">
-              <strong>Proof</strong>
+              <strong>What exists today</strong>
               <p>{project.shortOutcome}</p>
             </div>
             <div>
@@ -294,7 +294,7 @@ function ProjectFocusSection({
               </ul>
             </div>
             <div className="v8-detail-boundary">
-              <strong>Boundary</strong>
+              <strong>What I am not claiming</strong>
               <p>{project.boundary}</p>
             </div>
           </div>
@@ -378,18 +378,36 @@ export default function Home() {
                 <strong>Elijah Paul</strong>
               </div>
             </div>
-            <h1 id="hero-title">I turn customer problems into working AI products.</h1>
+            <h1 id="hero-title">I turn customer problems into AI products people can use.</h1>
             <p className="v8-hero-lede">
-              I help crypto, fintech, voice AI, creator-protection, and venture teams turn
-              high-stakes workflows into agentic product systems with clear screens, state,
-              approvals, QA, and a version people can actually test.
+              I work with crypto, fintech, voice AI, creator-protection, and venture teams
+              when customers or operators are stuck in a workflow worth fixing. I map the work,
+              design the product, build the first usable version, and show what is real,
+              what is assumed, and what still needs approval.
             </p>
             <div className="v8-hero-actions">
-              <a className="button button-primary" href={mailto("AI product fit call")}>Request a fit call</a>
-              <Link className="button button-outline" href="#work">View my work</Link>
+              <a className="button button-primary" href={mailto("AI product fit call")}>Request a product-fit call</a>
+              <Link className="button button-outline" href="#work">View product examples</Link>
               <Link className="v8-resume-link" href="/resume">Resume and background</Link>
             </div>
           </div>
+
+          <figure className="v8-hero-proof" aria-label="Featured product example">
+            <div className="v8-hero-proof-shot">
+              <Image
+                src={ventureLabs.image}
+                alt={ventureLabs.imageAlt}
+                width={1440}
+                height={1100}
+                priority
+                sizes="(max-width: 900px) 100vw, 1040px"
+              />
+            </div>
+            <figcaption>
+              <strong>Featured example: Venture Labs</strong>
+              <span>A doc-backed control room concept for build, hold, or kill decisions. Public products and live examples are below.</span>
+            </figcaption>
+          </figure>
 
           <aside className="v8-profile-brief" aria-label="Profile summary">
             {profileNotes.map((note) => (
@@ -402,57 +420,13 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="v8-section v8-work-intro" id="work" aria-labelledby="work-title">
-        <div className="site-shell v8-work-intro-grid">
-          <div>
-            <h2 id="work-title">Start with the orchestration system, then inspect the products.</h2>
-          </div>
-          <p>
-            Venture Labs shows the operating system behind my work: route the problem, gather the
-            evidence, force the decision, and keep QA visible. The other projects show that same
-            pattern applied to voice agents, creator protection, finance, compute, and payment
-            safety.
-          </p>
-        </div>
-      </section>
-
-      <section className="v8-proof-index-section" aria-labelledby="proof-index-title">
-        <div className="site-shell v8-proof-index-wrap">
-          <div className="v8-proof-index-head">
-            <h2 id="proof-index-title">Pick the system or product problem closest to yours.</h2>
-            <p>
-              Start with agent orchestration if you need the system behind a build. Choose a product
-              example if you want to see a specific market workflow.
-            </p>
-          </div>
-          <nav className="v8-proof-index" aria-label="Project proof index">
-            {focusSections.map(({ project, anchor, proofLabel, proofCue, tone }) => (
-              <a
-                key={project.slug}
-                href={`#${anchor}`}
-                aria-label={`Jump to ${project.name}`}
-                data-tone={tone}
-              >
-                <span>{proofLabel}</span>
-                <strong>{project.name}</strong>
-                <p>{proofCue}</p>
-              </a>
-            ))}
-          </nav>
-        </div>
-      </section>
-
-      {focusSections.map((section) => (
-        <ProjectFocusSection key={section.project.slug} {...section} />
-      ))}
-
       <section className="v8-section v8-offer-section" id="services" aria-labelledby="services-title">
         <div className="site-shell v8-offer">
           <div className="v8-section-head">
-            <h2 id="services-title">What you can hire me to do</h2>
+            <h2 id="services-title">Hire me to find the product, build it, or lead the work.</h2>
             <p>
-              Hire me when customers keep asking for something, the workflow is unclear, and your
-              team needs a first version people can use.
+              Use a sprint when you need clarity, a build when the problem is already selected,
+              or an embedded role when customer discovery and delivery need one owner.
             </p>
           </div>
 
@@ -469,6 +443,7 @@ export default function Home() {
                 <div className="v8-offer-main">
                   <strong>{title}</strong>
                   <h3>{service.name}</h3>
+                  <p className="v8-offer-price">{service.price}</p>
                   <p>{service.summary}</p>
                 </div>
                 <dl className="v8-offer-details">
@@ -494,13 +469,56 @@ export default function Home() {
         </div>
       </section>
 
+      <section className="v8-section v8-work-intro" id="work" aria-labelledby="work-title">
+        <div className="site-shell v8-work-intro-grid">
+          <div>
+            <h2 id="work-title">Start with the work, not the claim.</h2>
+          </div>
+          <p>
+            Each example shows what the product does, who it helps, what I built,
+            what exists today, and what I will not overclaim.
+          </p>
+        </div>
+      </section>
+
+      <section className="v8-proof-index-section" aria-labelledby="proof-index-title">
+        <div className="site-shell v8-proof-index-wrap">
+          <div className="v8-proof-index-head">
+            <h2 id="proof-index-title">Pick the problem closest to yours.</h2>
+            <p>
+              Start with Venture Labs if you need a decision system before a build. Pick Orelis,
+              Team Take Down, Treasury Router, GridSynapse, or Monarch Shield if your problem
+              is closer to intake, creator media, finance, compute, or payment safety.
+            </p>
+          </div>
+          <nav className="v8-proof-index" aria-label="Project proof index">
+            {focusSections.map(({ project, anchor, proofLabel, proofCue, tone }) => (
+              <a
+                key={project.slug}
+                href={`#${anchor}`}
+                aria-label={`Jump to ${project.name}`}
+                data-tone={tone}
+              >
+                <span>{proofLabel}</span>
+                <strong>{project.name}</strong>
+                <p>{proofCue}</p>
+              </a>
+            ))}
+          </nav>
+        </div>
+      </section>
+
+      {focusSections.map((section) => (
+        <ProjectFocusSection key={section.project.slug} {...section} />
+      ))}
+
       <section className="v8-section v8-method-section" id="method" aria-labelledby="method-title">
         <div className="site-shell">
           <div className="v8-section-head">
             <h2 id="method-title">How I work</h2>
             <p>
-              I find the stuck workflow, design the product path, build the first usable version,
-              and keep the limits clear.
+              I start with the actual handoff, design the first path a user can follow,
+              then build only far enough to make the next decision.
             </p>
           </div>
           <div className="v8-method-table-head" aria-hidden="true">
@@ -525,8 +543,8 @@ export default function Home() {
           <div className="v8-section-head">
             <h2 id="thinking-title">How I build when money, trust, or identity are involved.</h2>
             <p>
-              When a product touches money, identity, or reputation, I make the approval path,
-              evidence, and failure path visible before anyone has to trust it.
+              When a product touches money, identity, or reputation, people need to see what
+              the system does, what a human approves, and where it stops.
             </p>
           </div>
           <div className="v8-thought-list">
@@ -551,16 +569,17 @@ export default function Home() {
           <div>
             <h2 id="contact-title">Have a stuck workflow that should become a product?</h2>
             <p>
-              Send the customer problem, product idea, or role. I will tell you where I can help and
-              what I would check first.
+              Tell me the customer problem, current workaround, product idea, or role you need
+              filled. I will reply with where I can help, what I would check first, and which
+              engagement fits.
             </p>
             <div className="v8-fit-actions">
-              <a className="button button-inverse" href={mailto("AI product fit call")}>Request a fit call</a>
+              <a className="button button-inverse" href={mailto("AI product fit call")}>Request a product-fit call</a>
               <Link className="text-link text-link-light" href="/work">View all case studies</Link>
             </div>
           </div>
           <div className="v8-fit-card">
-            <strong>A strong first note answers four questions.</strong>
+            <strong>Include four details.</strong>
             <ul>
               {fitQuestions.map((question) => (
                 <li key={question}>{question}</li>
