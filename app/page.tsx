@@ -186,21 +186,37 @@ const buyingSituations = [
   },
 ];
 
+const problemSignals = [
+  {
+    problem: "Customers keep asking for a tool, but the first product is still unclear.",
+    fix: "I turn the calls, tickets, demos, and edge cases into one buildable path.",
+  },
+  {
+    problem: "The team has an AI demo, but not a product a buyer or operator can use.",
+    fix: "I design the screen, flow, controls, and handoff that make the idea usable.",
+  },
+  {
+    problem: "Sales hears the pain, engineering gets vague requirements.",
+    fix: "I translate the market signal into scope, proof, risks, and the first version.",
+  },
+  {
+    problem: "Money, identity, private media, or approvals make the build risky.",
+    fix: "I keep the human review points, limits, and failure states visible.",
+  },
+];
+
 const thoughtNotes = [
   {
-    title: "The user path beats the model choice",
+    title: "User path",
     check: "Who uses it, who approves it, what can go wrong, and what happens next.",
-    copy: "A strong model still fails when the product gives people no clear action.",
   },
   {
-    title: "Proof before the claim",
+    title: "Proof",
     check: "The product screen, role, source, current state, and boundary.",
-    copy: "A buyer should see the product, my role, the source, and the limit before believing the headline.",
   },
   {
-    title: "Limits protect the sale",
+    title: "Limits",
     check: "Money movement, identity, private media, customer operations, and provider setup.",
-    copy: "Trust-heavy products sell better when the page is clear about what the system does and does not do.",
   },
 ];
 
@@ -420,6 +436,26 @@ export default function Home() {
         </div>
       </section>
 
+      <section className="v8-section v8-problems-section" aria-labelledby="problems-title">
+        <div className="site-shell v8-problems">
+          <div className="v8-section-head">
+            <h2 id="problems-title">The problems I am hired to fix.</h2>
+            <p>
+              If the team can feel the opportunity but cannot turn it into a clear product,
+              this is where I help.
+            </p>
+          </div>
+          <div className="v8-problem-list">
+            {problemSignals.map((item) => (
+              <article key={item.problem}>
+                <strong>{item.problem}</strong>
+                <p>{item.fix}</p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <section className="v8-section v8-offer-section" id="services" aria-labelledby="services-title">
         <div className="site-shell v8-offer">
           <div className="v8-section-head">
@@ -469,26 +505,13 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="v8-section v8-work-intro" id="work" aria-labelledby="work-title">
-        <div className="site-shell v8-work-intro-grid">
-          <div>
-            <h2 id="work-title">Start with the work, not the claim.</h2>
-          </div>
-          <p>
-            Each example shows what the product does, who it helps, what I built,
-            what exists today, and what I will not overclaim.
-          </p>
-        </div>
-      </section>
-
-      <section className="v8-proof-index-section" aria-labelledby="proof-index-title">
+      <section className="v8-proof-index-section" id="work" aria-labelledby="proof-index-title">
         <div className="site-shell v8-proof-index-wrap">
           <div className="v8-proof-index-head">
-            <h2 id="proof-index-title">Pick the problem closest to yours.</h2>
+            <h2 id="proof-index-title">Start with the work, not the claim.</h2>
             <p>
-              Start with Venture Labs if you need a decision system before a build. Pick Orelis,
-              Team Take Down, Treasury Router, GridSynapse, or Monarch Shield if your problem
-              is closer to intake, creator media, finance, compute, or payment safety.
+              Pick the problem closest to yours. Each example shows what I built, who it helps,
+              what exists today, and what I will not overclaim.
             </p>
           </div>
           <nav className="v8-proof-index" aria-label="Project proof index">
@@ -517,49 +540,36 @@ export default function Home() {
           <div className="v8-section-head">
             <h2 id="method-title">How I work</h2>
             <p>
-              I start with the actual handoff, design the first path a user can follow,
-              then build only far enough to make the next decision.
+              I start where the work breaks, build the first version people can use,
+              and keep the trust points visible.
             </p>
           </div>
-          <div className="v8-method-table-head" aria-hidden="true">
-            <span>Step</span>
-            <span>What happens</span>
-            <span>Output</span>
-          </div>
-          <ol className="v8-method-list">
-            {methodSteps.map((step) => (
-              <li key={step.title}>
-                <strong>{step.title}</strong>
-                <p>{step.copy}</p>
-                <span>{step.output}</span>
-              </li>
-            ))}
-          </ol>
-        </div>
-      </section>
-
-      <section className="v8-section v8-thoughts" id="thinking" aria-labelledby="thinking-title">
-        <div className="site-shell">
-          <div className="v8-section-head">
-            <h2 id="thinking-title">How I build when money, trust, or identity are involved.</h2>
-            <p>
-              When a product touches money, identity, or reputation, people need to see what
-              the system does, what a human approves, and where it stops.
-            </p>
-          </div>
-          <div className="v8-thought-list">
-            <div className="v8-thought-table-head" aria-hidden="true">
-              <span>Principle</span>
-              <span>What I check</span>
-              <span>Why it matters</span>
+          <div className="v8-method-grid">
+            <div>
+              <div className="v8-method-table-head" aria-hidden="true">
+                <span>Step</span>
+                <span>What happens</span>
+                <span>Output</span>
+              </div>
+              <ol className="v8-method-list">
+                {methodSteps.map((step) => (
+                  <li key={step.title}>
+                    <strong>{step.title}</strong>
+                    <p>{step.copy}</p>
+                    <span>{step.output}</span>
+                  </li>
+                ))}
+              </ol>
             </div>
-            {thoughtNotes.map((note) => (
-              <article key={note.title}>
-                <strong>{note.title}</strong>
-                <span>{note.check}</span>
-                <p>{note.copy}</p>
-              </article>
-            ))}
+            <aside className="v8-trust-checks" aria-label="Trust checks">
+              <strong>Trust checks</strong>
+              {thoughtNotes.map((note) => (
+                <div key={note.title}>
+                  <span>{note.title}</span>
+                  <p>{note.check}</p>
+                </div>
+              ))}
+            </aside>
           </div>
         </div>
       </section>
