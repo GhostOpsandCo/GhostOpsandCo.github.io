@@ -17,6 +17,7 @@ GitHub: https://github.com/GhostOpsandCo
 
 ## Selected work
 
+- Venture Labs: agentic orchestration system artifact for routing venture ideas through intake, research, red-team review, decision gate, PRD, architecture, build package, QA, and launch planning. It is an illustrative dashboard artifact based on internal GhostOps system docs, not a live production dashboard or customer-result claim.
 - Orelis: inbound voice-agent product for service-business intake, qualification, booking request, and human handoff. Production telephony, CRM behavior, uptime, and outcomes depend on final implementation.
 - Team Take Down: release-first creator protection workflow for private-file cleanup, protected media preparation, public-site watch, evidence organization, creator-approved takedown support, and outcome checks. It does not search the whole internet or guarantee every copy will be found or removed.
 - Treasury Router: governed AI financial-advisor workflow and x402 merchant proof-of-flow. Working prototype with deterministic development data; no autonomous execution or live client funds.

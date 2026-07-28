@@ -6,7 +6,7 @@ The active implementation direction is Focused Portfolio V8.7: an editorial resu
 
 The homepage must make Elijah easy to understand, credible, human, and ready for hire. The core promise is:
 
-> Elijah Paul turns customer problems into working AI products.
+> I turn customer problems into working AI products.
 
 The supporting copy stays close to the existing site:
 
@@ -27,7 +27,7 @@ The supporting copy stays close to the existing site:
 - Alternate project chapters between white and black. Do not alternate the proof-choice table itself between black and white; it should read as one clean navigational table, not separate tiles.
 - Keep homepage typography on a restrained scale. Avoid poster-size headings paired with tiny metadata labels unless the contrast has a clear editorial purpose and passes mobile review.
 - Use scroll feedback only when it clarifies anchor navigation. It must be subtle, CSS-only, non-looping, and disabled for reduced-motion users.
-- Lead with Orelis as the commercial voice-agent offer most directly tied to paid services, while borrowing its one-focus section discipline rather than its palette.
+- Lead with Venture Labs as the agentic orchestration proof, then use Orelis as the strongest commercial voice-agent example and preserve its one-focus section discipline rather than its palette.
 - Give Team Take Down, Treasury Router, GridSynapse, and Monarch Shield their own standalone entries instead of alternating landing-page bands, a carousel, or a proof grid.
 - For each project, show problem, role, built artifact, what works today, and evidence boundary.
 - Include summary, use case, who it is for, proof, benefits, and boundary for every project section.

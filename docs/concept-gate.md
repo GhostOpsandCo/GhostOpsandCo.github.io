@@ -12,11 +12,11 @@ The first generated concept set, Editorial Intelligence V2.1, Profound Personal 
 
 The previous Pasteur and Socrates scores are invalid for the active direction because they evaluated the wrong visual contract.
 
-## Active direction: Focused Portfolio V8.1
+## Active direction: Focused Portfolio V8.6
 
-The active direction must read as a clean, modern product-builder portfolio with case-study depth on the homepage, but the page must now feel closer to an editorial resume/newsletter than stacked product landing pages. It starts from the current `elijahpaul.io` build instead of inventing a new identity or palette, references the current Orelis product page for focus and proof rhythm only, then expands each selected project into a compact copy-first entry: what it does, benefits, problem, role, build, proof, boundary, and inspectable next action. It uses the site-specific inspiration contract in [reference-selection-matrix.md](./reference-selection-matrix.md), with Apple and OpenAI as quality references, SaaSFrame as the paid case-study/conversion reference, shadcn as a component-behavior reference, and real portfolio artifacts as supporting proof.
+The active direction must read as a clean, modern product-builder portfolio with case-study depth on the homepage, but the page must now feel closer to an editorial resume/newsletter than stacked product landing pages. It starts from the current `elijahpaul.io` build instead of inventing a new identity or palette, leads with Venture Labs as the agentic orchestration proof, references the current Orelis product page for focus and proof rhythm only, then expands each selected project into a compact copy-first entry: what it does, benefits, problem, role, build, proof, boundary, and inspectable next action. It uses the site-specific inspiration contract in [reference-selection-matrix.md](./reference-selection-matrix.md), with Apple and OpenAI as quality references, SaaSFrame as the paid case-study/conversion reference, shadcn as a component-behavior reference, and real portfolio artifacts as supporting proof.
 
-The page must pass a human copy gate before review. Remove miniature project headers such as numbered labels or abstract category kickers, reject AI-sounding phrases such as "messy demand," "operating loop," "approval-ready," and "smallest version that proves the decision," and preserve exact product names. The product is `Monarch Shield`, never `Monarch Doctor`.
+The page must pass a human copy gate before review. Remove miniature project headers such as numbered labels or abstract category kickers, reject banned AI-copy phrases from the shared copy gate, and preserve exact product names. The product is `Monarch Shield`; do not use any prior incorrect name.
 
 Reference jobs:
 
@@ -35,7 +35,7 @@ The owned signature remains truthful operating evidence:
 
 The first viewport must preserve the current build's promise:
 
-> Elijah Paul turns customer problems into working AI products.
+> I turn customer problems into working AI products.
 
 The supporting copy must stay close to the current build:
 
@@ -50,7 +50,7 @@ The direction cannot be presented for approval until it includes:
 - desktop hero and flagship product theater;
 - Elijah's exact PFP and concise human introduction in the hero without allowing the portrait to displace product proof;
 - a clear transition from promise to one-project-per-section selected work;
-- compact editorial selected-work entries with the latest Orelis site artifact, Team Take Down creator workspace, exact Treasury Router advisor dashboard, exact GridSynapse dashboard, and Monarch Shield artifact;
+- compact editorial selected-work entries with the rendered Venture Labs orchestration artifact, latest Orelis site artifact, Team Take Down creator workspace, exact Treasury Router advisor dashboard, exact GridSynapse dashboard, and Monarch Shield artifact;
 - for every project section: summary, use case, who it is for, proof, benefits, problem, role, what was built, what works today, evidence boundary, and concrete links;
 - a plain-language offer section that states what buyers can purchase: product opportunity sprint, product build, or embedded AI solutions architecture;
 - trust/evidence band and fit-call or short-brief conversion surface;

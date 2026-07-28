@@ -5,7 +5,7 @@ Public portfolio for Elijah Paul, an AI solutions architect and product builder 
 ## What the site does
 
 - Explains the customer-led AI product role Elijah is available for.
-- Publishes inspectable case studies for Orelis, Team Take Down, Treasury Router, GridSynapse, and Monarch Shield.
+- Publishes inspectable case studies for Venture Labs, Orelis, Team Take Down, Treasury Router, GridSynapse, and Monarch Shield.
 - Separates verified product behavior from modeled inputs, prototypes, and future integrations.
 - Routes recruiters, consulting buyers, product users, partners, and acquisition inquiries to the relevant next step.
 - Provides crawlable metadata, structured data, `robots.txt`, `sitemap.xml`, and `llms.txt` for search and answer-engine discovery.

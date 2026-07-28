@@ -9,6 +9,7 @@ const siteUrl = "https://elijahpaul.io";
 const pages = [
   ["/", "index.html"],
   ["/work", "work.html"],
+  ["/work/venture-labs", "work/venture-labs.html"],
   ["/work/orelis", "work/orelis.html"],
   ["/work/team-take-down", "work/team-take-down.html"],
   ["/work/treasury-router", "work/treasury-router.html"],
@@ -26,6 +27,7 @@ const requiredFiles = [
   "llms.txt",
   "manifest.webmanifest",
   "downloads/elijah-paul-resume.pdf",
+  "projects/venture-labs-control-room.png",
   "projects/orelis-latest.png",
   "projects/team-take-down.png",
   "projects/treasury-router-dashboard.png",

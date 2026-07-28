@@ -18,7 +18,7 @@
 ## Message
 
 - Positioning: AI product builder for crypto, fintech, and AI teams.
-- Core promise: Elijah Paul turns customer problems into working AI products.
+- Core promise: I turn customer problems into working AI products.
 - Primary CTA: Request a fit call. Use Book a fit call only after a real scheduler is verified.
 - Supporting path: View my work.
 - Page story: customer workflow gap, proof from real product builds, what Elijah personally did, what people can buy from him, controlled build method, ways to engage, objection handling, and one qualified contact action.
@@ -27,7 +27,7 @@
 
 - Preserve the current routes: home, work, individual case studies, services, about, resume, and contact.
 - The homepage prioritizes consulting and embedded-product buyers. Hiring remains visible in navigation, resume, and contact.
-- Lead proof with Orelis as the primary commercial voice-agent offering, then give Team Take Down, Treasury Router, GridSynapse, and Monarch Shield their own compact editorial entries. Add a clear homepage offer section so buyers understand whether to request a sprint, a build, or embedded product help. Avoid proof grids, carousel-only presentation, giant alternating landing-page bands, or screenshots that overpower the reading path.
+- Lead proof with Venture Labs as the agentic orchestration system behind serious builds, then show Orelis, Team Take Down, Treasury Router, GridSynapse, and Monarch Shield as market-specific applications of the same product-building pattern. Add a clear homepage offer section so buyers understand whether to request a sprint, a build, or embedded product help. Avoid proof grids, carousel-only presentation, giant alternating landing-page bands, or screenshots that overpower the reading path.
 - Mobile must show the promise, explanation, primary CTA, supporting proof path, and first proof signal without clipped text or horizontal overflow.
 
 ## Discovery

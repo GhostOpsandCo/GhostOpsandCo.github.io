@@ -22,6 +22,26 @@ const monarchShield = getProject("x402-agent-payments");
 
 const focusSections = [
   {
+    project: ventureLabs,
+    anchor: "venture-labs",
+    tone: "venture",
+    title: "Venture Labs: the agentic orchestration system behind serious builds.",
+    lead:
+      "It shows how I structure agents, evidence, state, approvals, QA, and launch controls before a team spends engineering time.",
+    sectionSummary:
+      "A full orchestration artifact for teams that need a stricter path from idea to build decision.",
+    useCase:
+      "Agentic workflow design, startup validation, venture review, product planning, red-team review, and pre-build decision gates.",
+    audience:
+      "Founders, venture studios, AI teams, operators, and product leaders with more ideas than engineering capacity.",
+    interestSubject: "agentic orchestration system like Venture Labs",
+    learnMoreLabel: "Talk about a similar orchestration system",
+    artifactNote: "Rendered dashboard artifact showing the venture queue, decision gate, stage controls, and artifact readiness.",
+    proofLabel: "Agent orchestration",
+    proofCue: "A control room routes ideas through evidence, gates, QA, and launch boundaries.",
+    primary: true,
+  },
+  {
     project: orelis,
     anchor: "orelis",
     tone: "orelis",
@@ -39,7 +59,6 @@ const focusSections = [
     artifactNote: "Latest Orelis site capture: Faith example call and setup-call CTA.",
     proofLabel: "Missed calls",
     proofCue: "A voice agent answers, qualifies, and hands off the caller.",
-    primary: true,
   },
   {
     project: teamTakeDown,
@@ -97,25 +116,6 @@ const focusSections = [
     artifactNote: "Public compute procurement product and source-backed workflow.",
     proofLabel: "GPU buying",
     proofCue: "A compute planner compares provider options before spend is committed.",
-  },
-  {
-    project: ventureLabs,
-    anchor: "venture-labs",
-    tone: "venture",
-    title: "Venture Labs: decide what deserves engineering time.",
-    lead:
-      "It turns a raw idea into research, a red report, a decision record, and a build package before anyone starts writing production code.",
-    sectionSummary:
-      "A venture operating-system artifact for teams that need a stricter path from idea to build decision.",
-    useCase:
-      "Startup validation, venture review, product planning, agent workflow design, and pre-build decision gates.",
-    audience:
-      "Founders, venture studios, operators, and product teams with more ideas than engineering time.",
-    interestSubject: "venture workflow like Venture Labs",
-    learnMoreLabel: "Talk about a similar venture workflow",
-    artifactNote: "Doc-backed control-room artifact showing stages, gates, artifacts, and operating limits.",
-    proofLabel: "Startup ideas",
-    proofCue: "A gated operating system turns ideas into kill memos or build packages.",
   },
   {
     project: monarchShield,
@@ -218,7 +218,7 @@ const profileNotes = [
   },
   {
     label: "What I build",
-    copy: "Screens, agents, workflows, and prototypes people can test with real users.",
+    copy: "Agent workflows, product dashboards, decision systems, and prototypes people can test.",
   },
   {
     label: "Best fit",
@@ -378,9 +378,9 @@ export default function Home() {
             </div>
             <h1 id="hero-title">I turn customer problems into working AI products.</h1>
             <p className="v8-hero-lede">
-              I help crypto, fintech, voice AI, and creator-protection teams find the stuck
-              workflow, design the product path, and ship the version a customer, operator, or
-              investor can actually test.
+              I help crypto, fintech, voice AI, creator-protection, and venture teams turn
+              high-stakes workflows into agentic product systems with clear screens, state,
+              approvals, QA, and a version people can actually test.
             </p>
             <div className="v8-hero-actions">
               <a className="button button-primary" href={mailto("AI product fit call")}>Request a fit call</a>
@@ -403,12 +403,13 @@ export default function Home() {
       <section className="v8-section v8-work-intro" id="work" aria-labelledby="work-title">
         <div className="site-shell v8-work-intro-grid">
           <div>
-            <h2 id="work-title">Six builds that show what I can do for your team.</h2>
+            <h2 id="work-title">Start with the orchestration system, then inspect the products.</h2>
           </div>
           <p>
-            Each project starts with a real business problem: missed calls, creator leaks, idle
-            capital, GPU buying, startup validation, or payment safety. I show the product, who it
-            helps, what works today, and where the limits are so you can judge the fit quickly.
+            Venture Labs shows the operating system behind my work: route the problem, gather the
+            evidence, force the decision, and keep QA visible. The other projects show that same
+            pattern applied to voice agents, creator protection, finance, compute, and payment
+            safety.
           </p>
         </div>
       </section>
@@ -416,10 +417,10 @@ export default function Home() {
       <section className="v8-proof-index-section" aria-labelledby="proof-index-title">
         <div className="site-shell v8-proof-index-wrap">
           <div className="v8-proof-index-head">
-            <h2 id="proof-index-title">Start with the problem you recognize.</h2>
+            <h2 id="proof-index-title">Pick the system or product problem closest to yours.</h2>
             <p>
-              Choose the closest buyer problem, then read the matching product section. Each one
-              shows the use case, artifact, proof, and limit.
+              Start with agent orchestration if you need the system behind a build. Choose a product
+              example if you want to see a specific market workflow.
             </p>
           </div>
           <nav className="v8-proof-index" aria-label="Project proof index">

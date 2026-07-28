@@ -31,10 +31,10 @@ export const metadata: Metadata = {
     siteName: "Elijah Paul",
     images: [
       {
-        url: "/projects/treasury-router-dashboard.png",
-        width: 3420,
-        height: 1854,
-        alt: "Elijah Paul's AI product portfolio",
+        url: "/projects/venture-labs-control-room.png",
+        width: 2400,
+        height: 1500,
+        alt: "Elijah Paul's Venture Labs agentic orchestration dashboard artifact",
       },
     ],
   },
@@ -42,7 +42,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Elijah Paul | AI Solutions Architect & Product Builder",
     description: site.description,
-    images: ["/projects/treasury-router-dashboard.png"],
+    images: ["/projects/venture-labs-control-room.png"],
   },
   robots: {
     index: true,

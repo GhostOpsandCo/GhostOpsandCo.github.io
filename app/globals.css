@@ -4627,6 +4627,25 @@ h3 {
     top: 104px;
     align-self: start;
   }
+
+  .v8-project-primary .v8-project-article {
+    grid-template-columns: minmax(0, 0.82fr) minmax(520px, 1.18fr);
+    align-items: center;
+    gap: 64px;
+  }
+
+  .v8-project-primary .v8-project-article .v8-artifact {
+    max-width: 760px;
+  }
+
+  .v8-project-primary .v8-project-copy {
+    max-width: 700px;
+  }
+
+  .v8-project-primary .v8-project-copy h2 {
+    max-width: 680px;
+    font-size: 38px;
+  }
 }
 
 @media (max-width: 1120px) {

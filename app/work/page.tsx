@@ -12,7 +12,7 @@ export const metadata: Metadata = {
     title: "AI Product Builder Portfolio | Elijah Paul",
     description: "Inspect the problem, workflow, build, evidence, and operating boundary behind each product.",
     url: "/work",
-    images: ["/projects/gridsynapse.png"],
+    images: ["/projects/venture-labs-control-room.png"],
   },
 };
 
