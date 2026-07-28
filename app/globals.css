@@ -3992,7 +3992,7 @@ h3 {
 
 .v8-proof-index {
   display: grid;
-  grid-template-columns: repeat(5, minmax(0, 1fr));
+  grid-template-columns: repeat(6, minmax(0, 1fr));
   border-top: 1px solid var(--line);
 }
 
@@ -4098,8 +4098,8 @@ h3 {
   --section-wash: var(--black);
 }
 
-.v8-proof-index a[data-tone="monarch"],
-.v8-project-tone-monarch {
+.v8-proof-index a[data-tone="venture"],
+.v8-project-tone-venture {
   --index-accent: var(--black);
   --index-copy: var(--ink-soft);
   --index-hover: #f8f9fb;
@@ -4114,6 +4114,26 @@ h3 {
   --section-line: var(--line);
   --section-proof-bg: rgba(11, 13, 18, 0.035);
   --section-wash: var(--paper);
+}
+
+.v8-proof-index a[data-tone="monarch"],
+.v8-project-tone-monarch {
+  --index-accent: #ffffff;
+  --index-copy: #ffffff;
+  --index-hover: var(--night-soft);
+  --index-ink: #ffffff;
+  --index-label: #ffffff;
+  --index-wash: var(--black);
+  --section-accent: #ffffff;
+  --section-accent-label: #ffffff;
+  --section-copy: #ffffff;
+  --section-ink: #ffffff;
+  --section-label: #ffffff;
+  --section-line: rgba(255, 255, 255, 0.18);
+  --section-link: #ffffff;
+  --section-link-hover: #ffffff;
+  --section-proof-bg: rgba(255, 255, 255, 0.07);
+  --section-wash: var(--black);
 }
 
 .v8-proof-index a:last-child {
@@ -4995,6 +5015,7 @@ h3 {
 .v8-proof-index a[data-tone="team"],
 .v8-proof-index a[data-tone="treasury"],
 .v8-proof-index a[data-tone="grid"],
+.v8-proof-index a[data-tone="venture"],
 .v8-proof-index a[data-tone="monarch"] {
   grid-template-columns: minmax(132px, 0.32fr) minmax(148px, 0.28fr) minmax(0, 1fr);
   min-height: auto;
@@ -5023,7 +5044,8 @@ h3 {
 
 .v8-proof-index span,
 .v8-proof-index a[data-tone="team"] span,
-.v8-proof-index a[data-tone="grid"] span {
+.v8-proof-index a[data-tone="grid"] span,
+.v8-proof-index a[data-tone="monarch"] span {
   color: var(--ink);
   font-size: 15px;
   font-weight: 740;
@@ -5032,7 +5054,8 @@ h3 {
 
 .v8-proof-index strong,
 .v8-proof-index a[data-tone="team"] strong,
-.v8-proof-index a[data-tone="grid"] strong {
+.v8-proof-index a[data-tone="grid"] strong,
+.v8-proof-index a[data-tone="monarch"] strong {
   color: var(--ink);
   font-size: 16px;
   font-weight: 720;
@@ -5041,7 +5064,8 @@ h3 {
 
 .v8-proof-index p,
 .v8-proof-index a[data-tone="team"] p,
-.v8-proof-index a[data-tone="grid"] p {
+.v8-proof-index a[data-tone="grid"] p,
+.v8-proof-index a[data-tone="monarch"] p {
   color: var(--ink-soft);
   font-size: 15px;
   line-height: 1.52;
@@ -5123,6 +5147,7 @@ h3 {
   .v8-proof-index a[data-tone="team"],
   .v8-proof-index a[data-tone="treasury"],
   .v8-proof-index a[data-tone="grid"],
+  .v8-proof-index a[data-tone="venture"],
   .v8-proof-index a[data-tone="monarch"] {
     grid-template-columns: minmax(132px, 0.32fr) minmax(148px, 0.28fr) minmax(0, 1fr);
     border-top: 1px solid var(--line);
@@ -5190,6 +5215,7 @@ h3 {
   .v8-proof-index a[data-tone="team"],
   .v8-proof-index a[data-tone="treasury"],
   .v8-proof-index a[data-tone="grid"],
+  .v8-proof-index a[data-tone="venture"],
   .v8-proof-index a[data-tone="monarch"] {
     grid-template-columns: 1fr;
     gap: 5px;
@@ -5200,5 +5226,61 @@ h3 {
   .v8-proof-index strong,
   .v8-proof-index p {
     font-size: 15px;
+  }
+}
+
+@media (max-width: 620px) {
+  html,
+  body {
+    max-width: 100%;
+    overflow-x: clip;
+  }
+
+  .site-shell,
+  .v8-hero-grid,
+  .v8-proof-index-wrap,
+  .work-preview-strip {
+    width: min(calc(100svw - 40px), var(--shell));
+    max-width: calc(100svw - 40px);
+  }
+
+  .v8-hero-copy,
+  .v8-work-intro-grid,
+  .v8-proof-index-head,
+  .v8-project-copy,
+  .case-hero-copy,
+  .case-content,
+  .case-product-frame {
+    max-width: 100%;
+  }
+
+  .v8-hero h1,
+  .v8-hero-lede,
+  .v8-work-intro p,
+  .v8-proof-index p,
+  .case-hero h1,
+  .case-hero-copy p,
+  .case-content h2,
+  .case-content p {
+    overflow-wrap: anywhere;
+  }
+
+  .case-hero {
+    overflow: hidden;
+  }
+
+  .case-hero-image img {
+    transform: none;
+  }
+
+  .case-index {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 0 16px;
+    overflow-x: visible;
+    white-space: normal;
+  }
+
+  .case-index span {
+    padding-right: 0;
   }
 }

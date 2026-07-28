@@ -6,7 +6,7 @@ import { projects } from "@/lib/site";
 export const metadata: Metadata = {
   title: "AI Product Builder Portfolio",
   description:
-    "Selected AI product work by Elijah Paul across financial workflows, compute procurement, voice agents, and x402 agent payments.",
+    "Selected AI product work by Elijah Paul across voice agents, creator protection, financial workflows, compute procurement, venture systems, and x402 agent payments.",
   alternates: { canonical: "/work" },
   openGraph: {
     title: "AI Product Builder Portfolio | Elijah Paul",

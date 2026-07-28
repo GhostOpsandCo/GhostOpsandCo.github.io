@@ -2,7 +2,7 @@ export const site = {
   name: "Elijah Paul",
   title: "AI Solutions Architect & Product Builder",
   description:
-    "AI product builder helping crypto, fintech, voice AI, and creator-protection teams turn stuck workflows into products people can test, buy, or approve.",
+    "AI product builder helping crypto, fintech, voice AI, venture, and creator-protection teams turn stuck workflows into products people can test, buy, or approve.",
   url: "https://elijahpaul.io",
   email: "elijah@elijahpaul.io",
   linkedin: "https://www.linkedin.com/in/elijahpaul",
@@ -249,6 +249,58 @@ export const projects: Project[] = [
       "GridSynapse uses public pricing and carbon inputs. Capacity, latency, and availability are modeled. It does not discover guaranteed inventory, reserve GPUs, provision infrastructure, or spend money.",
     availability:
       "Available as a portfolio product foundation for product partnerships, custom implementation discussions, or acquisition inquiries.",
+  },
+  {
+    slug: "venture-labs",
+    name: "Venture Labs",
+    category: "Venture operating system",
+    status: "Doc-backed control-room artifact",
+    summary:
+      "A venture studio operating-system concept that takes raw ideas through intake, research, red-team review, decision gate, PRD, architecture, build package, QA, and launch memo before engineering starts.",
+    metaDescription:
+      "Venture Labs is a doc-backed GhostOps operating-system artifact for moving startup ideas through research, red-team review, decision gates, PRD, architecture, QA, and launch planning.",
+    shortOutcome:
+      "Shows the product process behind serious builds: an idea must become research, a red report, a decision record, and an execution package before it earns engineering time.",
+    whatItDoes:
+      "Venture Labs gives a venture team one path for deciding whether an idea should be killed, held, or turned into an execution-ready build package.",
+    benefits: [
+      "Stops teams from building before the idea has passed research and red-team review.",
+      "Turns startup ideas into concrete artifacts a founder, operator, or builder can inspect.",
+      "Keeps stage ownership, required records, QA readiness, and launch limits visible.",
+    ],
+    keywords: ["venture studio", "startup validation", "agent workflow", "decision gates", "PRD", "QA"],
+    image: "/projects/venture-labs-control-room.png",
+    imageAlt: "GhostOps Venture Labs control room showing venture stages, artifact readiness, and decision gates",
+    primaryAction: "View case study",
+    primaryIntent: "venture studio operating system",
+    skills: ["Product strategy", "Venture validation", "Agent workflow design", "Artifact systems", "QA gates", "Launch planning"],
+    role:
+      "System design, venture-stage architecture, agent role boundaries, artifact contracts, decision gates, QA controls, and public-facing control-room artifact.",
+    challenge:
+      "Founders and venture teams can burn engineering time on ideas that never passed research, red-team review, a clear decision record, or an execution-ready plan.",
+    approach: [
+      "Mapped the venture path from raw idea to kill memo or execution-ready build package.",
+      "Made the decision gate a first-class stage instead of a vague checkpoint.",
+      "Separated Router progression, Watchguard validation, stage-owner outputs, and QA readiness.",
+      "Created a portfolio-safe control-room artifact that explains the system without exposing private operations or fake metrics.",
+    ],
+    workflow: [
+      "Ingest the venture idea",
+      "Produce a research pack",
+      "Write the red report",
+      "Record the kill, hold, or build decision",
+      "Generate the PRD, architecture, build package, QA review, and launch memo",
+    ],
+    proof: [
+      "Verified GhostOps Venture Studio OS and technical architecture docs",
+      "Explicit intake to launch-memo stage model",
+      "Router, Watchguard, State Layer, and Artifact Contract responsibilities",
+      "Generated control-room artifact with clear illustrative boundary",
+    ],
+    boundary:
+      "The Venture Labs control room is an illustrative artifact based on internal GhostOps system docs. It is not a live production dashboard, customer result, revenue claim, autonomous startup launch claim, or proof that every stage has been automated.",
+    availability:
+      "Available for venture-studio workflow, product-validation system, and agent-operating-system discussions.",
   },
   {
     slug: "x402-agent-payments",

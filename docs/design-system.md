@@ -24,7 +24,7 @@ The supporting copy stays close to the existing site:
 - Use table-like rows for commercial and trust-heavy sections when the content needs comparison: engagement, best fit, output, timeline, method, check, and limit.
 - Add a clean proof-choice table before the long project run so buyers can self-select the relevant project by problem without hiding work in a carousel.
 - Show detailed project sections on the homepage instead of hiding work behind a carousel or selector, but keep each section compact and copy-first.
-- Alternate project chapters between white and black. Do not alternate the proof-choice table itself between black and white; it should read as one clean navigational table, not five separate tiles.
+- Alternate project chapters between white and black. Do not alternate the proof-choice table itself between black and white; it should read as one clean navigational table, not separate tiles.
 - Keep homepage typography on a restrained scale. Avoid poster-size headings paired with tiny metadata labels unless the contrast has a clear editorial purpose and passes mobile review.
 - Use scroll feedback only when it clarifies anchor navigation. It must be subtle, CSS-only, non-looping, and disabled for reduced-motion users.
 - Lead with Orelis as the commercial voice-agent offer most directly tied to paid services, while borrowing its one-focus section discipline rather than its palette.

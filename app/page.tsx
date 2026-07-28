@@ -17,6 +17,7 @@ const orelis = getProject("orelis");
 const teamTakeDown = getProject("team-take-down");
 const treasuryRouter = getProject("treasury-router");
 const gridSynapse = getProject("gridsynapse");
+const ventureLabs = getProject("venture-labs");
 const monarchShield = getProject("x402-agent-payments");
 
 const focusSections = [
@@ -96,6 +97,25 @@ const focusSections = [
     artifactNote: "Public compute procurement product and source-backed workflow.",
     proofLabel: "GPU buying",
     proofCue: "A compute planner compares provider options before spend is committed.",
+  },
+  {
+    project: ventureLabs,
+    anchor: "venture-labs",
+    tone: "venture",
+    title: "Venture Labs: decide what deserves engineering time.",
+    lead:
+      "It turns a raw idea into research, a red report, a decision record, and a build package before anyone starts writing production code.",
+    sectionSummary:
+      "A venture operating-system artifact for teams that need a stricter path from idea to build decision.",
+    useCase:
+      "Startup validation, venture review, product planning, agent workflow design, and pre-build decision gates.",
+    audience:
+      "Founders, venture studios, operators, and product teams with more ideas than engineering time.",
+    interestSubject: "venture workflow like Venture Labs",
+    learnMoreLabel: "Talk about a similar venture workflow",
+    artifactNote: "Doc-backed control-room artifact showing stages, gates, artifacts, and operating limits.",
+    proofLabel: "Startup ideas",
+    proofCue: "A gated operating system turns ideas into kill memos or build packages.",
   },
   {
     project: monarchShield,
@@ -383,12 +403,12 @@ export default function Home() {
       <section className="v8-section v8-work-intro" id="work" aria-labelledby="work-title">
         <div className="site-shell v8-work-intro-grid">
           <div>
-            <h2 id="work-title">Five builds that show what I can do for your team.</h2>
+            <h2 id="work-title">Six builds that show what I can do for your team.</h2>
           </div>
           <p>
             Each project starts with a real business problem: missed calls, creator leaks, idle
-            capital, GPU buying, or payment safety. I show the product, who it helps, what works
-            today, and where the limits are so you can judge the fit quickly.
+            capital, GPU buying, startup validation, or payment safety. I show the product, who it
+            helps, what works today, and where the limits are so you can judge the fit quickly.
           </p>
         </div>
       </section>
