@@ -112,3 +112,9 @@ V8.5 is the active implementation direction: a palette-preserving editorial home
 | Question | Source | Reference lesson | Adopt | Reject | Visible change |
 | --- | --- | --- | --- | --- | --- |
 | How should the header CTA feel less artificial? | Current site QA and human-copy gate, July 28, 2026 | A fake availability pill and status dot make a personal portfolio feel templated. | Remove the header availability badge and use one plain CTA: `Request a fit call`. | Do not use decorative live/status dots, vague availability claims, or multiple competing first-viewport actions. | `SiteHeader` now shows only navigation and `Request a fit call`; hero/contact CTAs use the same visible language. |
+
+## July 28 systems-map stitching
+
+| Question | Source | Reference lesson | Adopt | Reject | Visible change |
+| --- | --- | --- | --- | --- | --- |
+| How should the portfolio show that the products are connected without sounding like an investor deck? | User-approved portfolio direction and current evidence ledger, July 28, 2026 | The work should read as a connected body of product judgment, but each claim still needs a specific product, user, and boundary. | Add a compact systems-map section after the offer table and before the proof index, grouping projects by customer entry, product decisions, money/trust, and infrastructure. | Do not use acquisition-buyer framing, `developer infrastructure of tomorrow`, unsupported micro-SaaS claims, or inflated names such as runtime payment firewall or autonomous banking. | `v8-systems-section` connects the six project chapters with one direct headline, one short intro, and four table rows linking into existing project proof. |

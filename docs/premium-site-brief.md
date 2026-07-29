@@ -27,7 +27,7 @@
 
 - Preserve the current routes: home, work, individual case studies, services, about, resume, and contact.
 - The homepage prioritizes consulting and embedded-product buyers. Hiring remains visible in navigation, resume, and contact.
-- Lead proof with Venture Labs as the product decision system behind serious builds, then show Orelis, Team Take Down, Treasury Router, GridSynapse, and Monarch Shield as market-specific applications of the same product-building pattern. Keep the homepage offer section high enough that buyers understand whether to request a sprint, a build, or embedded product help before reading every project. Avoid proof grids, carousel-only presentation, giant alternating landing-page bands, or screenshots that overpower the reading path.
+- Lead proof with Venture Labs as the product decision system behind serious builds, then show Orelis, Team Take Down, Treasury Router, GridSynapse, and Monarch Shield as market-specific applications of the same product-building pattern. Keep the homepage offer section high enough that buyers understand whether to request a sprint, a build, or embedded product help before reading every project. Add a compact systems-map section that connects the work across customer entry, product decisions, money/trust, and infrastructure before the detailed project proof. Avoid proof grids, carousel-only presentation, giant alternating landing-page bands, or screenshots that overpower the reading path.
 - Mobile must show the promise, explanation, primary CTA, supporting proof path, and first proof signal without clipped text or horizontal overflow.
 
 ## Discovery

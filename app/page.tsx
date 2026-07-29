@@ -186,6 +186,39 @@ const buyingSituations = [
   },
 ];
 
+const systemLayers = [
+  {
+    layer: "Customer entry",
+    products: [
+      { name: "Orelis", href: "#orelis" },
+      { name: "Team Take Down", href: "#team-take-down" },
+    ],
+    description:
+      "Voice intake and creator-protection workflows that turn calls, releases, evidence, and next steps into a product surface.",
+  },
+  {
+    layer: "Product decisions",
+    products: [{ name: "Venture Labs", href: "#venture-labs" }],
+    description:
+      "A system for deciding what should be built, held, or killed before engineering time gets spent.",
+  },
+  {
+    layer: "Money and trust",
+    products: [
+      { name: "Treasury Router", href: "#treasury-router" },
+      { name: "Monarch Shield", href: "#monarch-shield" },
+    ],
+    description:
+      "Financial workflows, payment checks, human approval, and release safety where the boundary matters.",
+  },
+  {
+    layer: "Infrastructure planning",
+    products: [{ name: "GridSynapse", href: "#gridsynapse" }],
+    description:
+      "Compute planning before teams commit spend, provider work, or deployment decisions.",
+  },
+];
+
 const problemSignals = [
   {
     problem: "Customers keep asking for a tool, but the first product is still unclear.",
@@ -499,6 +532,36 @@ export default function Home() {
                 <a className="button button-outline" href={mailto(service.subject)}>
                   {actionLabel}
                 </a>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="v8-section v8-systems-section" aria-labelledby="systems-title">
+        <div className="site-shell v8-systems">
+          <div className="v8-systems-head">
+            <h2 id="systems-title">
+              I build usable products for workflows where money, identity, reputation,
+              infrastructure, or customer demand make the details matter.
+            </h2>
+            <p>
+              My background has helped me uniquely design and build systems that turn
+              high-stakes workflows into valuable products for buyers, operators, and
+              developers alike.
+            </p>
+          </div>
+
+          <div className="v8-systems-list" aria-label="How the portfolio work fits together">
+            {systemLayers.map((item) => (
+              <article className="v8-system-row" key={item.layer}>
+                <strong>{item.layer}</strong>
+                <div className="v8-system-products">
+                  {item.products.map((product) => (
+                    <a href={product.href} key={product.name}>{product.name}</a>
+                  ))}
+                </div>
+                <p>{item.description}</p>
               </article>
             ))}
           </div>
