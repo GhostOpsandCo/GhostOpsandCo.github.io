@@ -12,7 +12,7 @@ export default function Record() {
   return (
     <main id="main">
       <header className="page-head frame">
-        <p className="mono dim rise">EP / 004 · Record / <a href="/downloads/elijah-paul-resume.pdf" download>PDF ↓</a> / <a href={site.linkedin} target="_blank" rel="noreferrer">LinkedIn ↗</a></p>
+        <p className="mono dim rise"><a href="/downloads/elijah-paul-resume.pdf" download>PDF ↓</a> / <a href={site.linkedin} target="_blank" rel="noreferrer">LinkedIn ↗</a></p>
         <h1 className="page-title rise">Record</h1>
         <p className="page-sub rise">Building agents now. Years in the trenches before that: launches, exchanges, revenue.</p>
       </header>

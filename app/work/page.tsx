@@ -12,7 +12,7 @@ export default function WorkIndex() {
   return (
     <main id="main">
       <header className="page-head frame">
-        <p className="mono dim rise">EP / 003 · Work / {String(projects.length).padStart(2, "0")} shipped</p>
+        <p className="mono dim rise">{String(projects.length).padStart(2, "0")} shipped</p>
         <h1 className="page-title rise">Work</h1>
         <p className="page-sub rise">What it does. What it doesn&apos;t. Receipts on both.</p>
       </header>

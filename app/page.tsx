@@ -17,7 +17,7 @@ export default function Home() {
     <main id="main">
       <section className="hero">
         <div className="frame hero-in">
-          <p className="mono dim hero-kicker rise">EP / 001 · Index</p>
+          <p className="now-line mono rise"><span className="live" aria-hidden="true" />Now building <a href={site.hotbot} target="_blank" rel="noreferrer">Hot Bot</a></p>
           <h1 className="name rise">Elijah<br className="br-m" /> Paul</h1>
           <div className="hero-foot rise">
             <p className="thesis">

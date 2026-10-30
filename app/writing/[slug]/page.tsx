@@ -73,7 +73,7 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
           </dl>
         </header>
         <div className="measure">
-          {post.tldr && <p className="art-tldr">{post.tldr}</p>}
+          {post.tldr && <div className="art-tldr"><span className="tldr-k mono">TLDR</span><p>{post.tldr}</p></div>}
           <div className="prose" dangerouslySetInnerHTML={{ __html: post.html }} />
           <footer className="art-foot mono">
             <span className="dim">Elijah Paul / <a href={site.x} target="_blank" rel="noreferrer">{site.xHandle}</a></span>
