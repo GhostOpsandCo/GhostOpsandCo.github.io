@@ -1,6 +1,6 @@
 ---
 title: "Hot Bot Wasn't Built Overnight"
-date: 2026-10-03
+date: 2026-10-30
 tldr: "People asked how Hot Bot came together so fast for the ClawPump hackathon. Honest answer: a year of agent orchestration on my side plus a trading terminal my partner built, which a CEX later bought."
 tags: [Hot Bot, AnsemHack, Building]
 ---
