@@ -50,3 +50,7 @@ export function formatDate(date: string) {
     timeZone: "UTC",
   });
 }
+
+export function formatShort(date: string) {
+  return date.replaceAll("-", ".");
+}

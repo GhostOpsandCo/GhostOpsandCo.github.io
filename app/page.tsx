@@ -1,84 +1,129 @@
 import Link from "next/link";
-import { PostList } from "@/components/PostList";
-import { ProjectCard } from "@/components/ProjectCard";
-import { getAllPosts } from "@/lib/posts";
+import { Label } from "@/components/Chrome";
+import { formatShort, getAllPosts } from "@/lib/posts";
+import { experience } from "@/lib/resume";
 import { projects, site } from "@/lib/site";
 
-export default function HomePage() {
-  const posts = getAllPosts().slice(0, 4);
+const now = [
+  { k: "Hot Bot", v: "A private swarm of specialist trading agents on Solana. Co-founded with @0xWhoismax.", meta: "2026 — now", href: site.hotbot },
+  { k: "AnsemHack", v: "Entered the ClawPump × Ansem hackathon on its final day. Co-won.", meta: "Oct 2026", href: site.hotbotX },
+  { k: "Monarch Shield", v: "A CI linter that fails builds when x402 payments can fire without a policy check.", meta: "2026", href: "https://github.com/ghostmonarch/x402ms" },
+  { k: "GhostOps", v: "An internal OS of agents: routing, evidence loops, hard gates, reviewed memory.", meta: "2025 — now", href: "https://github.com/GhostOpsandCo/agent-orchestration" },
+];
 
+export default function Home() {
+  const posts = getAllPosts().slice(0, 5);
   return (
-    <main id="main-content">
+    <main id="main">
       <section className="hero">
-        <div className="shell">
-          <p className="eyebrow">Elijah Paul · Phoenix, Arizona</p>
-          <h1>AI solutions architect &amp; product builder.</h1>
-          <p className="lede">
-            Building <a className="link" href={site.hotbot} target="_blank" rel="noreferrer">Hot Bot</a>, a
-            team of specialist trading agents on Solana. I turn hard, high-stakes workflows into products people can use.
-          </p>
-          <div className="actions">
-            <Link className="btn btn-primary" href="/writing">Read the writing</Link>
-            <Link className="btn" href="/work">See the work</Link>
-            <a className="btn" href={site.x} target="_blank" rel="noreferrer">{site.xHandle}</a>
+        <div className="hero-field" aria-hidden="true" />
+        <div className="frame hero-in">
+          <p className="mono dim hero-kicker rise">EP / 001 — Index</p>
+          <h1 className="name rise">Elijah<br className="br-m" /> Paul</h1>
+          <div className="hero-foot rise">
+            <p className="thesis">
+              Building <a href={site.hotbot} target="_blank" rel="noreferrer">Hot Bot</a>, a swarm of trading agents on Solana.
+              Before that, guardrails for x402 agent payments and a year of agent orchestration.
+            </p>
+            <dl className="spec mono">
+              <div><dt>Now</dt><dd>Co-founder, Hot Bot</dd></div>
+              <div><dt>Prev</dt><dd>Gate · x402</dd></div>
+              <div><dt>Base</dt><dd>Phoenix, AZ</dd></div>
+            </dl>
           </div>
         </div>
       </section>
 
-      <section className="section" aria-labelledby="now-title">
-        <div className="shell">
-          <h2 id="now-title" className="eyebrow">Now</h2>
-          <div className="highlights">
-            <a href={site.hotbot} target="_blank" rel="noreferrer">
-              <strong>Building Hot Bot</strong>
-              <p>Agentic swarm trading on Solana. Co-founded with @0xWhoismax. Research, snipe, trade, launch.</p>
-            </a>
-            <a href={site.hotbotX} target="_blank" rel="noreferrer">
-              <strong>AnsemHack co-winner</strong>
-              <p>Joined the ClawPump × Ansem hackathon on the final day. Took the W.</p>
-            </a>
-            <Link href="/resume">
-              <strong>Previously at Gate</strong>
-              <p>Led AI product work: Treasury Router, an x402 merchant workflow, and Gate Router audits.</p>
-            </Link>
-          </div>
+      <section className="block">
+        <div className="frame grid12">
+          <Label n="01">Now</Label>
+          <ol className="index">
+            {now.map((r) => (
+              <li key={r.k} className="reveal">
+                <a href={r.href} target="_blank" rel="noreferrer" className="irow">
+                  <span className="i-title">{r.k}</span>
+                  <span className="i-desc">{r.v}</span>
+                  <span className="i-meta mono">{r.meta}</span>
+                  <span className="i-arrow" aria-hidden="true">↗</span>
+                </a>
+              </li>
+            ))}
+          </ol>
         </div>
       </section>
 
-      <section className="section" aria-labelledby="writing-title">
-        <div className="shell">
-          <div className="section-head">
-            <h2 id="writing-title">Writing</h2>
-            <Link className="link arrow" href="/writing">All posts</Link>
-          </div>
-          <PostList posts={posts} />
+      <section className="block">
+        <div className="frame grid12">
+          <Label n="02">Writing</Label>
+          <ol className="index">
+            {posts.map((p) => (
+              <li key={p.slug} className="reveal">
+                <Link href={`/writing/${p.slug}`} className="irow">
+                  <span className="i-title">{p.title}</span>
+                  <span className="i-desc">{p.tldr}</span>
+                  <span className="i-meta mono">{formatShort(p.date)}</span>
+                  <span className="i-arrow" aria-hidden="true">→</span>
+                </Link>
+              </li>
+            ))}
+            <li className="reveal"><Link href="/writing" className="more mono">All writing →</Link></li>
+          </ol>
         </div>
       </section>
 
-      <section className="section" aria-labelledby="work-title">
-        <div className="shell">
-          <div className="section-head">
-            <h2 id="work-title">Selected work</h2>
-            <Link className="link arrow" href="/work">All case studies</Link>
-          </div>
-          <div className="grid">
-            {projects.slice(0, 4).map((project) => <ProjectCard key={project.slug} project={project} />)}
-          </div>
+      <section className="block">
+        <div className="frame grid12">
+          <Label n="03">Selected work</Label>
+          <ol className="index">
+            {projects.map((p, i) => (
+              <li key={p.slug} className="reveal">
+                <Link href={`/work/${p.slug}`} className="irow">
+                  <span className="i-title"><span className="mono dim i-n">{String(i + 1).padStart(2, "0")}</span>{p.name}</span>
+                  <span className="i-desc">{p.category}</span>
+                  <span className="i-meta mono">{shortStatus(p.status)}</span>
+                  <span className="i-arrow" aria-hidden="true">→</span>
+                </Link>
+              </li>
+            ))}
+          </ol>
         </div>
       </section>
 
-      <section className="section" aria-labelledby="contact-title">
-        <div className="shell split">
-          <h2 id="contact-title">Let&apos;s build something.</h2>
-          <div>
-            <p className="lede">Roles, product builds, or partnerships across AI, crypto, and fintech.</p>
-            <div className="actions">
-              <a className="btn btn-primary" href={`mailto:${site.email}`}>{site.email}</a>
-              <a className="btn" href="/downloads/elijah-paul-resume.pdf" download>Download résumé</a>
-            </div>
+      <section className="block">
+        <div className="frame grid12">
+          <Label n="04">Record</Label>
+          <ol className="index">
+            {experience.map((r) => (
+              <li key={r.company + r.role} className="reveal">
+                <Link href="/resume" className="irow">
+                  <span className="i-title">{r.company}</span>
+                  <span className="i-desc">{r.role}</span>
+                  <span className="i-meta mono">{r.dates.replace(/January |February |March |April |May |June |July |August |September |October |November |December /g, "")}</span>
+                  <span className="i-arrow" aria-hidden="true">→</span>
+                </Link>
+              </li>
+            ))}
+          </ol>
+        </div>
+      </section>
+
+      <section className="block">
+        <div className="frame grid12">
+          <Label n="05">Contact</Label>
+          <div className="contact reveal">
+            <a className="contact-big" href={`mailto:${site.email}`}>{site.email}</a>
+            <p className="mono dim">DMs open at <a href={site.x} target="_blank" rel="noreferrer">{site.xHandle}</a></p>
           </div>
         </div>
       </section>
     </main>
   );
+}
+
+function shortStatus(s: string) {
+  if (/open-source/i.test(s)) return "Open source";
+  if (/prototype/i.test(s)) return "Prototype";
+  if (/demo/i.test(s)) return "Demo";
+  if (/concept/i.test(s)) return "Concept";
+  return "Foundation";
 }

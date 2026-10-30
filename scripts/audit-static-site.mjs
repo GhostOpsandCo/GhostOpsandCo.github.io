@@ -16,10 +16,7 @@ const pages = [
   ["/work/treasury-router", "work/treasury-router/index.html"],
   ["/work/gridsynapse", "work/gridsynapse/index.html"],
   ["/work/x402-agent-payments", "work/x402-agent-payments/index.html"],
-  ["/services", "services/index.html"],
-  ["/about", "about/index.html"],
   ["/resume", "resume/index.html"],
-  ["/contact", "contact/index.html"],
 ];
 
 const requiredFiles = [

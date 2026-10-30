@@ -1,6 +1,7 @@
 # Elijah Paul
 
-Elijah Paul is an AI solutions architect and product builder who helps crypto, fintech, voice AI, creator protection, and venture teams decide what to build, design the workflow, and ship a first version people can use.
+Elijah Paul is co-founder of Hot Bot (https://usehotbot.com), a swarm of specialist trading agents on Solana, and co-winner of the ClawPump × Ansem AnsemHack. Previously AI at Gate. He builds agent orchestration (GhostOps) and x402 agent-payment guardrails (Monarch Shield).
+X: https://x.com/elijahintek
 
 Canonical site: https://elijahpaul.io
 Contact: elijah@elijahpaul.io
@@ -9,11 +10,9 @@ GitHub: https://github.com/GhostOpsandCo
 
 ## Main pages
 
-- Portfolio: https://elijahpaul.io/work
-- AI product consulting and solutions architecture: https://elijahpaul.io/services
-- About: https://elijahpaul.io/about
-- Resume: https://elijahpaul.io/resume
-- Contact: https://elijahpaul.io/contact
+- Work: https://elijahpaul.io/work
+- Writing: https://elijahpaul.io/writing (RSS: https://elijahpaul.io/rss.xml)
+- Record / résumé: https://elijahpaul.io/resume
 
 ## Selected work
 
@@ -24,10 +23,4 @@ GitHub: https://github.com/GhostOpsandCo
 - GridSynapse: buyer-side compute planning workflow using public pricing and carbon inputs with deterministic optimization. Modeled capacity, latency, and availability; no provider reservation or spend.
 - Monarch Shield: open-source build-time and CI preflight for supported agent-payment patterns. It is not runtime payment enforcement, fraud prevention, provider verification, wallet security, regulatory compliance, or settlement validation.
 
-## Services
-
-- AI Product Opportunity Sprint
-- AI Product Build
-- Embedded AI Solutions Architect
-
-Elijah is available for full-time AI solutions and product roles, selected consulting engagements, custom implementations, and appropriate product partnership or acquisition discussions.
+Contact: elijah@elijahpaul.io

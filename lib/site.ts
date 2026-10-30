@@ -1,8 +1,8 @@
 export const site = {
   name: "Elijah Paul",
-  title: "AI Solutions Architect & Product Builder",
+  title: "Co-founder, Hot Bot",
   description:
-    "AI product builder helping crypto, fintech, voice AI, venture, and creator-protection teams turn stuck workflows into usable products with clear evidence, limits, and handoff.",
+    "Elijah Paul builds Hot Bot, a swarm of specialist trading agents on Solana. Before that: guardrails for x402 agent payments and a year of agent orchestration (GhostOps). Co-winner of AnsemHack.",
   url: "https://elijahpaul.io",
   email: "elijah@elijahpaul.io",
   linkedin: "https://www.linkedin.com/in/elijahpaul",

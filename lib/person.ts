@@ -13,6 +13,6 @@ export const personJsonLd = {
   address: { "@type": "PostalAddress", addressLocality: "Phoenix", addressRegion: "AZ", addressCountry: "US" },
   worksFor: { "@type": "Organization", name: "Hot Bot", url: site.hotbot, sameAs: [site.hotbotX] },
   award: "Co-winner, ClawPump × Ansem AnsemHack (2026)",
-  knowsAbout: ["AI solutions architecture", "Agentic trading", "AI agents", "x402", "Agent payments", "Solana", "Product strategy"],
+  knowsAbout: ["Agentic trading", "AI agents", "x402", "Agent payments", "Solana", "Product strategy"],
   sameAs,
 };

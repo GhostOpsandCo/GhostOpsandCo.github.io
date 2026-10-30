@@ -2,17 +2,10 @@ import Link from "next/link";
 
 export default function NotFound() {
   return (
-    <main id="main-content">
-      <section className="hero">
-        <div className="shell">
-          <p className="eyebrow">404</p>
-          <h1>Nothing here.</h1>
-          <div className="actions">
-            <Link className="btn btn-primary" href="/">Home</Link>
-            <Link className="btn" href="/writing">Writing</Link>
-          </div>
-        </div>
-      </section>
+    <main id="main" className="frame page-head">
+      <p className="mono dim">ERR / 404</p>
+      <h1 className="page-title">Not found</h1>
+      <p className="page-sub"><Link href="/">Back to index →</Link></p>
     </main>
   );
 }

@@ -39,9 +39,14 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
   const post = getPost(slug);
   if (!post) notFound();
   const url = `${site.url}/writing/${post.slug}/`;
+  const words = post.html.replace(/<[^>]+>/g, " ").split(/\s+/).filter(Boolean).length;
+  const all = getAllPosts();
+  const i = all.findIndex((p) => p.slug === post.slug);
+  const next = all[i - 1];
+  const prev = all[i + 1];
 
   return (
-    <main id="main-content">
+    <main id="main">
       <JsonLd
         data={{
           "@context": "https://schema.org",
@@ -57,22 +62,27 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
           publisher: { "@type": "Person", "@id": `${site.url}/#person`, name: site.name },
         }}
       />
-      <article className="narrow">
-        <header className="post-head">
-          <p className="post-meta">
-            <Link className="link" href="/writing">Writing</Link>
-            <span>·</span>
-            <time dateTime={post.date}>{formatDate(post.date)}</time>
-          </p>
-          <h1>{post.title}</h1>
-          {post.tags.length > 0 && <ul className="tags">{post.tags.map((tag) => <li key={tag}>{tag}</li>)}</ul>}
+      <article className="article">
+        <header className="art-head">
+          <p className="mono dim art-crumb rise"><Link href="/writing">← Writing</Link></p>
+          <h1 className="art-title rise">{post.title}</h1>
+          <dl className="art-meta mono rise">
+            <div><dt>Published</dt><dd><time dateTime={post.date}>{formatDate(post.date)}</time></dd></div>
+            <div><dt>Read</dt><dd>{Math.max(1, Math.round(words / 230))} min</dd></div>
+            <div><dt>Filed</dt><dd>{post.tags.join(" / ")}</dd></div>
+          </dl>
         </header>
-        {post.tldr && <p className="tldr"><b>TLDR</b>{post.tldr}</p>}
-        <div className="prose" dangerouslySetInnerHTML={{ __html: post.html }} />
-        <footer className="post-foot">
-          <span className="muted">— Elijah Paul</span>
-          <span><a className="link" href={site.x} target="_blank" rel="noreferrer">Follow {site.xHandle}</a> · <a className="link" href="/rss.xml">RSS</a></span>
-        </footer>
+        <div className="measure">
+          {post.tldr && <p className="art-tldr">{post.tldr}</p>}
+          <div className="prose" dangerouslySetInnerHTML={{ __html: post.html }} />
+          <footer className="art-foot mono">
+            <span className="dim">Elijah Paul — <a href={site.x} target="_blank" rel="noreferrer">{site.xHandle}</a></span>
+            <span className="art-nav">
+              {prev && <Link href={`/writing/${prev.slug}`}>← {prev.title}</Link>}
+              {next && <Link href={`/writing/${next.slug}`}>{next.title} →</Link>}
+            </span>
+          </footer>
+        </div>
       </article>
     </main>
   );
