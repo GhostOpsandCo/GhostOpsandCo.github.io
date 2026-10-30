@@ -10,7 +10,7 @@ GitHub: https://github.com/GhostOpsandCo
 ## Pages
 
 - Work: https://elijahpaul.io/work
-- Trench Notes: https://elijahpaul.io/writing (RSS: https://elijahpaul.io/rss.xml)
+- Thinking: https://elijahpaul.io/writing (RSS: https://elijahpaul.io/rss.xml)
 
 ## Work
 

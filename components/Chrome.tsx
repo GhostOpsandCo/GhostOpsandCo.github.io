@@ -5,7 +5,7 @@ import { NavLinks } from "./NavLinks";
 
 const nav = [
   { href: "/work", label: "Work" },
-  { href: "/writing", label: "Trench Notes" },
+  { href: "/writing", label: "Thinking" },
 ];
 
 export function Header() {

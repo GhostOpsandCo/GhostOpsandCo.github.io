@@ -5,11 +5,12 @@ import { formatShort, getAllPosts, getNextPost } from "@/lib/posts";
 import { site } from "@/lib/site";
 import { Bot } from "@/components/Bot";
 
-const now = [
-  { k: "Hot Bot", v: "Your own trading team. Specialist bots that snipe, filter and trade on Solana. Co-founded with @0xWhoismax.", meta: "2026 to now", href: site.hotbot },
-  { k: "AnsemHack", v: "Joined on the final day. Took the W.", meta: "Oct 2026", href: site.hotbotX },
-  { k: "Monarch Shield", v: "Your agent can pay without a policy check? Build fails.", meta: "2026", href: "https://github.com/ghostmonarch/x402ms" },
-  { k: "GhostOps", v: "My internal OS of agents. A year of runs. Everything else is built on it.", meta: "2025 to now", href: "https://github.com/GhostOpsandCo/agent-orchestration" },
+const contributions = [
+  { k: "Hot Bot", v: "Your own trading team. Specialist bots that snipe, filter and trade on Solana. Co-founded with @0xWhoismax.", href: site.hotbot },
+  { k: "Anchorage Digital Bank", v: "Worked with the team on an x402 gateway to an agentic banking platform.", href: "https://www.anchorage.com" },
+  { k: "Gate AI", v: "AI lead for internal integrations and product rollout.", href: "https://www.gate.com" },
+  { k: "x402", v: "Contributor to open source security guardrails and privacy policy.", href: "https://github.com/ghostmonarch/x402ms" },
+  { k: "GhostOps", v: "My internal OS of agents. A year of runs. Everything else is built on it.", href: "https://github.com/GhostOpsandCo/agent-orchestration" },
 ];
 
 const WORKED = [
@@ -103,7 +104,7 @@ export default function Home() {
 
       <section className="block">
         <div className="frame grid12">
-          <Label n="01" bot="purple" flip>Trench Notes</Label>
+          <Label n="01" bot="purple" flip>Thinking</Label>
           <ol className="index">
             {next && (
               <li className="reveal">
@@ -123,21 +124,20 @@ export default function Home() {
                 </Link>
               </li>
             ))}
-            <li className="reveal"><Link href="/writing" className="more mono">All notes →</Link></li>
+            <li className="reveal"><Link href="/writing" className="more mono">All posts →</Link></li>
           </ol>
         </div>
       </section>
 
       <section className="block">
         <div className="frame grid12">
-          <Label n="02">Now</Label>
+          <Label n="02">My Contributions</Label>
           <ol className="index">
-            {now.map((r) => (
+            {contributions.map((r) => (
               <li key={r.k} className="reveal">
                 <a href={r.href} target="_blank" rel="noreferrer" className="irow">
                   <span className="i-title">{r.k}</span>
                   <span className="i-desc">{r.v}</span>
-                  <span className="i-meta mono">{r.meta}</span>
                 </a>
               </li>
             ))}

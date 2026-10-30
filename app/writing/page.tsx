@@ -4,7 +4,7 @@ import { Bot } from "@/components/Bot";
 import { formatShort, getAllPosts } from "@/lib/posts";
 
 export const metadata: Metadata = {
-  title: "Trench Notes",
+  title: "Thinking",
   description: "Elijah Paul writing from the build: Hot Bot, agentic trading, x402 agent payments and running a year of agents on GhostOps.",
   alternates: { canonical: "/writing", types: { "application/rss+xml": "/rss.xml" } },
 };
@@ -16,7 +16,7 @@ export default function WritingIndex() {
       <header className="page-head frame">
         <Bot name="purple" className="page-bot float" flip />
         <p className="mono dim rise">{posts.length} posts</p>
-        <h1 className="page-title rise">Trench Notes</h1>
+        <h1 className="page-title rise">Thinking</h1>
         <p className="page-sub rise">Notes from the build, posted as it happens.</p>
       </header>
       <section className="frame">

@@ -27,7 +27,7 @@ ${post.tags.map((tag) => `      <category>${esc(tag)}</category>`).join("\n")}
   const xml = `<?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/">
   <channel>
-    <title>Elijah Paul | Trench Notes</title>
+    <title>Elijah Paul | Thinking</title>
     <link>${site.url}/writing/</link>
     <description>Building in public: Hot Bot, agentic trading, AI agents, and x402.</description>
     <language>en-us</language>

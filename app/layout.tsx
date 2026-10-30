@@ -27,7 +27,7 @@ export const metadata: Metadata = {
   authors: [{ name: "Elijah Paul", url: site.url }],
   creator: "Elijah Paul",
   publisher: "Elijah Paul",
-  alternates: { canonical: "/", types: { "application/rss+xml": [{ url: "/rss.xml", title: "Elijah Paul | Trench Notes" }] } },
+  alternates: { canonical: "/", types: { "application/rss+xml": [{ url: "/rss.xml", title: "Elijah Paul | Thinking" }] } },
   openGraph: {
     title: "Elijah Paul",
     description: site.description,

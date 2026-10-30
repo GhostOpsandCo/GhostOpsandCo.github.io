@@ -65,7 +65,7 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
       />
       <article className="article">
         <header className="art-head">
-          <p className="mono dim art-crumb rise"><Link href="/writing">← Trench Notes</Link></p>
+          <p className="mono dim art-crumb rise"><Link href="/writing">← Thinking</Link></p>
           <h1 className="art-title rise">{post.title}</h1>
           <dl className="art-meta mono rise">
             <div><dt>Published</dt><dd><time dateTime={post.date}>{formatDate(post.date)}</time></dd></div>
