@@ -2,7 +2,7 @@
 import Link from "next/link";
 import { Label } from "@/components/Chrome";
 import { formatShort, getAllPosts } from "@/lib/posts";
-import { experience } from "@/lib/resume";
+import { experience } from "@/lib/experience";
 import { projects, site } from "@/lib/site";
 
 const now = [
@@ -143,12 +143,11 @@ export default function Home() {
           <ol className="index">
             {experience.map((r) => (
               <li key={r.company + r.role} className="reveal">
-                <Link href="/resume" className="irow">
+                <div className="irow">
                   <span className="i-title">{r.company}</span>
                   <span className="i-desc">{r.role}</span>
                   <span className="i-meta mono">{r.dates.replace(/January |February |March |April |May |June |July |August |September |October |November |December /g, "")}</span>
-                  <span className="i-arrow" aria-hidden="true">→</span>
-                </Link>
+                </div>
               </li>
             ))}
           </ol>

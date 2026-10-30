@@ -12,7 +12,6 @@ GitHub: https://github.com/GhostOpsandCo
 
 - Work: https://elijahpaul.io/work
 - Writing: https://elijahpaul.io/writing (RSS: https://elijahpaul.io/rss.xml)
-- Record: https://elijahpaul.io/resume
 
 ## Work
 

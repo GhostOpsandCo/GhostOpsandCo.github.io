@@ -16,7 +16,6 @@ const pages = [
   ["/work/treasury-router", "work/treasury-router/index.html"],
   ["/work/gridsynapse", "work/gridsynapse/index.html"],
   ["/work/x402-agent-payments", "work/x402-agent-payments/index.html"],
-  ["/resume", "resume/index.html"],
 ];
 
 const requiredFiles = [
@@ -25,7 +24,6 @@ const requiredFiles = [
   "rss.xml",
   "llms.txt",
   "manifest.webmanifest",
-  "downloads/elijah-paul-resume.pdf",
   "projects/venture-labs-control-room.png",
   "projects/orelis-latest.png",
   "projects/team-take-down.png",

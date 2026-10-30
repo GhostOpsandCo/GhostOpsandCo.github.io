@@ -17,7 +17,6 @@ Public portfolio for Elijah Paul, an AI solutions architect and product builder 
 - `/work/[slug]/` — detailed product case studies
 - `/services/` — productized AI services
 - `/about/` — background and working method
-- `/resume/` — experience and downloadable resume
 - `/contact/` — inquiry paths
 - `/treasuryrouter/` — preserved static Treasury Router concept page
 

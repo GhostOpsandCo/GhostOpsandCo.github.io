@@ -1,5 +1,5 @@
 import { getAllPosts } from "@/lib/posts";
-import { experience } from "@/lib/resume";
+import { experience } from "@/lib/experience";
 import { projects, site } from "@/lib/site";
 
 export const dynamic = "force-static";
@@ -18,7 +18,7 @@ export function GET() {
     docs.push({ t: p.name, u: `/work/${p.slug}/`, a: `${p.name}: ${p.summary}`, x: `${p.name} ${p.category} ${p.keywords.join(" ")} ${p.summary} ${body} ${p.limits.join(" ")}` });
   }
   for (const r of experience) {
-    docs.push({ t: `${r.company}, ${r.role}`, u: "/resume/", a: `${r.company} (${r.dates}): ${r.summary}`, x: `${r.company} ${r.role} ${r.dates} ${r.summary} ${r.bullets.join(" ")}` });
+    docs.push({ t: `${r.company}, ${r.role}`, u: "/", a: `${r.company} (${r.dates}): ${r.summary}`, x: `${r.company} ${r.role} ${r.dates} ${r.summary} ${r.bullets.join(" ")}` });
   }
   docs.push(
     { t: "Hot Bot", u: site.hotbot, a: "Hot Bot is my company. Agentic trading on Solana, co-founded with @0xWhoismax. SniperBot gets in, ShieldBot filters the junk, TraderBot runs the position. Co-won AnsemHack, live 24 days later.", x: "hot bot hotbot company startup solana trading agentic sniperbot shieldbot traderbot portfolios ansemhack 0xwhoismax wrapper building shipping now" },
