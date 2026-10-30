@@ -1,48 +1,38 @@
 import type { Metadata } from "next";
-import Image from "next/image";
-import { ProjectCard } from "@/components/ProjectCard";
+import Link from "next/link";
 import { projects } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "AI Product Builder Portfolio",
-  description:
-    "Selected AI product work by Elijah Paul across voice agents, creator protection, financial workflows, compute procurement, venture systems, and x402 agent payments.",
+  title: "Work",
+  description: "What Elijah Paul has shipped: Monarch Shield for x402 payments, Treasury Router at Gate, Venture Labs on GhostOps, Orelis voice agents, Team Take Down and GridSynapse.",
   alternates: { canonical: "/work" },
-  openGraph: {
-    title: "AI Product Builder Portfolio | Elijah Paul",
-    description: "Inspect the problem, workflow, build, evidence, and operating boundary behind each product.",
-    url: "/work",
-    images: ["/projects/venture-labs-control-room.png"],
-  },
 };
 
-export default function WorkPage() {
+export default function WorkIndex() {
   return (
-    <main id="main-content">
-      <section className="page-hero page-hero-work">
-        <div className="site-shell page-hero-grid">
-          <div>
-            <p className="eyebrow">Selected work</p>
-            <h1>AI products built around real customer and operating problems.</h1>
-          </div>
-          <p className="large-copy">
-            Each case study shows the customer problem, product decisions, working surface, and
-            operating boundaries, so you can evaluate how I turn ambiguity into something a team can
-            test and improve.
-          </p>
-        </div>
-        <div className="work-preview-strip" aria-hidden="true">
-          {projects.map((project) => (
-            <div key={project.slug}><Image src={project.image} alt="" fill loading="eager" sizes="25vw" /></div>
+    <main id="main">
+      <header className="page-head frame">
+        <p className="mono dim rise">{String(projects.length).padStart(2, "0")} shipped</p>
+        <h1 className="page-title rise">Work</h1>
+        <p className="page-sub rise">What it does. What it doesn&apos;t. Receipts on both.</p>
+      </header>
+      <section className="frame">
+        <div className="table-head table-work mono dim"><span>No.</span><span>System</span><span>Type</span><span>Status</span></div>
+        <ol className="index index-flush">
+          {projects.map((p, i) => (
+            <li key={p.slug} className="reveal">
+              <Link href={`/work/${p.slug}`} className="trow trow-work">
+                <span className="mono dim">{String(i + 1).padStart(2, "0")}</span>
+                <span>
+                  <span className="t-title">{p.name}</span>
+                  <span className="t-desc">{p.shortOutcome}</span>
+                </span>
+                <span className="mono dim">{p.category}</span>
+                <span className="mono dim">{p.status}</span>
+              </Link>
+            </li>
           ))}
-        </div>
-      </section>
-      <section className="section-band">
-        <div className="site-shell project-grid project-grid-editorial">
-          {projects.map((project, index) => (
-            <ProjectCard key={project.slug} project={project} featured={index < 2} reverse={index === 1} />
-          ))}
-        </div>
+        </ol>
       </section>
     </main>
   );

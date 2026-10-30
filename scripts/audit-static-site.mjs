@@ -8,6 +8,7 @@ const siteUrl = "https://elijahpaul.io";
 
 const pages = [
   ["/", "index.html"],
+  ["/writing", "writing/index.html"],
   ["/work", "work/index.html"],
   ["/work/venture-labs", "work/venture-labs/index.html"],
   ["/work/orelis", "work/orelis/index.html"],
@@ -15,15 +16,13 @@ const pages = [
   ["/work/treasury-router", "work/treasury-router/index.html"],
   ["/work/gridsynapse", "work/gridsynapse/index.html"],
   ["/work/x402-agent-payments", "work/x402-agent-payments/index.html"],
-  ["/services", "services/index.html"],
-  ["/about", "about/index.html"],
   ["/resume", "resume/index.html"],
-  ["/contact", "contact/index.html"],
 ];
 
 const requiredFiles = [
   "robots.txt",
   "sitemap.xml",
+  "rss.xml",
   "llms.txt",
   "manifest.webmanifest",
   "downloads/elijah-paul-resume.pdf",

@@ -1,23 +1,26 @@
 import type { Metadata, Viewport } from "next";
-import { SiteFooter } from "@/components/SiteFooter";
-import { SiteHeader } from "@/components/SiteHeader";
+import { Footer, Header } from "@/components/Chrome";
+import { JsonLd } from "@/components/JsonLd";
+import { SiteBot } from "@/components/SiteBot";
+import { personJsonLd } from "@/lib/person";
 import { site } from "@/lib/site";
 import "./globals.css";
+
 
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
   title: {
-    default: "Elijah Paul | AI Solutions Architect & Product Builder",
+    default: "Elijah Paul",
     template: "%s | Elijah Paul",
   },
   description: site.description,
-  applicationName: "Elijah Paul Portfolio",
+  applicationName: "Elijah Paul",
   authors: [{ name: "Elijah Paul", url: site.url }],
   creator: "Elijah Paul",
   publisher: "Elijah Paul",
-  alternates: { canonical: "/" },
+  alternates: { canonical: "/", types: { "application/rss+xml": [{ url: "/rss.xml", title: "Elijah Paul | Writing" }] } },
   openGraph: {
-    title: "Elijah Paul | AI Solutions Architect & Product Builder",
+    title: "Elijah Paul",
     description: site.description,
     type: "website",
     url: site.url,
@@ -27,13 +30,14 @@ export const metadata: Metadata = {
         url: "/projects/venture-labs-control-room.png",
         width: 2400,
         height: 1500,
-        alt: "Elijah Paul's Venture Labs product decision control room",
+        alt: "Elijah Paul",
       },
     ],
   },
   twitter: {
+    creator: "@elijahintek",
     card: "summary_large_image",
-    title: "Elijah Paul | AI Solutions Architect & Product Builder",
+    title: "Elijah Paul",
     description: site.description,
     images: ["/projects/venture-labs-control-room.png"],
   },
@@ -47,18 +51,20 @@ export const metadata: Metadata = {
 export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
-  colorScheme: "light",
-  themeColor: "#f7f8fb",
+  colorScheme: "dark",
+  themeColor: "#000000",
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en">
       <body>
-        <a className="skip-link" href="#main-content">Skip to content</a>
-        <SiteHeader />
+        <JsonLd data={personJsonLd} />
+        <a className="skip-link" href="#main">Skip to content</a>
+        <Header />
         {children}
-        <SiteFooter />
+        <Footer />
+        <SiteBot />
       </body>
     </html>
   );

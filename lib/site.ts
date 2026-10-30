@@ -1,13 +1,21 @@
 export const site = {
   name: "Elijah Paul",
-  title: "AI Solutions Architect & Product Builder",
+  title: "Co-founder, Hot Bot",
   description:
-    "AI product builder helping crypto, fintech, voice AI, venture, and creator-protection teams turn stuck workflows into usable products with clear evidence, limits, and handoff.",
+    "Elijah Paul is co-founder of Hot Bot, a team of specialist trading bots on Solana. Co-won AnsemHack after joining on the final day. Before that: a year of agent orchestration (GhostOps) and Monarch Shield for x402 payments.",
   url: "https://elijahpaul.io",
   email: "elijah@elijahpaul.io",
   linkedin: "https://www.linkedin.com/in/elijahpaul",
   github: "https://github.com/GhostOpsandCo",
+  x: "https://x.com/elijahintek",
+  xHandle: "@elijahintek",
+  hotbot: "https://usehotbot.com",
+  hotbotX: "https://x.com/usehotbot",
 };
+
+export const sameAs = [site.linkedin, site.github, site.x];
+
+export type Section = { h: string; lines: string[] };
 
 export type Project = {
   slug: string;
@@ -17,396 +25,278 @@ export type Project = {
   summary: string;
   metaDescription: string;
   shortOutcome: string;
-  whatItDoes: string;
-  benefits: string[];
   keywords: string[];
   image: string;
   imageAlt: string;
   liveUrl?: string;
   sourceUrl?: string;
-  primaryAction: string;
-  primaryIntent: string;
   skills: string[];
-  role: string;
-  challenge: string;
-  approach: string[];
-  workflow: string[];
-  proof: string[];
-  boundary: string;
-  availability: string;
+  sections: Section[];
+  limits: string[];
 };
 
 export const projects: Project[] = [
   {
-    slug: "venture-labs",
-    name: "Venture Labs",
-    category: "Product decision system",
-    status: "Doc-backed control room concept",
-    summary:
-      "A control-room concept for deciding which ideas deserve engineering time. It routes ventures through intake, research, red-team review, a build/hold/kill decision, PRD, architecture, QA, and launch planning before build work starts.",
+    slug: "x402-agent-payments",
+    name: "Monarch Shield",
+    category: "x402 payment safety",
+    status: "Open source",
+    summary: "One command that fails your build when an agent can pay without a policy check.",
     metaDescription:
-      "Venture Labs is a GhostOps product decision control room for moving startup ideas through research, red-team review, decision gates, PRD, architecture, QA, and launch planning.",
-    shortOutcome:
-      "Shows how I turn a crowded idea queue into a decision path with stages, evidence, approval gates, QA, and a hard stop when the idea does not deserve engineering time.",
-    whatItDoes:
-      "Venture Labs gives founders and operators one place to turn raw ideas into a build, hold, or kill decision with the required work product for each stage.",
-    benefits: [
-      "Prevents expensive build work from starting until research, red-team review, and a decision record exist.",
-      "Shows how agent roles, state, evidence, QA, and approval gates work together before engineering starts.",
-      "Turns startup ideas into work a founder, investor, operator, or engineering team can inspect before funding the build.",
+      "Monarch Shield is an open-source CLI and CI check for x402 agent payments. It fails the build when a paid client call has no policy guard. Local, no account, no API key.",
+    shortOutcome: "Fails the build when an agent can pay without a policy check.",
+    keywords: ["x402", "agent payments", "CI", "CLI", "static analysis", "open source"],
+    image: "/projects/monarch-shield.png",
+    imageAlt: "Monarch Shield website: agents move money now, run this first",
+    liveUrl: "https://x402ms.ai/",
+    sourceUrl: "https://github.com/GhostMonarch/x402ms",
+    skills: ["x402", "CLI tooling", "CI/CD", "Static analysis", "TypeScript"],
+    sections: [
+      {
+        h: "Agents Have Wallets Now",
+        lines: [
+          "Copy the x402 quickstart, ship it, and your agent pays whatever it gets asked to pay.",
+          "No spend limit. No deny path.",
+          "You find out when the bill shows up.",
+        ],
+      },
+      {
+        h: "Run This First",
+        lines: [
+          "npx @monarch-shield/x402 doctor --ci --strict",
+          "Doctor scans JS and TS for paid client calls.",
+          "No recognized abort or deny before payment? The build fails.",
+          "If it can't finish the analysis, it fails closed.",
+        ],
+      },
+      {
+        h: "No Fake Guards",
+        lines: [
+          "Hooks that only log don't pass.",
+          "Hooks registered after the paid call don't pass.",
+          "Abort branches that can never run don't pass.",
+          "Lookalikes don't pass either.",
+        ],
+      },
+      {
+        h: "Where It Runs",
+        lines: [
+          "On your machine. No account, no API key.",
+          "JSON for CI, SARIF for code scanning, a GitHub Action for PRs.",
+          "MIT licensed.",
+        ],
+      },
     ],
-    keywords: ["product decision system", "venture studio", "startup validation", "AI workflow", "decision gates", "QA"],
-    image: "/projects/venture-labs-control-room.png",
-    imageAlt: "GhostOps Venture Labs dashboard showing a sample venture queue, decision gate, artifact readiness, and stage controls",
-    primaryAction: "View case study",
-    primaryIntent: "venture product decision system",
-    skills: ["Product decision systems", "Product strategy", "Workflow architecture", "Evidence systems", "QA gates", "Venture validation"],
-    role:
-      "Designed the stage model, review roles, state layer, work-product requirements, decision gates, QA controls, and public dashboard concept.",
-    challenge:
-      "Teams with AI agents, builders, and multiple product ideas need a way to decide what should be built, what should be killed, what still needs evidence, and what must stay blocked.",
-    approach: [
-      "Designed the venture path as a product decision system instead of a loose planning doc.",
-      "Separated routing, validation, state tracking, work-product contracts, stage ownership, and QA so each agent or operator has a clear job.",
-      "Made the decision gate the point where research, red-team risk, and build readiness meet.",
-      "Rendered the dashboard as a portfolio-safe concept that shows the architecture without pretending it is live production ops.",
+    limits: [
+      "It runs at build time. It doesn't block a payment at runtime.",
+      "It checks one file and follows its imports. It doesn't prove your policy is right.",
     ],
-    workflow: [
-      "Ingest the venture idea",
-      "Produce the research pack",
-      "Write the red report",
-      "Record the kill, hold, or build decision",
-      "Start the PRD, architecture, build package, QA review, and launch memo only after the decision is explicit",
-    ],
-    proof: [
-      "Verified GhostOps Venture Studio OS and technical architecture docs",
-      "Explicit intake to launch-memo stage model",
-      "Defined review roles, state tracking, and work-product responsibilities",
-      "Rendered dashboard concept with a clear illustrative boundary",
-    ],
-    boundary:
-      "The Venture Labs control room is an illustrative concept based on internal GhostOps system docs. It is not a live production dashboard, customer result, revenue claim, autonomous startup launch claim, or proof that every stage has been automated.",
-    availability:
-      "Available for product decision systems, venture-studio workflows, validation systems, and AI workflow architecture discussions.",
-  },
-  {
-    slug: "orelis",
-    name: "Orelis",
-    category: "Voice agent product",
-    status: "Commercial voice-agent demo",
-    summary:
-      "A focused inbound voice-agent offer for service businesses. Faith answers routed calls, qualifies the request, and prepares a booking request, structured summary, or human handoff.",
-    metaDescription:
-      "Orelis is a configurable AI voice-assistant service for service businesses that handles routed inbound-call intake, qualification, and prepared booking or human handoff.",
-    shortOutcome:
-      "Turns missed-call risk into a clear intake, qualification, and handoff workflow that a service business can evaluate from a real example call.",
-    whatItDoes:
-      "Orelis gives a service business one approved voice assistant, one routed number, and one call flow for missed calls, after-hours inquiries, and overflow.",
-    benefits: [
-      "Captures high-intent inbound demand when the team cannot answer.",
-      "Keeps qualification, urgency, and next-step details consistent.",
-      "Gives operators a scan-ready handoff instead of a vague voicemail.",
-    ],
-    keywords: ["voice AI", "missed calls", "high-ticket services", "intake", "qualification", "handoff"],
-    image: "/projects/orelis-latest.png",
-    imageAlt: "Latest Orelis website showing Faith, the example voice call, and Book a setup call action",
-    liveUrl: "https://orelis.io/",
-    primaryAction: "Open product",
-    primaryIntent: "voice AI agent for service businesses",
-    skills: ["Voice AI", "Conversation design", "B2B SaaS", "Lead qualification", "Product UX"],
-    role:
-      "Product positioning, conversation workflow, service-business use case, brand direction, UX, demo experience, and commercial packaging.",
-    challenge:
-      "High-ticket service businesses lose opportunities when inbound calls go unanswered or qualification and handoff details are inconsistent.",
-    approach: [
-      "Designed a clear caller journey from greeting through qualification and next step.",
-      "Kept the experience focused on business outcomes instead of generic chatbot features.",
-      "Created a branded product surface that can be adapted to different service categories.",
-      "Made human escalation and operator handoff part of the workflow rather than an exception.",
-    ],
-    workflow: [
-      "Answer the inbound request",
-      "Capture contact and service details",
-      "Qualify urgency and fit",
-      "Prepare a booking, summary, or operator handoff",
-      "Give the business a consistent follow-up record",
-    ],
-    proof: [
-      "Public product site with Faith as the primary example assistant",
-      "Listen-only 1:44 example call with identifying details redacted",
-      "Visible setup-call CTA and handoff summary pattern",
-      "Public boundary language for providers, workflow approval, and results",
-    ],
-    boundary:
-      "Orelis is a public commercial demo. Production telephony, CRM integrations, uptime, booking behavior, and customer outcomes depend on the final provider setup and tested workflow.",
-    availability:
-      "Available for custom voice-agent builds and commercial implementation discussions.",
-  },
-  {
-    slug: "team-take-down",
-    name: "Team Take Down",
-    category: "Creator protection platform",
-    status: "Public product foundation",
-    summary:
-      "A release-first creator protection workflow that prepares protected videos, watches accessible public sites after release, organizes proof, prepares takedown requests, and tracks outcomes with creator review.",
-    metaDescription:
-      "Team Take Down is a creator protection platform for release preparation, public-site leak checks, evidence organization, takedown support, and outcome tracking.",
-    shortOutcome:
-      "Turns leak cleanup into one controlled workspace from protected upload to evidence, creator approval, takedown support, and checked result.",
-    whatItDoes:
-      "Team Take Down clears private file details, adds private video and audio match signals, checks the finished MP4, watches accessible public sites, and keeps evidence and takedown follow-up connected.",
-    benefits: [
-      "Protects releases before they go public instead of reacting after proof is scattered.",
-      "Keeps match reasons, screenshots, filing routes, receipts, and outcomes in one place.",
-      "Keeps the creator in control of the final legal approval before any request is sent.",
-    ],
-    keywords: ["creator protection", "release watch", "digital fingerprinting", "evidence workflow", "takedown support", "privacy"],
-    image: "/projects/team-take-down.png",
-    imageAlt: "Team Take Down creator workspace showing protected release status, priorities, and recent protection activity",
-    liveUrl: "https://teamtakedown.xyz/",
-    primaryAction: "Open product",
-    primaryIntent: "creator content protection workflow",
-    skills: ["Creator protection", "AI workflows", "Digital fingerprinting", "Evidence systems", "Privacy UX", "Human review"],
-    role:
-      "Product strategy, creator workflow, privacy boundary, evidence model, dashboard UX, release positioning, and launch planning.",
-    challenge:
-      "Creators need a way to protect private media before release, recognize possible copies after release, organize proof, and approve takedown action without building a permanent media library or losing control of legal decisions.",
-    approach: [
-      "Designed the workflow around release preparation, not only post-leak cleanup.",
-      "Kept private media minimization, creator approval, evidence capture, and outcome checks visible in the product model.",
-      "Separated possible-copy detection from confirmed legal action so the product does not overclaim what it can see.",
-      "Built the creator workspace around the actions a creator actually needs next: protect, find, remove, and track.",
-    ],
-    workflow: [
-      "Upload and prepare a protected MP4",
-      "Remove private file details and add private match signals",
-      "Watch accessible public sites after release",
-      "Organize source links, screenshots, match reasons, and filing route",
-      "Ask the creator to approve the request and track the outcome",
-    ],
-    proof: [
-      "Public marketing site and creator workspace surface",
-      "Release Watch, evidence, review, request, and result states",
-      "Public privacy boundary that avoids whole-internet or guaranteed-removal claims",
-      "Creator-approved legal action model instead of autonomous takedowns",
-    ],
-    boundary:
-      "Team Take Down watches public sites it can legally access. It does not search private groups, locked accounts, paywalls, encrypted services, or the whole internet, and it does not guarantee every edited copy will be found or removed.",
-    availability:
-      "Available for creator-protection workflow builds, product strategy, and implementation discussions.",
   },
   {
     slug: "treasury-router",
     name: "Treasury Router",
-    category: "AI financial workflow",
-    status: "Working advisor prototype",
-    summary:
-      "A governed advisor workspace that surfaces modeled idle-capital opportunities, stages client cases, filters approved routes, prepares client materials, and keeps execution behind human approval.",
+    category: "AI advisor workflow",
+    status: "Prototype",
+    summary: "Built at Gate. An advisor workspace that finds idle capital across a VIP book and preps the client case. A human signs off on every move.",
     metaDescription:
-      "Treasury Router is a governed AI advisor workflow for modeled idle-capital analysis, controlled product matching, client materials, and human-approved handoff.",
-    shortOutcome:
-      "Turns an AI financial workflow idea into a working advisor surface that stakeholders can inspect, test, and discuss without giving the AI authority over funds.",
-    whatItDoes:
-      "Treasury Router ranks idle-capital opportunities across a VIP book, opens the highest-impact client case, prepares an advisor review path, and creates a clean handoff packet.",
-    benefits: [
-      "Shows advisors which client case deserves attention first.",
-      "Turns route analysis into a packet a human can review with the client.",
-      "Protects the workflow with deterministic controls and explicit execution boundaries.",
-    ],
-    keywords: ["AI treasury", "idle capital", "advisor workflow", "financial UX", "human approval", "x402"],
+      "Treasury Router: an AI advisor workflow built at Gate. Finds modeled idle capital, stages client cases, preps materials, and keeps every move behind human approval. Includes an x402 testnet flow.",
+    shortOutcome: "Finds idle capital, preps the case. A human approves every move.",
+    keywords: ["AI advisor", "idle capital", "x402", "Gate", "human approval"],
     image: "/projects/treasury-router-dashboard.png",
-    imageAlt: "Treasury Router advisor dashboard showing idle-capital opportunities and a client case workflow",
+    imageAlt: "Treasury Router advisor dashboard with idle-capital opportunities and a client case",
     liveUrl: "https://treasuryrouter.xyz/treasuryrouter/",
-    primaryAction: "View public concept",
-    primaryIntent: "AI financial advisor workflow",
-    skills: ["AI product strategy", "Next.js", "TypeScript", "x402", "Financial UX", "Human approval"],
-    role:
-      "Product strategy, workflow design, UX/UI, recommendation architecture, report design, prototyping, and x402 testnet implementation.",
-    challenge:
-      "VIP advisors need a faster way to identify idle balances, compare controlled product routes, explain tradeoffs, document approval, and hand a clean packet to operations without giving an AI agent authority over client funds.",
-    approach: [
-      "Mapped the advisor journey from opportunity detection through client approval and operations review.",
-      "Kept suitability, allocation, and eligibility logic deterministic while using Gate AI to explain and prepare materials.",
-      "Separated client-facing recommendations from internal operations packets and execution boundaries.",
-      "Added an x402 testnet proof-of-flow for paid, permissioned access to a structured recommendation package.",
+    skills: ["Product strategy", "Next.js", "TypeScript", "x402", "Financial UX"],
+    sections: [
+      {
+        h: "The Ask",
+        lines: [
+          "VIP advisors sit on books full of idle balances.",
+          "Finding them, comparing routes and writing it up for the client takes hours.",
+          "And nobody wants an AI touching client funds.",
+        ],
+      },
+      {
+        h: "The Build",
+        lines: [
+          "Rank the idle capital across the book.",
+          "Open the biggest client case first.",
+          "Filter to approved routes only. That logic is deterministic, not a model guessing.",
+          "Gate AI writes the explanation and the client packet.",
+          "The advisor approves. Ops gets a clean handoff.",
+        ],
+      },
+      {
+        h: "x402 on Testnet",
+        lines: [
+          "A paid recommendation, packaged as a work order and paid for over x402.",
+          "Policy stays in place. Execution stays with humans.",
+        ],
+      },
     ],
-    workflow: [
-      "Detect a modeled idle-capital opportunity",
-      "Apply client constraints and route-governance rules",
-      "Compare recommendation paths and rationale",
-      "Prepare advisor and client materials",
-      "Record human approval and create an operations handoff",
+    limits: [
+      "Prototype on development data.",
+      "No live client funds, no live Gate execution API, no autonomous execution.",
     ],
-    proof: [
-      "Working multi-step advisor product foundation",
-      "Deterministic route filtering and recommendation logic",
-      "Client packet and internal operations report generation",
-      "x402 testnet merchant access and human-review work-order flow",
+  },
+  {
+    slug: "venture-labs",
+    name: "Venture Labs",
+    category: "Idea to build, with a kill switch",
+    status: "Concept",
+    summary: "The GhostOps control room for deciding what deserves engineering time. Every idea has to survive a red report before anyone writes code.",
+    metaDescription:
+      "Venture Labs is the GhostOps control room for startup ideas: research, a red report that tries to kill the idea, a build/hold/kill gate, then PRD, build, QA and launch.",
+    shortOutcome: "Every idea has to survive a red report before anyone writes code.",
+    keywords: ["GhostOps", "venture studio", "decision gates", "agents"],
+    image: "/projects/venture-labs-control-room.png",
+    imageAlt: "Venture Labs dashboard with a venture queue, decision gate and stage controls",
+    skills: ["Agent orchestration", "Product strategy", "QA gates"],
+    sections: [
+      {
+        h: "Too Many Ideas",
+        lines: [
+          "Agents make it cheap to start things.",
+          "That's the problem. You end up building everything and finishing nothing.",
+        ],
+      },
+      {
+        h: "Try to Kill It First",
+        lines: [
+          "Idea comes in. Agents build the research pack.",
+          "Then a red report. Its only job is to kill the idea.",
+          "Build, hold or kill. Written down.",
+          "Only a build gets a PRD, architecture, QA and a launch plan.",
+        ],
+      },
+      {
+        h: "Runs on GhostOps",
+        lines: [
+          "Same harness as everything else I run.",
+          "Roles, state, evidence and hard gates. No agent skips a stage.",
+        ],
+      },
     ],
-    boundary:
-      "Built while working with Gate AI. The public material shows a working prototype using deterministic development data. It does not use live client funds, a live Gate execution API, or autonomous execution.",
-    availability:
-      "This employer-context case study demonstrates product and solution-architecture capability. It is not offered for acquisition or independent licensing.",
+    limits: [
+      "The dashboard is a concept built from the internal GhostOps docs.",
+      "It's not a live ops dashboard and not a customer result.",
+    ],
+  },
+  {
+    slug: "orelis",
+    name: "Orelis",
+    category: "Voice agent",
+    status: "Demo",
+    summary: "Faith picks up the calls your team misses, qualifies the caller and hands you a summary you can act on.",
+    metaDescription:
+      "Orelis is a voice agent for service businesses. Faith answers missed and after-hours calls, qualifies the caller, and preps a booking request or a human handoff.",
+    shortOutcome: "Picks up the calls you miss. Hands you a summary, not a voicemail.",
+    keywords: ["voice AI", "missed calls", "service business", "intake"],
+    image: "/projects/orelis-latest.png",
+    imageAlt: "Orelis website with Faith, the example call and the setup call button",
+    liveUrl: "https://orelis.io/",
+    skills: ["Voice AI", "Conversation design", "Product UX"],
+    sections: [
+      {
+        h: "Missed Calls Are Missed Money",
+        lines: [
+          "High-ticket service businesses lose deals on the calls nobody answers.",
+          "A voicemail doesn't qualify anyone.",
+        ],
+      },
+      {
+        h: "Meet Faith",
+        lines: [
+          "Answers the routed call.",
+          "Gets the contact, the service and how urgent it is.",
+          "Preps a booking request or hands off to a human.",
+          "Your team gets one clean record every time.",
+        ],
+      },
+      {
+        h: "Hear It",
+        lines: ["There's a real 1:44 example call on the site. Details redacted."],
+      },
+    ],
+    limits: ["Public demo. Telephony, CRM hookups and uptime depend on the final setup."],
+  },
+  {
+    slug: "team-take-down",
+    name: "Team Take Down",
+    category: "Creator protection",
+    status: "Foundation",
+    summary: "Protect the release before it leaks. Then find the copies, keep the receipts and file takedowns the creator signs off on.",
+    metaDescription:
+      "Team Take Down protects creator releases before they go public, watches accessible public sites for copies, organizes evidence and preps takedowns the creator approves.",
+    shortOutcome: "Protect the release first. Find the copies, keep the receipts.",
+    keywords: ["creator protection", "takedown", "fingerprinting", "evidence"],
+    image: "/projects/team-take-down.png",
+    imageAlt: "Team Take Down workspace with protected release status and recent activity",
+    liveUrl: "https://teamtakedown.xyz/",
+    skills: ["Creator protection", "Fingerprinting", "Privacy UX"],
+    sections: [
+      {
+        h: "Cleanup Is Too Late",
+        lines: [
+          "Most leak tools show up after the damage.",
+          "By then the proof is scattered everywhere.",
+        ],
+      },
+      {
+        h: "Release First",
+        lines: [
+          "Strip private file details from the MP4.",
+          "Add private video and audio match signals.",
+          "Watch accessible public sites after release.",
+          "Keep links, screenshots and match reasons in one place.",
+          "Creator approves. Request goes out. Outcome gets checked.",
+        ],
+      },
+    ],
+    limits: [
+      "It doesn't search the whole internet.",
+      "It can't promise every copy gets found or removed.",
+    ],
   },
   {
     slug: "gridsynapse",
     name: "GridSynapse",
-    category: "Compute planning",
-    status: "Public product foundation",
-    summary:
-      "A buyer-side compute planning workflow that compares public GPU pricing and carbon inputs, applies workload constraints, and gives teams a ranked shortlist before they buy.",
+    category: "GPU buying",
+    status: "Foundation",
+    summary: "Compare GPU providers on public price and carbon data, run your constraints, get a ranked shortlist before you spend a dollar.",
     metaDescription:
-      "GridSynapse compares public GPU pricing and carbon data, applies workload constraints, and helps teams review compute options before they commit spend.",
-    shortOutcome:
-      "Demonstrates how live public inputs, deterministic optimization, and operational approvals can replace spreadsheet-heavy compute sourcing.",
-    whatItDoes:
-      "GridSynapse turns fragmented compute options into a ranked procurement plan using workload constraints, public price inputs, carbon inputs, and deterministic optimization.",
-    benefits: [
-      "Helps buyers compare providers without relying on scattered spreadsheets.",
-      "Makes the tradeoff between cost, region, policy, carbon, and workload visible.",
-      "Prepares the review packet before any reservation, provisioning, or spend.",
-    ],
-    keywords: ["AI compute", "GPU procurement", "optimization", "OR-Tools", "Supabase", "decision systems"],
+      "GridSynapse compares public GPU pricing and carbon data against your workload constraints and gives you a ranked shortlist before you commit spend.",
+    shortOutcome: "Ranked GPU shortlist before you spend a dollar.",
+    keywords: ["GPU", "compute", "OR-Tools", "optimization"],
     image: "/projects/gridsynapse.png",
-    imageAlt: "GridSynapse operator console comparing compute options",
+    imageAlt: "GridSynapse console comparing compute options",
     liveUrl: "https://www.gridsynapse.xyz",
     sourceUrl: "https://github.com/GhostOpsandCo/gridsynapse-mvp",
-    primaryAction: "Open product",
-    primaryIntent: "AI compute optimization software",
-    skills: ["Optimization", "OR-Tools", "Next.js", "FastAPI", "Supabase", "Data validation"],
-    role:
-      "Product direction, information architecture, procurement workflow, optimization requirements, UX/UI, data-source integration, and release controls.",
-    challenge:
-      "Compute buyers need to compare fragmented provider options against cost, carbon, workload, region, and policy constraints without treating modeled capacity as guaranteed inventory.",
-    approach: [
-      "Normalized public provider catalog inputs into a comparable decision model.",
-      "Used deterministic optimization instead of opaque AI allocation decisions.",
-      "Separated measured public inputs from modeled capacity, latency, and availability.",
-      "Created a spend-capped review packet and SkyPilot artifact before any provider action.",
+    skills: ["OR-Tools", "Next.js", "FastAPI", "Supabase"],
+    sections: [
+      {
+        h: "Spreadsheet Hell",
+        lines: [
+          "Buying compute means tabs of provider pricing that never line up.",
+          "Region, policy, carbon and cost all pull different ways.",
+        ],
+      },
+      {
+        h: "Math, Not Vibes",
+        lines: [
+          "Public catalog pricing and UK carbon data, normalized.",
+          "A deterministic OR-Tools solver ranks the options. No model picking for you.",
+          "You get a spend-capped review packet and a SkyPilot file.",
+          "Every decision gets saved.",
+        ],
+      },
     ],
-    workflow: [
-      "Define workload and policy constraints",
-      "Compare public price and carbon inputs",
-      "Validate the ranked recommendation",
-      "Prepare procurement and deployment artifacts",
-      "Record the decision without reserving or purchasing resources",
+    limits: [
+      "Capacity, latency and availability are modeled.",
+      "It doesn't reserve GPUs or spend money.",
     ],
-    proof: [
-      "Publicly inspectable repository and working web product",
-      "Public catalog pricing and UK carbon-intensity inputs",
-      "Deterministic OR-Tools recommendation engine",
-      "Supabase-backed decision history with preview write protection",
-    ],
-    boundary:
-      "GridSynapse uses public pricing and carbon inputs. Capacity, latency, and availability are modeled. It does not discover guaranteed inventory, reserve GPUs, provision infrastructure, or spend money.",
-    availability:
-      "Available as a portfolio product foundation for product partnerships, custom implementation discussions, or acquisition inquiries.",
-  },
-  {
-    slug: "x402-agent-payments",
-    name: "Monarch Shield",
-    category: "Agent payment safety infrastructure",
-    status: "Open-source developer tool",
-    summary:
-      "A local-first CLI and CI safety gate for agent payment stacks. It detects supported money-moving code paths and fails strict checks when expected payment guards are missing.",
-    metaDescription:
-      "Monarch Shield is an open-source CLI and CI preflight for agent payment stacks, x402 flows, wallets, stablecoins, cards, paid APIs, and paid MCP tools.",
-    shortOutcome:
-      "Turns agent-payment release risk into a deterministic preflight developers and coding agents can run before real funds move.",
-    whatItDoes:
-      "Monarch Shield gives coding agents and developers one command to inspect supported payment code, catch unsafe paths, and keep a safety check in CI before launch.",
-    benefits: [
-      "Fails strict checks when supported payment code lacks the expected guard before release.",
-      "Gives reviewers reproducible proof packs instead of vague security claims.",
-      "Works locally without an account, API key, or hosted dependency to start.",
-    ],
-    keywords: ["agent payments", "x402", "payment safety", "CLI", "CI gate", "coding agents"],
-    image: "/projects/monarch-shield.png",
-    imageAlt: "Monarch Shield website showing agent payment safety infrastructure and build-time preflight",
-    liveUrl: "https://x402ms.ai/",
-    sourceUrl: "https://github.com/GhostMonarch/x402ms",
-    primaryAction: "View developer tool",
-    primaryIntent: "agent payment safety gate",
-    skills: ["x402", "CLI tooling", "CI/CD", "Static analysis", "Agent payments", "TypeScript"],
-    role:
-      "Product wedge, developer workflow, policy-guard model, CLI experience, CI behavior, testing, documentation, and public release.",
-    challenge:
-      "Agent-payment code can be merged without an explicit preflight policy check, leaving teams to find an avoidable implementation gap late in review.",
-    approach: [
-      "Focused on one detectable release-time failure mode rather than broad security claims.",
-      "Built a command developers can run locally or in CI with strict failure behavior.",
-      "Made findings deterministic and inspectable so teams can reproduce the result.",
-      "Kept runtime payment authorization and settlement outside the tool's scope.",
-    ],
-    workflow: [
-      "Scan a codebase for supported payment-code patterns",
-      "Check for a detectable policy guard",
-      "Report the finding with a reproducible command",
-      "Fail CI in strict mode when the guard is missing",
-      "Return control to the developer before release",
-    ],
-    proof: [
-      "MIT-licensed public repository",
-      "Installable CLI and CI-oriented strict mode",
-      "Public evidence tied to shipped code",
-      "Clear separation between build-time preflight and runtime enforcement",
-    ],
-    boundary:
-      "Monarch Shield is a build-time and CI preflight. It is not runtime enforcement by itself, fraud prevention, provider verification, wallet security, regulatory compliance, or settlement validation.",
-    availability:
-      "Available for open-source use. Related agent-payment workflow and integration work is available as a consulting engagement.",
-  },
-];
-
-export const services = [
-  {
-    name: "AI Product Opportunity Sprint",
-    timeline: "5-10 business days",
-    price: "Typical range: $3.5k-$7.5k",
-    summary:
-      "Find the customer or operations problem worth building before the team spends weeks on the wrong thing.",
-    deliverables: [
-      "Customer and workflow audit",
-      "Problem and opportunity map",
-      "Product concept and operating flow",
-      "Prioritized requirements and build plan",
-    ],
-    subject: "AI Product Opportunity Sprint",
-  },
-  {
-    name: "AI Product Build",
-    timeline: "3-8 weeks",
-    price: "Typical range: $15k-$40k+",
-    summary:
-      "Turn the selected workflow into a working product people can test, including the screens, logic, controls, and required integrations.",
-    deliverables: [
-      "Product and solution architecture",
-      "Working web product or agent workflow",
-      "Deterministic controls and human approvals",
-      "Testing, release readiness, and handoff",
-    ],
-    subject: "AI Product Build",
-  },
-  {
-    name: "Embedded AI Solutions Architect",
-    timeline: "Monthly engagement",
-    price: "Typical range: $10k-$18k/month",
-    summary:
-      "Work with customers, product, sales, and engineering to find the gap, shape the product, and keep the build moving.",
-    deliverables: [
-      "Customer-facing solution discovery",
-      "Product audits and technical design",
-      "Prototypes, demos, and implementation support",
-      "Product feedback and go-to-market alignment",
-    ],
-    subject: "Embedded AI Solutions Architect",
   },
 ];
 
 export function getProject(slug: string) {
   return projects.find((project) => project.slug === slug);
-}
-
-export function mailto(subject: string) {
-  return `mailto:${site.email}?subject=${encodeURIComponent(subject)}`;
 }

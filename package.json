@@ -10,6 +10,8 @@
     "test": "node scripts/audit-static-site.mjs"
   },
   "dependencies": {
+    "gray-matter": "^4.0.3",
+    "marked": "^18.1.2",
     "next": "^16.2.11",
     "react": "19.2.3",
     "react-dom": "19.2.3"
