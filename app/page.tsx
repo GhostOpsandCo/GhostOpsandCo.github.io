@@ -70,6 +70,8 @@ export default function Home() {
               <dl className="stats">
                 <div><dt>What it is</dt><dd>Agentic Trading as a Service</dd></div>
                 <div><dt>Build to launch</dt><dd>24 days. Still shipping.</dd></div>
+                <div><dt>Paying beta users</dt><dd>200</dd></div>
+                <div><dt>Waitlist</dt><dd>2,000+</dd></div>
                 <div>
                   <dt>What I do</dt>
                   <dd><ul className="hacks">{WHAT_I_DO.map((l) => <li key={l}>{l}</li>)}</ul></dd>
