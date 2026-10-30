@@ -27,7 +27,7 @@ To be clear: this is us going for it. Not a done deal. YC's next deadline is Mon
 
 YC has incubated some of the most innovative and ground-breaking tech used by billions of people.
 
-When they call out agentic trading by name, that's a stamp of approval for the whole category.
+When they call out agentic trading by name, the whole category just got validated.
 
 This is the coding agent moment for trading.
 
@@ -40,7 +40,7 @@ The last 24 hours, for context:
 - YC posts about investing in crypto startups
 - Grant Cardone bets Jason $1M that BTC hits a new ATH, and Cobie offers to escrow
 
-Signal vs noise. We know which one this is.
+One of those matters for what we're building.
 
 ## Back to Work
 

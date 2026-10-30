@@ -4,7 +4,7 @@ import { projects } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Work",
-  description: "Systems Elijah Paul has designed and shipped: agent payments, agent orchestration, voice agents, treasury workflows, and creator protection.",
+  description: "What Elijah Paul has shipped: Monarch Shield for x402 payments, Treasury Router at Gate, Venture Labs on GhostOps, Orelis voice agents, Team Take Down and GridSynapse.",
   alternates: { canonical: "/work" },
 };
 
@@ -12,9 +12,9 @@ export default function WorkIndex() {
   return (
     <main id="main">
       <header className="page-head frame">
-        <p className="mono dim rise">EP / 003 — Work · {String(projects.length).padStart(2, "0")} systems</p>
+        <p className="mono dim rise">EP / 003 · Work / {String(projects.length).padStart(2, "0")} shipped</p>
         <h1 className="page-title rise">Work</h1>
-        <p className="page-sub rise">Systems with explicit boundaries: what they do, what they don&apos;t, and the proof behind each.</p>
+        <p className="page-sub rise">What it does. What it doesn&apos;t. Receipts on both.</p>
       </header>
       <section className="frame">
         <div className="table-head table-work mono dim"><span>No.</span><span>System</span><span>Type</span><span>Status</span></div>

@@ -32,7 +32,7 @@ export function Footer() {
       <div className="frame ftr-grid">
         <div>
           <p className="ftr-big">Elijah Paul</p>
-          <p className="mono dim">Phoenix, AZ · 33.45° N, 112.07° W</p>
+          <p className="mono dim">Phoenix, AZ / 33.45° N, 112.07° W</p>
         </div>
         <ul className="ftr-links mono">
           <li><a href={`mailto:${site.email}`}>{site.email}</a></li>
@@ -41,7 +41,7 @@ export function Footer() {
           <li><a href={site.linkedin} target="_blank" rel="noreferrer">LinkedIn</a></li>
           <li><a href="/rss.xml">RSS</a></li>
         </ul>
-        <p className="mono dim ftr-note">God calls us to serve others, and I strive to follow that calling in business and life.</p>
+        <p className="mono dim ftr-note">God calls us to serve others. I try to live that in business and in life.</p>
       </div>
     </footer>
   );

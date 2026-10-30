@@ -76,7 +76,7 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
           {post.tldr && <p className="art-tldr">{post.tldr}</p>}
           <div className="prose" dangerouslySetInnerHTML={{ __html: post.html }} />
           <footer className="art-foot mono">
-            <span className="dim">Elijah Paul — <a href={site.x} target="_blank" rel="noreferrer">{site.xHandle}</a></span>
+            <span className="dim">Elijah Paul / <a href={site.x} target="_blank" rel="noreferrer">{site.xHandle}</a></span>
             <span className="art-nav">
               {prev && <Link href={`/writing/${prev.slug}`}>← {prev.title}</Link>}
               {next && <Link href={`/writing/${next.slug}`}>{next.title} →</Link>}

@@ -1,7 +1,7 @@
 ---
 title: "GhostOps, Day Zero"
 date: 2025-04-15
-tldr: "In April 2025 I started building GhostOps: my own internal OS of agents. Three versions in three weeks, then a VPS build in June. This is where everything after it came from."
+tldr: "April 15, 2025 I started GhostOps, my own OS of agents. v1, v2 and v3 in under 3 weeks. On a VPS by June. Everything I've built since runs on it."
 tags: [GhostOps, Agents, Building]
 ---
 
@@ -9,40 +9,40 @@ tags: [GhostOps, Agents, Building]
 
 April 15, 2025. First GhostOps repo.
 
-April 16. GhostOps v2.
+April 16. v2.
 
-May 5. GhostOps v3.
+May 5. v3.
 
-Not because the first two failed. Because every version taught me what the next one needed.
+Each version showed me what the next one was missing. So I kept going.
 
 ## Why Build My Own
 
-I didn't want another chat window.
+I was done with chat windows.
 
-I wanted a system. Agents with roles. Work that stacks. Results I can check.
+I wanted agents with roles, work that stacks, and results I can check.
 
-So I built the thing I wanted to use.
+Nobody was selling that. So I built it.
 
-## What v3 Added
+## v3 Got an Evolution Engine
 
-v3 got an evolution engine.
+Every agent gets a genome.
 
-Agents get a genome. Agents compete in a league. The best one becomes the champion.
+They compete in a league.
 
-A champion doesn't ship itself. Promotion to prod needs approval.
+The winner becomes champion.
 
-That rule stuck. It's still in everything I build.
+But a champion can't promote itself to prod. That takes my approval.
+
+That rule never left. It's in everything I build.
 
 ## Off the Laptop
 
-By June 2025 GhostOps moved onto a VPS. Always on. Always working.
+June 2025, GhostOps moved onto a VPS.
 
-Small step. Big change in how I worked.
+On 24/7 now. Working while I sleep.
 
-## In Closing
+## In Closing (for now)
 
 Nobody saw this part.
 
-Everything after it runs on it.
-
-Long on vision. Relentless on daily execution. 🔥🤖
+Everything after it runs on it. 🔥🤖

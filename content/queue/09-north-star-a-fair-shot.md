@@ -31,7 +31,7 @@ We've corrupted that.
 
 Coding agents made powerful, easy-to-use tech cheap and available to everyone.
 
-Opportunities that used to be locked away or too expensive opened up.
+Stuff that used to be locked away or way too expensive opened up.
 
 Now all it takes is time and effort to learn the tools.
 
@@ -41,6 +41,6 @@ Our goal is the same, for trading.
 
 User experience + top-quality tech + access for everyone.
 
-This is the future we should all be building.
+We should all be building toward that.
 
 Cleanse the trenches. 🔥🤖

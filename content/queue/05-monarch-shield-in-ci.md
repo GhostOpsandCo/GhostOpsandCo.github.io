@@ -1,7 +1,7 @@
 ---
 title: "Monarch Shield Ships: Catch Unguarded x402 Payments in CI"
 date: 2026-07-30
-tldr: "Monarch Shield is now a CI linter. It scans JS and TS for x402 v2 client calls that can pay without a policy check and fails the build. It runs locally with no account and no API key, and outputs JSON or SARIF."
+tldr: "Monarch Shield is live as a CI linter. It scans JS and TS for x402 v2 calls that can pay with no policy check and fails the build. Runs local. No account. No API key."
 tags: [x402, Security, Open Source]
 ---
 
@@ -9,38 +9,42 @@ tags: [x402, Security, Open Source]
 
 The official x402 v2 Fetch quickstart can create a payment with no app-level policy check.
 
-Copy it, ship it, and your agent pays whatever it's asked to.
+Copy it. Ship it.
 
-## The Fix
+Now your agent pays whatever it gets asked to pay.
+
+## One Command
 
 `npx @monarch-shield/x402 doctor --ci --strict`
 
-Doctor fails any file where a paid client path has no recognized abort or deny return.
+Any file with a paid client call and no abort or deny path? Fails.
 
-Add an `onBeforePaymentCreation` hook that aborts over a spend limit and it passes.
+Add an `onBeforePaymentCreation` hook that aborts over your spend limit. Passes.
 
-## What Doesn't Pass
+## No Fake Guards
 
-- Hooks that only log.
-- Hooks registered after the paid call.
-- Abort branches that can never run.
-- Hooks on a different client.
-- Lookalike guards.
+- Hooks that only log
+- Hooks registered after the paid call
+- Abort branches that can never run
+- Hooks on a different client
+- Lookalike guards
 
-If the analysis can't finish, it fails closed.
+None of those pass.
 
-## Where It Runs
+Can't finish the analysis? It fails closed.
 
-Locally. No account. No API key.
+## Runs Anywhere
 
-JSON for CI. SARIF for code scanning. A GitHub Action for pull requests.
+Local. No account. No API key.
 
-## Honest Limits
+JSON for CI. SARIF for code scanning. GitHub Action for PRs.
 
-It checks a single file and follows its imports.
+## What It Doesn't Do
 
-It doesn't prove your policy is correct, and it doesn't claim to cover all of x402.
+It checks one file and follows its imports.
 
-It catches the bug that costs you $10,000 while you sleep.
+It won't tell you your policy is right, and it doesn't cover all of x402.
 
-Security is a feature. 🛡️
+It does catch the bug that costs you $10,000 while you sleep.
+
+Go run it. 🛡️

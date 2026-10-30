@@ -25,7 +25,7 @@ I spent over a year building agent orchestration systems. GhostOps.
 
 My partner, @0xWhoismax, built a trading terminal that sold to a CEX for an undisclosed amount.
 
-We took software we'd already built and put it together, fast.
+We took what we'd already built and bolted it together. Fast.
 
 ## Turn Wallets Into Workers
 
@@ -33,6 +33,6 @@ That's Hot Bot.
 
 A team of specialist bots that trade on their own, following a strategy you set.
 
-## In Closing
+## In Closing (for now)
 
 Expand your timeline. Raise your targets. 🔥🤖

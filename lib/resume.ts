@@ -5,83 +5,77 @@ export const experience: Role[] = [
     company: "Hot Bot",
     role: "Co-founder",
     dates: "October 2026 – Present",
-    summary: "Building agentic swarm trading on Solana with @0xWhoismax: a private team of specialist bots that research, snipe, trade, and launch.",
-    bullets: ["Co-winner of the ClawPump × Ansem AnsemHack."],
+    summary: "Agentic trading on Solana with @0xWhoismax. SniperBot gets in, ShieldBot filters the junk, TraderBot runs the position.",
+    bullets: [
+      "Joined the ClawPump × Ansem AnsemHack on its final day. Co-won.",
+      "Live 24 days after we started building.",
+      "Own indexer, own swap, own database, bare metal. We aren't a wrapper.",
+    ],
   },
-
   {
     company: "Gate",
     role: "Leading AI",
     dates: "June 2026",
-    summary:
-      "Worked across customer feedback, product strategy, UX, and implementation to improve Gate AI products and identify Gate-native AI opportunities.",
+    summary: "AI and Web3 in the same room. Talked to customers, shaped the product, then built it.",
     bullets: [
-      "Designed and built Treasury Router, a governed advisor workflow for identifying modeled idle-capital opportunities and preparing human-approved product recommendations.",
-      "Built an x402 testnet merchant workflow that packages a paid recommendation into an institutional work order while preserving policy and execution boundaries.",
-      "Audited Gate Router product experience, documentation, differentiation, and US market positioning based on enterprise prospect feedback.",
-      "Translated pricing, performance, migration, and reliability objections into product requirements and a tighter enterprise adoption path.",
+      "Designed and built Treasury Router: finds idle capital across a VIP book and preps the client case. Humans approve every move.",
+      "Built an x402 testnet flow that sells a recommendation as a work order without giving up policy or execution control.",
+      "Audited Gate Router's docs, positioning and US market fit off enterprise prospect feedback.",
+      "Turned pricing, migration and reliability objections into product requirements.",
     ],
   },
   {
-    company: "Independent Consultant",
-    role: "AI Product, Growth & Revenue Lead",
+    company: "Independent",
+    role: "AI Product, Growth & Revenue",
     dates: "April 2024 – Present",
-    summary:
-      "Helping founders and internal teams turn customer and operating problems into clearer products, working builds, partnerships, and commercial paths.",
+    summary: "Founders bring the problem. I ship the product, the partners and the path to revenue.",
     bullets: [
-      "Built AI, agent, and infrastructure product foundations spanning compute procurement, voice workflows, and agent payments.",
-      "Led partnership and revenue work across AI and crypto infrastructure projects, contributing to eight-figure ecosystem growth.",
-      "Expanded qualified partner pipelines by improving product positioning, partner alignment, and customer-facing workflows.",
+      "Built AI, agent and infra products: compute buying, voice agents, agent payments.",
+      "Ran partnerships and revenue across AI and crypto infra projects, part of eight-figure ecosystem growth.",
     ],
   },
   {
-    company: "Independent Consultant",
-    role: "Strategic Partnerships & Growth Lead",
+    company: "Independent",
+    role: "Partnerships & Growth",
     dates: "February 2020 – April 2024",
-    summary:
-      "Worked with digital-asset teams on launches, exchange relationships, liquidity coordination, ecosystem growth, and go-to-market execution.",
+    summary: "Four years in the trenches with digital-asset teams. Launches, exchanges, liquidity, go-to-market.",
     bullets: [
-      "Contributed to more than $20M in primary launch revenue across client and project engagements.",
-      "Supported projects that reached more than $100M in trading and ecosystem volume through distribution, liquidity, and launch coordination.",
-      "Built working relationships across exchanges, investors, market makers, founders, and infrastructure partners.",
+      "$20M+ in primary launch revenue across client projects.",
+      "$100M+ in trading and ecosystem volume on projects I supported.",
+      "Worked with exchanges, investors, market makers and founders.",
     ],
   },
   {
     company: "Non Fungible Arcade",
     role: "Founder",
     dates: "May 2021 – August 2023",
-    summary:
-      "Founded a web3 gaming platform designed to help independent developers launch and monetize games through digital ownership and community distribution.",
+    summary: "Web3 gaming platform for indie devs to launch and make money from their games.",
     bullets: [
-      "Helped grow the platform to a $50M venture-backed valuation.",
-      "Built partnerships across game studios, infrastructure providers, exchanges, and NFT marketplaces.",
-      "Represented the company at GDC, SXSW, Token2049, Miami NFT Week, and industry media appearances.",
+      "Grew it to a $50M venture-backed valuation.",
+      "Partnered with studios, infra providers, exchanges and NFT marketplaces.",
+      "On stage and on the floor at GDC, SXSW, Token2049 and Miami NFT Week.",
     ],
   },
   {
     company: "Fit Start Training",
     role: "Revenue Performance Lead",
     dates: "January 2018 – February 2020",
-    summary:
-      "Owned sales performance, conversion improvement, team execution, and revenue systems for a high-ticket service business.",
+    summary: "High-ticket sales. Owned the number.",
     bullets: [
-      "Managed an $8M+ annual revenue target while exceeding quota by more than 25%.",
-      "Improved close rates from 38% to 62% by identifying and fixing conversion bottlenecks.",
-      "Led a four-person performance turnaround and built KPI systems supporting three consecutive growth quarters.",
+      "$8M+ annual revenue target. Beat quota by 25%+.",
+      "Close rate from 38% to 62%.",
+      "Turned around a four-person team. Three straight growth quarters.",
     ],
   },
 ];
 
-
 export const capabilities = [
-  "AI solutions architecture",
-  "AI product strategy",
-  "Customer workflow analysis",
-  "Agentic AI and x402",
-  "Financial product UX",
-  "Product prototyping",
-  "Technical requirements",
-  "Human approval systems",
+  "Agentic trading",
+  "Agent orchestration",
+  "x402 and agent payments",
+  "Solana",
+  "Product strategy",
+  "Prototyping",
+  "Human approval gates",
   "Partnerships and GTM",
 ];
-

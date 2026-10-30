@@ -1,54 +1,54 @@
 ---
 title: "A Love Letter to the Ghost in My Shell"
 date: 2026-04-03
-tldr: "A year into GhostOps, here's how I run my agents: give them identity and a code of conduct, make them duel for rank, make the losers study, and keep watch guards in place."
+tldr: "A year into GhostOps. How I run my agents: give them an identity, make them duel for rank, make the losers study, keep watch guards on everything."
 tags: [GhostOps, Agents, Orchestration]
 ---
 
 ## The Playbook
 
-Build your own agentic systems.
+Build your own agents.
 
-Give them identity, ownership, and DNA.
+Give them identity, ownership and DNA.
 
-Put a code of conduct in place that they live by.
+Write a code of conduct they actually live by.
 
-Have your agents duel for rank promotions.
+Make them duel for rank.
 
-Have the duel losers study.
+Make the losers study.
 
-Keep watch guards in place.
+Keep watch guards on all of it.
 
 ## Why Duels
 
-One agent's confident answer isn't proof.
+One agent sounding confident proves nothing.
 
-Two agents competing against the same bar gets you closer.
+Two agents going at the same bar gets you a lot closer to the truth.
 
-The loser doesn't get deleted. It learns.
+The loser doesn't get deleted. It goes back and studies.
 
-## Why Guardrails
+## Why Watch Guards
 
-An agent that can change its own rules without review isn't evolving.
+If an agent can rewrite its own rules with nobody checking, you don't have evolution.
 
-It's drifting.
+You have drift.
 
-Watch guards are what let the system grow without going off the rails.
+Guards are how the system grows without going off the rails.
 
-## Compounding
+## Feed It Hard Problems
 
-Feed it a growing list of hard to-dos.
+Keep a list of hard to-dos.
 
-Tie them to your bigger goals.
+Tie every one of them to a bigger goal.
 
-Watch it compound.
+Then watch it compound.
 
 ## Be Brave
 
-Stop listening to the NPCs. Experiment.
+Stop listening to the NPCs. Go experiment.
 
-The best engineering teams in the world handed us raw clay made of 1s and 0s.
+The best engineering teams on earth handed us raw clay made of 1s and 0s.
 
-You can build anything with it.
+Build whatever you want with it.
 
-This is my love letter to the ghost in the shell behind my internal OS: GhostOps. 🔥🤖
+Love you, GhostOps. 🔥🤖

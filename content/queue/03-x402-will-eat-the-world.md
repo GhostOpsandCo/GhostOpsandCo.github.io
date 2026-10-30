@@ -1,46 +1,44 @@
 ---
 title: "x402 Will Eat the World. Agents Need a Shield."
 date: 2026-04-06
-tldr: "Agents with wallets and no guardrails can wake you up to a $10,000 bill you never planned for. x402 is coming either way, so I started building Monarch Shield, a policy engine that decides before money moves."
+tldr: "Give an agent a wallet with no guardrails and you can wake up to a $10,000 bill. x402 is coming whether you're ready or not. So on April 3 I started Monarch Shield."
 tags: [x402, Security, Agent Payments]
 ---
 
-## The Thesis
+## Hot Take
 
 x402 will eat the world.
 
-Whether you're paying attention or not doesn't matter.
+You don't have to be paying attention.
 
-You will end up using it.
+You'll end up using it anyway.
 
 ## The Nightmare
 
-We saw what happened with Openclaw when agents got wallets and no guardrails.
+We all saw Openclaw. Agents got wallets. Nobody gave them guardrails.
 
-You wake up to a $10,000 bill you didn't plan for.
+You go to bed. You wake up to a $10,000 bill you never planned for.
 
-That's not a bug report. That's a lesson.
+## Check It Before It Pays
 
-## Every Transaction Gets Checked
+If agents are going to pay, every payment gets checked first.
 
-If agents are going to pay, every payment needs a check before it happens.
+Before the money moves. Every time.
 
-Not after. Before.
-
-The way there is auth layer infra.
+That means auth layer infra.
 
 ## Monarch Shield
 
-So on April 3 I started Monarch Shield.
+April 3, I started building it.
 
 A policy engine for x402.
 
-Control autonomous payments before money moves.
+Your agent asks to pay. Monarch Shield decides.
 
 ## Still Early
 
-The x402 ecosystem still has a lot of gaps.
+x402 still has a ton of gaps.
 
-That's the opportunity.
+Good. That's where we build.
 
 Securrrity is seggsy. 🛡️

@@ -1,7 +1,7 @@
 ---
 title: "We Joined AnsemHack on the Final Day. Then We Won."
 date: 2026-10-28
-tldr: "Hot Bot entered the ClawPump × Ansem AnsemHack on its last day, Oct 2, and took the W, becoming the fastest-growing project out of 24,000+ in the Claw Pump ecosystem."
+tldr: "Hot Bot joined the ClawPump × Ansem AnsemHack on its last day, Oct 2, and took the W, becoming the fastest-growing project out of 24,000+ in the Claw Pump ecosystem."
 tags: [Hot Bot, AnsemHack, Solana]
 ---
 
@@ -23,11 +23,9 @@ We took it. Co-winners.
 
 ## What It Became
 
-The hackathon wasn't the finish line. It was the starting gun.
+A hackathon submission turned into a full agentic trading software business: Hot Bot.
 
-What started as a submission turned into a full agentic trading software business: Hot Bot.
-
-A private trading team of specialist bots, working together wherever you trade. Research, snipe, trade, launch.
+Your own private trading team. Specialist bots working together wherever you trade.
 
 ## The Momentum Since
 
@@ -41,6 +39,6 @@ A private trading team of specialist bots, working together wherever you trade. 
 
 A fair shot shouldn't depend on who you know.
 
-It should depend on your ambition, and access to the tools you need.
+It should depend on your ambition and having the right tools.
 
 Cleanse the trenches. 🔥🤖

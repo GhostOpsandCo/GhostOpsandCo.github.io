@@ -13,14 +13,14 @@ export const metadata: Metadata = {
   metadataBase: new URL(site.url),
   title: {
     default: "Elijah Paul",
-    template: "%s — Elijah Paul",
+    template: "%s | Elijah Paul",
   },
   description: site.description,
   applicationName: "Elijah Paul",
   authors: [{ name: "Elijah Paul", url: site.url }],
   creator: "Elijah Paul",
   publisher: "Elijah Paul",
-  alternates: { canonical: "/", types: { "application/rss+xml": [{ url: "/rss.xml", title: "Elijah Paul — Writing" }] } },
+  alternates: { canonical: "/", types: { "application/rss+xml": [{ url: "/rss.xml", title: "Elijah Paul | Writing" }] } },
   openGraph: {
     title: "Elijah Paul",
     description: site.description,

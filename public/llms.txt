@@ -1,26 +1,24 @@
 # Elijah Paul
 
-Elijah Paul is co-founder of Hot Bot (https://usehotbot.com), a swarm of specialist trading agents on Solana, and co-winner of the ClawPump × Ansem AnsemHack. Previously AI at Gate. He builds agent orchestration (GhostOps) and x402 agent-payment guardrails (Monarch Shield).
-X: https://x.com/elijahintek
+Elijah Paul is co-founder of Hot Bot (https://usehotbot.com), agentic trading on Solana, built with @0xWhoismax. Hot Bot joined the ClawPump × Ansem AnsemHack on its final day and co-won. It went live 24 days after they started building. Before Hot Bot he led AI at Gate. He also built GhostOps, his own agent orchestration system, and Monarch Shield, a CI check for x402 agent payments.
 
+X: https://x.com/elijahintek
 Canonical site: https://elijahpaul.io
 Contact: elijah@elijahpaul.io
 LinkedIn: https://www.linkedin.com/in/elijahpaul
 GitHub: https://github.com/GhostOpsandCo
 
-## Main pages
+## Pages
 
 - Work: https://elijahpaul.io/work
 - Writing: https://elijahpaul.io/writing (RSS: https://elijahpaul.io/rss.xml)
-- Record / résumé: https://elijahpaul.io/resume
+- Record: https://elijahpaul.io/resume
 
-## Selected work
+## Work
 
-- Venture Labs: product decision control room for routing venture ideas through intake, research, red-team review, decision gate, PRD, architecture, build package, QA, and launch planning. It is an illustrative dashboard concept based on internal GhostOps system docs, not a live production dashboard or customer-result claim.
-- Orelis: inbound voice-agent product for service-business intake, qualification, booking request, and human handoff. Production telephony, CRM behavior, uptime, and outcomes depend on final implementation.
-- Team Take Down: release-first creator protection workflow for private-file cleanup, protected media preparation, public-site watch, evidence organization, creator-approved takedown support, and outcome checks. It does not search the whole internet or guarantee every copy will be found or removed.
-- Treasury Router: governed AI financial-advisor workflow and x402 merchant proof-of-flow. Working prototype with deterministic development data; no autonomous execution or live client funds.
-- GridSynapse: buyer-side compute planning workflow using public pricing and carbon inputs with deterministic optimization. Modeled capacity, latency, and availability; no provider reservation or spend.
-- Monarch Shield: open-source build-time and CI preflight for supported agent-payment patterns. It is not runtime payment enforcement, fraud prevention, provider verification, wallet security, regulatory compliance, or settlement validation.
-
-Contact: elijah@elijahpaul.io
+- Monarch Shield: open-source CLI and CI check. It fails the build when x402 agent payment code can pay without a policy check. It does not enforce payments at runtime, prevent fraud, secure wallets or prove compliance.
+- Treasury Router: built at Gate. Finds idle capital across a VIP book and preps the client case. A human approves every move. Prototype on dev data. No live client funds, no autonomous execution.
+- Venture Labs: dashboard concept on GhostOps. Every venture idea goes intake → research → red team → decision gate → PRD → build → QA → launch. Illustrative, built from internal docs. Not a live product and no customer results claimed.
+- Orelis: voice agent for service businesses. Answers inbound calls, qualifies, takes booking requests, hands off to a human. Real telephony, CRM and uptime depend on the final build.
+- Team Take Down: creator protection. Private-file cleanup, protected media, watching public sites, evidence and creator-approved takedown support. It does not search the whole internet and can't promise every copy gets removed.
+- GridSynapse: compute buying planner. Public pricing and carbon data, deterministic optimizer. Capacity and latency are modeled. It doesn't reserve or spend with providers.

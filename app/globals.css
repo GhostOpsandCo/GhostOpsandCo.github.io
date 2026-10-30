@@ -240,3 +240,8 @@ a.mono:hover, .mono a:hover { color: var(--ink); }
 @media (min-width: 700px) { .br-m { display: none; } .name { font-size: min(21vw, 26rem); } }
 .flow { counter-reset: f; }
 @media (min-width: 900px) { .table-head > span:last-child { text-align: right; } }
+.lines { max-width: 40ch; font-size: clamp(1.1rem, 1.7vw, 1.4rem); line-height: 1.4; letter-spacing: -.02em; color: var(--ink-2); }
+.lines p + p { margin-top: .55em; }
+.lines p:first-child { color: var(--ink); }
+.lines-dim, .lines-dim p:first-child { color: var(--dim); font-size: 1.05rem; }
+.cmd { margin: .2em 0 .9em; font-family: var(--mono); font-size: 14px; color: var(--ink); background: #070707; border: 1px solid var(--line-2); padding: 14px 16px; overflow-x: auto; letter-spacing: 0; }

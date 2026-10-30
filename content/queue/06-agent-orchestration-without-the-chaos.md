@@ -1,40 +1,40 @@
 ---
 title: "Agent Orchestration Without the Chaos"
 date: 2026-07-30
-tldr: "A year of GhostOps boiled down to one open harness: policy, routing, a bounded evidence loop, hard gates and reviewed memory. Agents never get to quietly rewrite their own rules."
+tldr: "A year of GhostOps, open sourced as one harness. Policy, routing, an evidence loop, hard gates and reviewed memory. No agent quietly rewrites its own rules."
 tags: [GhostOps, Orchestration, Open Source]
 ---
 
-## The Problem
+## Prompt Soup
 
-Without shared structure, every task starts with another giant prompt.
+No shared structure means every task starts with another giant prompt.
 
-Agents hold different standards.
+Every agent holds a different bar.
 
-Polished output gets ahead of the evidence.
+And the pretty output shows up way before the proof does.
 
 ## The Stack
 
 Policy → harness → routing graph → specialist → candidate → evidence loop → hard gates → authorized action → observed outcome → reviewed learning.
 
-## The Pieces
+## How It Works
 
-- **The harness** holds task state, context, permissions and handoffs.
-- **The graph** sends work to the smallest skill that can do it.
-- **The loop** compares a limited set of options against one fixed bar. It doesn't run forever.
-- **Memory** keeps facts and decisions. It never grants permission and never stores secrets.
-- **Gates** stop a confident agent from overriding truth, privacy, safety or release rules.
+- **Harness:** holds the task state, context, permissions and handoffs.
+- **Graph:** sends the work to the smallest skill that can handle it.
+- **Loop:** puts a short list of options up against one fixed bar. Then it stops.
+- **Memory:** keeps facts and decisions. Never grants permission. Never stores secrets.
+- **Gates:** a confident agent still can't override truth, privacy, safety or release rules.
 
 ## FullyBuilt
 
-Same runtime, aimed at founders: GhostOps Venture Studio, branded FullyBuilt.
+Same runtime, pointed at founders. GhostOps Venture Studio, branded FullyBuilt.
 
-Idea → research → a red report that tries to kill the idea → decision gate → PRD → build → QA → launch.
+Idea → research → red report that tries to kill it → decision gate → PRD → build → QA → launch.
 
-Every claim gets backed by code, tests or logs. Anything still aspirational goes on the roadmap.
+Every claim needs code, tests or logs behind it. Anything we can't back up yet goes on the roadmap.
 
-## In Closing
+## In Closing (for now)
 
-An agent's confidence isn't evidence.
+Confidence isn't evidence.
 
-Gates are. 🔥🤖
+Ship the gates. 🔥🤖

@@ -16,7 +16,7 @@ Today Hot Bot is live.
 - Swaps under 50ms.
 - Fastest: 25ms.
 
-In the trenches, milliseconds are the edge.
+In the trenches you win or lose by milliseconds.
 
 ## Fort Knox
 
@@ -48,6 +48,10 @@ And **Portfolios**: think ChatGPT for investing in Solana coins. In a 12-day tes
 
 ## Day 0
 
-Named among Solana ecosystem companies. Mobile fully overhauled. And this is just day 0.
+Named among Solana ecosystem companies.
+
+Mobile fully overhauled.
+
+This is day 0.
 
 History remembers what they built, not what the market was doing while they built it. 🔥🤖

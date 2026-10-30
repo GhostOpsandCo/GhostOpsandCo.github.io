@@ -18,7 +18,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     description: project.metaDescription,
     alternates: { canonical: `/work/${project.slug}` },
     openGraph: {
-      title: `${project.name} — Elijah Paul`,
+      title: `${project.name} | Elijah Paul`,
       description: project.metaDescription,
       url: `/work/${project.slug}`,
       images: [{ url: project.image, alt: project.imageAlt }],
@@ -52,7 +52,7 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
         }}
       />
       <header className="page-head frame">
-        <p className="mono dim rise"><Link href="/work">← Work</Link> · {String(i + 1).padStart(2, "0")} / {String(projects.length).padStart(2, "0")}</p>
+        <p className="mono dim rise"><Link href="/work">← Work</Link> / {String(i + 1).padStart(2, "0")} / {String(projects.length).padStart(2, "0")}</p>
         <h1 className="page-title rise">{project.name}</h1>
         <p className="page-sub rise">{project.summary}</p>
         <dl className="spec spec-row mono rise">
@@ -69,39 +69,16 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
         </figure>
       </div>
 
-      <section className="block">
-        <div className="frame grid12">
-          <div className="label mono"><span className="dim">A</span><span>Problem</span></div>
-          <p className="body-lg reveal">{project.challenge}</p>
-        </div>
-      </section>
-      <section className="block">
-        <div className="frame grid12">
-          <div className="label mono"><span className="dim">B</span><span>Role</span></div>
-          <p className="body-lg reveal">{project.role}</p>
-        </div>
-      </section>
-      <section className="block">
-        <div className="frame grid12">
-          <div className="label mono"><span className="dim">C</span><span>Approach</span></div>
-          <ol className="steps reveal">{project.approach.map((a, n) => <li key={a}><span className="mono dim">{String(n + 1).padStart(2, "0")}</span><span>{a}</span></li>)}</ol>
-        </div>
-      </section>
-      <section className="block">
-        <div className="frame grid12">
-          <div className="label mono"><span className="dim">D</span><span>Flow</span></div>
-          <ol className="flow mono reveal">{project.workflow.map((w) => <li key={w}>{w}</li>)}</ol>
-        </div>
-      </section>
-      <section className="block">
-        <div className="frame grid12">
-          <div className="label mono"><span className="dim">E</span><span>Evidence</span></div>
-          <div className="reveal">
-            <ul className="steps">{project.proof.map((p) => <li key={p}><span className="mono dim">+</span><span>{p}</span></li>)}</ul>
-            <p className="note mono dim">{project.boundary}</p>
+      {[...project.sections, { h: "What It Isn't", lines: project.limits }].map((sec, n) => (
+        <section className="block" key={sec.h}>
+          <div className="frame grid12">
+            <div className="label mono"><span className="dim">{String(n + 1).padStart(2, "0")}</span><span>{sec.h}</span></div>
+            <div className={`lines reveal${n === project.sections.length ? " lines-dim" : ""}`}>
+              {sec.lines.map((l) => (l.startsWith("npx ") ? <pre key={l} className="cmd"><code>{l}</code></pre> : <p key={l}>{l}</p>))}
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+      ))}
 
       <div className="frame">
         <Link href={`/work/${next.slug}`} className="nextlink reveal">
