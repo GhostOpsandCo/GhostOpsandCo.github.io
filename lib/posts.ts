@@ -13,10 +13,18 @@ export type Post = {
 };
 
 const postsDir = join(process.cwd(), "content", "posts");
+const queueDir = join(process.cwd(), "content", "queue");
 
 function slugFromFile(file: string) {
   const base = file.replace(/\.md$/, "");
   return /^\d{4}-\d{2}-\d{2}-/.test(base) ? base.slice(11) : base.replace(/^\d{2,3}-/, "");
+}
+
+// The scheduler publishes the lowest-numbered queue file next.
+export function getNextPost(): { title: string } | null {
+  const file = readdirSync(queueDir).filter((name) => /^\d{2,3}-.+\.md$/.test(name)).sort()[0];
+  if (!file) return null;
+  return { title: String(matter(readFileSync(join(queueDir, file), "utf8")).data.title) };
 }
 
 export function getAllPosts(): Post[] {

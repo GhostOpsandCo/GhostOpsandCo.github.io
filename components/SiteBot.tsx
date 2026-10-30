@@ -30,7 +30,7 @@ function rank(docs: Doc[], q: string) {
 }
 
 const CHIPS = ["What is Hot Bot?", "What's x402?", "What's GhostOps?", "What are you shipping?"];
-const HELLO: Msg = { from: "bot", text: "I'm Hot Bot. Ask about Elijah, x402, GhostOps or what's shipping." };
+const HELLO: Msg = { from: "bot", text: "I'm the site bot. Ask about Hot Bot, x402, GhostOps or what's shipping." };
 
 export function SiteBot() {
   const [open, setOpen] = useState(false);
@@ -66,15 +66,15 @@ export function SiteBot() {
   return (
     <div className="sb">
       {open && (
-        <div className="sb-panel" role="dialog" aria-label="Hot Bot" id="sb-panel">
+        <div className="sb-panel" role="dialog" aria-label="Site bot" id="sb-panel">
           <div className="sb-head">
-            <span><Bot name="flame" className="sb-av" />Hot Bot</span>
+            <span><Bot name="cloud" className="sb-av" />Site bot</span>
             <button type="button" className="sb-x" aria-label="Close" onClick={() => { setOpen(false); btn.current?.focus(); }}>×</button>
           </div>
           <div className="sb-log" ref={log} aria-live="polite">
             {msgs.map((m, i) => (
               <div key={i} className={`sb-msg sb-${m.from}`}>
-                {m.from === "bot" && <Bot name="flame" className="sb-av sb-av-msg" />}
+                {m.from === "bot" && <Bot name="cloud" className="sb-av sb-av-msg" />}
                 <p>{m.text}</p>
                 {m.link && (
                   <a href={m.link.u} {...(m.link.u.startsWith("http") ? { target: "_blank", rel: "noreferrer" } : {})}>{m.link.t} →</a>
@@ -88,14 +88,14 @@ export function SiteBot() {
             )}
           </div>
           <form className="sb-form" onSubmit={(e) => { e.preventDefault(); ask(q); }}>
-            <label htmlFor="sb-q" className="sr-only">Ask Hot Bot</label>
+            <label htmlFor="sb-q" className="sr-only">Ask the site bot</label>
             <input id="sb-q" ref={input} value={q} onChange={(e) => setQ(e.target.value)} placeholder="Ask something…" autoComplete="off" maxLength={200} />
             <button type="submit" aria-label="Send">↑</button>
           </form>
         </div>
       )}
-      <button ref={btn} type="button" className="sb-btn" aria-expanded={open} aria-controls="sb-panel" aria-label={open ? "Close Hot Bot" : "Open Hot Bot"} onClick={() => setOpen((o) => !o)}>
-        {open ? "×" : <Bot name="flame" className="bob" flip />}
+      <button ref={btn} type="button" className="sb-btn" aria-expanded={open} aria-controls="sb-panel" aria-label={open ? "Close site bot" : "Open site bot"} onClick={() => setOpen((o) => !o)}>
+        {open ? "×" : <Bot name="cloud" className="bob" flip />}
       </button>
     </div>
   );

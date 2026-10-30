@@ -5,7 +5,6 @@ export const site = {
     "Elijah Paul is co-founder of Hot Bot, a team of specialist trading bots on Solana. Co-won AnsemHack after joining on the final day. Before that: a year of agent orchestration (GhostOps) and Monarch Shield for x402 payments.",
   url: "https://elijahpaul.io",
   email: "elijah@elijahpaul.io",
-  linkedin: "https://www.linkedin.com/in/elijahpaul",
   github: "https://github.com/GhostOpsandCo",
   x: "https://x.com/elijahintek",
   xHandle: "@elijahintek",
@@ -13,7 +12,7 @@ export const site = {
   hotbotX: "https://x.com/usehotbot",
 };
 
-export const sameAs = [site.linkedin, site.github, site.x];
+export const sameAs = [site.github, site.x];
 
 export type Section = { h: string; lines: string[] };
 

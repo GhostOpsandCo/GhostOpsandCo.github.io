@@ -4,7 +4,7 @@ import { Bot } from "@/components/Bot";
 import { formatShort, getAllPosts } from "@/lib/posts";
 
 export const metadata: Metadata = {
-  title: "Writing",
+  title: "Trench Notes",
   description: "Elijah Paul writing from the build: Hot Bot, agentic trading, x402 agent payments and running a year of agents on GhostOps.",
   alternates: { canonical: "/writing", types: { "application/rss+xml": "/rss.xml" } },
 };
@@ -16,7 +16,7 @@ export default function WritingIndex() {
       <header className="page-head frame">
         <Bot name="purple" className="page-bot float" flip />
         <p className="mono dim rise">{posts.length} entries / <a href="/rss.xml">RSS</a></p>
-        <h1 className="page-title rise">Writing</h1>
+        <h1 className="page-title rise">Trench Notes</h1>
         <p className="page-sub rise">Notes from the build. Agents, payments, trading. Posted in the order it happened.</p>
       </header>
       <section className="frame">

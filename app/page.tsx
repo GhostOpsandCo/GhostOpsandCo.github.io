@@ -1,7 +1,7 @@
 /* eslint-disable @next/next/no-img-element -- static SVG logos */
 import Link from "next/link";
 import { Label } from "@/components/Chrome";
-import { formatShort, getAllPosts } from "@/lib/posts";
+import { formatShort, getAllPosts, getNextPost } from "@/lib/posts";
 import { site } from "@/lib/site";
 import { Bot } from "@/components/Bot";
 
@@ -25,6 +25,7 @@ const HACKATHONS = [
   { n: "Meta AI Global", r: "Ongoing" },
 ];
 const SWARM = [
+  { n: "Hot Bot", v: "Keeps the work moving.", bot: "hotbot" },
   { n: "ResearchBot", v: "Finds coins that fit your rules.", bot: "research" },
   { n: "ShieldBot", v: "Filters the junk.", bot: "shield" },
   { n: "SniperBot", v: "Buys the moment one checks out.", bot: "sniper" },
@@ -44,6 +45,7 @@ const CREW = [
 
 export default function Home() {
   const posts = getAllPosts().slice(0, 5);
+  const next = getNextPost();
   return (
     <main id="main">
       <section className="hero">
@@ -51,6 +53,7 @@ export default function Home() {
           <h1 className="name rise">Elijah<br className="br-m" /> Paul</h1>
           <div className="hero-foot rise">
             <div>
+              <p className="oneliner">Second-time founder. Took my last startup to a $50M valuation. Led AI at Gate.</p>
               <p className="thesis">
                 Building <a href={site.hotbot} target="_blank" rel="noreferrer">Hot Bot</a>. Agentic trading on Solana.
                 Joined a hackathon on the final day, won it, went live 24 days later.
@@ -100,8 +103,17 @@ export default function Home() {
 
       <section className="block">
         <div className="frame grid12">
-          <Label n="01" bot="purple" flip>Log</Label>
+          <Label n="01" bot="purple" flip>Trench Notes</Label>
           <ol className="index">
+            {next && (
+              <li className="reveal">
+                <div className="irow next-up">
+                  <span className="i-title">{next.title}</span>
+                  <span className="i-desc" />
+                  <span className="i-meta mono">Next up</span>
+                </div>
+              </li>
+            )}
             {posts.map((p) => (
               <li key={p.slug} className="reveal">
                 <Link href={`/writing/${p.slug}`} className="irow">
@@ -112,7 +124,7 @@ export default function Home() {
                 </Link>
               </li>
             ))}
-            <li className="reveal"><Link href="/writing" className="more mono">Full log →</Link></li>
+            <li className="reveal"><Link href="/writing" className="more mono">All notes →</Link></li>
           </ol>
         </div>
       </section>
@@ -132,7 +144,7 @@ export default function Home() {
             ))}
           </ol>
           <div className="panel swarm reveal">
-            <p className="kicker"><Bot name="flame" className="mascot" />The Hot Bot swarm</p>
+            <p className="kicker">Your private trading team of specialist bots</p>
             <ul>
               {SWARM.map((b) => (
                 <li key={b.n}><Bot name={b.bot} className="float" /><b>{b.n}</b><span>{b.v}</span></li>

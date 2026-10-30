@@ -5,7 +5,7 @@ import { NavLinks } from "./NavLinks";
 
 const nav = [
   { href: "/work", label: "Work" },
-  { href: "/writing", label: "Writing" },
+  { href: "/writing", label: "Trench Notes" },
 ];
 
 export function Header() {
@@ -37,7 +37,6 @@ export function Footer() {
           <li><a href={`mailto:${site.email}`}>{site.email}</a></li>
           <li><a href={site.x} target="_blank" rel="noreferrer">X / {site.xHandle}</a></li>
           <li><a href={site.github} target="_blank" rel="noreferrer">GitHub / GhostOpsandCo</a></li>
-          <li><a href={site.linkedin} target="_blank" rel="noreferrer">LinkedIn</a></li>
           <li><a href="/rss.xml">RSS</a></li>
         </ul>
         <p className="mono dim ftr-note">God calls us to serve others. I try to live that in business and in life.</p>

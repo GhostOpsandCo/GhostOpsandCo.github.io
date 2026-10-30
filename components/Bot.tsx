@@ -13,7 +13,7 @@ export function Bot({ name, className = "", flip = false, style }: { name: BotNa
   }
   return (
     <span className={`bot bot-${name} ${flip ? "bot-flip " : ""}${className}`} style={style} aria-hidden="true">
-      <img src={`/bots/${name}.webp`} alt="" width={480} height={480} loading="lazy" decoding="async" />
+      <img src={`/bots/${name}.webp`} alt="" width={480} height={480} />
       <svg viewBox="0 0 480 480">
         <g className="pp" data-r={name === "shield" ? 0.6 : undefined}>
           {eyes[name as keyof typeof eyes].map((e) => (

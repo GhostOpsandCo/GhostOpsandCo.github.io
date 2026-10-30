@@ -5,13 +5,12 @@ Elijah Paul is co-founder of Hot Bot (https://usehotbot.com), agentic trading on
 X: https://x.com/elijahintek
 Canonical site: https://elijahpaul.io
 Contact: elijah@elijahpaul.io
-LinkedIn: https://www.linkedin.com/in/elijahpaul
 GitHub: https://github.com/GhostOpsandCo
 
 ## Pages
 
 - Work: https://elijahpaul.io/work
-- Writing: https://elijahpaul.io/writing (RSS: https://elijahpaul.io/rss.xml)
+- Trench Notes: https://elijahpaul.io/writing (RSS: https://elijahpaul.io/rss.xml)
 
 ## Work
 
