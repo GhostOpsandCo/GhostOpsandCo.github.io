@@ -31,7 +31,7 @@ const SWARM = [
   { n: "TraderBot", v: "Runs the position inside your rules.", bot: "trader" },
 ] as const;
 const WHAT_I_DO = ["Solve big problems", "with unique solutions", "that users love"];
-const FACTS = ["BJJ no-gi champ", "62% close rate in high-ticket sales"];
+const FACTS = ["Advised UFC champ Khabib in crypto", "BJJ no-gi champ", "Kids MMA instructor"];
 // The banner's lineup, mirrored so everyone faces the email.
 const CREW = [
   { n: "cloud", x: 11.6, y: 41.6, s: 32 },
