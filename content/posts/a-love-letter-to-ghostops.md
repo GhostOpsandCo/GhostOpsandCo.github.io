@@ -1,6 +1,6 @@
 ---
 title: "A Love Letter to the Ghost in My Shell"
-date: 2026-04-03
+date: 2026-10-29
 tldr: "A year into GhostOps. How I run my agents: give them an identity, make them duel for rank, make the losers study, keep watch guards on everything."
 tags: [GhostOps, Agents, Orchestration]
 ---
