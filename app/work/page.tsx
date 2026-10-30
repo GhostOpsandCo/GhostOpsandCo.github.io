@@ -13,7 +13,7 @@ export default function WorkIndex() {
   return (
     <main id="main">
       <header className="page-head frame">
-        <Bot name="green" className="page-bot float" />
+        <Bot name="green" className="page-bot float" flip />
         <p className="mono dim rise">{String(projects.length).padStart(2, "0")} shipped</p>
         <h1 className="page-title rise">Work</h1>
         <p className="page-sub rise">What it does. What it doesn&apos;t. Receipts on both.</p>

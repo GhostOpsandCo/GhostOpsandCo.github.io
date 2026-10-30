@@ -1,7 +1,6 @@
 import Link from "next/link";
 import { Label } from "@/components/Chrome";
 import { formatShort, getAllPosts } from "@/lib/posts";
-import { experience } from "@/lib/experience";
 import { projects, site } from "@/lib/site";
 import { Bot } from "@/components/Bot";
 
@@ -21,6 +20,7 @@ const WORKED = [
 ];
 const SWARM = [
   { n: "ResearchBot", v: "Finds coins that fit your rules.", bot: "cloud" },
+  { n: "ShieldBot", v: "Filters the junk.", bot: "purple" },
   { n: "SniperBot", v: "Buys the moment one checks out.", bot: "red" },
   { n: "TraderBot", v: "Runs the position inside your rules.", bot: "blue" },
 ] as const;
@@ -47,7 +47,7 @@ export default function Home() {
               </div>
             </div>
             <section className="panel glance" aria-label="At a glance">
-              <Bot name="green" className="perch" />
+              <Bot name="green" className="perch" flip />
               <p className="kicker">At a glance</p>
               <dl className="stats">
                 <div><dt>Building</dt><dd><Bot name="flame" className="mascot" />Hot Bot <span className="up">● Live</span></dd></div>
@@ -122,42 +122,7 @@ export default function Home() {
 
       <section className="block">
         <div className="frame grid12">
-          <Label n="03" bot="green">Shipped</Label>
-          <ol className="index">
-            {projects.map((p, i) => (
-              <li key={p.slug} className="reveal">
-                <Link href={`/work/${p.slug}`} className="irow">
-                  <span className="i-title"><span className="mono dim i-n">{String(i + 1).padStart(2, "0")}</span>{p.name}</span>
-                  <span className="i-desc">{p.shortOutcome}</span>
-                  <span className="i-meta mono">{p.status}</span>
-                  <span className="i-arrow" aria-hidden="true">→</span>
-                </Link>
-              </li>
-            ))}
-          </ol>
-        </div>
-      </section>
-
-      <section className="block">
-        <div className="frame grid12">
-          <Label n="04" bot="blue">Record</Label>
-          <ol className="index">
-            {experience.map((r) => (
-              <li key={r.company + r.role} className="reveal">
-                <div className="irow">
-                  <span className="i-title">{r.company}</span>
-                  <span className="i-desc">{r.role}</span>
-                  <span className="i-meta mono">{r.dates.replace(/January |February |March |April |May |June |July |August |September |October |November |December /g, "")}</span>
-                </div>
-              </li>
-            ))}
-          </ol>
-        </div>
-      </section>
-
-      <section className="block">
-        <div className="frame grid12">
-          <Label n="05" bot="red">Contact</Label>
+          <Label n="03" bot="red">Contact</Label>
           <div className="contact reveal">
             <a className="contact-big" href={`mailto:${site.email}`}>{site.email}</a>
             <p className="mono dim">DMs open. <a href={site.x} target="_blank" rel="noreferrer">{site.xHandle}</a></p>

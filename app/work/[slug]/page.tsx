@@ -85,7 +85,7 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
         <Link href={`/work/${next.slug}`} className="nextlink reveal">
           <span className="mono dim">Next</span>
           <span className="nextlink-t">{next.name} →</span>
-          <Bot name="green" className="next-bot float" />
+          <Bot name="green" className="next-bot float" flip />
         </Link>
       </div>
     </main>

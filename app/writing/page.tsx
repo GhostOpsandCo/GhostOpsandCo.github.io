@@ -14,7 +14,7 @@ export default function WritingIndex() {
   return (
     <main id="main">
       <header className="page-head frame">
-        <Bot name="purple" className="page-bot float" />
+        <Bot name="purple" className="page-bot float" flip />
         <p className="mono dim rise">{String(posts.length).padStart(2, "0")} entries / <a href="/rss.xml">RSS</a></p>
         <h1 className="page-title rise">Writing</h1>
         <p className="page-sub rise">Notes from the build. Agents, payments, trading. Posted in the order it happened.</p>

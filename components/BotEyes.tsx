@@ -19,12 +19,12 @@ export function BotEyes() {
       const boxes = idle ? [] : list.map((g) => (g.ownerSVGElement as SVGSVGElement).getBoundingClientRect());
       list.forEach((g, i) => {
         let dx: number, dy: number;
-        if (idle) { dx = Math.sin(t / 1400 + i) * 8; dy = Math.cos(t / 1900 + i * 1.7) * 5; }
+        if (idle) { dx = Math.sin(t / 1400 + i) * 11; dy = Math.cos(t / 1900 + i * 1.7) * 7; }
         else {
           const r = boxes[i];
           const vx = px - (r.left + r.width / 2), vy = py - (r.top + r.height / 2);
-          const d = Math.hypot(vx, vy) || 1, k = Math.min(1, d / 300);
-          dx = (vx / d) * 12 * k; dy = (vy / d) * 10 * k;
+          const d = Math.hypot(vx, vy) || 1, k = Math.min(1, d / 180);
+          dx = (vx / d) * 20 * k; dy = (vy / d) * 16 * k;
         }
         g.setAttribute("transform", `translate(${dx.toFixed(2)} ${dy.toFixed(2)})`);
       });
