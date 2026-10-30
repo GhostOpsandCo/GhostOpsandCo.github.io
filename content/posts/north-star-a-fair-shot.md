@@ -1,6 +1,6 @@
 ---
 title: "Hot Bot's North Star: A Fair Shot"
-date: 2026-10-04
+date: 2026-10-30
 tldr: "A handful of people post huge PnLs while insiders, cabals and bundles quietly take the rest. Hot Bot's North Star is putting real trading tech in everyone's hands, the way coding agents did for software."
 tags: [Hot Bot, Mission, Trenches]
 ---
