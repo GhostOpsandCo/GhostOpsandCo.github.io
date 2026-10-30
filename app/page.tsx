@@ -16,7 +16,6 @@ export default function Home() {
   return (
     <main id="main">
       <section className="hero">
-        <div className="hero-field" aria-hidden="true" />
         <div className="frame hero-in">
           <p className="mono dim hero-kicker rise">EP / 001 · Index</p>
           <h1 className="name rise">Elijah<br className="br-m" /> Paul</h1>

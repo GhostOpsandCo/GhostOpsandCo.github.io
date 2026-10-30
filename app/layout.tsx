@@ -3,11 +3,8 @@ import { Footer, Header } from "@/components/Chrome";
 import { JsonLd } from "@/components/JsonLd";
 import { personJsonLd } from "@/lib/person";
 import { site } from "@/lib/site";
-import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
-const sans = Geist({ subsets: ["latin"], variable: "--font-geist", display: "swap" });
-const mono = Geist_Mono({ subsets: ["latin"], variable: "--font-geist-mono", display: "swap" });
 
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
@@ -59,7 +56,7 @@ export const viewport: Viewport = {
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en" className={`${sans.variable} ${mono.variable}`}>
+    <html lang="en">
       <body>
         <JsonLd data={personJsonLd} />
         <a className="skip-link" href="#main">Skip to content</a>
