@@ -1,6 +1,6 @@
 ---
 title: "Cheesecake Factory vs. the Steakhouse"
-date: 2026-10-08
+date: 2026-10-30
 tldr: "After working with both frontier and specialized models on narrow, high-impact problems at companies like Gate, I'm sold. If a specialized model is within reach, it wins. Hot Bot is built on that bet."
 tags: [Models, Hot Bot, Gate]
 ---
