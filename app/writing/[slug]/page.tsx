@@ -70,14 +70,14 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
           <dl className="art-meta mono rise">
             <div><dt>Published</dt><dd><time dateTime={post.date}>{formatDate(post.date)}</time></dd></div>
             <div><dt>Read</dt><dd>{Math.max(1, Math.round(words / 230))} min</dd></div>
-            <div><dt>Filed</dt><dd>{post.tags.join(" / ")}</dd></div>
+            <div><dt>Filed</dt><dd>{post.tags.join(", ")}</dd></div>
           </dl>
         </header>
         <div className="measure">
           {post.tldr && <div className="art-tldr"><span className="tldr-k mono">TLDR</span><p>{post.tldr}</p></div>}
           <div className="prose" dangerouslySetInnerHTML={{ __html: post.html }} />
           <footer className="art-foot mono">
-            <span className="dim art-sign"><Bot name="purple" className="float" />Elijah Paul / <a href={site.x} target="_blank" rel="noreferrer">{site.xHandle}</a></span>
+            <span className="dim art-sign"><Bot name="purple" className="float" />Elijah Paul, <a href={site.x} target="_blank" rel="noreferrer">{site.xHandle}</a></span>
             <span className="art-nav">
               {prev && <Link href={`/writing/${prev.slug}`}>← {prev.title}</Link>}
               {next && <Link href={`/writing/${next.slug}`}>{next.title} →</Link>}

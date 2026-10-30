@@ -16,7 +16,7 @@ export default function WorkIndex() {
         <Bot name="green" className="page-bot float" flip />
         <p className="mono dim rise">{projects.length} shipped</p>
         <h1 className="page-title rise">Work</h1>
-        <p className="page-sub rise">What it does. What it doesn&apos;t. Receipts on both.</p>
+        <p className="page-sub rise">What I&apos;ve shipped, with the limits spelled out.</p>
       </header>
       <section className="frame">
         <div className="table-head table-work mono dim"><span>System</span><span>Type</span><span>Status</span></div>

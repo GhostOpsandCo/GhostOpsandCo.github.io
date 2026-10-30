@@ -507,7 +507,7 @@ html, body { background: #000; }
 .label-bot { align-items: center; }
 .label-bot .bot { width: 52px; height: 52px; margin: -14px 0 -14px auto; }
 @media (min-width: 900px) {
-  .label-bot { display: grid; justify-items: start; gap: 10px; position: sticky; top: 88px; }
+  .label-bot { display: grid; justify-items: start; gap: 10px; position: sticky; top: 24px; }
   .label-bot .bot { width: 104px; height: 104px; margin: 0 0 0 -15px; }
 }
 .swarm ul { margin-top: 18px; }
@@ -535,3 +535,19 @@ html, body { background: #000; }
 @media (max-width: 520px) { .sb-btn[aria-expanded="false"] { width: 50px; height: 50px; } .sb-btn .bot { width: 56px; height: 56px; } }
 .sb-av.bot { width: 26px; height: 26px; margin: -5px 2px -5px -5px; vertical-align: -3px; }
 .sb-av-msg.bot { float: left; width: 24px; height: 24px; margin: -3px 5px 0 -5px; }
+
+/* ---- plain pass: drop the template habits ---- */
+.hdr { position: static; background: none; backdrop-filter: none; -webkit-backdrop-filter: none; border-bottom: 0; }
+.hdr-nav a.on::after { display: none; }
+.name { letter-spacing: -.035em; }
+.page-title, .art-title, .nextlink-t { letter-spacing: -.03em; }
+.contact-big { letter-spacing: -.02em; }
+.ctas { gap: 20px; margin-top: 20px; }
+.ctas a { color: var(--ink); text-decoration: underline; text-decoration-color: #4a4a50; text-underline-offset: 4px; transition: text-decoration-color .15s; }
+.ctas a:hover { text-decoration-color: var(--ink); }
+.panel, .plate, .art-tldr { border-radius: 10px; }
+.prose pre, .cmd { border-radius: 8px; }
+.sb-panel { border-radius: 12px; }
+.sb-bot, .sb-me { border-radius: 10px; }
+.irow:hover, .trow:hover { background: none; box-shadow: none; }
+@media (min-width: 900px) { .irow { grid-template-columns: 3.2fr 5fr 2fr; } }

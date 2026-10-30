@@ -15,9 +15,9 @@ export default function WritingIndex() {
     <main id="main">
       <header className="page-head frame">
         <Bot name="purple" className="page-bot float" flip />
-        <p className="mono dim rise">{posts.length} entries / <a href="/rss.xml">RSS</a></p>
+        <p className="mono dim rise">{posts.length} posts</p>
         <h1 className="page-title rise">Trench Notes</h1>
-        <p className="page-sub rise">Notes from the build. Agents, payments, trading. Posted in the order it happened.</p>
+        <p className="page-sub rise">Notes from the build, posted as it happens.</p>
       </header>
       <section className="frame">
         <div className="table-head mono dim"><span>Date</span><span>Title</span><span>Tags</span></div>
@@ -30,7 +30,7 @@ export default function WritingIndex() {
                   <span className="t-title">{p.title}</span>
                   <span className="t-desc">{p.tldr}</span>
                 </span>
-                <span className="mono dim t-tags">{p.tags.slice(0, 2).join(" / ")}</span>
+                <span className="mono dim t-tags">{p.tags.slice(0, 2).join(", ")}</span>
               </Link>
             </li>
           ))}

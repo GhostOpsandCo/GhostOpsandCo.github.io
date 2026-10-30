@@ -35,8 +35,8 @@ export function Footer() {
         </div>
         <ul className="ftr-links mono">
           <li><a href={`mailto:${site.email}`}>{site.email}</a></li>
-          <li><a href={site.x} target="_blank" rel="noreferrer">X / {site.xHandle}</a></li>
-          <li><a href={site.github} target="_blank" rel="noreferrer">GitHub / GhostOpsandCo</a></li>
+          <li><a href={site.x} target="_blank" rel="noreferrer">X</a></li>
+          <li><a href={site.github} target="_blank" rel="noreferrer">GitHub</a></li>
           <li><a href="/rss.xml">RSS</a></li>
         </ul>
         <p className="mono dim ftr-note">God calls us to serve others. I try to live that in business and in life.</p>

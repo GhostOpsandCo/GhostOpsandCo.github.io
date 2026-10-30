@@ -6,10 +6,10 @@ import { site } from "@/lib/site";
 import { Bot } from "@/components/Bot";
 
 const now = [
-  { k: "Hot Bot", v: "Your own trading team. Specialist bots that snipe, filter and trade on Solana. Co-founded with @0xWhoismax.", meta: "2026 / now", href: site.hotbot },
+  { k: "Hot Bot", v: "Your own trading team. Specialist bots that snipe, filter and trade on Solana. Co-founded with @0xWhoismax.", meta: "2026 to now", href: site.hotbot },
   { k: "AnsemHack", v: "Joined on the final day. Took the W.", meta: "Oct 2026", href: site.hotbotX },
   { k: "Monarch Shield", v: "Your agent can pay without a policy check? Build fails.", meta: "2026", href: "https://github.com/ghostmonarch/x402ms" },
-  { k: "GhostOps", v: "My internal OS of agents. A year of runs. Everything else is built on it.", meta: "2025 / now", href: "https://github.com/GhostOpsandCo/agent-orchestration" },
+  { k: "GhostOps", v: "My internal OS of agents. A year of runs. Everything else is built on it.", meta: "2025 to now", href: "https://github.com/GhostOpsandCo/agent-orchestration" },
 ];
 
 const WORKED = [
@@ -53,16 +53,16 @@ export default function Home() {
           <h1 className="name rise">Elijah<br className="br-m" /> Paul</h1>
           <div className="hero-foot rise">
             <div>
-              <p className="oneliner">Second-time founder. Took my last startup to a $50M valuation. Led AI at Gate.</p>
+              <p className="oneliner">Second-time founder. My last startup reached a $50M valuation, and I led AI at Gate before starting Hot Bot.</p>
               <p className="thesis">
                 Building <a href={site.hotbot} target="_blank" rel="noreferrer">Hot Bot</a>. Agentic trading on Solana.
                 Joined a hackathon on the final day, won it, went live 24 days later.
                 We aren&apos;t a wrapper.
               </p>
               <div className="ctas">
-                <a className="pill pill-solid" href={site.hotbot} target="_blank" rel="noreferrer"><Bot name="flame" className="mascot" />Hot Bot</a>
-                <a className="pill" href={site.x} target="_blank" rel="noreferrer">{site.xHandle}</a>
-                <a className="pill" href={`mailto:${site.email}`}>Email</a>
+                <a href={site.hotbot} target="_blank" rel="noreferrer">Hot Bot</a>
+                <a href={site.x} target="_blank" rel="noreferrer">{site.xHandle}</a>
+                <a href={`mailto:${site.email}`}>Email</a>
               </div>
             </div>
             <section className="panel glance" aria-label="Hot Bot">
@@ -120,7 +120,6 @@ export default function Home() {
                   <span className="i-title">{p.title}</span>
                   <span className="i-desc">{p.tldr}</span>
                   <span className="i-meta mono">{formatShort(p.date)}</span>
-                  <span className="i-arrow" aria-hidden="true">→</span>
                 </Link>
               </li>
             ))}
