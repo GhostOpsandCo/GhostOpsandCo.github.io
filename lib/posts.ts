@@ -15,7 +15,8 @@ export type Post = {
 const postsDir = join(process.cwd(), "content", "posts");
 
 function slugFromFile(file: string) {
-  return file.replace(/\.md$/, "").replace(/^\d{4}-\d{2}-\d{2}-/, "");
+  const base = file.replace(/\.md$/, "");
+  return /^\d{4}-\d{2}-\d{2}-/.test(base) ? base.slice(11) : base.replace(/^\d{2,3}-/, "");
 }
 
 export function getAllPosts(): Post[] {
