@@ -41,45 +41,36 @@ export default function ContactPage() {
           "@context": "https://schema.org",
           "@type": "ContactPage",
           name: "Contact Elijah Paul",
-          url: `${site.url}/contact`,
+          url: `${site.url}/contact/`,
           mainEntity: { "@type": "Person", name: site.name, email: `mailto:${site.email}`, url: site.url },
         }}
       />
-      <section className="contact-page-hero">
-        <div className="site-shell contact-page-grid">
-          <div>
-            <p className="eyebrow eyebrow-light">Contact</p>
-            <h1>Bring the customer problem. I will help make the product path clear.</h1>
-          </div>
-          <div>
-            <p>
-              The most useful first message includes the user, what they cannot do today, why it
-              matters to the business, and whether you need a hire, a focused engagement, or an
-              existing product.
-            </p>
-            <a className="button button-inverse" href={`mailto:${site.email}`}>{site.email}</a>
+      <section className="hero">
+        <div className="shell">
+          <p className="eyebrow">Contact</p>
+          <h1>Bring the customer problem.</h1>
+          <p className="lede">
+            The most useful first message includes the user, what they cannot do today, why it
+            matters, and whether you need a hire, a focused engagement, or an existing product.
+          </p>
+          <div className="actions">
+            <a className="btn btn-primary" href={`mailto:${site.email}`}>{site.email}</a>
+            <a className="btn" href={site.x} target="_blank" rel="noreferrer">{site.xHandle}</a>
+            <a className="btn" href={site.linkedin} target="_blank" rel="noreferrer">LinkedIn</a>
           </div>
         </div>
       </section>
-
-      <section className="section-band">
-        <div className="site-shell contact-paths">
-          {contactPaths.map((path) => (
-            <article key={path.title}>
-              <p className="eyebrow">{path.label}</p>
-              <h2>{path.title}</h2>
-              <p>{path.copy}</p>
-              <a className="button button-outline" href={mailto(path.subject)}>{path.action}</a>
-            </article>
-          ))}
-        </div>
-      </section>
-
-      <section className="section-band section-soft">
-        <div className="site-shell direct-links">
-          <div><span>LinkedIn</span><a href={site.linkedin} target="_blank" rel="noreferrer">linkedin.com/in/elijahpaul</a></div>
-          <div><span>GitHub</span><a href={site.github} target="_blank" rel="noreferrer">github.com/GhostOpsandCo</a></div>
-          <div><span>Location</span><strong>Phoenix, Arizona · Remote</strong></div>
+      <section className="section">
+        <div className="shell">
+          <div className="highlights">
+            {contactPaths.map((path) => (
+              <a key={path.title} href={mailto(path.subject)}>
+                <p className="eyebrow">{path.label}</p>
+                <strong>{path.title}</strong>
+                <p>{path.copy}</p>
+              </a>
+            ))}
+          </div>
         </div>
       </section>
     </main>

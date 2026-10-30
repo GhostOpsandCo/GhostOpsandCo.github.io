@@ -88,66 +88,66 @@ const capabilities = [
 export default function ResumePage() {
   return (
     <main id="main-content">
-      <section className="page-hero resume-hero">
-        <div className="site-shell page-hero-grid">
-          <div>
-            <p className="eyebrow">Resume</p>
-            <h1>AI solutions architecture with product and commercial judgment.</h1>
-          </div>
-          <div className="large-copy">
-            <p>
-              I work directly with customers and internal teams to find product gaps, design practical
-              AI solutions, and build the version a company can test and bring to market.
-            </p>
-            <div className="hero-actions">
-              <a className="button button-primary" href="/downloads/elijah-paul-resume.pdf" download>Download PDF resume</a>
-              <a className="button button-outline" href={site.linkedin} target="_blank" rel="noreferrer">LinkedIn</a>
-            </div>
+      <section className="hero">
+        <div className="shell">
+          <p className="eyebrow">Resume</p>
+          <h1>AI solutions architecture with product and commercial judgment.</h1>
+          <p className="lede">
+            I work directly with customers and internal teams to find product gaps, design practical
+            AI solutions, and build the version a company can test and bring to market.
+          </p>
+          <div className="actions">
+            <a className="btn btn-primary" href="/downloads/elijah-paul-resume.pdf" download>Download PDF résumé</a>
+            <a className="btn" href={site.linkedin} target="_blank" rel="noreferrer">LinkedIn</a>
           </div>
         </div>
       </section>
 
-      <section className="section-band">
-        <div className="site-shell resume-layout">
-          <aside className="resume-aside">
-            <div>
-              <p className="eyebrow">Capabilities</p>
-              <ul className="plain-list">
-                {capabilities.map((capability) => <li key={capability}>{capability}</li>)}
-              </ul>
-            </div>
-            <div>
-              <p className="eyebrow">Selected work</p>
-              <p>Orelis, Team Take Down, Treasury Router, GridSynapse, and Monarch Shield.</p>
-              <Link className="text-link" href="/work">View case studies</Link>
-            </div>
-          </aside>
-          <div className="experience-list">
-            {experience.map((item) => (
-              <article className="experience-item" key={`${item.company}-${item.role}`}>
-                <div className="experience-heading">
-                  <div><p>{item.company}</p><h2>{item.role}</h2></div>
-                  <span>{item.dates}</span>
-                </div>
-                <p className="experience-summary">{item.summary}</p>
-                <ul className="evidence-list">
-                  {item.bullets.map((bullet) => <li key={bullet}>{bullet}</li>)}
+      <section className="section">
+        <div className="shell">
+          <ol className="timeline">
+            <li>
+              <span className="when">October 2026 – Present</span>
+              <div>
+                <h3>Co-founder</h3>
+                <p className="org">Hot Bot · <a className="link" href={site.hotbot} target="_blank" rel="noreferrer">usehotbot.com</a></p>
+                <ul>
+                  <li>Building agentic swarm trading on Solana: a private team of specialist bots that research, snipe, trade, and launch.</li>
+                  <li>Co-winner of the ClawPump × Ansem AnsemHack.</li>
                 </ul>
-              </article>
+              </div>
+            </li>
+            {experience.map((item) => (
+              <li key={`${item.company}-${item.role}`}>
+                <span className="when">{item.dates}</span>
+                <div>
+                  <h3>{item.role}</h3>
+                  <p className="org">{item.company}</p>
+                  <p>{item.summary}</p>
+                  <ul>{item.bullets.map((bullet) => <li key={bullet}>{bullet}</li>)}</ul>
+                </div>
+              </li>
             ))}
-          </div>
+          </ol>
         </div>
       </section>
 
-      <section className="contact-band">
-        <div className="site-shell contact-band-inner">
+      <section className="section">
+        <div className="shell split">
+          <h2>Capabilities</h2>
+          <ul className="tags">{capabilities.map((capability) => <li key={capability}>{capability}</li>)}</ul>
+        </div>
+      </section>
+
+      <section className="section">
+        <div className="shell split">
+          <h2>Hiring?</h2>
           <div>
-            <p className="eyebrow eyebrow-light">Hiring?</p>
-            <h2>Looking for someone who can face the customer and build the solution?</h2>
-          </div>
-          <div>
-            <p>I am most interested in AI solutions, product, and forward-deployed roles across crypto, fintech, and AI infrastructure.</p>
-            <a className="button button-inverse" href={mailto("AI solutions role")}>Discuss a role</a>
+            <p className="lede">I am most interested in AI solutions, product, and forward-deployed roles across crypto, fintech, and AI infrastructure.</p>
+            <div className="actions">
+              <a className="btn btn-primary" href={mailto("AI solutions role")}>Discuss a role</a>
+              <Link className="btn" href="/work">View case studies</Link>
+            </div>
           </div>
         </div>
       </section>

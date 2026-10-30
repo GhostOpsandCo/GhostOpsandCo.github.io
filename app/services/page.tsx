@@ -73,94 +73,54 @@ export default function ServicesPage() {
           },
         ]}
       />
-
-      <section className="page-hero">
-        <div className="site-shell page-hero-grid">
-          <div>
-            <p className="eyebrow">AI product services</p>
-            <h1>Turn a costly workflow problem into a product people can test.</h1>
-          </div>
-          <div className="large-copy">
-            <p>
-              I work with customers and internal teams to find the real bottleneck, design the
-              operating flow, and build the first credible version. The goal is a better product and
-              a clear path to adoption, not an AI feature looking for a use case.
-            </p>
-            <a className="button button-primary" href={mailto("AI product opportunity")}>Describe the problem</a>
-          </div>
+      <section className="hero">
+        <div className="shell">
+          <p className="eyebrow">AI product services</p>
+          <h1>Turn a costly workflow problem into a product people can test.</h1>
+          <p className="lede">
+            I find the real bottleneck, design the operating flow, and build the first credible version.
+          </p>
+          <div className="actions"><a className="btn btn-primary" href={mailto("AI product opportunity")}>Describe the problem</a></div>
         </div>
       </section>
 
-      <section className="section-band" aria-labelledby="engagements-title">
-        <div className="site-shell">
-          <div className="section-heading">
-            <div>
-              <p className="eyebrow">Ways to work together</p>
-              <h2 id="engagements-title">Start at the level your problem requires</h2>
-            </div>
-          </div>
-          <div className="services-stack">
+      <section className="section">
+        <div className="shell">
+          <h2>Ways to work together</h2>
+          <ul className="rows" style={{ marginTop: 28 }}>
             {services.map((service) => (
-              <article className="service-row" key={service.name}>
-                <div className="service-title-block">
-                  <h3>{service.name}</h3>
-                  <p>{service.summary}</p>
-                </div>
-                <dl className="service-details">
+              <li key={service.name} style={{ padding: "28px 0" }}>
+                <h3>{service.name}</h3>
+                <p className="muted">{service.summary}</p>
+                <dl className="dl" style={{ margin: "18px 0" }}>
                   <div><dt>Timeline</dt><dd>{service.timeline}</dd></div>
                   <div><dt>Investment</dt><dd>{service.price}</dd></div>
+                  <div><dt>Deliverables</dt><dd>{service.deliverables.join(" · ")}</dd></div>
                 </dl>
-                <div className="service-deliverables">
-                  <span>Typical deliverables</span>
-                  <ul>
-                    {service.deliverables.map((item) => <li key={item}>{item}</li>)}
-                  </ul>
-                </div>
-                <a className="button button-outline" href={mailto(service.subject)}>Ask about this engagement</a>
-              </article>
+                <a className="link arrow" href={mailto(service.subject)}>Ask about this engagement</a>
+              </li>
             ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="section-band section-soft" aria-labelledby="fit-title">
-        <div className="site-shell split-reading">
-          <div>
-            <p className="eyebrow">Good fit</p>
-            <h2 id="fit-title">The signal is usually already visible</h2>
-          </div>
-          <ul className="signal-list">
-            {fitSignals.map((signal) => <li key={signal}>{signal}</li>)}
           </ul>
         </div>
       </section>
 
-      <section className="section-band" aria-labelledby="faq-title">
-        <div className="site-shell faq-layout">
+      <section className="section">
+        <div className="shell split">
+          <h2>Good fit</h2>
+          <ul className="prose">{fitSignals.map((signal) => <li key={signal}>{signal}</li>)}</ul>
+        </div>
+      </section>
+
+      <section className="section">
+        <div className="shell split">
+          <h2>Common questions</h2>
           <div>
-            <p className="eyebrow">Common questions</p>
-            <h2 id="faq-title">What the engagement looks like</h2>
-          </div>
-          <div className="faq-list">
             {faqs.map((item) => (
-              <details key={item.question}>
+              <details className="faq" key={item.question}>
                 <summary>{item.question}</summary>
                 <p>{item.answer}</p>
               </details>
             ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="contact-band">
-        <div className="site-shell contact-band-inner">
-          <div>
-            <p className="eyebrow eyebrow-light">Start with the bottleneck</p>
-            <h2>Tell me what customers cannot do today.</h2>
-          </div>
-          <div>
-            <p>Include the user, current workflow, and business impact. I will respond with where I would start.</p>
-            <a className="button button-inverse" href={mailto("Customer workflow worth fixing")}>Email Elijah</a>
           </div>
         </div>
       </section>

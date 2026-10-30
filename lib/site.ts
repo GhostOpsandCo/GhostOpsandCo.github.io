@@ -7,7 +7,13 @@ export const site = {
   email: "elijah@elijahpaul.io",
   linkedin: "https://www.linkedin.com/in/elijahpaul",
   github: "https://github.com/GhostOpsandCo",
+  x: "https://x.com/elijahintek",
+  xHandle: "@elijahintek",
+  hotbot: "https://usehotbot.com",
+  hotbotX: "https://x.com/usehotbot",
 };
+
+export const sameAs = [site.linkedin, site.github, site.x];
 
 export type Project = {
   slug: string;

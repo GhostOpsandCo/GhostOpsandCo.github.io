@@ -1,6 +1,8 @@
 import type { Metadata, Viewport } from "next";
 import { SiteFooter } from "@/components/SiteFooter";
 import { SiteHeader } from "@/components/SiteHeader";
+import { JsonLd } from "@/components/JsonLd";
+import { personJsonLd } from "@/lib/person";
 import { site } from "@/lib/site";
 import "./globals.css";
 
@@ -15,7 +17,7 @@ export const metadata: Metadata = {
   authors: [{ name: "Elijah Paul", url: site.url }],
   creator: "Elijah Paul",
   publisher: "Elijah Paul",
-  alternates: { canonical: "/" },
+  alternates: { canonical: "/", types: { "application/rss+xml": [{ url: "/rss.xml", title: "Elijah Paul — Writing" }] } },
   openGraph: {
     title: "Elijah Paul | AI Solutions Architect & Product Builder",
     description: site.description,
@@ -32,6 +34,7 @@ export const metadata: Metadata = {
     ],
   },
   twitter: {
+    creator: "@elijahintek",
     card: "summary_large_image",
     title: "Elijah Paul | AI Solutions Architect & Product Builder",
     description: site.description,
@@ -47,14 +50,18 @@ export const metadata: Metadata = {
 export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
-  colorScheme: "light",
-  themeColor: "#f7f8fb",
+  colorScheme: "light dark",
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "#ffffff" },
+    { media: "(prefers-color-scheme: dark)", color: "#0c0c0c" },
+  ],
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en">
       <body>
+        <JsonLd data={personJsonLd} />
         <a className="skip-link" href="#main-content">Skip to content</a>
         <SiteHeader />
         {children}

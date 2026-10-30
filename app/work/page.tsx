@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import { ProjectCard } from "@/components/ProjectCard";
 import { projects } from "@/lib/site";
 
@@ -19,29 +18,18 @@ export const metadata: Metadata = {
 export default function WorkPage() {
   return (
     <main id="main-content">
-      <section className="page-hero page-hero-work">
-        <div className="site-shell page-hero-grid">
-          <div>
-            <p className="eyebrow">Selected work</p>
-            <h1>AI products built around real customer and operating problems.</h1>
-          </div>
-          <p className="large-copy">
-            Each case study shows the customer problem, product decisions, working surface, and
-            operating boundaries, so you can evaluate how I turn ambiguity into something a team can
-            test and improve.
+      <section className="hero">
+        <div className="shell">
+          <p className="eyebrow">Selected work</p>
+          <h1>AI products built around real problems.</h1>
+          <p className="lede">
+            Each case study shows the customer problem, product decisions, working surface, and operating boundaries.
           </p>
         </div>
-        <div className="work-preview-strip" aria-hidden="true">
-          {projects.map((project) => (
-            <div key={project.slug}><Image src={project.image} alt="" fill loading="eager" sizes="25vw" /></div>
-          ))}
-        </div>
       </section>
-      <section className="section-band">
-        <div className="site-shell project-grid project-grid-editorial">
-          {projects.map((project, index) => (
-            <ProjectCard key={project.slug} project={project} featured={index < 2} reverse={index === 1} />
-          ))}
+      <section style={{ paddingBottom: 96 }}>
+        <div className="shell grid">
+          {projects.map((project) => <ProjectCard key={project.slug} project={project} />)}
         </div>
       </section>
     </main>

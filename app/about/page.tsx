@@ -32,46 +32,26 @@ export default function AboutPage() {
           "@context": "https://schema.org",
           "@type": "ProfilePage",
           name: "About Elijah Paul",
-          url: `${site.url}/about`,
-          mainEntity: {
-            "@type": "Person",
-            name: site.name,
-            image: `${site.url}/headshot.jpg`,
-            jobTitle: site.title,
-            description: site.description,
-            sameAs: [site.linkedin, site.github],
-          },
+          url: `${site.url}/about/`,
+          mainEntity: { "@id": `${site.url}/#person`, "@type": "Person", name: site.name },
         }}
       />
-
-      <section className="about-hero">
-        <div className="site-shell about-hero-grid">
-          <div className="about-portrait">
-            <Image src="/headshot.jpg" alt="Elijah Paul" fill loading="eager" sizes="(max-width: 760px) 100vw, 42vw" />
-          </div>
-          <div className="about-intro">
-            <p className="eyebrow">About</p>
-            <h1>I build the bridge between a customer problem and a product that works.</h1>
-            <p className="large-copy">
+      <section className="hero">
+        <div className="narrow">
+          <Image className="portrait" src="/headshot.jpg" alt="Elijah Paul" width={264} height={264} loading="eager" />
+          <p className="eyebrow">About</p>
+          <h1>I build the bridge between a customer problem and a product that works.</h1>
+          <div className="prose">
+            <p>
               I am an AI solutions architect and product builder working across crypto, fintech, and
               AI. I am strongest when customers are describing a real problem,
               the opportunity is valuable, and the product path is not obvious yet.
             </p>
-            <div className="hero-actions">
-              <Link className="button button-primary" href="/work">View my work</Link>
-              <a className="button button-outline" href={mailto("Role or product conversation")}>Start a conversation</a>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="section-band">
-        <div className="site-shell about-copy-grid">
-          <div>
-            <p className="eyebrow">How I work</p>
-            <h2>Customer-led, technically grounded, commercially useful.</h2>
-          </div>
-          <div className="large-copy">
+            <p>
+              Right now I&apos;m building <a href={site.hotbot} target="_blank" rel="noreferrer">Hot Bot</a> with
+              @0xWhoismax: agentic swarm trading on Solana. We co-won the ClawPump × Ansem AnsemHack.
+              Before that I led AI product work at Gate.
+            </p>
             <p>
               Over the last six years, I have worked with founders and internal teams across crypto,
               AI, and early-stage technology. The work has moved from distribution and partnerships
@@ -82,45 +62,27 @@ export default function AboutPage() {
               actually a positioning problem, when a requested feature will not change adoption, and
               when a focused build can open a customer, partnership, or new revenue path.
             </p>
-          </div>
-        </div>
-      </section>
-
-      <section className="section-band section-soft" aria-labelledby="strength-title">
-        <div className="site-shell">
-          <div className="section-heading">
-            <div>
-              <p className="eyebrow">What I bring</p>
-              <h2 id="strength-title">Four parts of the same job</h2>
-            </div>
-          </div>
-          <div className="strength-grid">
-            {strengths.map(([title, copy]) => (
-              <article key={title}>
-                <h3>{title}</h3>
-                <p>{copy}</p>
-              </article>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="section-band section-dark">
-        <div className="site-shell principle-grid">
-          <div>
-            <p className="eyebrow eyebrow-light">Principle</p>
             <h2>AI is useful when it improves a real decision or workflow.</h2>
-          </div>
-          <div>
             <p>
               I do not start with a model and search for somewhere to put it. I start with the user,
               the cost of the current process, the controls the company needs, and the outcome that
               would justify changing behavior.
             </p>
-            <p>
-              That is the pattern across my work: decision support for advisors, compute procurement,
-              voice intake, and agent-payment developer tooling.
-            </p>
+          </div>
+        </div>
+      </section>
+
+      <section className="section">
+        <div className="shell">
+          <h2 className="eyebrow">What I bring</h2>
+          <div className="highlights" style={{ gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))" }}>
+            {strengths.map(([title, copy]) => (
+              <div key={title}><strong>{title}</strong><p>{copy}</p></div>
+            ))}
+          </div>
+          <div className="actions">
+            <Link className="btn btn-primary" href="/work">View my work</Link>
+            <a className="btn" href={mailto("Role or product conversation")}>Start a conversation</a>
           </div>
         </div>
       </section>
