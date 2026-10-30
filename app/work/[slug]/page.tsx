@@ -53,14 +53,14 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
         }}
       />
       <header className="page-head frame">
-        <p className="mono dim rise"><Link href="/work">← Work</Link> / {String(i + 1).padStart(2, "0")} / {String(projects.length).padStart(2, "0")}</p>
+        <p className="mono dim rise"><Link href="/work">← Work</Link></p>
         <h1 className="page-title rise">{project.name}</h1>
         <p className="page-sub rise">{project.summary}</p>
         <dl className="spec spec-row mono rise">
           <div><dt>Type</dt><dd>{project.category}</dd></div>
           <div><dt>Status</dt><dd>{project.status}</dd></div>
-          {project.liveUrl && <div><dt>Live</dt><dd><a href={project.liveUrl} target="_blank" rel="noreferrer">{project.liveUrl.replace(/^https?:\/\/(www\.)?/, "").replace(/\/$/, "")} ↗</a></dd></div>}
-          {project.sourceUrl && <div><dt>Source</dt><dd><a href={project.sourceUrl} target="_blank" rel="noreferrer">GitHub ↗</a></dd></div>}
+          {project.liveUrl && <div><dt>Live</dt><dd><a href={project.liveUrl} target="_blank" rel="noreferrer">{project.liveUrl.replace(/^https?:\/\/(www\.)?/, "").replace(/\/$/, "")}</a></dd></div>}
+          {project.sourceUrl && <div><dt>Source</dt><dd><a href={project.sourceUrl} target="_blank" rel="noreferrer">GitHub</a></dd></div>}
         </dl>
       </header>
 

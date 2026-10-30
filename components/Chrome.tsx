@@ -18,7 +18,7 @@ export function Header() {
         </Link>
         <nav aria-label="Primary" className="hdr-nav">
           <NavLinks items={nav} />
-          <a href={site.x} target="_blank" rel="noreferrer" className="hdr-x">X ↗</a>
+          <a href={site.x} target="_blank" rel="noreferrer" className="hdr-x">X</a>
         </nav>
       </div>
     </header>
@@ -31,7 +31,7 @@ export function Footer() {
       <div className="frame ftr-grid">
         <div>
           <p className="ftr-big">Elijah Paul</p>
-          <p className="mono dim">Phoenix, AZ / 33.45° N, 112.07° W</p>
+          <p className="mono dim">Phoenix, AZ</p>
         </div>
         <ul className="ftr-links mono">
           <li><a href={`mailto:${site.email}`}>{site.email}</a></li>
@@ -46,12 +46,12 @@ export function Footer() {
   );
 }
 
-export function Label({ n, children, bot }: { n: string; children: React.ReactNode; bot?: BotName }) {
+export function Label({ n, children, bot, flip }: { n: string; children: React.ReactNode; bot?: BotName; flip?: boolean }) {
   return (
     <div className={`label mono${bot ? " label-bot" : ""}`}>
       <span className="dim">{n}</span>
       <span>{children}</span>
-      {bot && <Bot name={bot} className="float" />}
+      {bot && <Bot name={bot} className="float" flip={flip} />}
     </div>
   );
 }

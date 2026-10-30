@@ -18,6 +18,7 @@ export function BotEyes() {
       const list = Array.from(eyes);
       const boxes = idle ? [] : list.map((g) => (g.ownerSVGElement as SVGSVGElement).getBoundingClientRect());
       list.forEach((g, i) => {
+        const reach = Number(g.dataset.r ?? 1); // small eyes, or eyes behind glasses, travel less
         let dx: number, dy: number;
         if (idle) { dx = Math.sin(t / 1400 + i) * 11; dy = Math.cos(t / 1900 + i * 1.7) * 7; }
         else {
@@ -26,7 +27,7 @@ export function BotEyes() {
           const d = Math.hypot(vx, vy) || 1, k = Math.min(1, d / 180);
           dx = (vx / d) * 20 * k; dy = (vy / d) * 16 * k;
         }
-        g.setAttribute("transform", `translate(${dx.toFixed(2)} ${dy.toFixed(2)})`);
+        g.setAttribute("transform", `translate(${(dx * reach).toFixed(2)} ${(dy * reach).toFixed(2)})`);
       });
     };
     raf = requestAnimationFrame(tick);

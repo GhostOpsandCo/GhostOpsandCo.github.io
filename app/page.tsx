@@ -21,14 +21,24 @@ const WORKED = [
 ];
 const HACKATHONS = [
   { n: "AnsemHack", r: "🏆" },
-  { n: "Colosseum", r: "TBD" },
-  { n: "Meta AI Global", r: "TBD" },
+  { n: "Colosseum", r: "Ongoing" },
+  { n: "Meta AI Global", r: "Ongoing" },
 ];
 const SWARM = [
-  { n: "ResearchBot", v: "Finds coins that fit your rules.", bot: "cloud" },
-  { n: "ShieldBot", v: "Filters the junk.", bot: "purple" },
-  { n: "SniperBot", v: "Buys the moment one checks out.", bot: "red" },
-  { n: "TraderBot", v: "Runs the position inside your rules.", bot: "blue" },
+  { n: "ResearchBot", v: "Finds coins that fit your rules.", bot: "research" },
+  { n: "ShieldBot", v: "Filters the junk.", bot: "shield" },
+  { n: "SniperBot", v: "Buys the moment one checks out.", bot: "sniper" },
+  { n: "TraderBot", v: "Runs the position inside your rules.", bot: "trader" },
+] as const;
+const FACTS = ["BJJ no-gi champ", "62% close rate in high-ticket sales"];
+// The banner's lineup, mirrored so everyone faces the email.
+const CREW = [
+  { n: "cloud", x: 11.6, y: 41.6, s: 32 },
+  { n: "purple", x: 38.1, y: 16.6, s: 26.3 },
+  { n: "blue", x: 25, y: 78.9, s: 28.6 },
+  { n: "flame", x: 58.1, y: 54.2, s: 60.4 },
+  { n: "red", x: 90.9, y: 44.5, s: 25 },
+  { n: "green", x: 88.7, y: 84.6, s: 30.8 },
 ] as const;
 
 export default function Home() {
@@ -37,7 +47,6 @@ export default function Home() {
     <main id="main">
       <section className="hero">
         <div className="frame hero-in">
-          <p className="now-line mono rise">Now building <a href={site.hotbot} target="_blank" rel="noreferrer">Hot Bot</a></p>
           <h1 className="name rise">Elijah<br className="br-m" /> Paul</h1>
           <div className="hero-foot rise">
             <div>
@@ -47,24 +56,23 @@ export default function Home() {
                 We aren&apos;t a wrapper.
               </p>
               <div className="ctas">
-                <a className="pill pill-solid" href={site.hotbot} target="_blank" rel="noreferrer"><Bot name="flame" className="mascot" />Hot Bot ↗</a>
+                <a className="pill pill-solid" href={site.hotbot} target="_blank" rel="noreferrer"><Bot name="flame" className="mascot" />Hot Bot</a>
                 <a className="pill" href={site.x} target="_blank" rel="noreferrer">{site.xHandle}</a>
                 <a className="pill" href={`mailto:${site.email}`}>Email</a>
               </div>
             </div>
-            <section className="panel glance" aria-label="At a glance">
+            <section className="panel glance" aria-label="Hot Bot">
               <Bot name="green" className="perch" flip />
-              <p className="kicker">At a glance</p>
+              <p className="panel-title"><a href={site.hotbot} target="_blank" rel="noreferrer"><Bot name="flame" className="mascot" />Hot Bot</a></p>
               <dl className="stats">
-                <div><dt>Building</dt><dd><Bot name="flame" className="mascot" />Hot Bot <span className="up">● Live</span></dd></div>
-                <div><dt>Build to launch</dt><dd>24 days</dd></div>
+                <div className="stat-wide"><dt>What it is</dt><dd>Agentic Trading as a Service</dd></div>
+                <div><dt>Build to launch</dt><dd>24 days. Still shipping.</dd></div>
                 <div>
-                  <dt>Hackathons</dt>
+                  <dt>Hackathons entered</dt>
                   <dd><ul className="hacks">{HACKATHONS.map((h) => <li key={h.n}>{h.n} <span>{h.r}</span></li>)}</ul></dd>
                 </div>
-                <div><dt>What I do</dt><dd className="does"><span>Consumer problems.</span> <span>Unique solutions.</span></dd></div>
               </dl>
-              <p className="glance-foot">Phoenix, AZ · Co-founder with @0xWhoismax</p>
+              <p className="glance-foot">Co-founded with @0xWhoismax</p>
             </section>
           </div>
           <div className="worked rise">
@@ -78,12 +86,22 @@ export default function Home() {
               ))}
             </ul>
           </div>
+          <div className="bio rise">
+            <div>
+              <p className="kicker">What I do</p>
+              <p className="bio-lines"><span>Solve big problems</span> <span>with unique solutions</span> <span>that users love</span></p>
+            </div>
+            <div>
+              <p className="kicker">Random facts</p>
+              <ul className="bio-lines">{FACTS.map((f) => <li key={f}>{f}</li>)}</ul>
+            </div>
+          </div>
         </div>
       </section>
 
       <section className="block">
         <div className="frame grid12">
-          <Label n="01" bot="purple">Log</Label>
+          <Label n="01" bot="purple" flip>Log</Label>
           <ol className="index">
             {posts.map((p) => (
               <li key={p.slug} className="reveal">
@@ -110,7 +128,6 @@ export default function Home() {
                   <span className="i-title">{r.k}</span>
                   <span className="i-desc">{r.v}</span>
                   <span className="i-meta mono">{r.meta}</span>
-                  <span className="i-arrow" aria-hidden="true">↗</span>
                 </a>
               </li>
             ))}
@@ -129,10 +146,17 @@ export default function Home() {
 
       <section className="block">
         <div className="frame grid12">
-          <Label n="03" bot="red">Contact</Label>
+          <Label n="03">Contact</Label>
           <div className="contact reveal">
-            <a className="contact-big" href={`mailto:${site.email}`}>{site.email}</a>
-            <p className="mono dim">DMs open. <a href={site.x} target="_blank" rel="noreferrer">{site.xHandle}</a></p>
+            <div>
+              <a className="contact-big" href={`mailto:${site.email}`}>{site.email}</a>
+              <p className="mono dim">DMs open. <a href={site.x} target="_blank" rel="noreferrer">{site.xHandle}</a></p>
+            </div>
+            <div className="crew" aria-hidden="true">
+              {CREW.map((c) => (
+                <Bot key={c.n} name={c.n} className="float" flip style={{ left: `${c.x}%`, top: `${c.y}%`, width: `${c.s}%`, marginLeft: `${-c.s / 2}%`, marginTop: `${-c.s / 2}%` }} />
+              ))}
+            </div>
           </div>
         </div>
       </section>
