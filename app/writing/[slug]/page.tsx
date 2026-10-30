@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import { Bot } from "@/components/Bot";
 import { JsonLd } from "@/components/JsonLd";
 import { formatDate, getAllPosts, getPost } from "@/lib/posts";
 import { site } from "@/lib/site";
@@ -76,7 +77,7 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
           {post.tldr && <div className="art-tldr"><span className="tldr-k mono">TLDR</span><p>{post.tldr}</p></div>}
           <div className="prose" dangerouslySetInnerHTML={{ __html: post.html }} />
           <footer className="art-foot mono">
-            <span className="dim">Elijah Paul / <a href={site.x} target="_blank" rel="noreferrer">{site.xHandle}</a></span>
+            <span className="dim art-sign"><Bot name="purple" className="float" />Elijah Paul / <a href={site.x} target="_blank" rel="noreferrer">{site.xHandle}</a></span>
             <span className="art-nav">
               {prev && <Link href={`/writing/${prev.slug}`}>← {prev.title}</Link>}
               {next && <Link href={`/writing/${next.slug}`}>{next.title} →</Link>}

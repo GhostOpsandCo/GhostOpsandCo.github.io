@@ -1,6 +1,6 @@
 "use client";
-/* eslint-disable @next/next/no-img-element -- static SVG mascots */
 import { useEffect, useRef, useState } from "react";
+import { Bot } from "./Bot";
 
 type Doc = { t: string; u: string; a: string; x: string };
 type Msg = { from: "bot" | "me"; text: string; link?: { t: string; u: string } };
@@ -30,7 +30,7 @@ function rank(docs: Doc[], q: string) {
 }
 
 const CHIPS = ["What is Hot Bot?", "What's x402?", "What's GhostOps?", "What are you shipping?"];
-const HELLO: Msg = { from: "bot", text: "Yo 👋 I'm Elijah's site bot. Ask me about Hot Bot, x402, GhostOps, or what I'm shipping." };
+const HELLO: Msg = { from: "bot", text: "I'm Hot Bot. Ask about Elijah, x402, GhostOps or what's shipping." };
 
 export function SiteBot() {
   const [open, setOpen] = useState(false);
@@ -66,15 +66,15 @@ export function SiteBot() {
   return (
     <div className="sb">
       {open && (
-        <div className="sb-panel" role="dialog" aria-label="Site bot" id="sb-panel">
+        <div className="sb-panel" role="dialog" aria-label="Hot Bot" id="sb-panel">
           <div className="sb-head">
-            <span><img src="/bots/flame.svg" alt="" width={18} height={18} className="sb-av" />Site bot</span>
+            <span><Bot name="flame" className="sb-av" />Hot Bot</span>
             <button type="button" className="sb-x" aria-label="Close" onClick={() => { setOpen(false); btn.current?.focus(); }}>×</button>
           </div>
           <div className="sb-log" ref={log} aria-live="polite">
             {msgs.map((m, i) => (
               <div key={i} className={`sb-msg sb-${m.from}`}>
-                {m.from === "bot" && <img src="/bots/flame.svg" alt="" width={16} height={16} className="sb-av sb-av-msg" />}
+                {m.from === "bot" && <Bot name="flame" className="sb-av sb-av-msg" />}
                 <p>{m.text}</p>
                 {m.link && (
                   <a href={m.link.u} {...(m.link.u.startsWith("http") ? { target: "_blank", rel: "noreferrer" } : {})}>{m.link.t} →</a>
@@ -88,14 +88,14 @@ export function SiteBot() {
             )}
           </div>
           <form className="sb-form" onSubmit={(e) => { e.preventDefault(); ask(q); }}>
-            <label htmlFor="sb-q" className="sr-only">Ask the site bot</label>
+            <label htmlFor="sb-q" className="sr-only">Ask Hot Bot</label>
             <input id="sb-q" ref={input} value={q} onChange={(e) => setQ(e.target.value)} placeholder="Ask something…" autoComplete="off" maxLength={200} />
             <button type="submit" aria-label="Send">↑</button>
           </form>
         </div>
       )}
-      <button ref={btn} type="button" className="sb-btn" aria-expanded={open} aria-controls="sb-panel" aria-label={open ? "Close site bot" : "Open site bot"} onClick={() => setOpen((o) => !o)}>
-        {open ? "×" : <img src="/bots/flame.svg" alt="" width={30} height={30} className="bob" />}
+      <button ref={btn} type="button" className="sb-btn" aria-expanded={open} aria-controls="sb-panel" aria-label={open ? "Close Hot Bot" : "Open Hot Bot"} onClick={() => setOpen((o) => !o)}>
+        {open ? "×" : <Bot name="flame" className="bob" />}
       </button>
     </div>
   );

@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { site } from "@/lib/site";
+import { Bot, type BotName } from "./Bot";
 import { NavLinks } from "./NavLinks";
 
 const nav = [
@@ -12,7 +13,7 @@ export function Header() {
     <header className="hdr">
       <div className="frame hdr-in">
         <Link href="/" className="mark" aria-label="Elijah Paul, home">
-          <span className="mark-dot" aria-hidden="true" />
+          <Bot name="cloud" className="mark-bot" />
           Elijah Paul
         </Link>
         <nav aria-label="Primary" className="hdr-nav">
@@ -45,11 +46,12 @@ export function Footer() {
   );
 }
 
-export function Label({ n, children }: { n: string; children: React.ReactNode }) {
+export function Label({ n, children, bot }: { n: string; children: React.ReactNode; bot?: BotName }) {
   return (
-    <div className="label mono">
+    <div className={`label mono${bot ? " label-bot" : ""}`}>
       <span className="dim">{n}</span>
       <span>{children}</span>
+      {bot && <Bot name={bot} className="float" />}
     </div>
   );
 }

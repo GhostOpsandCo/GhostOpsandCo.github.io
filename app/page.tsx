@@ -1,10 +1,9 @@
-/* eslint-disable @next/next/no-img-element -- static SVG mascots */
 import Link from "next/link";
 import { Label } from "@/components/Chrome";
 import { formatShort, getAllPosts } from "@/lib/posts";
 import { experience } from "@/lib/experience";
 import { projects, site } from "@/lib/site";
-import Cast from "@/components/Cast";
+import { Bot } from "@/components/Bot";
 
 const now = [
   { k: "Hot Bot", v: "Your own trading team. Specialist bots that snipe, filter and trade on Solana. Co-founded with @0xWhoismax.", meta: "2026 / now", href: site.hotbot },
@@ -21,10 +20,10 @@ const WORKED = [
   { n: "x402", u: "https://www.x402.org", src: "/logos/x402.svg", w: 47, text: false },
 ];
 const SWARM = [
-  { n: "ResearchBot", v: "Finds coins that fit your rules." },
-  { n: "SniperBot", v: "Buys the moment one checks out." },
-  { n: "TraderBot", v: "Runs the position inside your rules." },
-];
+  { n: "ResearchBot", v: "Finds coins that fit your rules.", bot: "cloud" },
+  { n: "SniperBot", v: "Buys the moment one checks out.", bot: "red" },
+  { n: "TraderBot", v: "Runs the position inside your rules.", bot: "blue" },
+] as const;
 
 export default function Home() {
   const posts = getAllPosts().slice(0, 5);
@@ -42,15 +41,16 @@ export default function Home() {
                 We aren&apos;t a wrapper.
               </p>
               <div className="ctas">
-                <a className="pill pill-solid" href={site.hotbot} target="_blank" rel="noreferrer"><img src="/bots/flame.svg" alt="" width={18} height={18} className="mascot" />Hot Bot ↗</a>
+                <a className="pill pill-solid" href={site.hotbot} target="_blank" rel="noreferrer"><Bot name="flame" className="mascot" />Hot Bot ↗</a>
                 <a className="pill" href={site.x} target="_blank" rel="noreferrer">{site.xHandle}</a>
                 <a className="pill" href={`mailto:${site.email}`}>Email</a>
               </div>
             </div>
             <section className="panel glance" aria-label="At a glance">
+              <Bot name="green" className="perch" />
               <p className="kicker">At a glance</p>
               <dl className="stats">
-                <div><dt>Building</dt><dd><img src="/bots/flame.svg" alt="" width={18} height={18} className="mascot bob" />Hot Bot <span className="up">● Live</span></dd></div>
+                <div><dt>Building</dt><dd><Bot name="flame" className="mascot" />Hot Bot <span className="up">● Live</span></dd></div>
                 <div><dt>AnsemHack</dt><dd>Co-won</dd></div>
                 <div><dt>Build to launch</dt><dd>24 days</dd></div>
                 <div><dt>Before</dt><dd>AI at Gate</dd></div>
@@ -76,7 +76,7 @@ export default function Home() {
 
       <section className="block">
         <div className="frame grid12">
-          <Label n="01">Log</Label>
+          <Label n="01" bot="purple">Log</Label>
           <ol className="index">
             {posts.map((p) => (
               <li key={p.slug} className="reveal">
@@ -109,11 +109,10 @@ export default function Home() {
             ))}
           </ol>
           <div className="panel swarm reveal">
-            <p className="kicker">The Hot Bot swarm</p>
-            <Cast />
+            <p className="kicker"><Bot name="flame" className="mascot" />The Hot Bot swarm</p>
             <ul>
               {SWARM.map((b) => (
-                <li key={b.n}><b>{b.n}</b><span>{b.v}</span></li>
+                <li key={b.n}><Bot name={b.bot} className="float" /><b>{b.n}</b><span>{b.v}</span></li>
               ))}
             </ul>
             <p className="glance-foot">Each bot does one job. You set the rules, they run the trade.</p>
@@ -123,7 +122,7 @@ export default function Home() {
 
       <section className="block">
         <div className="frame grid12">
-          <Label n="03">Shipped</Label>
+          <Label n="03" bot="green">Shipped</Label>
           <ol className="index">
             {projects.map((p, i) => (
               <li key={p.slug} className="reveal">
@@ -141,7 +140,7 @@ export default function Home() {
 
       <section className="block">
         <div className="frame grid12">
-          <Label n="04">Record</Label>
+          <Label n="04" bot="blue">Record</Label>
           <ol className="index">
             {experience.map((r) => (
               <li key={r.company + r.role} className="reveal">
@@ -158,7 +157,7 @@ export default function Home() {
 
       <section className="block">
         <div className="frame grid12">
-          <Label n="05">Contact</Label>
+          <Label n="05" bot="red">Contact</Label>
           <div className="contact reveal">
             <a className="contact-big" href={`mailto:${site.email}`}>{site.email}</a>
             <p className="mono dim">DMs open. <a href={site.x} target="_blank" rel="noreferrer">{site.xHandle}</a></p>

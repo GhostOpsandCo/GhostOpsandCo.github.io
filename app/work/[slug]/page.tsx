@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import { Bot } from "@/components/Bot";
 import { JsonLd } from "@/components/JsonLd";
 import { getProject, projects, site } from "@/lib/site";
 
@@ -84,6 +85,7 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
         <Link href={`/work/${next.slug}`} className="nextlink reveal">
           <span className="mono dim">Next</span>
           <span className="nextlink-t">{next.name} →</span>
+          <Bot name="green" className="next-bot float" />
         </Link>
       </div>
     </main>

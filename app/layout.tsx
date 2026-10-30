@@ -1,4 +1,5 @@
 import type { Metadata, Viewport } from "next";
+import { BotEyes } from "@/components/BotEyes";
 import { Footer, Header } from "@/components/Chrome";
 import { JsonLd } from "@/components/JsonLd";
 import { SiteBot } from "@/components/SiteBot";
@@ -11,11 +12,11 @@ export const metadata: Metadata = {
   metadataBase: new URL(site.url),
   icons: {
     icon: [
-      { url: "/favicon.gif", type: "image/gif" },
-      { url: "/icon-32.png", sizes: "32x32", type: "image/png" },
-      { url: "/favicon.ico", sizes: "any" },
+      { url: "/favicon.gif?v=4", type: "image/gif" },
+      { url: "/icon-32.png?v=4", sizes: "32x32", type: "image/png" },
+      { url: "/favicon.ico?v=4", sizes: "any" },
     ],
-    apple: [{ url: "/apple-touch-icon.png", sizes: "180x180" }],
+    apple: [{ url: "/apple-touch-icon.png?v=4", sizes: "180x180" }],
   },
   title: {
     default: "Elijah Paul",
@@ -73,6 +74,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         {children}
         <Footer />
         <SiteBot />
+        <BotEyes />
       </body>
     </html>
   );

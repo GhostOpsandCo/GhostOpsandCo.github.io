@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { Bot } from "@/components/Bot";
 import { formatShort, getAllPosts } from "@/lib/posts";
 
 export const metadata: Metadata = {
@@ -13,6 +14,7 @@ export default function WritingIndex() {
   return (
     <main id="main">
       <header className="page-head frame">
+        <Bot name="purple" className="page-bot float" />
         <p className="mono dim rise">{String(posts.length).padStart(2, "0")} entries / <a href="/rss.xml">RSS</a></p>
         <h1 className="page-title rise">Writing</h1>
         <p className="page-sub rise">Notes from the build. Agents, payments, trading. Posted in the order it happened.</p>
