@@ -1,6 +1,6 @@
 ---
 title: "24 Days to Launch: We Aren't a Wrapper"
-date: 2026-10-26
+date: 2026-10-30
 tldr: "Hot Bot went live after 24 days of building. Swaps land in under 50ms (fastest 25ms), we own the whole stack, and Portfolios turned 30 SOL into 63 in a 12-day test."
 tags: [Hot Bot, Launch, Engineering]
 ---
