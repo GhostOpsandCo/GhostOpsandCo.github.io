@@ -95,7 +95,7 @@ export function SiteBot() {
         </div>
       )}
       <button ref={btn} type="button" className="sb-btn" aria-expanded={open} aria-controls="sb-panel" aria-label={open ? "Close site bot" : "Open site bot"} onClick={() => setOpen((o) => !o)}>
-        {open ? "×" : <Bot name="cloud" className="bob" flip />}
+        {open ? "×" : <Bot name="cloud" flip />}
       </button>
     </div>
   );
