@@ -33,10 +33,10 @@ export default function HomePage() {
               <strong>Building Hot Bot</strong>
               <p>Agentic swarm trading on Solana. Co-founded with @0xWhoismax. Research, snipe, trade, launch.</p>
             </a>
-            <Link href="/writing/ansemhack-co-win-and-the-hot-bot-journey">
+            <a href={site.hotbotX} target="_blank" rel="noreferrer">
               <strong>AnsemHack co-winner</strong>
               <p>Joined the ClawPump × Ansem hackathon on the final day. Took the W.</p>
-            </Link>
+            </a>
             <Link href="/resume">
               <strong>Previously at Gate</strong>
               <p>Led AI product work: Treasury Router, an x402 merchant workflow, and Gate Router audits.</p>
