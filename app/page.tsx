@@ -54,7 +54,6 @@ export default function Home() {
           <h1 className="name rise">Elijah<br className="br-m" /> Paul</h1>
           <div className="hero-foot rise">
             <div>
-              <p className="oneliner">Second-time founder. My last startup reached a $50M valuation, and I led AI at Gate before starting Hot Bot.</p>
               <p className="thesis">
                 Building <a href={site.hotbot} target="_blank" rel="noreferrer">Hot Bot</a>. Agentic trading on Solana.
                 Joined a hackathon on the final day, won it, went live 24 days later.

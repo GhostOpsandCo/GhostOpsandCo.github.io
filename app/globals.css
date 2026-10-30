@@ -495,7 +495,6 @@ html, body { background: #000; }
 .mark { gap: 5px; }
 .mark-bot { width: 36px; height: 36px; margin: -8px 0 -8px -7px; }
 .glance { position: relative; }
-.oneliner { max-width: 40ch; margin-bottom: 12px; font-size: 19px; line-height: 1.4; letter-spacing: -.02em; font-weight: 500; color: var(--ink); }
 .next-up .i-title, .next-up .i-meta { color: var(--dim); }
 .hacks { display: grid; gap: 3px; font-size: 14px; font-weight: 500; letter-spacing: -.01em; }
 .hacks span { color: var(--dim); font-weight: 400; }
