@@ -1,4 +1,5 @@
 "use client";
+/* eslint-disable @next/next/no-img-element -- static SVG mascots */
 import { useEffect, useRef, useState } from "react";
 
 type Doc = { t: string; u: string; a: string; x: string };
@@ -67,12 +68,13 @@ export function SiteBot() {
       {open && (
         <div className="sb-panel" role="dialog" aria-label="Site bot" id="sb-panel">
           <div className="sb-head">
-            <span><span className="sb-dot" aria-hidden="true" />Site bot</span>
+            <span><img src="/bots/flame.svg" alt="" width={18} height={18} className="sb-av" />Site bot</span>
             <button type="button" className="sb-x" aria-label="Close" onClick={() => { setOpen(false); btn.current?.focus(); }}>×</button>
           </div>
           <div className="sb-log" ref={log} aria-live="polite">
             {msgs.map((m, i) => (
               <div key={i} className={`sb-msg sb-${m.from}`}>
+                {m.from === "bot" && <img src="/bots/flame.svg" alt="" width={16} height={16} className="sb-av sb-av-msg" />}
                 <p>{m.text}</p>
                 {m.link && (
                   <a href={m.link.u} {...(m.link.u.startsWith("http") ? { target: "_blank", rel: "noreferrer" } : {})}>{m.link.t} →</a>
@@ -93,7 +95,7 @@ export function SiteBot() {
         </div>
       )}
       <button ref={btn} type="button" className="sb-btn" aria-expanded={open} aria-controls="sb-panel" aria-label={open ? "Close site bot" : "Open site bot"} onClick={() => setOpen((o) => !o)}>
-        {open ? "×" : <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" aria-hidden="true"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.6A8 8 0 1 1 21 12z" strokeLinejoin="round" /></svg>}
+        {open ? "×" : <img src="/bots/flame.svg" alt="" width={30} height={30} className="bob" />}
       </button>
     </div>
   );

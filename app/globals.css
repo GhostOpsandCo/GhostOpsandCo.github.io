@@ -457,3 +457,30 @@ html, body { background: #000; }
 .sb-form button { border-radius: 999px; }
 .sb-me { border-radius: 14px 14px 4px 14px; }
 .sb-bot { border-radius: 14px 14px 14px 4px; }
+
+/* ---- mascots + worked with ---- */
+.mascot { width: 18px; height: 18px; display: inline-block; vertical-align: -3px; margin-right: 6px; }
+.stats .mascot { width: 16px; height: 16px; margin-right: 5px; }
+@keyframes bob { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-3px); } }
+.bob { animation: bob 3.2s ease-in-out infinite; }
+@media (prefers-reduced-motion: reduce) { .bob { animation: none; } }
+.worked { margin-top: 48px; padding-top: 20px; border-top: 1px solid var(--pline); display: flex; align-items: center; gap: 28px; flex-wrap: wrap; }
+.worked ul { display: flex; flex-wrap: wrap; align-items: center; gap: 20px 36px; list-style: none; margin: 0; padding: 0; }
+.logo { display: inline-flex; align-items: center; gap: 8px; height: 22px; color: #8b8b8b; transition: color .2s; }
+.logo:hover, .logo:focus-visible { color: #fff; }
+.logo-img { display: block; height: 18px; background: currentColor; -webkit-mask: no-repeat center / contain; mask: no-repeat center / contain; }
+.logo .logo-img { -webkit-mask-repeat: no-repeat; mask-repeat: no-repeat; -webkit-mask-position: center; mask-position: center; -webkit-mask-size: contain; mask-size: contain; }
+.logo-txt { font-size: 15px; font-weight: 600; letter-spacing: -.01em; }
+.swarm { grid-column: 1 / -1; margin-top: 28px; padding: 18px 20px 16px; }
+@media (min-width: 900px) { .swarm { grid-column: 2; } }
+.swarm ul { list-style: none; margin: 14px 0 0; padding: 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+.swarm li { display: flex; flex-direction: column; align-items: flex-start; gap: 4px; }
+.swarm img { width: 52px; height: 52px; margin-bottom: 6px; }
+.swarm b { font-size: 14px; font-weight: 600; color: var(--ink); }
+.swarm span { font-size: 13px; color: var(--ink-2); line-height: 1.45; }
+@media (max-width: 520px) { .swarm ul { grid-template-columns: 1fr; } .swarm li { flex-direction: row; flex-wrap: wrap; align-items: center; column-gap: 12px; } .swarm img { width: 40px; height: 40px; margin: 0; } .swarm span { flex-basis: 100%; } }
+.sb-head > span { display: inline-flex; align-items: center; }
+.sb-av { width: 18px; height: 18px; vertical-align: -4px; margin-right: 6px; }
+.sb-av-msg { float: left; width: 16px; height: 16px; margin: 1px 8px 0 0; }
+.sb-btn img { width: 30px; height: 30px; }
+.sb-av, .mascot { display: inline-block !important; } .sb-head > span { display: inline-flex !important; align-items: center; }

@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element -- static SVG mascots */
 import Link from "next/link";
 import { Label } from "@/components/Chrome";
 import { formatShort, getAllPosts } from "@/lib/posts";
@@ -9,6 +10,19 @@ const now = [
   { k: "AnsemHack", v: "Joined on the final day. Took the W.", meta: "Oct 2026", href: site.hotbotX },
   { k: "Monarch Shield", v: "Your agent can pay without a policy check? Build fails.", meta: "2026", href: "https://github.com/ghostmonarch/x402ms" },
   { k: "GhostOps", v: "My internal OS of agents. A year of runs. Everything else is built on it.", meta: "2025 / now", href: "https://github.com/GhostOpsandCo/agent-orchestration" },
+];
+
+const WORKED = [
+  { n: "Coinbase", u: "https://www.coinbase.com", src: "/logos/coinbase.svg", w: 100, text: false },
+  { n: "OKX", u: "https://www.okx.com", src: "/logos/okx.svg", w: 64, text: false },
+  { n: "Gate", u: "https://www.gate.com", src: "/logos/gate.svg", w: 68, h: 24, text: false },
+  { n: "Anchorage Digital", u: "https://www.anchorage.com", src: "/logos/anchorage.svg", w: 100, h: 23, text: false },
+  { n: "x402", u: "https://www.x402.org", src: "/logos/x402.svg", w: 47, text: false },
+];
+const SWARM = [
+  { n: "ResearchBot", v: "Finds coins that fit your rules.", src: "/bots/research.svg" },
+  { n: "SniperBot", v: "Buys the moment one checks out.", src: "/bots/sniper.svg" },
+  { n: "TraderBot", v: "Runs the position inside your rules.", src: "/bots/trader.svg" },
 ];
 
 export default function Home() {
@@ -27,7 +41,7 @@ export default function Home() {
                 We aren&apos;t a wrapper.
               </p>
               <div className="ctas">
-                <a className="pill pill-solid" href={site.hotbot} target="_blank" rel="noreferrer">Hot Bot ↗</a>
+                <a className="pill pill-solid" href={site.hotbot} target="_blank" rel="noreferrer"><img src="/bots/flame.svg" alt="" width={18} height={18} className="mascot" />Hot Bot ↗</a>
                 <a className="pill" href={site.x} target="_blank" rel="noreferrer">{site.xHandle}</a>
                 <a className="pill" href={`mailto:${site.email}`}>Email</a>
               </div>
@@ -35,15 +49,26 @@ export default function Home() {
             <section className="panel glance" aria-label="At a glance">
               <p className="kicker">At a glance</p>
               <dl className="stats">
-                <div><dt>Building</dt><dd>Hot Bot <span className="up">● Live</span></dd></div>
+                <div><dt>Building</dt><dd><img src="/bots/flame.svg" alt="" width={18} height={18} className="mascot bob" />Hot Bot <span className="up">● Live</span></dd></div>
                 <div><dt>AnsemHack</dt><dd>Co-won</dd></div>
                 <div><dt>Build to launch</dt><dd>24 days</dd></div>
                 <div><dt>Before</dt><dd>AI at Gate</dd></div>
-                <div><dt>Launch revenue</dt><dd>$20M+</dd></div>
+                <div><dt>Swarm</dt><dd>3 agents</dd></div>
                 <div><dt>Shipped</dt><dd>{projects.length} projects</dd></div>
               </dl>
               <p className="glance-foot">Phoenix, AZ · Co-founder with @0xWhoismax</p>
             </section>
+          </div>
+          <div className="worked rise">
+            <p className="kicker">Worked with</p>
+            <ul>
+              {WORKED.map((l) => (
+                <li key={l.n}><a href={l.u} target="_blank" rel="noreferrer" aria-label={l.n} className="logo">
+                  <span className="logo-img" style={{ WebkitMaskImage: `url(${l.src})`, maskImage: `url(${l.src})`, width: l.w, height: "h" in l ? l.h : undefined }} />
+                  {l.text && <span className="logo-txt">{l.n}</span>}
+                </a></li>
+              ))}
+            </ul>
           </div>
         </div>
       </section>
@@ -82,6 +107,15 @@ export default function Home() {
               </li>
             ))}
           </ol>
+          <div className="panel swarm reveal">
+            <p className="kicker">The Hot Bot swarm</p>
+            <ul>
+              {SWARM.map((b, i) => (
+                <li key={b.n}><img src={b.src} alt="" width={56} height={56} className="bob" style={{ animationDelay: `${i * -0.8}s` }} /><b>{b.n}</b><span>{b.v}</span></li>
+              ))}
+            </ul>
+            <p className="glance-foot">Each bot does one job. You set the rules, they run the trade.</p>
+          </div>
         </div>
       </section>
 
