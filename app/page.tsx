@@ -25,13 +25,6 @@ const HACKATHONS = [
   { n: "Colosseum", r: "Ongoing" },
   { n: "Meta AI Global", r: "Ongoing" },
 ];
-const SWARM = [
-  { n: "Hot Bot", v: "Keeps the work moving.", bot: "hotbot" },
-  { n: "ResearchBot", v: "Finds coins that fit your rules.", bot: "research" },
-  { n: "ShieldBot", v: "Filters the junk.", bot: "shield" },
-  { n: "SniperBot", v: "Buys the moment one checks out.", bot: "sniper" },
-  { n: "TraderBot", v: "Runs the position inside your rules.", bot: "trader" },
-] as const;
 const WHAT_I_DO = ["Solve big problems", "with unique solutions", "that users love"];
 const FACTS = ["Advised UFC champ Khabib in crypto", "BJJ no-gi champ", "Kids MMA instructor"];
 // The banner's lineup, mirrored so everyone faces the email.
@@ -142,15 +135,6 @@ export default function Home() {
               </li>
             ))}
           </ol>
-          <div className="panel swarm reveal">
-            <p className="kicker">Your private trading team of specialist bots</p>
-            <ul>
-              {SWARM.map((b) => (
-                <li key={b.n}><Bot name={b.bot} className="float" /><b>{b.n}</b><span>{b.v}</span></li>
-              ))}
-            </ul>
-            <p className="glance-foot">Each bot does one job. You set the rules, they run the trade.</p>
-          </div>
         </div>
       </section>
 

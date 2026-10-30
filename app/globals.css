@@ -461,14 +461,6 @@ html, body { background: #000; }
 .logo-img { display: block; height: 18px; max-width: none; object-fit: contain; font-size: 13px; filter: brightness(0) invert(1); opacity: .55; transition: opacity .2s; }
 .logo:hover .logo-img, .logo:focus-visible .logo-img { opacity: 1; }
 .logo-txt { font-size: 15px; font-weight: 600; letter-spacing: -.01em; }
-.swarm { grid-column: 1 / -1; margin-top: 28px; padding: 18px 20px 16px; }
-@media (min-width: 900px) { .swarm { grid-column: 2; } }
-.swarm ul { list-style: none; margin: 14px 0 0; padding: 0; display: grid; grid-template-columns: repeat(5, 1fr); gap: 16px; }
-@media (max-width: 700px) { .swarm ul { grid-template-columns: repeat(2, 1fr); } }
-.swarm li { display: flex; flex-direction: column; align-items: flex-start; gap: 4px; }
-.swarm b { font-size: 14px; font-weight: 600; color: var(--ink); }
-.swarm span { font-size: 13px; color: var(--ink-2); line-height: 1.45; }
-@media (max-width: 520px) { .swarm ul { grid-template-columns: 1fr; } .swarm li { flex-direction: row; flex-wrap: wrap; align-items: center; column-gap: 8px; } .swarm li > span:last-child { flex-basis: 100%; } }
 .sb-head > span { display: inline-flex; align-items: center; }
 .sb-av, .mascot { display: inline-block !important; } .sb-head > span { display: inline-flex !important; align-items: center; }
 
@@ -483,15 +475,10 @@ html, body { background: #000; }
 .bot-green .e { animation-delay: -3.2s; }
 .bot-purple .e { animation-delay: -.7s; }
 .bot-blue .e { animation-delay: -3.9s; }
-.bot-shield .e { animation-delay: -2.7s; }
-.bot-research .e { animation-delay: -1.8s; }
-.bot-sniper .e { animation-delay: -3.4s; }
-.bot-trader .e { animation-delay: -.3s; }
 .float { animation: float 3.6s ease-in-out infinite; }
 @keyframes blink { 0%,93%,100% { transform: scaleY(1); } 96% { transform: scaleY(.1); } }
 @keyframes float { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-5px); } }
 .mascot { width: 26px; height: 26px; margin: -6px 2px -6px -5px; vertical-align: -2px; }
-.kicker .mascot { width: 28px; height: 28px; margin: -10px 4px -10px -6px; vertical-align: 0; }
 .mark { gap: 5px; }
 .mark-bot { width: 36px; height: 36px; margin: -8px 0 -8px -7px; }
 .glance { position: relative; }
@@ -509,10 +496,6 @@ html, body { background: #000; }
   .label-bot { display: grid; justify-items: start; gap: 10px; position: sticky; top: 24px; }
   .label-bot .bot { width: 104px; height: 104px; margin: 0 0 0 -15px; }
 }
-.swarm ul { margin-top: 18px; }
-.swarm li .bot { width: 98px; height: 98px; margin-bottom: 4px; }
-.swarm .bot-shield img, .swarm .bot-shield svg { inset: auto; left: -12.40%; top: 17.59%; width: 87.54%; height: 87.54%; }
-@media (max-width: 520px) { .swarm li .bot { width: 72px; height: 72px; margin: 0 -16px 0 0; } }
 .page-head { position: relative; }
 .page-bot { position: absolute; right: var(--pad); top: calc(clamp(56px, 8vw, 96px) - 12px); width: 112px; height: 112px; }
 @media (min-width: 1000px) { .page-bot { width: 168px; height: 168px; } }
