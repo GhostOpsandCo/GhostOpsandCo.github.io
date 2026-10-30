@@ -420,7 +420,6 @@ html, body { background: #000; }
 .glance { padding: 18px 20px 16px; align-self: start; }
 .glance .kicker { margin-bottom: 14px; }
 .stats { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px 20px; }
-.stat-wide { grid-column: 1 / -1; }
 @media (max-width: 520px) { .stats { grid-template-columns: 1fr; } }
 .stats dt { font-size: 12px; color: var(--dim); margin-bottom: 3px; }
 .stats dd { font-size: 16px; font-weight: 600; color: var(--ink); letter-spacing: -.015em; font-variant-numeric: tabular-nums; }
@@ -499,10 +498,8 @@ html, body { background: #000; }
 .hacks { display: grid; gap: 3px; font-size: 14px; font-weight: 500; letter-spacing: -.01em; }
 .hacks span { color: var(--dim); font-weight: 400; }
 .panel-title { margin-bottom: 14px; font-size: 16px; font-weight: 600; letter-spacing: -.015em; }
-.bio { margin-top: 28px; padding-top: 20px; border-top: 1px solid var(--pline); display: flex; flex-wrap: wrap; gap: 24px 96px; }
-.bio .kicker { margin-bottom: 8px; }
-.bio-lines { font-size: 18px; line-height: 1.5; letter-spacing: -.02em; color: var(--ink); }
-.bio-lines span { display: block; }
+.bio { margin-top: 20px; padding-top: 20px; border-top: 1px solid var(--pline); display: flex; flex-wrap: wrap; align-items: center; gap: 10px 28px; }
+.bio ul { display: flex; flex-wrap: wrap; gap: 6px 36px; font-size: 15px; letter-spacing: -.01em; color: var(--ink-2); }
 .perch { position: absolute; right: 22px; top: -66px; width: 88px; height: 88px; }
 @media (max-width: 520px) { .perch { right: 14px; top: -42px; width: 56px; height: 56px; } }
 .label-bot { align-items: center; }
@@ -522,11 +519,10 @@ html, body { background: #000; }
 .art-sign .bot { width: 40px; height: 40px; margin: -10px 0 -10px -7px; }
 .nextlink { position: relative; }
 .contact { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 28px 40px; }
-.crew { position: relative; flex: 0 1 400px; min-width: 260px; aspect-ratio: 737 / 361; }
-.crew .bot { position: absolute; height: auto; aspect-ratio: 1; }
+.crew { position: relative; flex: 0 0 150px; aspect-ratio: 737 / 361; }
+.crew .bot { position: absolute; height: auto; aspect-ratio: 1; animation-duration: 4.4s; }
 .crew .bot:nth-child(2n) { animation-delay: -1.3s; }
 .crew .bot:nth-child(3n) { animation-delay: -2.4s; }
-@media (max-width: 899px) { .crew { flex-basis: 100%; } }
 .next-bot { position: absolute; right: 0; top: 50%; width: clamp(72px, 12vw, 120px); height: clamp(72px, 12vw, 120px); margin-top: calc(clamp(72px, 12vw, 120px) / -2); }
 .sb { right: 14px; bottom: 14px; }
 .sb-btn[aria-expanded="false"] { position: relative; width: 68px; height: 68px; border: 0; box-shadow: none; background: radial-gradient(closest-side, rgba(0,0,0,.72), transparent); }

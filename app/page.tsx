@@ -30,6 +30,7 @@ const SWARM = [
   { n: "SniperBot", v: "Buys the moment one checks out.", bot: "sniper" },
   { n: "TraderBot", v: "Runs the position inside your rules.", bot: "trader" },
 ] as const;
+const WHAT_I_DO = ["Solve big problems", "with unique solutions", "that users love"];
 const FACTS = ["BJJ no-gi champ", "62% close rate in high-ticket sales"];
 // The banner's lineup, mirrored so everyone faces the email.
 const CREW = [
@@ -65,8 +66,12 @@ export default function Home() {
               <Bot name="green" className="perch" flip />
               <p className="panel-title"><a href={site.hotbot} target="_blank" rel="noreferrer"><Bot name="flame" className="mascot" />Hot Bot</a></p>
               <dl className="stats">
-                <div className="stat-wide"><dt>What it is</dt><dd>Agentic Trading as a Service</dd></div>
+                <div><dt>What it is</dt><dd>Agentic Trading as a Service</dd></div>
                 <div><dt>Build to launch</dt><dd>24 days. Still shipping.</dd></div>
+                <div>
+                  <dt>What I do</dt>
+                  <dd><ul className="hacks">{WHAT_I_DO.map((l) => <li key={l}>{l}</li>)}</ul></dd>
+                </div>
                 <div>
                   <dt>Hackathons entered</dt>
                   <dd><ul className="hacks">{HACKATHONS.map((h) => <li key={h.n}>{h.n} <span>{h.r}</span></li>)}</ul></dd>
@@ -87,14 +92,8 @@ export default function Home() {
             </ul>
           </div>
           <div className="bio rise">
-            <div>
-              <p className="kicker">What I do</p>
-              <p className="bio-lines"><span>Solve big problems</span> <span>with unique solutions</span> <span>that users love</span></p>
-            </div>
-            <div>
-              <p className="kicker">Random facts</p>
-              <ul className="bio-lines">{FACTS.map((f) => <li key={f}>{f}</li>)}</ul>
-            </div>
+            <p className="kicker">Random facts</p>
+            <ul>{FACTS.map((f) => <li key={f}>{f}</li>)}</ul>
           </div>
         </div>
       </section>
