@@ -1,6 +1,6 @@
 ---
 title: "Monarch Shield Ships: Catch Unguarded x402 Payments in CI"
-date: 2026-07-30
+date: 2026-10-30
 tldr: "Monarch Shield is live as a CI linter. It scans JS and TS for x402 v2 calls that can pay with no policy check and fails the build. Runs local. No account. No API key."
 tags: [x402, Security, Open Source]
 ---
