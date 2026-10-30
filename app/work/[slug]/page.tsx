@@ -21,10 +21,12 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     openGraph: {
       title: `${project.name} | Elijah Paul`,
       description: project.metaDescription,
+      type: "article",
+      locale: "en_US",
       url: `/work/${project.slug}`,
       images: [{ url: project.image, alt: project.imageAlt }],
     },
-    twitter: { card: "summary_large_image", title: project.name, description: project.metaDescription, images: [project.image] },
+    twitter: { card: "summary_large_image", site: site.xHandle, title: project.name, description: project.metaDescription, images: [project.image] },
   };
 }
 

@@ -3,8 +3,8 @@ import { BotEyes } from "@/components/BotEyes";
 import { Footer, Header } from "@/components/Chrome";
 import { JsonLd } from "@/components/JsonLd";
 import { SiteBot } from "@/components/SiteBot";
-import { personJsonLd } from "@/lib/person";
-import { site } from "@/lib/site";
+import { siteJsonLd } from "@/lib/person";
+import { ogImage, sameAs, site } from "@/lib/site";
 import "./globals.css";
 
 
@@ -19,42 +19,45 @@ export const metadata: Metadata = {
     apple: [{ url: "/apple-touch-icon.png?v=4", sizes: "180x180" }],
   },
   title: {
-    default: "Elijah Paul",
+    default: `${site.name} | ${site.title}`,
     template: "%s | Elijah Paul",
   },
   description: site.description,
+  keywords: ["Elijah Paul", "elijahintek", "Hot Bot", "Hot Bot co-founder", "agentic trading", "AI trading bots", "Solana", "x402", "GhostOps", "AnsemHack"],
   applicationName: "Elijah Paul",
   authors: [{ name: "Elijah Paul", url: site.url }],
   creator: "Elijah Paul",
   publisher: "Elijah Paul",
+  category: "technology",
+  referrer: "origin-when-cross-origin",
+  formatDetection: { email: false, address: false, telephone: false },
   alternates: { canonical: "/", types: { "application/rss+xml": [{ url: "/rss.xml", title: "Elijah Paul | Thinking" }] } },
   openGraph: {
-    title: "Elijah Paul",
+    type: "profile",
+    firstName: "Elijah",
+    lastName: "Paul",
+    username: "elijahintek",
+    title: `${site.name} | ${site.title}`,
     description: site.description,
-    type: "website",
     url: site.url,
     siteName: "Elijah Paul",
-    images: [
-      {
-        url: "/projects/venture-labs-control-room.png",
-        width: 2400,
-        height: 1500,
-        alt: "Elijah Paul",
-      },
-    ],
+    locale: "en_US",
+    images: [ogImage],
   },
   twitter: {
-    creator: "@elijahintek",
     card: "summary_large_image",
-    title: "Elijah Paul",
+    site: site.xHandle,
+    creator: site.xHandle,
+    title: `${site.name} | ${site.title}`,
     description: site.description,
-    images: ["/projects/venture-labs-control-room.png"],
+    images: [ogImage],
   },
   robots: {
     index: true,
     follow: true,
-    googleBot: { index: true, follow: true, "max-image-preview": "large" },
+    googleBot: { index: true, follow: true, "max-image-preview": "large", "max-snippet": -1, "max-video-preview": -1 },
   },
+  other: { "geo.region": "US-AZ", "geo.placename": "Phoenix" },
 };
 
 export const viewport: Viewport = {
@@ -67,8 +70,11 @@ export const viewport: Viewport = {
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en">
+      <head>
+        {sameAs.map((href) => <link key={href} rel="me" href={href} />)}
+      </head>
       <body>
-        <JsonLd data={personJsonLd} />
+        <JsonLd data={siteJsonLd} />
         <a className="skip-link" href="#main">Skip to content</a>
         <Header />
         {children}

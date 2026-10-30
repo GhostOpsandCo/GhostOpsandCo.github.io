@@ -1,12 +1,13 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { Bot } from "@/components/Bot";
-import { projects } from "@/lib/site";
+import { ogImage, projects } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Work",
   description: "What Elijah Paul has shipped: Monarch Shield for x402 payments, Treasury Router at Gate, Venture Labs on GhostOps, Orelis voice agents, Team Take Down and GridSynapse.",
   alternates: { canonical: "/work" },
+  openGraph: { type: "website", locale: "en_US", title: "Work | Elijah Paul", url: "/work", images: [ogImage] },
 };
 
 export default function WorkIndex() {

@@ -24,12 +24,12 @@ export function Footer() {
       <div className="frame ftr-grid">
         <div>
           <p className="ftr-big">Elijah Paul</p>
-          <p className="mono dim">Phoenix, AZ</p>
+          <p className="mono dim">Co-founder of Hot Bot. Phoenix, AZ</p>
         </div>
         <ul className="ftr-links mono">
           <li><a href={`mailto:${site.email}`}>{site.email}</a></li>
-          <li><a href={site.x} target="_blank" rel="noreferrer">X</a></li>
-          <li><a href={site.github} target="_blank" rel="noreferrer">GitHub</a></li>
+          <li><a href={site.x} target="_blank" rel="me noreferrer">X</a></li>
+          <li><a href={site.github} target="_blank" rel="me noreferrer">GitHub</a></li>
           <li><a href="/rss.xml">RSS</a></li>
         </ul>
         <p className="mono dim ftr-note">God calls us to serve others. I try to live that in business and in life.</p>
@@ -40,10 +40,10 @@ export function Footer() {
 
 export function Label({ n, children, bot, flip }: { n: string; children: React.ReactNode; bot?: BotName; flip?: boolean }) {
   return (
-    <div className={`label mono${bot ? " label-bot" : ""}`}>
+    <h2 className={`label mono${bot ? " label-bot" : ""}`}>
       <span className="dim">{n}</span>
       <span>{children}</span>
       {bot && <Bot name={bot} className="float" flip={flip} />}
-    </div>
+    </h2>
   );
 }

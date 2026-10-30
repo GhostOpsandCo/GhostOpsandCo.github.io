@@ -4,7 +4,7 @@ import { notFound } from "next/navigation";
 import { Bot } from "@/components/Bot";
 import { JsonLd } from "@/components/JsonLd";
 import { formatDate, getAllPosts, getPost } from "@/lib/posts";
-import { site } from "@/lib/site";
+import { ogImage, site } from "@/lib/site";
 
 export const dynamicParams = false;
 
@@ -24,14 +24,17 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     alternates: { canonical: `/writing/${post.slug}` },
     openGraph: {
       type: "article",
+      locale: "en_US",
       title: post.title,
       description: post.tldr,
       url: `/writing/${post.slug}`,
       publishedTime: post.date,
+      modifiedTime: post.date,
       authors: [site.name],
       tags: post.tags,
+      images: [ogImage],
     },
-    twitter: { card: "summary", title: post.title, description: post.tldr, creator: site.xHandle },
+    twitter: { card: "summary_large_image", site: site.xHandle, title: post.title, description: post.tldr, creator: site.xHandle, images: [ogImage] },
   };
 }
 
@@ -57,6 +60,8 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
           datePublished: post.date,
           dateModified: post.date,
           keywords: post.tags.join(", "),
+          image: `${site.url}${ogImage.url}`,
+          inLanguage: "en-US",
           url,
           mainEntityOfPage: url,
           author: { "@type": "Person", "@id": `${site.url}/#person`, name: site.name, url: site.url },

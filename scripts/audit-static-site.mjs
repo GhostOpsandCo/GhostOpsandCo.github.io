@@ -24,6 +24,7 @@ const requiredFiles = [
   "rss.xml",
   "llms.txt",
   "manifest.webmanifest",
+  "og.png",
   "projects/venture-labs-control-room.png",
   "projects/orelis-latest.png",
   "projects/team-take-down.png",

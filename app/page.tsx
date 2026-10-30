@@ -4,6 +4,8 @@ import { Label } from "@/components/Chrome";
 import { formatShort, getAllPosts, getNextPost } from "@/lib/posts";
 import { site } from "@/lib/site";
 import { Bot } from "@/components/Bot";
+import { JsonLd } from "@/components/JsonLd";
+import { personRef } from "@/lib/person";
 
 const contributions = [
   { k: "Hot Bot", v: "Your own trading team. Specialist bots that snipe, filter and trade on Solana. Co-founded with @0xWhoismax.", href: site.hotbot },
@@ -42,6 +44,17 @@ export default function Home() {
   const next = getNextPost();
   return (
     <main id="main">
+      <JsonLd
+        data={{
+          "@context": "https://schema.org",
+          "@type": "ProfilePage",
+          url: `${site.url}/`,
+          name: `${site.name} | ${site.title}`,
+          inLanguage: "en-US",
+          dateModified: posts[0]?.date,
+          mainEntity: personRef,
+        }}
+      />
       <section className="hero">
         <div className="frame hero-in">
           <h1 className="name rise">Elijah<br className="br-m" /> Paul</h1>

@@ -1,12 +1,13 @@
 import type { MetadataRoute } from "next";
+import { site } from "@/lib/site";
 
 export const dynamic = "force-static";
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: "Elijah Paul | AI Product Portfolio",
+    name: `${site.name} | ${site.title}`,
     short_name: "Elijah Paul",
-    description: "AI solutions architecture and product-building portfolio.",
+    description: site.description,
     start_url: "/",
     display: "standalone",
     background_color: "#000000",

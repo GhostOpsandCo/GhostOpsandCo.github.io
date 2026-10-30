@@ -1,18 +1,21 @@
 export const site = {
   name: "Elijah Paul",
-  title: "Co-founder, Hot Bot",
+  title: "Co-founder of Hot Bot",
   description:
-    "Elijah Paul is co-founder of Hot Bot, a team of specialist trading bots on Solana. Co-won AnsemHack after joining on the final day. Before that: a year of agent orchestration (GhostOps) and Monarch Shield for x402 payments.",
+    "Elijah Paul is the co-founder of Hot Bot, agentic trading on Solana. Co-won AnsemHack and went live in 24 days. Previously led AI at Gate.",
   url: "https://elijahpaul.io",
   email: "elijah@elijahpaul.io",
   github: "https://github.com/GhostOpsandCo",
   x: "https://x.com/elijahintek",
+  linkedin: "https://www.linkedin.com/in/elijahpaul",
   xHandle: "@elijahintek",
   hotbot: "https://usehotbot.com",
   hotbotX: "https://x.com/usehotbot",
 };
 
-export const sameAs = [site.github, site.x];
+export const sameAs = [site.x, site.linkedin, site.github];
+
+export const ogImage = { url: "/og.png", width: 1200, height: 630, alt: "Elijah Paul, co-founder of Hot Bot" };
 
 export type Section = { h: string; lines: string[] };
 

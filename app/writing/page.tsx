@@ -2,11 +2,13 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { Bot } from "@/components/Bot";
 import { formatShort, getAllPosts } from "@/lib/posts";
+import { ogImage } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Thinking",
   description: "Elijah Paul writing from the build: Hot Bot, agentic trading, x402 agent payments and running a year of agents on GhostOps.",
   alternates: { canonical: "/writing", types: { "application/rss+xml": "/rss.xml" } },
+  openGraph: { type: "website", locale: "en_US", title: "Thinking | Elijah Paul", url: "/writing", images: [ogImage] },
 };
 
 export default function WritingIndex() {

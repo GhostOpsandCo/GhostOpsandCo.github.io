@@ -1,16 +1,33 @@
 # Elijah Paul
 
-Elijah Paul is co-founder of Hot Bot (https://usehotbot.com), agentic trading on Solana, built with @0xWhoismax. Hot Bot joined the ClawPump × Ansem AnsemHack on its final day and co-won. It went live 24 days after they started building. Before Hot Bot he led AI at Gate. He also built GhostOps, his own agent orchestration system, and Monarch Shield, a CI check for x402 agent payments.
+Elijah Paul is the co-founder of Hot Bot (https://usehotbot.com), Agentic Trading as a Service on Solana, built with @0xWhoismax. He is based in Phoenix, Arizona.
 
-X: https://x.com/elijahintek
+Hot Bot joined the ClawPump × Ansem AnsemHack on its final day and co-won. It went live 24 days after they started building. It has 200 paying beta users and a waitlist of 2,000+.
+
 Canonical site: https://elijahpaul.io
-Contact: elijah@elijahpaul.io
+X: https://x.com/elijahintek
+LinkedIn: https://www.linkedin.com/in/elijahpaul
 GitHub: https://github.com/GhostOpsandCo
+Contact: elijah@elijahpaul.io
+
+## Contributions
+
+- Hot Bot: co-founder. A private trading team of specialist bots that snipe, filter and trade on Solana.
+- Anchorage Digital Bank: worked with the team on an x402 gateway to an agentic banking platform.
+- Gate AI: AI lead for internal integrations and product rollout.
+- x402: contributor to open source security guardrails and privacy policy.
+- GhostOps: his own OS of agents, running since April 2025.
+
+## Facts
+
+- Advised UFC champion Khabib in crypto.
+- BJJ no-gi champion.
+- Kids MMA instructor.
 
 ## Pages
 
-- Work: https://elijahpaul.io/work
 - Thinking: https://elijahpaul.io/writing (RSS: https://elijahpaul.io/rss.xml)
+- Work: https://elijahpaul.io/work
 
 ## Work
 
