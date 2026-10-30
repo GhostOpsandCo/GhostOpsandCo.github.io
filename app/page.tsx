@@ -57,39 +57,37 @@ export default function Home() {
       />
       <section className="hero">
         <div className="frame hero-in">
-          <h1 className="name rise">Elijah<br className="br-m" /> Paul</h1>
-          <div className="hero-foot rise">
-            <div>
-              <p className="thesis">
-                Building <a href={site.hotbot} target="_blank" rel="noreferrer">Hot Bot</a>. Agentic trading on Solana.
-                Joined a hackathon on the final day, won it, went live 24 days later.
-              </p>
-              <div className="ctas">
-                <a href={site.hotbot} target="_blank" rel="noreferrer">Hot Bot</a>
-                <a href={site.x} target="_blank" rel="noreferrer">{site.xHandle}</a>
-                <a href={`mailto:${site.email}`}>Email</a>
-              </div>
+          <div className="lead rise">
+            <h1 className="name">Elijah<br className="br-m" /> Paul</h1>
+            <p className="thesis">
+              Building <a href={site.hotbot} target="_blank" rel="noreferrer">Hot Bot</a>. Agentic trading on Solana.
+              Joined a hackathon on the final day, won it, went live 24 days later.
+            </p>
+            <div className="ctas">
+              <a href={site.hotbot} target="_blank" rel="noreferrer">Hot Bot</a>
+              <a href={site.x} target="_blank" rel="noreferrer">{site.xHandle}</a>
+              <a href={`mailto:${site.email}`}>Email</a>
             </div>
-            <section className="panel glance" aria-label="Hot Bot">
-              <Bot name="green" className="perch" flip />
-              <p className="panel-title"><a href={site.hotbot} target="_blank" rel="noreferrer"><Bot name="flame" className="mascot" />Hot Bot</a></p>
-              <dl className="stats">
-                <div><dt>What it is</dt><dd>Agentic Trading as a Service</dd></div>
-                <div><dt>Build to launch</dt><dd>24 days. Still shipping.</dd></div>
-                <div><dt>Paying beta users</dt><dd>200</dd></div>
-                <div><dt>Waitlist</dt><dd>2,000+</dd></div>
-                <div>
-                  <dt>What I do</dt>
-                  <dd><ul className="hacks">{WHAT_I_DO.map((l) => <li key={l}>{l}</li>)}</ul></dd>
-                </div>
-                <div>
-                  <dt>Hackathons entered</dt>
-                  <dd><ul className="hacks">{HACKATHONS.map((h) => <li key={h.n}>{h.n} <span>{h.r}</span></li>)}</ul></dd>
-                </div>
-              </dl>
-              <p className="glance-foot">Co-founded with @0xWhoismax</p>
-            </section>
           </div>
+          <section className="panel glance" aria-label="Hot Bot">
+            <Bot name="green" className="perch" flip />
+            <p className="panel-title"><a href={site.hotbot} target="_blank" rel="noreferrer"><Bot name="flame" className="mascot" />Hot Bot</a></p>
+            <dl className="stats">
+              <div><dt>What it is</dt><dd>Agentic Trading as a Service</dd></div>
+              <div><dt>Build to launch</dt><dd>24 days. Still shipping.</dd></div>
+              <div><dt>Paying beta users</dt><dd>200</dd></div>
+              <div><dt>Waitlist</dt><dd>2,000+</dd></div>
+              <div>
+                <dt>What I do</dt>
+                <dd><ul className="hacks">{WHAT_I_DO.map((l) => <li key={l}>{l}</li>)}</ul></dd>
+              </div>
+              <div>
+                <dt>Hackathons entered</dt>
+                <dd><ul className="hacks">{HACKATHONS.map((h) => <li key={h.n}>{h.n} <span>{h.r}</span></li>)}</ul></dd>
+              </div>
+            </dl>
+            <p className="glance-foot">Co-founded with @0xWhoismax</p>
+          </section>
           <div className="worked rise">
             <p className="kicker">Worked with</p>
             <ul>
@@ -108,8 +106,8 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="block">
-        <div className="frame grid12">
+      <section className="sect">
+        <div className="frame sect-in">
           <Label n="01" bot="purple" flip>Thinking</Label>
           <ol className="index">
             {next && (
@@ -135,8 +133,8 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="block">
-        <div className="frame grid12">
+      <section className="sect">
+        <div className="frame sect-in">
           <Label n="02">My Contributions</Label>
           <ol className="index">
             {contributions.map((r) => (
@@ -151,8 +149,8 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="block">
-        <div className="frame grid12">
+      <section className="sect">
+        <div className="frame sect-in">
           <Label n="03">Contact</Label>
           <div className="contact reveal">
             <div>
