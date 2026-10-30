@@ -1,6 +1,6 @@
 ---
 title: "x402 Will Eat the World. Agents Need a Shield."
-date: 2026-04-06
+date: 2026-10-30
 tldr: "Give an agent a wallet with no guardrails and you can wake up to a $10,000 bill. x402 is coming whether you're ready or not. So on April 3 I started Monarch Shield."
 tags: [x402, Security, Agent Payments]
 ---
