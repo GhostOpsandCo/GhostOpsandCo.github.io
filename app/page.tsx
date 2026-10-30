@@ -4,6 +4,7 @@ import { Label } from "@/components/Chrome";
 import { formatShort, getAllPosts } from "@/lib/posts";
 import { experience } from "@/lib/experience";
 import { projects, site } from "@/lib/site";
+import Cast from "@/components/Cast";
 
 const now = [
   { k: "Hot Bot", v: "Your own trading team. Specialist bots that snipe, filter and trade on Solana. Co-founded with @0xWhoismax.", meta: "2026 / now", href: site.hotbot },
@@ -20,9 +21,9 @@ const WORKED = [
   { n: "x402", u: "https://www.x402.org", src: "/logos/x402.svg", w: 47, text: false },
 ];
 const SWARM = [
-  { n: "ResearchBot", v: "Finds coins that fit your rules.", src: "/bots/research.svg" },
-  { n: "SniperBot", v: "Buys the moment one checks out.", src: "/bots/sniper.svg" },
-  { n: "TraderBot", v: "Runs the position inside your rules.", src: "/bots/trader.svg" },
+  { n: "ResearchBot", v: "Finds coins that fit your rules." },
+  { n: "SniperBot", v: "Buys the moment one checks out." },
+  { n: "TraderBot", v: "Runs the position inside your rules." },
 ];
 
 export default function Home() {
@@ -109,9 +110,10 @@ export default function Home() {
           </ol>
           <div className="panel swarm reveal">
             <p className="kicker">The Hot Bot swarm</p>
+            <Cast />
             <ul>
-              {SWARM.map((b, i) => (
-                <li key={b.n}><img src={b.src} alt="" width={56} height={56} className="bob" style={{ animationDelay: `${i * -0.8}s` }} /><b>{b.n}</b><span>{b.v}</span></li>
+              {SWARM.map((b) => (
+                <li key={b.n}><b>{b.n}</b><span>{b.v}</span></li>
               ))}
             </ul>
             <p className="glance-foot">Each bot does one job. You set the rules, they run the trade.</p>
