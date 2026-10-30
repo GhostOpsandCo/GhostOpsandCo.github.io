@@ -1,6 +1,6 @@
 ---
 title: "What Gate Taught Me About Routing"
-date: 2026-06-12
+date: 2026-10-30
 tldr: "June 2026 I started leading AI at Gate. Gate Router's smart routing picks the right model per task and typically cuts token costs 20 to 30%. More tokens doesn't mean more work done."
 tags: [Gate, AI, Models]
 ---
