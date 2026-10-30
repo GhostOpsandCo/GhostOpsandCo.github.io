@@ -58,7 +58,6 @@ export default function Home() {
               <p className="thesis">
                 Building <a href={site.hotbot} target="_blank" rel="noreferrer">Hot Bot</a>. Agentic trading on Solana.
                 Joined a hackathon on the final day, won it, went live 24 days later.
-                We aren&apos;t a wrapper.
               </p>
               <div className="ctas">
                 <a href={site.hotbot} target="_blank" rel="noreferrer">Hot Bot</a>

@@ -9,7 +9,7 @@ export const experience: Role[] = [
     bullets: [
       "Joined the ClawPump × Ansem AnsemHack on its final day. Co-won.",
       "Live 24 days after we started building.",
-      "Own indexer, own swap, own database, bare metal. We aren't a wrapper.",
+      "Own indexer, own swap, own database, bare metal.",
     ],
   },
   {
