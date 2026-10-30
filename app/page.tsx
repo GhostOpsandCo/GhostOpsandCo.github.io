@@ -20,17 +20,30 @@ export default function Home() {
           <p className="now-line mono rise">Now building <a href={site.hotbot} target="_blank" rel="noreferrer">Hot Bot</a></p>
           <h1 className="name rise">Elijah<br className="br-m" /> Paul</h1>
           <div className="hero-foot rise">
-            <p className="thesis">
-              Building <a href={site.hotbot} target="_blank" rel="noreferrer">Hot Bot</a>. Agentic trading on Solana.
-              Joined a hackathon on the final day, won it, went live 24 days later.
-              We aren&apos;t a wrapper.
-            </p>
-            <dl className="spec mono">
-              <div><dt>Now</dt><dd>Shipping Hot Bot</dd></div>
-              <div><dt>Then</dt><dd>AI at Gate</dd></div>
-              <div><dt>Side</dt><dd>GhostOps / Monarch Shield</dd></div>
-              <div><dt>Base</dt><dd>Phoenix, AZ</dd></div>
-            </dl>
+            <div>
+              <p className="thesis">
+                Building <a href={site.hotbot} target="_blank" rel="noreferrer">Hot Bot</a>. Agentic trading on Solana.
+                Joined a hackathon on the final day, won it, went live 24 days later.
+                We aren&apos;t a wrapper.
+              </p>
+              <div className="ctas">
+                <a className="pill pill-solid" href={site.hotbot} target="_blank" rel="noreferrer">Hot Bot ↗</a>
+                <a className="pill" href={site.x} target="_blank" rel="noreferrer">{site.xHandle}</a>
+                <a className="pill" href={`mailto:${site.email}`}>Email</a>
+              </div>
+            </div>
+            <section className="panel glance" aria-label="At a glance">
+              <p className="kicker">At a glance</p>
+              <dl className="stats">
+                <div><dt>Building</dt><dd>Hot Bot <span className="up">● Live</span></dd></div>
+                <div><dt>AnsemHack</dt><dd>Co-won</dd></div>
+                <div><dt>Build to launch</dt><dd>24 days</dd></div>
+                <div><dt>Before</dt><dd>AI at Gate</dd></div>
+                <div><dt>Launch revenue</dt><dd>$20M+</dd></div>
+                <div><dt>Shipped</dt><dd>{projects.length} projects</dd></div>
+              </dl>
+              <p className="glance-foot">Phoenix, AZ · Co-founder with @0xWhoismax</p>
+            </section>
           </div>
         </div>
       </section>
