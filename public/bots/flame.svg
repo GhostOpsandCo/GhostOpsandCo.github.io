@@ -3,11 +3,11 @@
     <radialGradient id="body" gradientUnits="userSpaceOnUse" cx="268" cy="300" r="290" fx="258" fy="280">
       <stop stop-color="#ffec9a"/><stop offset=".3" stop-color="#ffc845"/><stop offset=".62" stop-color="#ff8b30"/><stop offset=".88" stop-color="#e84c24"/><stop offset="1" stop-color="#c93a1f"/>
     </radialGradient>
-  </defs>
+  </defs><style>@keyframes bl{0%,92%,100%{transform:scaleY(1)}95%{transform:scaleY(.1)}}@keyframes fl{0%,100%{transform:translateY(0)}50%{transform:translateY(-4%)}}.e{transform-box:fill-box;transform-origin:center;animation:bl 4.2s infinite 0s}.f{animation:fl 3.6s ease-in-out infinite}@media (prefers-reduced-motion:reduce){.e,.f{animation:none}}</style><g class="f">
   
   <g transform="translate(47 2) scale(.86)">
     <path fill="url(#body)" d="M190 16C188 64 210 104 256 126C318 148 366 182 388 222C402 206 414 196 432 192C418 214 412 240 420 262C434 278 446 296 454 318C460 306 468 298 480 292C472 318 472 344 472 372C472 470 392 546 270 546C136 546 18 470 18 344C18 268 24 192 50 146C56 172 72 190 92 196C82 160 88 118 110 92C112 116 122 138 140 150C120 100 140 50 190 16Z"/>
-    <ellipse cx="220" cy="282" rx="26" ry="52" transform="rotate(-28 220 282)" fill="#0a0a0a"/>
-    <ellipse cx="346" cy="296" rx="23" ry="46" transform="rotate(-24 346 296)" fill="#0a0a0a"/>
+    <ellipse class="e" cx="220" cy="282" rx="26" ry="52" transform="rotate(-28 220 282)" fill="#0a0a0a"/>
+    <ellipse class="e" cx="346" cy="296" rx="23" ry="46" transform="rotate(-24 346 296)" fill="#0a0a0a"/>
   </g>
-</svg>
+</g></svg>

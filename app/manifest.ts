@@ -9,8 +9,8 @@ export default function manifest(): MetadataRoute.Manifest {
     description: "AI solutions architecture and product-building portfolio.",
     start_url: "/",
     display: "standalone",
-    background_color: "#f7f8fb",
+    background_color: "#000000",
     theme_color: "#0b0d12",
-    icons: [{ src: "/icon.svg", sizes: "any", type: "image/svg+xml" }],
+    icons: [{ src: "/icon-512.png", sizes: "512x512", type: "image/png" }, { src: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" }],
   };
 }

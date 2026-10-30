@@ -9,6 +9,14 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
+  icons: {
+    icon: [
+      { url: "/favicon.gif", type: "image/gif" },
+      { url: "/icon-32.png", sizes: "32x32", type: "image/png" },
+      { url: "/favicon.ico", sizes: "any" },
+    ],
+    apple: [{ url: "/apple-touch-icon.png", sizes: "180x180" }],
+  },
   title: {
     default: "Elijah Paul",
     template: "%s | Elijah Paul",

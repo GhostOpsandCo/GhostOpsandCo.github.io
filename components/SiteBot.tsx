@@ -68,13 +68,13 @@ export function SiteBot() {
       {open && (
         <div className="sb-panel" role="dialog" aria-label="Site bot" id="sb-panel">
           <div className="sb-head">
-            <span><img src="/bots/flame.svg" alt="" width={18} height={18} className="sb-av" />Site bot</span>
+            <span><img src="/bots/ghost.svg" alt="" width={18} height={18} className="sb-av" />Site bot</span>
             <button type="button" className="sb-x" aria-label="Close" onClick={() => { setOpen(false); btn.current?.focus(); }}>×</button>
           </div>
           <div className="sb-log" ref={log} aria-live="polite">
             {msgs.map((m, i) => (
               <div key={i} className={`sb-msg sb-${m.from}`}>
-                {m.from === "bot" && <img src="/bots/flame.svg" alt="" width={16} height={16} className="sb-av sb-av-msg" />}
+                {m.from === "bot" && <img src="/bots/ghost.svg" alt="" width={16} height={16} className="sb-av sb-av-msg" />}
                 <p>{m.text}</p>
                 {m.link && (
                   <a href={m.link.u} {...(m.link.u.startsWith("http") ? { target: "_blank", rel: "noreferrer" } : {})}>{m.link.t} →</a>
@@ -95,7 +95,7 @@ export function SiteBot() {
         </div>
       )}
       <button ref={btn} type="button" className="sb-btn" aria-expanded={open} aria-controls="sb-panel" aria-label={open ? "Close site bot" : "Open site bot"} onClick={() => setOpen((o) => !o)}>
-        {open ? "×" : <img src="/bots/flame.svg" alt="" width={30} height={30} className="bob" />}
+        {open ? "×" : <img src="/bots/ghost.svg" alt="" width={30} height={30} className="bob" />}
       </button>
     </div>
   );
