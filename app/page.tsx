@@ -53,7 +53,7 @@ export default function Home() {
                 <div><dt>AnsemHack</dt><dd>Co-won</dd></div>
                 <div><dt>Build to launch</dt><dd>24 days</dd></div>
                 <div><dt>Before</dt><dd>AI at Gate</dd></div>
-                <div><dt>Swarm</dt><dd>3 agents</dd></div>
+                <div><dt>Launch revenue</dt><dd>$20M+</dd></div>
                 <div><dt>Shipped</dt><dd>{projects.length} projects</dd></div>
               </dl>
               <p className="glance-foot">Phoenix, AZ · Co-founder with @0xWhoismax</p>
