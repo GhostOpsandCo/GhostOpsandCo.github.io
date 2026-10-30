@@ -1,6 +1,6 @@
 ---
 title: "YC Wants Agentic Trading. So We're In."
-date: 2026-10-29
+date: 2026-10-30
 tldr: "Y Combinator just put out a crypto request for startups that names trading and agents. Hot Bot builds agentic trading. We're applying."
 tags: [Hot Bot, Y Combinator, Agentic Trading]
 ---
