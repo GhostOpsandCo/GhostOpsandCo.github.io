@@ -1,6 +1,6 @@
 ---
 title: "Agent Orchestration Without the Chaos"
-date: 2026-07-30
+date: 2026-10-30
 tldr: "A year of GhostOps, open sourced as one harness. Policy, routing, an evidence loop, hard gates and reviewed memory. No agent quietly rewrites its own rules."
 tags: [GhostOps, Orchestration, Open Source]
 ---
