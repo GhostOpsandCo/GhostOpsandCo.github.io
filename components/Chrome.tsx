@@ -1,12 +1,6 @@
 import Link from "next/link";
 import { site } from "@/lib/site";
 import { Bot, type BotName } from "./Bot";
-import { NavLinks } from "./NavLinks";
-
-const nav = [
-  { href: "/work", label: "Work" },
-  { href: "/writing", label: "Thinking" },
-];
 
 export function Header() {
   return (
@@ -17,7 +11,6 @@ export function Header() {
           Elijah Paul
         </Link>
         <nav aria-label="Primary" className="hdr-nav">
-          <NavLinks items={nav} />
           <a href={site.x} target="_blank" rel="noreferrer" className="hdr-x">X</a>
         </nav>
       </div>
