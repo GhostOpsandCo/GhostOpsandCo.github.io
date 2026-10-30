@@ -1,6 +1,6 @@
 ---
 title: "We Joined AnsemHack on the Final Day. Then We Won."
-date: 2026-10-28
+date: 2026-10-30
 tldr: "Hot Bot joined the ClawPump × Ansem AnsemHack on its last day, Oct 2, and took the W, becoming the fastest-growing project out of 24,000+ in the Claw Pump ecosystem."
 tags: [Hot Bot, AnsemHack, Solana]
 ---
