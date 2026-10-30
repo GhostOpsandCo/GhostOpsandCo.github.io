@@ -1,7 +1,8 @@
+/* eslint-disable @next/next/no-img-element -- static SVG logos */
 import Link from "next/link";
 import { Label } from "@/components/Chrome";
 import { formatShort, getAllPosts } from "@/lib/posts";
-import { projects, site } from "@/lib/site";
+import { site } from "@/lib/site";
 import { Bot } from "@/components/Bot";
 
 const now = [
@@ -17,6 +18,11 @@ const WORKED = [
   { n: "Gate", u: "https://www.gate.com", src: "/logos/gate.svg", w: 68, h: 24, text: false },
   { n: "Anchorage Digital", u: "https://www.anchorage.com", src: "/logos/anchorage.svg", w: 100, h: 23, text: false },
   { n: "x402", u: "https://www.x402.org", src: "/logos/x402.svg", w: 47, text: false },
+];
+const HACKATHONS = [
+  { n: "AnsemHack", r: "🏆" },
+  { n: "Colosseum", r: "TBD" },
+  { n: "Meta AI Global", r: "TBD" },
 ];
 const SWARM = [
   { n: "ResearchBot", v: "Finds coins that fit your rules.", bot: "cloud" },
@@ -51,11 +57,12 @@ export default function Home() {
               <p className="kicker">At a glance</p>
               <dl className="stats">
                 <div><dt>Building</dt><dd><Bot name="flame" className="mascot" />Hot Bot <span className="up">● Live</span></dd></div>
-                <div><dt>AnsemHack</dt><dd>Co-won</dd></div>
                 <div><dt>Build to launch</dt><dd>24 days</dd></div>
-                <div><dt>Before</dt><dd>AI at Gate</dd></div>
-                <div><dt>Launch revenue</dt><dd>$20M+</dd></div>
-                <div><dt>Shipped</dt><dd>{projects.length} projects</dd></div>
+                <div>
+                  <dt>Hackathons</dt>
+                  <dd><ul className="hacks">{HACKATHONS.map((h) => <li key={h.n}>{h.n} <span>{h.r}</span></li>)}</ul></dd>
+                </div>
+                <div><dt>What I do</dt><dd className="does"><span>Consumer problems.</span> <span>Unique solutions.</span></dd></div>
               </dl>
               <p className="glance-foot">Phoenix, AZ · Co-founder with @0xWhoismax</p>
             </section>
@@ -64,8 +71,8 @@ export default function Home() {
             <p className="kicker">Worked with</p>
             <ul>
               {WORKED.map((l) => (
-                <li key={l.n}><a href={l.u} target="_blank" rel="noreferrer" aria-label={l.n} className="logo">
-                  <span className="logo-img" style={{ WebkitMaskImage: `url(${l.src})`, maskImage: `url(${l.src})`, width: l.w, height: "h" in l ? l.h : undefined }} />
+                <li key={l.n}><a href={l.u} target="_blank" rel="noreferrer" className="logo">
+                  <img className="logo-img" src={l.src} alt={l.n} style={{ width: l.w, height: "h" in l ? l.h : undefined }} />
                   {l.text && <span className="logo-txt">{l.n}</span>}
                 </a></li>
               ))}
