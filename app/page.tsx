@@ -17,7 +17,7 @@ export default function Home() {
     <main id="main">
       <section className="hero">
         <div className="frame hero-in">
-          <p className="now-line mono rise"><span className="live" aria-hidden="true" />Now building <a href={site.hotbot} target="_blank" rel="noreferrer">Hot Bot</a></p>
+          <p className="now-line mono rise">Now building <a href={site.hotbot} target="_blank" rel="noreferrer">Hot Bot</a></p>
           <h1 className="name rise">Elijah<br className="br-m" /> Paul</h1>
           <div className="hero-foot rise">
             <p className="thesis">
@@ -37,25 +37,7 @@ export default function Home() {
 
       <section className="block">
         <div className="frame grid12">
-          <Label n="01">Now</Label>
-          <ol className="index">
-            {now.map((r) => (
-              <li key={r.k} className="reveal">
-                <a href={r.href} target="_blank" rel="noreferrer" className="irow">
-                  <span className="i-title">{r.k}</span>
-                  <span className="i-desc">{r.v}</span>
-                  <span className="i-meta mono">{r.meta}</span>
-                  <span className="i-arrow" aria-hidden="true">↗</span>
-                </a>
-              </li>
-            ))}
-          </ol>
-        </div>
-      </section>
-
-      <section className="block">
-        <div className="frame grid12">
-          <Label n="02">Writing</Label>
+          <Label n="01">Log</Label>
           <ol className="index">
             {posts.map((p) => (
               <li key={p.slug} className="reveal">
@@ -67,7 +49,25 @@ export default function Home() {
                 </Link>
               </li>
             ))}
-            <li className="reveal"><Link href="/writing" className="more mono">Everything I&apos;ve written →</Link></li>
+            <li className="reveal"><Link href="/writing" className="more mono">Full log →</Link></li>
+          </ol>
+        </div>
+      </section>
+
+      <section className="block">
+        <div className="frame grid12">
+          <Label n="02">Now</Label>
+          <ol className="index">
+            {now.map((r) => (
+              <li key={r.k} className="reveal">
+                <a href={r.href} target="_blank" rel="noreferrer" className="irow">
+                  <span className="i-title">{r.k}</span>
+                  <span className="i-desc">{r.v}</span>
+                  <span className="i-meta mono">{r.meta}</span>
+                  <span className="i-arrow" aria-hidden="true">↗</span>
+                </a>
+              </li>
+            ))}
           </ol>
         </div>
       </section>

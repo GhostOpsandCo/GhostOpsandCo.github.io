@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Footer, Header } from "@/components/Chrome";
 import { JsonLd } from "@/components/JsonLd";
+import { SiteBot } from "@/components/SiteBot";
 import { personJsonLd } from "@/lib/person";
 import { site } from "@/lib/site";
 import "./globals.css";
@@ -63,6 +64,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         <Header />
         {children}
         <Footer />
+        <SiteBot />
       </body>
     </html>
   );
